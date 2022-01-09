@@ -8,38 +8,49 @@
 import SwiftUI
 
 @main
-struct CQApp: App {
+struct SwitcherApp: App {
+    // Linking a created AppDelegate
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
-        WindowGroup {
+        // IMPORTANT
+        Settings {
             ContentView()
+            
         }
     }
 }
 
-public class AppDelegate: NSObject, NSApplicationDelegate{
+
+
+
+class AppDelegate: NSObject, NSApplicationDelegate{
     var state = Wrapper()
     var statusItem: NSStatusItem?
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
-//        if AXIsProcessTrusted() {
+        if AXIsProcessTrusted() {
           createEventTap()
-//        }
-        
-        
-        let menuView = MenuView()
+          MakeMenuButton()
+        } else{
+            ShellCommand(arg: Privacy_Accessibility)
+            createEventTap()
+            MakeMenuButton()
+        }
+       
+    }
 
+
+    
+    func MakeMenuButton(){
+        let menuView = MenuView()
         popOver.behavior = .transient
         popOver.animates = true
-
 //        set empty view controller
         popOver.contentViewController = NSViewController()
         popOver.contentViewController?.view = NSHostingView(rootView: menuView)
-
 //        making view as main view
-        popOver.contentViewController?.view.window?.makeKey()
+//        popOver.contentViewController?.view.window?.makeKey()
         popOver.contentSize = NSSize(width: 360, height: 800)
-
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let MenuButton = statusItem?.button{
@@ -50,6 +61,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate{
         }
 
     }
+    
     
     @objc func MenuButtonToggle(sender: AnyObject) {
 //      showing popover
