@@ -13,21 +13,16 @@ struct ContentView: View {
 @State public var isEnabled = false
     var body: some View {
         VStack{
-            Toggle(isOn: $isEnabled) {
-                       Text(String(isEnabled))
-                   }.keyboardShortcut("t")
+            
         }.frame(width: 300, height: 300)
-            .toast(isPresenting: $isEnabled){
-                AlertToast(type: .regular, title: "Message Sent!")
-            }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
 //let eventMask = CGEventType.keyDown.rawValue //| (1 << CGEventType.keyUp.rawValue)
 //print(eventMask)
 

@@ -72,7 +72,7 @@ struct MenuView: View {
                 HStack(
                     spacing: 0){
     //                   \(Image(systemName: "sun.max.fill"))
-                        Image(systemName: "command")
+                        Image(systemName: "magicmouse")
                             .padding(.top, 15.0)
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)

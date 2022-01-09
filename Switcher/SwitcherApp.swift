@@ -25,6 +25,8 @@ public class AppDelegate: NSObject, NSApplicationDelegate{
 //        if AXIsProcessTrusted() {
           createEventTap()
 //        }
+        
+        
         let menuView = MenuView()
 
         popOver.behavior = .transient
@@ -42,7 +44,8 @@ public class AppDelegate: NSObject, NSApplicationDelegate{
 
         if let MenuButton = statusItem?.button{
 //            MenuButton.image = NSImage(systemSymbolName: "command", accessibilityDescription: nil)
-            MenuButton.title = "􀆔􀂴"
+//            MenuButton.title = "􀙀"
+            MenuButton.image = NSImage(named: "IMG")
             MenuButton.action = #selector(MenuButtonToggle)
         }
 
