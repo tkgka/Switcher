@@ -21,8 +21,8 @@
 		F97D4D912788419100FBC5AD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
 		F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* EventHandler.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
-		F9BAFD74278AD8F300990607 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD73278AD8F300990607 /* WelcomeViewController.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
+		F9E7EB0C278C3B42004B5037 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,8 @@
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
-		F9BAFD73278AD8F300990607 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
+		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E7EB0C278C3B42004B5037 /* LaunchAtLogin in Frameworks */,
 				E587389C9352E04BED961A87 /* Pods_Switcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +148,7 @@
 		F97D4D5527883B0900FBC5AD /* Switcher */ = {
 			isa = PBXGroup;
 			children = (
+				F9E7EB09278C38E6004B5037 /* Info.plist */,
 				F9BAFD75278AF8EC00990607 /* Command */,
 				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
 				F97D4D8F2788418200FBC5AD /* Menu */,
@@ -154,7 +156,6 @@
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
-				F9BAFD73278AD8F300990607 /* WelcomeViewController.swift */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
 				F97D4D5C27883B0B00FBC5AD /* Preview Content */,
@@ -221,6 +222,9 @@
 			dependencies = (
 			);
 			name = Switcher;
+			packageProductDependencies = (
+				F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */,
+			);
 			productName = Switcher;
 			productReference = F97D4D5327883B0900FBC5AD /* Switcher.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +300,9 @@
 				Base,
 			);
 			mainGroup = F97D4D4A27883B0900FBC5AD;
+			packageReferences = (
+				F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = F97D4D5427883B0900FBC5AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -448,7 +455,6 @@
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
 				F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */,
-				F9BAFD74278AD8F300990607 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +621,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Switcher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,6 +650,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Switcher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -772,6 +780,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F97D4D4B27883B0900FBC5AD /* Project object */;
 }

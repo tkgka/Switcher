@@ -1,8 +1,7 @@
 //
-//  ContentView.swift
-//  CQ
+//  Switcher
 //
-//  Created by 김수환 on 2021/12/31.
+//  Created by 김수환 on 2022/01/08.
 //
 
 import SwiftUI

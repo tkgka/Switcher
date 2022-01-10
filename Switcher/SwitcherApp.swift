@@ -1,8 +1,7 @@
 //
-//  CQApp.swift
-//  CQ
+//  Switcher
 //
-//  Created by 김수환 on 2021/12/31.
+//  Created by 김수환 on 2022/01/08.
 //
 
 import SwiftUI
@@ -28,6 +27,17 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     var statusItem: NSStatusItem?
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
+        let runningApps = NSWorkspace.shared.runningApplications
+            let isRunning = runningApps.contains {
+                $0.bundleIdentifier == "your.domain.TestAutoLaunch"
+            }
+        if !isRunning {
+            var path = Bundle.main.bundlePath as NSString
+            for _ in 1...4 {
+                path = path.deletingLastPathComponent as NSString
+            }
+            NSWorkspace.shared.launchApplication(path as String)
+        }
         if AXIsProcessTrusted() {
           createEventTap()
           MakeMenuButton()

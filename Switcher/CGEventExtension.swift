@@ -1,9 +1,9 @@
 //
-//  CGEventExtension.swift
-//  ForceClickToRightClick
+//  Switcher
 //
-//  Created by Jed Fox on 5/11/21.
+//  Created by 김수환 on 2022/01/08.
 //
+// code from "https://github.com/j-f1/ForceClickToRightClick"
 
 import Foundation
 

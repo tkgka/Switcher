@@ -1,12 +1,14 @@
 //
-//  MenuView.swift
-//  OneClick
+//  Switcher
 //
-//  Created by Michele Marcucci on 15/12/21.
-//  Copyright © 2021 Golden Chopper. All rights reserved.
+//  Created by 김수환 on 2022/01/08.
 //
+// UI Design from " https://github.com/mik3sw/OneClick"
 
 import SwiftUI
+import LaunchAtLogin
+
+
 
 struct MenuView: View {
     @State var CMDQToggle: Bool = true
