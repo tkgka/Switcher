@@ -16,15 +16,6 @@ struct ContentView: View {
         }.frame(width: 300, height: 300)
     }
 }
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
-//let eventMask = CGEventType.keyDown.rawValue //| (1 << CGEventType.keyUp.rawValue)
-//print(eventMask)
-
 
 prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
     Binding<Bool>(

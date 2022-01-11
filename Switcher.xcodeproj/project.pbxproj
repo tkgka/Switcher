@@ -23,6 +23,7 @@
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9E7EB0C278C3B42004B5037 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */; };
+		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
 				F97D4D5C27883B0B00FBC5AD /* Preview Content */,
@@ -451,6 +454,7 @@
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
+				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
 				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
@@ -627,7 +631,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -656,7 +660,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

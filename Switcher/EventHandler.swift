@@ -13,25 +13,6 @@ class Wrapper {
     var isRight = false
     var mouseMoves: [CGPoint] = []
 
-    func replay(into proxy: CGEventTapProxy, from event: CGEvent, isRight: Bool) {
-//      print("replay")
-      task.cancel()
-      let source = CGEventSource(event: event)
-      let mouseDownEvent = mouseDownEvent.copy()!
-      if isRight {
-        mouseDownEvent.type = .rightMouseDown
-        mouseDownEvent.setIntegerValueField(.mouseEventButtonNumber, value: Int64(CGMouseButton.right.rawValue))
-      }
-      mouseDownEvent.tapPostEvent(proxy)
-      mouseMoves.forEach {
-        CGEvent(
-          mouseEventSource: source,
-          mouseType: isRight ? .rightMouseDragged : .leftMouseDragged,
-          mouseCursorPosition: $0,
-          mouseButton: isRight ? .right : .left
-        )?.tapPostEvent(proxy)
-      }
-    }
   }
 }
 
@@ -71,17 +52,5 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
   }
 }
 
-
-
-
-func dialogOKCancel(question: String, text: String) -> Bool {
-    let alert = NSAlert()
-    alert.messageText = question
-    alert.informativeText = text
-    alert.alertStyle = NSAlert.Style.informational
-    alert.addButton(withTitle: "OK")
-    alert.addButton(withTitle: "Cancel")
-    return alert.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
-}
 
 

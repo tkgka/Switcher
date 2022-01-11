@@ -6,17 +6,12 @@
 // UI Design from " https://github.com/mik3sw/OneClick"
 
 import SwiftUI
-import LaunchAtLogin
-
-
 
 struct MenuView: View {
     @State var CMDQToggle: Bool = true
     @State var MouseWheelToggle: Bool = true
 
     var body: some View {
-        
-        
         VStack( alignment: .leading, spacing: 0){
             
             Text("Switcher")

@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import Darwin // needed for exit(0)
 
 @main
 struct SwitcherApp: App {
@@ -19,30 +20,17 @@ struct SwitcherApp: App {
     }
 }
 
-
-
-
 class AppDelegate: NSObject, NSApplicationDelegate{
     var state = Wrapper()
     var statusItem: NSStatusItem?
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
-        let runningApps = NSWorkspace.shared.runningApplications
-            let isRunning = runningApps.contains {
-                $0.bundleIdentifier == "your.domain.TestAutoLaunch"
-            }
-        if !isRunning {
-            var path = Bundle.main.bundlePath as NSString
-            for _ in 1...4 {
-                path = path.deletingLastPathComponent as NSString
-            }
-            NSWorkspace.shared.launchApplication(path as String)
-        }
         if AXIsProcessTrusted() {
-          createEventTap()
-          MakeMenuButton()
+            createEventTap()
+            MakeMenuButton()
         } else{
             ShellCommand(arg: Privacy_Accessibility)
+            WelcomeView().openInWindow(title: "Win View", sender: self)
             createEventTap()
             MakeMenuButton()
         }
@@ -123,3 +111,16 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     }
   }
 
+
+extension View {
+    
+    @discardableResult
+    func openInWindow(title: String, sender: Any?) -> NSWindow {
+        let controller = NSHostingController(rootView: self)
+        let win = NSWindow(contentViewController: controller)
+        win.contentViewController = controller
+        win.title = title
+        win.makeKeyAndOrderFront(sender)
+        return win
+    }
+}
