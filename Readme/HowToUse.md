@@ -14,3 +14,10 @@ Release 된 앱을 설치 합니다.
 앱에 "손쉬운 사용" 권한을 주고 앱을 재시작 시킵니다.
 
 ![image](https://user-images.githubusercontent.com/52348220/149314665-f93b14ce-d139-40f1-be55-1c09fbab31f3.png)![image](https://user-images.githubusercontent.com/52348220/149314729-20718a8f-5b45-4f7b-a6e5-a626f73afdf9.png)
+
+
+
+메뉴바 아이콘의 토글을 이용하여 각 기능의 사용 여부를 개별적으로 선택할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/149321446-0134261f-6030-4433-82ef-471b724e3426.png)
+
