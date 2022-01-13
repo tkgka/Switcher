@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
             MakeMenuButton()
         } else{
             ShellCommand(arg: Privacy_Accessibility)
-            WelcomeView().openInWindow(title: "Win View", sender: self)
+            WelcomeView().openInWindow(title: "Switcher", sender: self)
             createEventTap()
             MakeMenuButton()
         }
