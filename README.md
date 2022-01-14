@@ -5,7 +5,7 @@ command + q 명령어를 두번 입력한 경우에만 동작하도록 설정할
 
 ![img](https://user-images.githubusercontent.com/52348220/149319230-d7ab3d6b-2467-4159-997d-f6ca14f0cafd.gif)
 
-마우스휠의 회전 방향을 변경할 수 있습니다.
+마우스휠과 트랙패드의 스크롤 방향을 다르게 할지 여부를 결정할 수 있습니다.
 
 #
 사용 방법은 <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse.md"> 여기 </a> 에서 확인하실 수 있습니다.
