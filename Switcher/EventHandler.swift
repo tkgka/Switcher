@@ -28,6 +28,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 value = false
                 return cgEvent
             }else{
+                delay()
                 value = true
                 return nil
             }
@@ -52,5 +53,9 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
   }
 }
 
-
+func delay(){
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        value = false
+    }
+}
 
