@@ -1,4 +1,6 @@
 Release 된 앱을 설치 합니다.
+* 앱이 /Applications 폴더에 위치해 있지 않으면 정상 동작하지 않습니다.
+
 ![image](https://user-images.githubusercontent.com/52348220/149315663-b1f4783b-916b-48ce-9f1a-93c5438ae6e8.png)
 
 실행 시점에 아래와 같은 에러가 발생한다면 설정 -> 보안 및 개인 정보 -> 일반 에서 "확인 없이 열기" 를 클릭합니다.
