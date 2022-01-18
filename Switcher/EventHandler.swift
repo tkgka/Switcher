@@ -28,8 +28,8 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 value = false
                 return cgEvent
             }else{
-                delay()
                 value = true
+                delay()
                 return nil
             }
             
