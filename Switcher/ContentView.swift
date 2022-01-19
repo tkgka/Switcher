@@ -1,25 +1,35 @@
 //
-//  Switcher
+//  ContentView.swift
+//  CQ
 //
-//  Created by 김수환 on 2022/01/08.
+//  Created by 김수환 on 2021/12/31.
 //
 
 import SwiftUI
-import AlertToast
 
+struct EffectsView: NSViewRepresentable {
+  func makeNSView(context: Context) -> NSVisualEffectView {
+    return NSVisualEffectView()
+  }
+  
+  func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+    // Nothing to do.
+  }
+}
 
 struct ContentView: View {
 @State public var isEnabled = false
     var body: some View {
         VStack{
-            
+            EffectsView()
         }.frame(width: 300, height: 300)
+            .cornerRadius(20)
     }
 }
 
-prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
-    Binding<Bool>(
-        get: { !value.wrappedValue },
-        set: { value.wrappedValue = !$0 }
-    )
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
+
