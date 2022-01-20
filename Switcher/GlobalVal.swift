@@ -8,5 +8,6 @@ import Foundation
 
 var CMDQ:Bool = true
 var MouseWheel:Bool = true
-let DefaultTimeout = 1.5
 var AlertSize:CGFloat = 200.0
+var AlertIsOn:Bool = false
+let DefaultTimeout = 1.5

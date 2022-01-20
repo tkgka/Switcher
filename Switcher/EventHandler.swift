@@ -28,7 +28,9 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 value = false
                 return cgEvent
             }else{
-                ContentView().displayAsAlert()
+                if(AlertIsOn == false){
+                    ContentView().displayAsAlert()
+                }
                 value = true
                 delay()
                 return nil

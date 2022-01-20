@@ -124,6 +124,7 @@ extension View {
         return win
     }
     func displayAsAlert(){
+        AlertIsOn = true
         let controller = NSHostingController(rootView: self)
         let win = NSWindow(contentViewController: controller)
         win.isMovableByWindowBackground = false
@@ -140,6 +141,7 @@ extension View {
         win.styleMask.remove(.resizable)
         win.orderFrontRegardless()
         DispatchQueue.main.asyncAfter(deadline: .now()+DefaultTimeout) {
+            AlertIsOn = false
             win.close()
         }
         
