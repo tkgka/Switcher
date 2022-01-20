@@ -56,7 +56,7 @@
 		0F9F0DF023A67F1E3748EF3BD0130FF0 /* Pods-SwitcherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwitcherTests.modulemap"; sourceTree = "<group>"; };
 		11DAA367F82ED86115B6E018DF7056F4 /* Pods-Switcher-SwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Switcher-SwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1EDE9C8447BB0943F8E8B6AFD6171CEF /* Pods-SwitcherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwitcherTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		219ED5D358E85B4B4F80DCDF73255CAA /* Pods-SwitcherTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SwitcherTests"; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		219ED5D358E85B4B4F80DCDF73255CAA /* Pods_SwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26EE4529DD380DDB848734F5F22DA8A7 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Sources/AlertToast/BlurView.swift; sourceTree = "<group>"; };
 		39A55521963E7D5050D81155C8567055 /* AlertToast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlertToast-Info.plist"; sourceTree = "<group>"; };
 		4009B7FB99DE7A16809F476F961B47D6 /* AlertToast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertToast.swift; path = Sources/AlertToast/AlertToast.swift; sourceTree = "<group>"; };
@@ -72,14 +72,14 @@
 		925975F27893FB1F7B11F335AAEED30B /* AlertToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.debug.xcconfig; sourceTree = "<group>"; };
 		9BF630ED8857C4DFFFC84D8FAA3A8BE7 /* AlertToast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlertToast; path = AlertToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50F036BE0BFE618C67FA52B80377F3B /* AlertToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlertToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72B1EA510BE57D5F7D5462B525CE192 /* AlertToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertToast-umbrella.h"; sourceTree = "<group>"; };
 		AE3F126B2DBCF3655C9BA9BBDB7994BB /* Pods-Switcher-SwitcherUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Switcher-SwitcherUITests.modulemap"; sourceTree = "<group>"; };
 		AE90850BE07E756F7723C901C3B5CDE9 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE06CA36BEB43603A21F0608CA1E421D /* Pods-Switcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Switcher-dummy.m"; sourceTree = "<group>"; };
 		BF71E6291B5E41B619ED25906D71FF88 /* Pods-SwitcherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwitcherTests-dummy.m"; sourceTree = "<group>"; };
 		C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods-Switcher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Switcher"; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C259DEF807F5A52F0EFE804E5A148C55 /* Pods-Switcher-SwitcherUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Switcher-SwitcherUITests-frameworks.sh"; sourceTree = "<group>"; };
 		C44CED3C0950804654DEAA48320D82E8 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD9C1E6FA826768952F8647EEBA53A72 /* Pods-Switcher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Switcher-frameworks.sh"; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		D12372BFDE3BC17EA0B94C38DC93831C /* Pods-SwitcherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwitcherTests-umbrella.h"; sourceTree = "<group>"; };
 		D8E1AA0E70340C729F88E0A6B58368E5 /* Pods-Switcher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Switcher-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EF1CCC19177B496F8F67109973428418 /* Pods-Switcher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Switcher-umbrella.h"; sourceTree = "<group>"; };
-		F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods-Switcher-SwitcherUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Switcher-SwitcherUITests"; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods_Switcher_SwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FC4C6A07B7E33020D59FBE23C1684B /* Pods-SwitcherTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwitcherTests-Info.plist"; sourceTree = "<group>"; };
 		FA96A2096B9B2EF3871FD601F7A0CFDE /* Pods-Switcher-SwitcherUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Switcher-SwitcherUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FD57D1A9B9454C5F838270F54C1C5F3C /* Pods-Switcher-SwitcherUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Switcher-SwitcherUITests-umbrella.h"; sourceTree = "<group>"; };
@@ -160,10 +160,10 @@
 		0AA994CAE4D2C01660085F0D622635DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */,
-				C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods-Switcher */,
-				F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods-Switcher-SwitcherUITests */,
-				219ED5D358E85B4B4F80DCDF73255CAA /* Pods-SwitcherTests */,
+				A50F036BE0BFE618C67FA52B80377F3B /* AlertToast.framework */,
+				C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods_Switcher.framework */,
+				F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods_Switcher_SwitcherUITests.framework */,
+				219ED5D358E85B4B4F80DCDF73255CAA /* Pods_SwitcherTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			);
 			name = "Pods-Switcher-SwitcherUITests";
 			productName = Pods_Switcher_SwitcherUITests;
-			productReference = F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods-Switcher-SwitcherUITests */;
+			productReference = F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods_Switcher_SwitcherUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6BD4A67E21FF91466B26515DB13E9592 /* Pods-SwitcherTests */ = {
@@ -334,7 +334,7 @@
 			);
 			name = "Pods-SwitcherTests";
 			productName = Pods_SwitcherTests;
-			productReference = 219ED5D358E85B4B4F80DCDF73255CAA /* Pods-SwitcherTests */;
+			productReference = 219ED5D358E85B4B4F80DCDF73255CAA /* Pods_SwitcherTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A7F3A91A4BA66FF7C7BCF5ED0F9BE406 /* Pods-Switcher */ = {
@@ -353,7 +353,7 @@
 			);
 			name = "Pods-Switcher";
 			productName = Pods_Switcher;
-			productReference = C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods-Switcher */;
+			productReference = C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods_Switcher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */ = {
@@ -371,7 +371,7 @@
 			);
 			name = AlertToast;
 			productName = AlertToast;
-			productReference = A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */;
+			productReference = A50F036BE0BFE618C67FA52B80377F3B /* AlertToast.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -381,7 +381,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1320;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -499,7 +499,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 925975F27893FB1F7B11F335AAEED30B /* AlertToast.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -535,7 +534,6 @@
 			baseConfigurationReference = 0D07490A8DDC39A6E01151803C74CEE6 /* Pods-Switcher.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -571,7 +569,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BF630ED8857C4DFFFC84D8FAA3A8BE7 /* AlertToast.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -607,7 +604,6 @@
 			baseConfigurationReference = 431E50342EF13BE244B5EE3DBC877824 /* Pods-SwitcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -644,7 +640,6 @@
 			baseConfigurationReference = AE90850BE07E756F7723C901C3B5CDE9 /* Pods-SwitcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -681,7 +676,6 @@
 			baseConfigurationReference = 11DAA367F82ED86115B6E018DF7056F4 /* Pods-Switcher-SwitcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -718,7 +712,6 @@
 			baseConfigurationReference = 6200EB0E3C2AE0AC8C6FD851056CE96E /* Pods-Switcher.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -883,7 +876,6 @@
 			baseConfigurationReference = C44CED3C0950804654DEAA48320D82E8 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";

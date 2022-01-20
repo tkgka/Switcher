@@ -20,7 +20,6 @@ struct WelcomeView: View {
         .padding(.top, 15.0)
         .padding(.bottom, 10.0)
         .frame(alignment: .leading)
-        
         }.frame(width: 300, height: 300)
         
     }

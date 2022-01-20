@@ -28,7 +28,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 value = false
                 return cgEvent
             }else{
-                ContentView().displayAlert()
+                ContentView().displayAsAlert()
                 value = true
                 delay()
                 return nil
@@ -55,7 +55,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
 }
 
 func delay(){
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
         value = false
     }
 }

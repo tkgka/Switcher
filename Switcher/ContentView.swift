@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EffectsView: NSViewRepresentable {
   func makeNSView(context: Context) -> NSVisualEffectView {
-    return NSVisualEffectView()
+      return NSVisualEffectView()
   }
   
   func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
@@ -18,18 +18,34 @@ struct EffectsView: NSViewRepresentable {
 }
 
 struct ContentView: View {
-@State public var isEnabled = false
+    let width = NSScreen.main?.frame.width
+    let height = NSScreen.main?.frame.height
     var body: some View {
         VStack{
+        ZStack{
             EffectsView()
-        }.frame(width: 300, height: 300)
-            .cornerRadius(20)
+                .luminanceToAlpha()
+                .contrast(0.5)
+            .colorMultiply(Color.white)
+            VStack{
+                Image(systemName: "exclamationmark.circle")
+                    .resizable()
+                    .frame(width: 70.0, height: 70.0)
+//                    .padding().shadow(color: .white, radius: 20, x: 2, y: 2)
+                    .padding()
+                Text("Enter 􀆔q again \nto shutdown app").multilineTextAlignment(.center)
+                    .font(.system(size: 15))
+                    .foregroundColor(Color.white)
+                
+            }
+        }.frame(width: AlertSize, height: AlertSize)
+                .cornerRadius(20)
+                .position(x: width!/2, y: height! - AlertSize*3/2.04)
+        }.frame(width: width!, height:height!)
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
