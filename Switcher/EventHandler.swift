@@ -16,28 +16,25 @@ class Wrapper {
   }
 }
 
-var value = false
 func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-    if event.type == .keyDown && CMDQ == true{
+    if (event.type == .keyDown && CMDQ == true){
 //        print(event.modifierFlags)
         if event.keyCode == 12 && ( // P key down
             event.modifierFlags.rawValue == 1048840 || // right command key down
             event.modifierFlags.rawValue == 1048848 || // left command key down
             event.modifierFlags.rawValue == 1048856){  // both command key down
-            if value == true {
-                value = false
+            if AlertIsOn == true {
+                AlertIsOn = false
                 return cgEvent
             }else{
                 if(AlertIsOn == false){
                     ContentView().displayAsAlert()
                 }
-                value = true
-                delay()
                 return nil
             }
             
         }else {
-            value = false
+            AlertIsOn = false
             return cgEvent
         }
     } else  if event.type == .scrollWheel && MouseWheel == true{
@@ -50,14 +47,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 }
             }
  else {
-     
-     value = false
+     AlertIsOn = false
     return cgEvent
   }
-}
-
-func delay(){
-    DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
-        value = false
-    }
 }

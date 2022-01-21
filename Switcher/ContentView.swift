@@ -18,6 +18,7 @@ struct EffectsView: NSViewRepresentable {
 }
 
 struct ContentView: View {
+    let value:Bool = true
     let width = NSScreen.main?.frame.width
     let height = NSScreen.main?.frame.height
     var body: some View {
@@ -31,6 +32,7 @@ struct ContentView: View {
                 Image(systemName: "exclamationmark.circle")
                     .resizable()
                     .frame(width: 70.0, height: 70.0)
+                    .foregroundColor(Color.white)
 //                    .padding().shadow(color: .white, radius: 20, x: 2, y: 2)
                     .padding()
                 Text("Enter 􀆔q again \nto shutdown app").multilineTextAlignment(.center)

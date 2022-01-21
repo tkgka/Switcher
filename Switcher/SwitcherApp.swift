@@ -25,18 +25,13 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     var statusItem: NSStatusItem?
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
-        if AXIsProcessTrusted() {
-            createEventTap()
-            MakeMenuButton()
-        } else{
+        if !AXIsProcessTrusted() {
             ShellCommand(arg: Privacy_Accessibility)
             WelcomeView().openInWindow(title: "Switcher", sender: self)
+        }
             createEventTap()
             MakeMenuButton()
-        }
-       
     }
-
 
     
     func MakeMenuButton(){
@@ -113,7 +108,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 
 
 extension View {
-    
     @discardableResult
     func openInWindow(title: String, sender: Any?) -> NSWindow {
         let controller = NSHostingController(rootView: self)
@@ -133,7 +127,7 @@ extension View {
         win.titlebarAppearsTransparent = true
         win.isOpaque = false
         win.backgroundColor = NSColor.clear
-//        win.alphaValue = 0.9 //you can remove this line but it adds a nice effect to it
+        win.alphaValue = 0.98 //you can remove this line but it adds a nice effect to it
         win.styleMask.remove(.closable)
         win.styleMask.remove(.fullScreen)
         win.styleMask.remove(.miniaturizable)
