@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State var CMDQToggle: Bool = true
+    @State var AlertToggle: Bool = true
     @State var MouseWheelToggle: Bool = true
 
     var body: some View {
@@ -61,6 +62,10 @@ struct MenuView: View {
                 .padding(.bottom, 15.0)
                 }
                 
+            
+            if CMDQToggle {
+                
+            }
                 Divider()
                     .padding(.horizontal, 10.0)
                     .frame(width: 300)
@@ -131,7 +136,7 @@ struct MenuView: View {
 //            defaults write com.apple.finder CreateDesktop false killall Finder
             
             
-        }
+    }
         
     }
 

@@ -25,9 +25,9 @@ struct ContentView: View {
         VStack{
         ZStack{
             EffectsView()
+                .colorMultiply(Color("BGColor"))
                 .luminanceToAlpha()
-                .contrast(0.5)
-            .colorMultiply(Color.white)
+
             VStack{
                 Image(systemName: "exclamationmark.circle")
                     .resizable()
@@ -38,11 +38,11 @@ struct ContentView: View {
                 Text("Enter 􀆔q again \nto shutdown app").multilineTextAlignment(.center)
                     .font(.system(size: 15))
                     .foregroundColor(Color.white)
-                
             }
         }.frame(width: AlertSize, height: AlertSize)
                 .cornerRadius(20)
                 .position(x: width!/2, y: height! - AlertSize*3/2.04)
+
         }.frame(width: width!, height:height!)
     }
 }

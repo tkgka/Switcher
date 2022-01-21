@@ -10,6 +10,8 @@
 		91E039DEC7D1BF6EB8408FF3 /* Pods_Switcher_SwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD99D5648650951C12C5676 /* Pods_Switcher_SwitcherUITests.framework */; };
 		AAE3E2A1DC812A7B9AC1D48A /* Pods_SwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355F3FEBDC8CBF699D97F68 /* Pods_SwitcherTests.framework */; };
 		E587389C9352E04BED961A87 /* Pods_Switcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6692BECD2D8CDACA02542539 /* Pods_Switcher.framework */; };
+		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
+		F950052A279AC7D7006807F8 /* popupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* popupController.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
 		F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* ContentView.swift */; };
 		F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		6692BECD2D8CDACA02542539 /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7930BE6510296E6D9920ADAC /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
 		99C47D638E79152D394BC47E /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.debug.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
+		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		F9500529279AC7D7006807F8 /* popupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupController.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
 		F97D4D5827883B0900FBC5AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,11 +157,13 @@
 				F9E7EB09278C38E6004B5037 /* Info.plist */,
 				F9BAFD75278AF8EC00990607 /* Command */,
 				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
+				F9500529279AC7D7006807F8 /* popupController.swift */,
 				F97D4D8F2788418200FBC5AD /* Menu */,
 				F97D4D8B2788413F00FBC5AD /* EventHandler.swift */,
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
@@ -323,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F97D4D5E27883B0B00FBC5AD /* Preview Assets.xcassets in Resources */,
+				F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */,
 				F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +461,7 @@
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
+				F950052A279AC7D7006807F8 /* popupController.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
 				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
