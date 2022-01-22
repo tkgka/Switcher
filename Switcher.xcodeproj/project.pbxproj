@@ -24,7 +24,6 @@
 		F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* EventHandler.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
-		F9E7EB0C278C3B42004B5037 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E7EB0C278C3B42004B5037 /* LaunchAtLogin in Frameworks */,
 				E587389C9352E04BED961A87 /* Pods_Switcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +230,6 @@
 			);
 			name = Switcher;
 			packageProductDependencies = (
-				F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */,
 			);
 			productName = Switcher;
 			productReference = F97D4D5327883B0900FBC5AD /* Switcher.app */;
@@ -803,14 +800,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F9E7EB0B278C3B42004B5037 /* LaunchAtLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
-			productName = LaunchAtLogin;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F97D4D4B27883B0900FBC5AD /* Project object */;
 }

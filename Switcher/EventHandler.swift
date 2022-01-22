@@ -1,4 +1,5 @@
 import Cocoa
+import SwiftUI
 
 class Wrapper {
   var state: State?
@@ -27,9 +28,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 AlertIsOn = false
                 return cgEvent
             }else{
-                if(AlertIsOn == false){
-                    ContentView().displayAsAlert()
-                }
+                ContentView().displayAsAlert()
                 return nil
             }
             

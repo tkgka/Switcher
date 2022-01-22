@@ -18,7 +18,8 @@ struct EffectsView: NSViewRepresentable {
 }
 
 struct ContentView: View {
-    let value:Bool = true
+    @State var scale: CGFloat = 1
+    let AlertTimeout:Double = 1
     let width = NSScreen.main?.frame.width
     let height = NSScreen.main?.frame.height
     var body: some View {
@@ -27,7 +28,6 @@ struct ContentView: View {
             EffectsView()
                 .colorMultiply(Color("BGColor"))
                 .luminanceToAlpha()
-
             VStack{
                 Image(systemName: "exclamationmark.circle")
                     .resizable()
@@ -42,7 +42,16 @@ struct ContentView: View {
         }.frame(width: AlertSize, height: AlertSize)
                 .cornerRadius(20)
                 .position(x: width!/2, y: height! - AlertSize*3/2.04)
-
+                .opacity(scale)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + AlertTimeout) {
+                    let baseAnimation = Animation.easeIn(duration: DefaultTimeout - AlertTimeout)
+                    let repeated = baseAnimation.repeatCount(1, autoreverses: false)
+                    withAnimation(repeated) {
+                        scale = 0.0
+                    }
+                    }
+                }
         }.frame(width: width!, height:height!)
     }
 }
@@ -51,3 +60,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
