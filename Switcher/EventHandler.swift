@@ -1,5 +1,6 @@
 import Cocoa
 import SwiftUI
+var currentWindow:NSWindow?
 
 class Wrapper {
   var state: State?
@@ -28,7 +29,12 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 AlertIsOn = false
                 return cgEvent
             }else{
-                ContentView().displayAsAlert()
+                if currentWindow != nil{
+                    closeWindow(window: currentWindow!)
+                }
+                let AlertWindow = setWindow()
+                currentWindow = AlertWindow
+                ContentView().displayAsAlert(win: AlertWindow)
                 return nil
             }
             

@@ -15,14 +15,12 @@ extension View {
         win.contentViewController = controller
         win.title = title
         win.makeKeyAndOrderFront(sender)
+        win.orderFrontRegardless()
         return win
     }
-    func displayAsAlert(){
+    func displayAsAlert(win:NSWindow){
         AlertIsOn = true
-        let controller = NSHostingController(rootView: self)
-        let win = NSWindow(contentViewController: controller)
         win.isMovableByWindowBackground = false
-        win.contentViewController = controller
         win.titleVisibility = .hidden
         win.titlebarAppearsTransparent = true
         win.isOpaque = false
@@ -36,9 +34,17 @@ extension View {
         win.orderFrontRegardless()
         DispatchQueue.main.asyncAfter(deadline: .now()+DefaultTimeout) {
             AlertIsOn = false
-            win.close()
+            closeWindow(window: win)
         }
-        
     }
 }
 
+func setWindow() -> NSWindow{
+    let controller = NSHostingController(rootView: ContentView())
+    let win = NSWindow(contentViewController: controller)
+    return win
+}
+
+func closeWindow(window:NSWindow){
+    window.close()
+}
