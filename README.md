@@ -9,5 +9,5 @@ press command + q twice to shutdown app
 change mouse Wheel direction
 
 
-## 💾 [Downlaod](https://github.com/tkgka/Switcher/releases) 
+## 💾 [Download](https://github.com/tkgka/Switcher/releases) 
 check introduction <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse_EN.md"> here </a>
