@@ -25,3 +25,9 @@ can operate function by toggle from menubar icon to use it
 
 ![image](https://user-images.githubusercontent.com/52348220/149321446-0134261f-6030-4433-82ef-471b724e3426.png)
 
+
+Add Application to "Users & Groups > Login Items" to open it when system starts
+
+![image](https://user-images.githubusercontent.com/52348220/150670952-a1d28f8a-77c0-4e08-8a58-a47021aab748.png)
+
+
