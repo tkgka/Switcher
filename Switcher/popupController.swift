@@ -10,9 +10,7 @@ import SwiftUI
 extension View {
     @discardableResult
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        let controller = NSHostingController(rootView: self)
-        let win = NSWindow(contentViewController: controller)
-        win.contentViewController = controller
+        let win = WelcomeView().setWindow()
         win.title = title
         win.makeKeyAndOrderFront(sender)
         win.orderFrontRegardless()
@@ -37,12 +35,12 @@ extension View {
             closeWindow(window: win)
         }
     }
-}
+    func setWindow() -> NSWindow{
+        let controller = NSHostingController(rootView: self)
+        let win = NSWindow(contentViewController: controller)
+        return win
+    }
 
-func setWindow() -> NSWindow{
-    let controller = NSHostingController(rootView: ContentView())
-    let win = NSWindow(contentViewController: controller)
-    return win
 }
 
 func closeWindow(window:NSWindow){

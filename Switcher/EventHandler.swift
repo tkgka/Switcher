@@ -32,7 +32,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 if currentWindow != nil{
                     closeWindow(window: currentWindow!)
                 }
-                let AlertWindow = setWindow()
+                let AlertWindow = ContentView().setWindow()
                 currentWindow = AlertWindow
                 ContentView().displayAsAlert(win: AlertWindow)
                 return nil
