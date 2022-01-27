@@ -7,16 +7,23 @@
 
 import SwiftUI
 
-struct EffectsView: NSViewRepresentable {
-  func makeNSView(context: Context) -> NSVisualEffectView {
-      return NSVisualEffectView()
-  }
-  
-  func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
-    // Nothing to do.
-  }
+public struct EffectsView: NSViewRepresentable {
+    public typealias NSViewType = NSVisualEffectView
+    
+    public func makeNSView(context: Context) -> NSVisualEffectView {
+        let effectView = NSVisualEffectView()
+        effectView.material = .hudWindow
+        effectView.blendingMode = .withinWindow
+        effectView.state = NSVisualEffectView.State.active
+        
+        return effectView
+    }
+    
+    public func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+        nsView.material = .hudWindow
+        nsView.blendingMode = .withinWindow
+    }
 }
-
 struct ContentView: View {
     @State var scale: CGFloat = 1
     let AlertTimeout:Double = 1
@@ -26,18 +33,18 @@ struct ContentView: View {
         VStack{
         ZStack{
             EffectsView()
-                .colorMultiply(Color("BGColor"))
-                .luminanceToAlpha()
             VStack{
                 Image(systemName: "exclamationmark.circle")
                     .resizable()
                     .frame(width: 70.0, height: 70.0)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("ImageColor"))
 //                    .padding().shadow(color: .white, radius: 20, x: 2, y: 2)
                     .padding()
-                Text("Enter 􀆔q again \nto shutdown app").multilineTextAlignment(.center)
-                    .font(.system(size: 15))
-                    .foregroundColor(Color.white)
+                Text("Enter 􀆔q again \nto shutdown app")
+                    .kerning(-0.5)
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 18))
+                    .foregroundColor(Color("FontColor"))
             }
         }.frame(width: AlertSize, height: AlertSize)
                 .cornerRadius(20)
