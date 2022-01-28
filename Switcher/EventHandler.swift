@@ -34,7 +34,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 }
                 let AlertWindow = ContentView().setWindow()
                 currentWindow = AlertWindow
-                ContentView().displayAsAlert(win: AlertWindow)
+                displayAsAlert(win: AlertWindow)
                 return nil
             }
             
