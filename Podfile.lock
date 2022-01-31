@@ -1,0 +1,16 @@
+PODS:
+  - AlertPopup (1.0.2)
+
+DEPENDENCIES:
+  - AlertPopup (~> 1.0.2)
+
+SPEC REPOS:
+  trunk:
+    - AlertPopup
+
+SPEC CHECKSUMS:
+  AlertPopup: 90480b1fa066d01de50794d43490348e5bfdfd32
+
+PODFILE CHECKSUM: 170a2d49cf108699869d0621a0b9659dd9ea8deb
+
+COCOAPODS: 1.11.2

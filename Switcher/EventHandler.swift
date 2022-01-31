@@ -1,5 +1,6 @@
 import Cocoa
 import SwiftUI
+import AlertPopup
 var currentWindow:NSWindow?
 
 class Wrapper {
@@ -34,7 +35,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 }
                 let AlertWindow = ContentView().setWindow()
                 currentWindow = AlertWindow
-                displayAsAlert(win: AlertWindow)
+                displayAsAlert(win: AlertWindow, Timer: 1.5)
                 return nil
             }
             

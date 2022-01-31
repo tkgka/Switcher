@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4068A765232BD6ED93070D /* Pods_Switcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0284D33547AB46888C30E5C /* Pods_Switcher.framework */; };
+		2199060D0419893AEFAA93D5 /* Pods_SwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */; };
+		C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F950052A279AC7D7006807F8 /* popupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* popupController.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
@@ -42,6 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.debug.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.debug.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
+		A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.release.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
+		B0284D33547AB46888C30E5C /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F9500529279AC7D7006807F8 /* popupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupController.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E4068A765232BD6ED93070D /* Pods_Switcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2199060D0419893AEFAA93D5 /* Pods_SwitcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,15 +97,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81864350AFE9618276A6B1D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0284D33547AB46888C30E5C /* Pods_Switcher.framework */,
+				605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */,
+				334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E73887CDDADB07C0A5E4C369 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */,
+				A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */,
+				148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */,
+				A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */,
+				8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */,
+				C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -104,6 +135,7 @@
 				F97D4D7127883B0B00FBC5AD /* SwitcherUITests */,
 				F97D4D5427883B0900FBC5AD /* Products */,
 				E73887CDDADB07C0A5E4C369 /* Pods */,
+				81864350AFE9618276A6B1D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7827883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "Switcher" */;
 			buildPhases = (
+				C94599B351B94EA3CF5B619F /* [CP] Check Pods Manifest.lock */,
 				F97D4D4F27883B0900FBC5AD /* Sources */,
 				F97D4D5027883B0900FBC5AD /* Frameworks */,
 				F97D4D5127883B0900FBC5AD /* Resources */,
+				2F58259BAE90DA81F1576231 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7B27883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "SwitcherTests" */;
 			buildPhases = (
+				51E3CA8F3A28C63622E67866 /* [CP] Check Pods Manifest.lock */,
 				F97D4D6027883B0B00FBC5AD /* Sources */,
 				F97D4D6127883B0B00FBC5AD /* Frameworks */,
 				F97D4D6227883B0B00FBC5AD /* Resources */,
@@ -221,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7E27883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "SwitcherUITests" */;
 			buildPhases = (
+				6C31084868633D01D2C49617 /* [CP] Check Pods Manifest.lock */,
 				F97D4D6A27883B0B00FBC5AD /* Sources */,
 				F97D4D6B27883B0B00FBC5AD /* Frameworks */,
 				F97D4D6C27883B0B00FBC5AD /* Resources */,
+				0E2046899EC1B88312AB79EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +344,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E2046899EC1B88312AB79EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F58259BAE90DA81F1576231 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51E3CA8F3A28C63622E67866 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwitcherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C31084868633D01D2C49617 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Switcher-SwitcherUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94599B351B94EA3CF5B619F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Switcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F97D4D4F27883B0900FBC5AD /* Sources */ = {
@@ -475,6 +615,7 @@
 		};
 		F97D4D7927883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +644,7 @@
 		};
 		F97D4D7A27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +673,7 @@
 		};
 		F97D4D7C27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +693,7 @@
 		};
 		F97D4D7D27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +713,7 @@
 		};
 		F97D4D7F27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +731,7 @@
 		};
 		F97D4D8027883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
