@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct MenuView: View {
-    @State var CMDQToggle: Bool = true
-    @State var AlertToggle: Bool = true
-    @State var MouseWheelToggle: Bool = true
+    @AppStorage("CMDQ") var CMDQToggle: Bool = UserDefaults.standard.bool(forKey: "CMDQ")
+    @AppStorage("MouseWheel") var MouseWheelToggle: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
 
     var body: some View {
         VStack( alignment: .leading, spacing: 0){
