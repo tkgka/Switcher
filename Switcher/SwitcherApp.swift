@@ -38,17 +38,12 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         let menuView = MenuView()
         popOver.behavior = .transient
         popOver.animates = true
-//        set empty view controller
         popOver.contentViewController = NSViewController()
         popOver.contentViewController?.view = NSHostingView(rootView: menuView)
-//        making view as main view
-//        popOver.contentViewController?.view.window?.makeKey()
         popOver.contentSize = NSSize(width: 360, height: 800)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let MenuButton = statusItem?.button{
-//            MenuButton.image = NSImage(systemSymbolName: "command", accessibilityDescription: nil)
-//            MenuButton.title = "􀙀"
             MenuButton.image = NSImage(named: "IMG")
             MenuButton.action = #selector(MenuButtonToggle)
         }

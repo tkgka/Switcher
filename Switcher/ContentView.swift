@@ -38,7 +38,6 @@ struct ContentView: View {
                     .resizable()
                     .frame(width: 70.0, height: 70.0)
                     .foregroundColor(Color("ImageColor"))
-//                    .padding().shadow(color: .white, radius: 20, x: 2, y: 2)
                     .padding()
                 Text("Enter 􀆔q again \nto shutdown app")
                     .kerning(-0.5)
