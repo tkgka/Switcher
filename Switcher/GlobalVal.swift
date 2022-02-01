@@ -6,9 +6,8 @@
 
 import Foundation
 
-var CMDQ:Bool = true
-var MouseWheel:Bool = true
-var AlertToggle:Bool = true
+var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
+var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
 
 var AlertIsOn:Bool = false
 var AlertSize:CGFloat = 200.0
