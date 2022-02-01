@@ -35,7 +35,8 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 }
                 let AlertWindow = ContentView().setWindow()
                 currentWindow = AlertWindow
-                displayAsAlert(win: AlertWindow, Timer: 1.5)
+                displayAsAlert(win: currentWindow!, Timer: DefaultTimeout)
+                AlertPopupTimeout()
                 AlertIsOn = true
                 return nil
             }
@@ -57,4 +58,10 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
      AlertIsOn = false
     return cgEvent
   }
+}
+
+func AlertPopupTimeout(){
+    DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
+        AlertIsOn = false
+    }
 }
