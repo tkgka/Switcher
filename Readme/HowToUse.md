@@ -23,3 +23,6 @@ Release 된 앱을 설치 합니다.
 
 ![image](https://user-images.githubusercontent.com/52348220/149321446-0134261f-6030-4433-82ef-471b724e3426.png)
 
+"사용자 및 그룹" -> "로그인 항목" 에 어플리케이션을 추가하여 로그인 시 자동으로 시작되도록 설정할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/152667649-b75b2063-72f5-4052-9536-c07a9fc1bab0.png)
