@@ -42,8 +42,8 @@ public func displayAsAlert(win:NSWindow, Timer:Double){
 
 
 @available(macOS 10.15, *)
-public func ShowSystemAlert(ImageName:String, AlertText:String, Timer:Double) -> NSWindow{
-    let AlertWindow = AlertView(ImageName: ImageName, AlertText: AlertText,Timer:Timer).setWindow()
+public func ShowSystemAlert(ImageName:String = "", AlertText:String = "", Timer:Double = 1.5, ImageColor:Color = Color.gray, FontColor:Color = Color.gray) -> NSWindow{
+    let AlertWindow = AlertView(ImageName: ImageName, AlertText: AlertText, Timer:Timer, ImageColor: ImageColor, FontColor:FontColor).setWindow()
     displayAsAlert(win: AlertWindow, Timer: Timer)
     return AlertWindow
 }

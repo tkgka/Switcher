@@ -7,49 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049A5120EC9657BD093D5E675E4C2903 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8B1ED82CDF659AB9367EE1E80B65C /* PopupController.swift */; };
 		315AE1BE9693C4288FEBF0B115A6DAD8 /* Pods-Switcher-SwitcherUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD57D1A9B9454C5F838270F54C1C5F3C /* Pods-Switcher-SwitcherUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E25B8274A2B2F8383EF2638226E61AB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
 		427A7775DE8E56EBE052973B5901CFCF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
 		44562A0CBEE1E3B4141F1A67B4A9E8F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
 		55E5553B0D13E0349E43F825FF4CA50E /* Pods-SwitcherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D12372BFDE3BC17EA0B94C38DC93831C /* Pods-SwitcherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C31E54C817DA7FE42EF1A28D182BECE /* AlertPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2782649E855D13F765FC07DA6EDE49B2 /* AlertPopup-dummy.m */; };
+		604AE5AE0D2F285305CD264B7113120B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
+		7B5B47814BD1DE80D40611F7D772CC56 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B3750AEAB8C4E5B741B6709A50AEF /* AlertView.swift */; };
 		889C4851CA15C128EB00E7D973460D3E /* Pods-SwitcherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71E6291B5E41B619ED25906D71FF88 /* Pods-SwitcherTests-dummy.m */; };
-		8B5BF9606297F0BA315A595FC1C79D48 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9ACA530DB87AC317EA54570181A44 /* ReplaceMe.swift */; };
-		8E1068C2E59CC1F1A7EE4E690A4FD4F9 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4053BB7DF361477A6B3E03E3DD13093 /* AlertView.swift */; };
+		9F62EB24B6828E4E6005A61C1D977F58 /* AlertPopup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB78F8640A8796BC0F0D58413216C467 /* AlertPopup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4B168CF41F304158AA63B3D4D654048 /* Pods-Switcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1CCC19177B496F8F67109973428418 /* Pods-Switcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC4D8BC5CA6BC3F37DF8F2B8D4BF58FA /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC410B240C402F29F79BD24527780F /* PopupController.swift */; };
-		D276ABF22E9F6FEC5F08E1B6E369E4EE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
 		E25705EDAA04C089E40040FD24041BD3 /* Pods-Switcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE06CA36BEB43603A21F0608CA1E421D /* Pods-Switcher-dummy.m */; };
+		ED58CE42711CE43A321FF97AC0D1408F /* AlertPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B931C9820FB1B096D9253279CCFEA3 /* AlertPopup-dummy.m */; };
 		F86845C449536BAB497DC214CBD54A68 /* Pods-Switcher-SwitcherUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 777670E7D7E49F2030F51E8213505874 /* Pods-Switcher-SwitcherUITests-dummy.m */; };
-		FD901CBD34519B75B2A8C7235D0D8A75 /* AlertPopup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 703CB0F91B2187187BCBBB164A2BC001 /* AlertPopup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0E63CE9F73521E8AF59B1A333C09F7FA /* PBXContainerItemProxy */ = {
+		2314995E50B4AD384A85D9CB9CC1DB4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 12DE255BF47C66B49114FE4B48803969;
 			remoteInfo = AlertPopup;
 		};
-		18B51B8B349F61EA60CC65D85889AC63 /* PBXContainerItemProxy */ = {
+		7BC75BFD805D6804602EC2C7D9E6C076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12DE255BF47C66B49114FE4B48803969;
+			remoteInfo = AlertPopup;
+		};
+		901EE271735313C3E6B946E64ADB8F68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A7F3A91A4BA66FF7C7BCF5ED0F9BE406;
 			remoteInfo = "Pods-Switcher";
 		};
-		9FDE9073C4AD37C9ECFA165BBFF17A2B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12DE255BF47C66B49114FE4B48803969;
-			remoteInfo = AlertPopup;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B26DBA85DDD9C30C2B2D3309BCA78E /* AlertPopup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertPopup.release.xcconfig; sourceTree = "<group>"; };
 		09950580E5426B152D041FA338A283DC /* Pods-Switcher-SwitcherUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Switcher-SwitcherUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0D07490A8DDC39A6E01151803C74CEE6 /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
 		0F9F0DF023A67F1E3748EF3BD0130FF0 /* Pods-SwitcherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwitcherTests.modulemap"; sourceTree = "<group>"; };
@@ -57,19 +55,19 @@
 		15B500525ACE0AA63CDE5115D6D48A0B /* AlertPopup */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlertPopup; path = AlertPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDE9C8447BB0943F8E8B6AFD6171CEF /* Pods-SwitcherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwitcherTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		219ED5D358E85B4B4F80DCDF73255CAA /* Pods-SwitcherTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SwitcherTests"; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2782649E855D13F765FC07DA6EDE49B2 /* AlertPopup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlertPopup-dummy.m"; sourceTree = "<group>"; };
+		366B3750AEAB8C4E5B741B6709A50AEF /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = AlertPopup/Classes/AlertView.swift; sourceTree = "<group>"; };
 		431E50342EF13BE244B5EE3DBC877824 /* Pods-SwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		452EE4FBBB9323E7469980C259AB4E84 /* AlertPopup-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlertPopup-Info.plist"; sourceTree = "<group>"; };
 		4CF8B920E2AE24727B8B8135DBBB3B24 /* Pods-Switcher-SwitcherUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Switcher-SwitcherUITests-Info.plist"; sourceTree = "<group>"; };
+		50B8B1ED82CDF659AB9367EE1E80B65C /* PopupController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupController.swift; path = AlertPopup/Classes/PopupController.swift; sourceTree = "<group>"; };
 		55DA60279AD170B9CF2570785FC6A36F /* Pods-Switcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Switcher.modulemap"; sourceTree = "<group>"; };
-		582C8DC7BAEE03CA8FB01B81DF17F90C /* AlertPopup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlertPopup.modulemap; sourceTree = "<group>"; };
 		6200EB0E3C2AE0AC8C6FD851056CE96E /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
 		6FC8B11E06DBAE61D84C30D4BCBD5CF3 /* Pods-SwitcherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwitcherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		703CB0F91B2187187BCBBB164A2BC001 /* AlertPopup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertPopup-umbrella.h"; sourceTree = "<group>"; };
+		76DD73800B95090544926424BDDAAB4B /* AlertPopup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertPopup.debug.xcconfig; sourceTree = "<group>"; };
 		777670E7D7E49F2030F51E8213505874 /* Pods-Switcher-SwitcherUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Switcher-SwitcherUITests-dummy.m"; sourceTree = "<group>"; };
-		7F3E05E26FAAAF3A8D193645541A8102 /* AlertPopup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertPopup-prefix.pch"; sourceTree = "<group>"; };
 		7F7C2EF828611EC337711A27EC8FC446 /* Pods-Switcher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Switcher-Info.plist"; sourceTree = "<group>"; };
 		84455F8272A16D6DFF9BF390489B25D0 /* Pods-Switcher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Switcher-acknowledgements.plist"; sourceTree = "<group>"; };
-		94A9A458867EAC813F698CBF791D3B12 /* AlertPopup-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlertPopup-Info.plist"; sourceTree = "<group>"; };
+		8A2DCA004737A0625788AA5DC4A69A6E /* AlertPopup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertPopup-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AE3F126B2DBCF3655C9BA9BBDB7994BB /* Pods-Switcher-SwitcherUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Switcher-SwitcherUITests.modulemap"; sourceTree = "<group>"; };
 		AE90850BE07E756F7723C901C3B5CDE9 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,29 +77,21 @@
 		C2096AC6C54A1A54B0E3B39957E6C1A9 /* Pods-Switcher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Switcher"; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C259DEF807F5A52F0EFE804E5A148C55 /* Pods-Switcher-SwitcherUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Switcher-SwitcherUITests-frameworks.sh"; sourceTree = "<group>"; };
 		C44CED3C0950804654DEAA48320D82E8 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C4CC410B240C402F29F79BD24527780F /* PopupController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupController.swift; path = AlertPopup/Classes/PopupController.swift; sourceTree = "<group>"; };
+		C5B931C9820FB1B096D9253279CCFEA3 /* AlertPopup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlertPopup-dummy.m"; sourceTree = "<group>"; };
 		CD9C1E6FA826768952F8647EEBA53A72 /* Pods-Switcher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Switcher-frameworks.sh"; sourceTree = "<group>"; };
 		D12372BFDE3BC17EA0B94C38DC93831C /* Pods-SwitcherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwitcherTests-umbrella.h"; sourceTree = "<group>"; };
-		D4053BB7DF361477A6B3E03E3DD13093 /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = AlertPopup/Classes/AlertView.swift; sourceTree = "<group>"; };
 		D8E1AA0E70340C729F88E0A6B58368E5 /* Pods-Switcher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Switcher-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DC9D341DE8EA6983033E96CEC13BE193 /* AlertPopup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertPopup.debug.xcconfig; sourceTree = "<group>"; };
-		E0E9ACA530DB87AC317EA54570181A44 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = AlertPopup/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		EF1CCC19177B496F8F67109973428418 /* Pods-Switcher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Switcher-umbrella.h"; sourceTree = "<group>"; };
+		EF6A3E36B65E9686F9270E695F4DFA42 /* AlertPopup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertPopup.release.xcconfig; sourceTree = "<group>"; };
 		F32D615CA36F0F8696C13DC62E3DFBE3 /* Pods-Switcher-SwitcherUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Switcher-SwitcherUITests"; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BBD53D145BA3D9AFB6CEAD90EC6DC4 /* AlertPopup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlertPopup.modulemap; sourceTree = "<group>"; };
 		F7FC4C6A07B7E33020D59FBE23C1684B /* Pods-SwitcherTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwitcherTests-Info.plist"; sourceTree = "<group>"; };
 		FA96A2096B9B2EF3871FD601F7A0CFDE /* Pods-Switcher-SwitcherUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Switcher-SwitcherUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FB78F8640A8796BC0F0D58413216C467 /* AlertPopup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertPopup-umbrella.h"; sourceTree = "<group>"; };
 		FD57D1A9B9454C5F838270F54C1C5F3C /* Pods-Switcher-SwitcherUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Switcher-SwitcherUITests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B24E2659A5620304A7595A2689A5B4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D276ABF22E9F6FEC5F08E1B6E369E4EE /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		360398B7A43A52583193DB57525FC92F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,6 +116,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E789379083D4C6AF4249D063451FBDA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				604AE5AE0D2F285305CD264B7113120B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,10 +144,10 @@
 			path = "Target Support Files/Pods-Switcher-SwitcherUITests";
 			sourceTree = "<group>";
 		};
-		1382665AB3B6F2567D3A51DA9E9CF4A4 /* Pods */ = {
+		25DDF7846FAFCBA3B838A1A2895EDE62 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AC73A43C54D0270DBED7BFE43CC0B6F6 /* AlertPopup */,
+				D44609932F07BDB1AA4FE5F6AEF4B5C7 /* AlertPopup */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -191,42 +189,26 @@
 			path = "Target Support Files/Pods-SwitcherTests";
 			sourceTree = "<group>";
 		};
-		9972CA6E9AD0F3AB5CB7CBC72FB80C9B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				582C8DC7BAEE03CA8FB01B81DF17F90C /* AlertPopup.modulemap */,
-				2782649E855D13F765FC07DA6EDE49B2 /* AlertPopup-dummy.m */,
-				94A9A458867EAC813F698CBF791D3B12 /* AlertPopup-Info.plist */,
-				7F3E05E26FAAAF3A8D193645541A8102 /* AlertPopup-prefix.pch */,
-				703CB0F91B2187187BCBBB164A2BC001 /* AlertPopup-umbrella.h */,
-				DC9D341DE8EA6983033E96CEC13BE193 /* AlertPopup.debug.xcconfig */,
-				00B26DBA85DDD9C30C2B2D3309BCA78E /* AlertPopup.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AlertPopup";
-			sourceTree = "<group>";
-		};
-		AC73A43C54D0270DBED7BFE43CC0B6F6 /* AlertPopup */ = {
-			isa = PBXGroup;
-			children = (
-				D4053BB7DF361477A6B3E03E3DD13093 /* AlertView.swift */,
-				C4CC410B240C402F29F79BD24527780F /* PopupController.swift */,
-				E0E9ACA530DB87AC317EA54570181A44 /* ReplaceMe.swift */,
-				9972CA6E9AD0F3AB5CB7CBC72FB80C9B /* Support Files */,
-			);
-			name = AlertPopup;
-			path = AlertPopup;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
-				1382665AB3B6F2567D3A51DA9E9CF4A4 /* Pods */,
+				25DDF7846FAFCBA3B838A1A2895EDE62 /* Pods */,
 				8AB4461994B4F624FFA9ACE0C1560D68 /* Products */,
 				287D6AB1CE246B0B4BB53C853DADD539 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D44609932F07BDB1AA4FE5F6AEF4B5C7 /* AlertPopup */ = {
+			isa = PBXGroup;
+			children = (
+				366B3750AEAB8C4E5B741B6709A50AEF /* AlertView.swift */,
+				50B8B1ED82CDF659AB9367EE1E80B65C /* PopupController.swift */,
+				E8B401F0EFFC0A391B3095D9976CC562 /* Support Files */,
+			);
+			name = AlertPopup;
+			path = AlertPopup;
 			sourceTree = "<group>";
 		};
 		DECDF217D4D613EA4809E08C8A2F6898 /* Pods-Switcher */ = {
@@ -262,6 +244,21 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
+		E8B401F0EFFC0A391B3095D9976CC562 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3BBD53D145BA3D9AFB6CEAD90EC6DC4 /* AlertPopup.modulemap */,
+				C5B931C9820FB1B096D9253279CCFEA3 /* AlertPopup-dummy.m */,
+				452EE4FBBB9323E7469980C259AB4E84 /* AlertPopup-Info.plist */,
+				8A2DCA004737A0625788AA5DC4A69A6E /* AlertPopup-prefix.pch */,
+				FB78F8640A8796BC0F0D58413216C467 /* AlertPopup-umbrella.h */,
+				76DD73800B95090544926424BDDAAB4B /* AlertPopup.debug.xcconfig */,
+				EF6A3E36B65E9686F9270E695F4DFA42 /* AlertPopup.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AlertPopup";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -281,14 +278,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		748FFC4614FDCC698E24C20D01A3D1ED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD901CBD34519B75B2A8C7235D0D8A75 /* AlertPopup-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		752E3DE9793FDEA4ACFE9E735B217DE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,17 +286,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDF9F1C7DF8C16775507BDE9B0000B08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F62EB24B6828E4E6005A61C1D977F58 /* AlertPopup-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		12DE255BF47C66B49114FE4B48803969 /* AlertPopup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0095C842C3495B4BFA8AA744085A75EF /* Build configuration list for PBXNativeTarget "AlertPopup" */;
+			buildConfigurationList = ABF4F3D007836643847FCCA26BC7F722 /* Build configuration list for PBXNativeTarget "AlertPopup" */;
 			buildPhases = (
-				748FFC4614FDCC698E24C20D01A3D1ED /* Headers */,
-				B56E34C1765B1D77A3AA52390DABCB82 /* Sources */,
-				0B24E2659A5620304A7595A2689A5B4A /* Frameworks */,
-				D78A1BCF2CE2A6190A7F9076B9367C1F /* Resources */,
+				CDF9F1C7DF8C16775507BDE9B0000B08 /* Headers */,
+				E5568A7A2D06DB04053C8D98D0CDF368 /* Sources */,
+				E789379083D4C6AF4249D063451FBDA7 /* Frameworks */,
+				487B21DC077A3E9DE7DEDF4401935E46 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -330,7 +327,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CD1241D172AD0BCD80048F2339EC3085 /* PBXTargetDependency */,
+				2008BC106868FB462D2F380ECB2DDF5B /* PBXTargetDependency */,
 			);
 			name = "Pods-Switcher-SwitcherUITests";
 			productName = Pods_Switcher_SwitcherUITests;
@@ -349,7 +346,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D0B9B9E6181A4D5F4F617B2F14FD6B19 /* PBXTargetDependency */,
+				65BA8C21B5081545AE25D512DE77B56B /* PBXTargetDependency */,
 			);
 			name = "Pods-SwitcherTests";
 			productName = Pods_SwitcherTests;
@@ -368,7 +365,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9059473D18C35F4A8E509E4397E254D /* PBXTargetDependency */,
+				D145D09163BFB1ABBA87B36BD5682621 /* PBXTargetDependency */,
 			);
 			name = "Pods-Switcher";
 			productName = Pods_Switcher;
@@ -420,14 +417,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB3A2007477EF7DE1BE363DFAC745B45 /* Resources */ = {
+		487B21DC077A3E9DE7DEDF4401935E46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D78A1BCF2CE2A6190A7F9076B9367C1F /* Resources */ = {
+		AB3A2007477EF7DE1BE363DFAC745B45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -442,17 +439,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F86845C449536BAB497DC214CBD54A68 /* Pods-Switcher-SwitcherUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B56E34C1765B1D77A3AA52390DABCB82 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C31E54C817DA7FE42EF1A28D182BECE /* AlertPopup-dummy.m in Sources */,
-				8E1068C2E59CC1F1A7EE4E690A4FD4F9 /* AlertView.swift in Sources */,
-				BC4D8BC5CA6BC3F37DF8F2B8D4BF58FA /* PopupController.swift in Sources */,
-				8B5BF9606297F0BA315A595FC1C79D48 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,66 +458,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5568A7A2D06DB04053C8D98D0CDF368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED58CE42711CE43A321FF97AC0D1408F /* AlertPopup-dummy.m in Sources */,
+				7B5B47814BD1DE80D40611F7D772CC56 /* AlertView.swift in Sources */,
+				049A5120EC9657BD093D5E675E4C2903 /* PopupController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C9059473D18C35F4A8E509E4397E254D /* PBXTargetDependency */ = {
+		2008BC106868FB462D2F380ECB2DDF5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlertPopup;
 			target = 12DE255BF47C66B49114FE4B48803969 /* AlertPopup */;
-			targetProxy = 0E63CE9F73521E8AF59B1A333C09F7FA /* PBXContainerItemProxy */;
+			targetProxy = 7BC75BFD805D6804602EC2C7D9E6C076 /* PBXContainerItemProxy */;
 		};
-		CD1241D172AD0BCD80048F2339EC3085 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlertPopup;
-			target = 12DE255BF47C66B49114FE4B48803969 /* AlertPopup */;
-			targetProxy = 9FDE9073C4AD37C9ECFA165BBFF17A2B /* PBXContainerItemProxy */;
-		};
-		D0B9B9E6181A4D5F4F617B2F14FD6B19 /* PBXTargetDependency */ = {
+		65BA8C21B5081545AE25D512DE77B56B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Switcher";
 			target = A7F3A91A4BA66FF7C7BCF5ED0F9BE406 /* Pods-Switcher */;
-			targetProxy = 18B51B8B349F61EA60CC65D85889AC63 /* PBXContainerItemProxy */;
+			targetProxy = 901EE271735313C3E6B946E64ADB8F68 /* PBXContainerItemProxy */;
+		};
+		D145D09163BFB1ABBA87B36BD5682621 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlertPopup;
+			target = 12DE255BF47C66B49114FE4B48803969 /* AlertPopup */;
+			targetProxy = 2314995E50B4AD384A85D9CB9CC1DB4A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		211E088A3D1484D32D303094CB21E399 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00B26DBA85DDD9C30C2B2D3309BCA78E /* AlertPopup.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AlertPopup/AlertPopup-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AlertPopup/AlertPopup-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/AlertPopup/AlertPopup.modulemap";
-				PRODUCT_MODULE_NAME = AlertPopup;
-				PRODUCT_NAME = AlertPopup;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2E7F98D2A298756578041D1D726D4314 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 431E50342EF13BE244B5EE3DBC877824 /* Pods-SwitcherTests.debug.xcconfig */;
@@ -568,6 +528,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		3D285EB61C54978AC0596677A1B33366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF6A3E36B65E9686F9270E695F4DFA42 /* AlertPopup.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AlertPopup/AlertPopup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlertPopup/AlertPopup-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/AlertPopup/AlertPopup.modulemap";
+				PRODUCT_MODULE_NAME = AlertPopup;
+				PRODUCT_NAME = AlertPopup;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		4A47E662241666733D356ACA3643562E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -882,9 +878,9 @@
 			};
 			name = Release;
 		};
-		D29C403545C630B4F46CDF7BE4269D94 /* Debug */ = {
+		DF9A96D6F608E3412543069CCBBE531F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC9D341DE8EA6983033E96CEC13BE193 /* AlertPopup.debug.xcconfig */;
+			baseConfigurationReference = 76DD73800B95090544926424BDDAAB4B /* AlertPopup.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -921,15 +917,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0095C842C3495B4BFA8AA744085A75EF /* Build configuration list for PBXNativeTarget "AlertPopup" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D29C403545C630B4F46CDF7BE4269D94 /* Debug */,
-				211E088A3D1484D32D303094CB21E399 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1E9B93B2362FDE76B04873989A4827BA /* Build configuration list for PBXNativeTarget "Pods-SwitcherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -962,6 +949,15 @@
 			buildConfigurations = (
 				94ABCECD8C7F01BC9DCB7C9B3E75112A /* Debug */,
 				4A47E662241666733D356ACA3643562E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF4F3D007836643847FCCA26BC7F722 /* Build configuration list for PBXNativeTarget "AlertPopup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF9A96D6F608E3412543069CCBBE531F /* Debug */,
+				3D285EB61C54978AC0596677A1B33366 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

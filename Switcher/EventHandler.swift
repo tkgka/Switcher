@@ -31,10 +31,9 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             }else{
                 if currentWindow != nil{
                     closeWindow(window: currentWindow!)
+                    currentWindow = nil
                 }
-                let AlertWindow = ContentView().setWindow()
-                currentWindow = AlertWindow
-                displayAsAlert(win: currentWindow!, Timer: DefaultTimeout)
+                currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Enter 􀆔q again \nto shutdown app", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
                 AlertPopupTimeout()
                 AlertIsOn = true
                 return nil
