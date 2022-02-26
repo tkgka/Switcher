@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     @discardableResult
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        let win = WelcomeView().setWindow()
+        let win = self.setWindow()
         win.title = title
         win.makeKeyAndOrderFront(sender)
         win.orderFrontRegardless()

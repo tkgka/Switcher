@@ -10,7 +10,8 @@ import SwiftUI
 struct MenuView: View {
     @AppStorage("CMDQ") var CMDQToggle: Bool = UserDefaults.standard.bool(forKey: "CMDQ")
     @AppStorage("MouseWheel") var MouseWheelToggle: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
-
+    @AppStorage("KeyMap") var KeyMapToggle: Bool = UserDefaults.standard.bool(forKey: "KeyMap")
+    
     var body: some View {
         VStack( alignment: .leading, spacing: 0){
             
@@ -60,10 +61,6 @@ struct MenuView: View {
                 .padding(.bottom, 15.0)
                 }
                 
-            
-            if CMDQToggle {
-                
-            }
                 Divider()
                     .padding(.horizontal, 10.0)
                     .frame(width: 300)
@@ -101,16 +98,62 @@ struct MenuView: View {
                     .frame(alignment: .leading)
                     .padding(.bottom, 15.0)
                     }
+            Divider()
+                .padding(.horizontal, 10.0)
+                .frame(width: 300)
+            
+            Group {
+            HStack(
+                spacing: 0){
+                    Image(systemName: "keyboard")
+                        .padding(.top, 15.0)
+                        .padding(.leading, 15.0)
+                        .frame(width: 40, alignment: .leading)
+                        
+                    Text("Key Mapper")
+                        .fontWeight(.medium)
+                        .padding(.top, 15.0)
+                        .frame(width: 200, alignment: .leading)
+                        
+                    
+                    if #available(macOS 11.0, *) {
+                        Toggle("", isOn: $KeyMapToggle)
+                            .toggleStyle(.switch)
+                            .frame(alignment: .leading)
+                            .padding(.top, 15.0)
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }.onChange(of: KeyMapToggle) { CMDQToggle in
+                    KeyMap = KeyMapToggle
+                }
+            HStack{
+            Text("Mapping key input and output")
+                    .font(Font.system(size: 12.0))
+                    .fontWeight(.light)
+                    .padding(.leading, 15.0)
+                    .padding(.top, 15.0)
+                    .frame(alignment: .leading)
+                    .padding(.bottom, 15.0)
+            Text("Open")
+                    .foregroundColor(Color.blue)
+                    .font(Font.system(size: 12.0))
+                    .fontWeight(.bold)
+                    .padding(.leading, 15.0)
+                    .padding(.top, 15.0)
+                    .frame(alignment: .leading)
+                    .padding(.bottom, 15.0)
+                    .onTapGesture{
+                    KeyMapView().openInWindow(title: "KeyMap", sender: self)
+                    }
+                }
+                }
+                
+                Divider()
+                    .padding(.horizontal, 10.0)
+                    .frame(width: 300)
             
             }
-             
-           
-        
-
-        Divider()
-            .padding(.horizontal, 10.0)
-            .frame(width: 300)
-            
             
             
             HStack{
