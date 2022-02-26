@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         tap: .cgSessionEventTap,
         place: .headInsertEventTap,
         options: .defaultTap,
-        eventsOfInterest: [.keyDown, .leftMouseDown, .rightMouseDown, .scrollWheel],
+        eventsOfInterest: [.keyDown, .keyUp, .flagsChanged, .leftMouseDown, .rightMouseDown, .scrollWheel],
         callback: { proxy, _, cgEvent, ctx in
           if let event = NSEvent(cgEvent: cgEvent),
              let wrapper = ctx?.load(as: Wrapper.self) {
