@@ -9,6 +9,8 @@ import Foundation
 var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
 var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
 var KeyMap:Bool = UserDefaults.standard.bool(forKey: "KeyMap")
+var ListOfKeyMap:[[String]] = [[String]](rawValue: UserDefaults.standard.string(forKey: "ListOfKeyMap")!) ?? [["a","Any","a","Any"]]
+var IsChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? [false]
 
 var AlertIsOn:Bool = false
 var AlertSize:CGFloat = 200.0

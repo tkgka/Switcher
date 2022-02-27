@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         }
             createEventTap()
             MakeMenuButton()
+            SetKeyMapValue()
     }
 
     

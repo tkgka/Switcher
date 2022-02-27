@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct KeyMapView: View {
-    @AppStorage("ListOfKeyMap") var ListOfKeyMap:[[String]] = [["a","Any","a","Any"]]
+    @AppStorage("ListOfKeyMap") var listOfKeyMap:[[String]] = [["a","Any","a","Any"]]
     @State var KeyMapList:[String] = ["","Any","","Any"]
-    @AppStorage("IsChecked") var IsChecked:[Bool] = [false]
+    @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     var body: some View {
         VStack{
 
@@ -24,12 +24,14 @@ struct KeyMapView: View {
                         )
                         .padding([.top, .bottom] , 2)
                     } .onTapGesture(count: 1, perform: {
-                        for (index, value) in IsChecked.enumerated().reversed(){
+                        for (index, value) in isChecked.enumerated().reversed(){
                             if(value == true){
-                                ListOfKeyMap.remove(at: index)
-                                IsChecked.remove(at: index)
+                                listOfKeyMap.remove(at: index)
+                                isChecked.remove(at: index)
+                                ListOfKeyMap = listOfKeyMap
+                                IsChecked = isChecked
                             }
-                            
+                            SetKeyMapValue()
                         }
                     }).frame(width: 100)
                     
@@ -91,10 +93,13 @@ struct KeyMapView: View {
                 }.onTapGesture(count: 1, perform: {
                     if(KeyMapList[0] != "" && KeyMapList[2] != ""){
                     (KeyMaps[KeyMapList[2]]! >= 96 && KeyMaps[KeyMapList[2]]! <= 122) ? (KeyMapList[3] = "Fn") : nil
-                    ListOfKeyMap.append(KeyMapList)
-                    IsChecked.append(false)
+                    listOfKeyMap.append(KeyMapList)
+                    isChecked.append(false)
+                    ListOfKeyMap = listOfKeyMap
+                    IsChecked = isChecked
                     KeyMapList = ["","Any","","Any"]
                     }
+                    SetKeyMapValue()
                 }).frame(width: 100)
                 
     }
@@ -102,58 +107,24 @@ struct KeyMapView: View {
             Divider()
 
             List {
-                ForEach (0..<ListOfKeyMap.count, id: \.self) { Val in
+                ForEach (0..<listOfKeyMap.count, id: \.self) { Val in
                     let i:Int = Val
             HStack{
                 VStack{
                 HStack{
-                Toggle(isOn: $IsChecked[i]) {}.frame(width: 50)
+                Toggle(isOn: $isChecked[i]) {}.frame(width: 50)
                 Spacer()
-                Text(ListOfKeyMap[i][1]).frame(width: 30)
-                Text(ListOfKeyMap[i][0]).frame(width: 100)
+                Text(listOfKeyMap[i][1]).frame(width: 30)
+                Text(listOfKeyMap[i][0]).frame(width: 100)
                 Text(":")
-                Text(ListOfKeyMap[i][3]).frame(width: 80)
-                Text(ListOfKeyMap[i][2]).frame(width: 100)
+                Text(listOfKeyMap[i][3]).frame(width: 80)
+                Text(listOfKeyMap[i][2]).frame(width: 100)
                 Spacer()
                 }
                 }
             }
         }
     }
-            HStack{
-           Text("set value")
-                    .padding(7)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                        .stroke(lineWidth: 2)
-                    )
-                    .padding([.leading, .bottom], 8.0)
-                
-   } .onTapGesture(count: 1, perform: {
-       IsflagsChanged.removeAll()
-       KeyDict.removeAll()
-       for (index, value) in ListOfKeyMap.enumerated().reversed(){
-           if((value[0] == "" || value[2] == "") || (KeyDict[KeyMaps[value[0]]!] != nil)){
-               if FlagMaps[value[1]]![0] == 0x00 { // if Keys Flag == Any
-                   ListOfKeyMap.removeAll(where: {$0[0] == value[0] && $0 != value})
-                   IsChecked.remove(at: index)
-               }
-               else if (FlagMaps[value[1]]![0] == KeyDict[KeyMaps[value[0]]!]![0] || KeyDict[KeyMaps[value[0]]!]![0] == 0x00){
-                   ListOfKeyMap.remove(at: index)
-                   IsChecked.remove(at: index)
-               }
-           }else{
-               KeyDict[KeyMaps[value[0]]!] = [FlagMaps[value[1]]![0],FlagMaps[value[1]]![1],KeyMaps[value[2]]!,KeyMaps[value[3]]!] // (0,1): keysFlag, 2: MappedKeyVal, 3: MappedKeysFlag
-           }
-       }
-       if IsChecked.count != ListOfKeyMap.count {
-           IsChecked.removeAll()
-           for _ in (1...ListOfKeyMap.count){
-               IsChecked.append(false)
-           }
-       }
-   })
-   .frame(height: 32.0)
     }.frame(width: 1200, height: 500, alignment: .center)
 }
 }
