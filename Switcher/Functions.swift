@@ -74,5 +74,6 @@ func SetKeyMapValue(){
         for _ in (1...ListOfKeyMap.count){
             IsChecked.append(false)
         }
+        ListOfKeyMap = Array(Set(ListOfKeyMap))
     }
 }

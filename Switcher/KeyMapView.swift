@@ -28,12 +28,12 @@ struct KeyMapView: View {
                             if(value == true){
                                 listOfKeyMap.remove(at: index)
                                 isChecked.remove(at: index)
-                                ListOfKeyMap = listOfKeyMap
-                                IsChecked = isChecked
+                                ListOfKeyMap = listOfKeyMap.reversed()
+                                IsChecked = isChecked.reversed()
                             }
                             SetKeyMapValue()
-                            listOfKeyMap = ListOfKeyMap
-                            isChecked = IsChecked
+                            listOfKeyMap = ListOfKeyMap.reversed()
+                            isChecked = IsChecked.reversed()
                         }
                     }).frame(width: 100)
                     
@@ -97,13 +97,13 @@ struct KeyMapView: View {
                     (KeyMaps[KeyMapList[2]]! >= 96 && KeyMaps[KeyMapList[2]]! <= 122) ? (KeyMapList[3] = "Fn") : nil
                     listOfKeyMap.append(KeyMapList)
                     isChecked.append(false)
-                    ListOfKeyMap = listOfKeyMap
-                    IsChecked = isChecked
+                    ListOfKeyMap = listOfKeyMap.reversed()
+                    IsChecked = isChecked.reversed()
                     KeyMapList = ["","Any","","Any"]
                     }
                     SetKeyMapValue()
-                    listOfKeyMap = ListOfKeyMap
-                    isChecked = IsChecked
+                    listOfKeyMap = ListOfKeyMap.reversed()
+                    isChecked = IsChecked.reversed()
                 }).frame(width: 100)
                 
     }
