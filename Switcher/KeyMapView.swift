@@ -32,6 +32,8 @@ struct KeyMapView: View {
                                 IsChecked = isChecked
                             }
                             SetKeyMapValue()
+                            listOfKeyMap = ListOfKeyMap
+                            isChecked = IsChecked
                         }
                     }).frame(width: 100)
                     
@@ -100,6 +102,8 @@ struct KeyMapView: View {
                     KeyMapList = ["","Any","","Any"]
                     }
                     SetKeyMapValue()
+                    listOfKeyMap = ListOfKeyMap
+                    isChecked = IsChecked
                 }).frame(width: 100)
                 
     }
