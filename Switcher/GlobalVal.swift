@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import AppKit
 
 var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
 var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
@@ -144,3 +145,42 @@ extension Dictionary where Value: Equatable {
         return first(where: { $1 == val })?.key
     }
 }
+
+extension String{
+    func getArrayAfterRegex(regex: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: self,
+                                        range: NSRange(self.startIndex..., in: self))
+            return results.map {
+                String(self[Range($0.range, in: self)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class ObservableList: ObservableObject {
+    @Published var PressedKey: String = "PressedKey"
+    @Published var ReturnKey: String = "Returnkey"
+    @Published var PressedKeyEvent: CGEvent?
+    @Published var ReturnKeyEvent: CGEvent?
+}
+
+var ObservedObjects = ObservableList()
+
+var CGEventDict : [CGEvent : CGEvent] = [:]

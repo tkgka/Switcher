@@ -26,8 +26,20 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              event.modifierFlags.rawValue == 1048848 || // left command key down
              event.modifierFlags.rawValue == 1048856) && (KeyDict.keys.contains(UInt16(event.keyCode)) == false || (KeyDict.keys.contains(UInt16(event.keyCode)) == true && KeyMap == false) )){ // both command key down
                  return IsAlertOn(cgEvent: cgEvent)
-             
-         }else if (KeyDict.keys.contains(UInt16(event.keyCode)) && (FlagKey.contains(KeyDict[UInt16(event.keyCode)]![0]) || FlagKey.contains(KeyDict[UInt16(event.keyCode)]![1]) || KeyDict[UInt16(event.keyCode)]![0] == 0x00) && KeyMap == true){
+         
+         }
+         
+         if ObservedObjects.PressedKey == "Waiting"{
+             ObservedObjects.PressedKey = event.characters!+"("+String(event.keyCode)+")"
+             ObservedObjects.PressedKeyEvent = cgEvent
+             return nil
+         }
+         if ObservedObjects.ReturnKey == "Waiting"{
+             ObservedObjects.ReturnKey = event.characters!+"("+String(event.keyCode)+")"
+             ObservedObjects.ReturnKeyEvent = cgEvent
+             return nil
+         }
+         else if (KeyDict.keys.contains(UInt16(event.keyCode)) && (FlagKey.contains(KeyDict[UInt16(event.keyCode)]![0]) || FlagKey.contains(KeyDict[UInt16(event.keyCode)]![1]) || KeyDict[UInt16(event.keyCode)]![0] == 0x00) && KeyMap == true){
             let Event = CreateEvent(event: event, cgEvent: cgEvent, dic: KeyDict, index: 2, keyDown: (event.type == .keyUp ? false : true)) // index 2 = mapped keys value, index 3 = mapped keys flag
              if (NSEvent(cgEvent: Event)?.keyCode == 12 && cgEvent.type == .keyDown && (Event.flags == .maskCommand || Event.flags.rawValue == 1048840 || Event.flags.rawValue == 1048848 || Event.flags.rawValue == 1048856)){
                 return IsAlertOn(cgEvent: Event)

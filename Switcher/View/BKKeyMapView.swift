@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KeyMapView: View {
+struct BKKeyMapView: View {
     @AppStorage("ListOfKeyMap") var listOfKeyMap:[[String]] = [["a","Any","a","Any"]]
     @State var KeyMapList:[String] = ["","Any","","Any"]
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]

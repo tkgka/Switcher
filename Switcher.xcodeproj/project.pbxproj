@@ -23,6 +23,7 @@
 		F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */; };
 		F97D4D912788419100FBC5AD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
 		F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* EventHandler.swift */; };
+		F989189D27D60CCE00FA5726 /* BKKeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189C27D60CCE00FA5726 /* BKKeyMapView.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
@@ -72,6 +73,7 @@
 		F97D4D8B2788413F00FBC5AD /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		F989189C27D60CCE00FA5726 /* BKKeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKKeyMapView.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -161,11 +163,9 @@
 				F97D4D8F2788418200FBC5AD /* Menu */,
 				F97D4D8B2788413F00FBC5AD /* EventHandler.swift */,
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
-				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
-				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F989189B27D60C4000FA5726 /* View */,
 				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
-				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
 				F97D4D5C27883B0B00FBC5AD /* Preview Content */,
@@ -204,6 +204,17 @@
 				F97D4D902788419100FBC5AD /* MenuView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		F989189B27D60C4000FA5726 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
+				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
+				F989189C27D60CCE00FA5726 /* BKKeyMapView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
@@ -456,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F989189D27D60CCE00FA5726 /* BKKeyMapView.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
