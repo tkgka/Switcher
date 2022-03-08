@@ -25,10 +25,6 @@ can operate function by toggle from menubar icon to use it
 
 ![image](https://user-images.githubusercontent.com/52348220/156359072-208fa9a2-b867-48be-8868-856c0f99106c.png)
 
-can mapping key
-
-![image](https://user-images.githubusercontent.com/52348220/156359449-19d93fa9-85a8-492f-b6f3-e536289ff668.png)
-
 
 Add Application to "Users & Groups > Login Items" to open it when system starts
 
