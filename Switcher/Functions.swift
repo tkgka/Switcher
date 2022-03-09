@@ -35,6 +35,18 @@ func CreateEvent(event:NSEvent, cgEvent:CGEvent, dic:[UInt16 : [UInt16]], index:
     return Event!
 }
 
+func CreateCGEvent(cgEvent:CGEvent, KeyDown:Bool) -> CGEvent{
+    let event:NSEvent = NSEvent(cgEvent: cgEvent)!
+    let Event = CGEvent(keyboardEventSource: nil, virtualKey: event.keyCode, keyDown: KeyDown);
+    Event?.timestamp = cgEvent.timestamp
+    Event?.flags = cgEvent.flags
+    return Event!
+}
+
+
+
+
+
 func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
     if (AlertIsOn == true) {
         AlertIsOn = false
@@ -53,27 +65,16 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
 
 
 func SetKeyMapValue(){
-    IsflagsChanged.removeAll()
-    KeyDict.removeAll()
-    for (index, value) in ListOfKeyMap.enumerated().reversed(){
-        if((value[0] == "" || value[2] == "") || (KeyDict[KeyMaps[value[0]]!] != nil)){
-            if FlagMaps[value[1]]![0] == 0x00 { // if Keys Flag == Any
-                ListOfKeyMap.removeAll(where: {$0[0] == value[0] && $0 != value})
-                IsChecked.remove(at: index)
-            }
-            else if (FlagMaps[value[1]]![0] == KeyDict[KeyMaps[value[0]]!]![0] || KeyDict[KeyMaps[value[0]]!]![0] == 0x00){
-                ListOfKeyMap.remove(at: index)
-                IsChecked.remove(at: index)
-            }
-        }else{
-            KeyDict[KeyMaps[value[0]]!] = [FlagMaps[value[1]]![0],FlagMaps[value[1]]![1],KeyMaps[value[2]]!,KeyMaps[value[3]]!] // (0,1): keysFlag, 2: MappedKeyVal, 3: MappedKeysFlag
-        }
-    }
+    print(UserDefaults.standard.dictionary(forKey: "CGEventDict"))
     if IsChecked.count != ListOfKeyMap.count {
         IsChecked.removeAll()
-        for _ in (1...ListOfKeyMap.count){
+        for _ in (0...ListOfKeyMap.count){
             IsChecked.append(false)
         }
         ListOfKeyMap = Array(Set(ListOfKeyMap))
     }
+}
+
+func PressedKeyEventStringMaker(event:NSEvent) -> String{
+    return String(event.keyCode) + "|" + String(event.modifierFlags.rawValue)
 }

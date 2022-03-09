@@ -10,6 +10,8 @@ import SwiftUI
 struct KeyMapView: View {
     @AppStorage("ListOfKeyMap") var listOfKeyMap:[[String]] = [["a","Any","a","Any"]]
     @State var KeyMapList:[String] = ["","Any","","Any"]
+    @State var DictKeys:[String] = Array(CGEventDict.keys)
+    @State var DictValues:[CGEvent] = Array(CGEventDict.values)
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     @ObservedObject var Content = ObservedObjects
     var body: some View {
@@ -27,14 +29,9 @@ struct KeyMapView: View {
                     } .onTapGesture(count: 1, perform: {
                         for (index, value) in isChecked.enumerated().reversed(){
                             if(value == true){
-                                listOfKeyMap.remove(at: index)
-                                isChecked.remove(at: index)
-                                ListOfKeyMap = listOfKeyMap.reversed()
-                                IsChecked = isChecked.reversed()
+                                RemoveDataToCGEventDict(index: index)
+                                
                             }
-                            SetKeyMapValue()
-                            listOfKeyMap = ListOfKeyMap.reversed()
-                            isChecked = IsChecked.reversed()
                         }
                     }).frame(width: 100)
                     
@@ -63,10 +60,7 @@ struct KeyMapView: View {
                         .padding(.trailing , 8.0)
                 }.onTapGesture(count: 1, perform: {
                     if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
-                        Content.PressedKey = "PressedKey"
-                        Content.ReturnKey = "ReturnKey"
-                        CGEventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
-                        print(CGEventDict)
+                        appendDataToCGEventDict()
                     }
                 }).frame(width: 100)
                 
@@ -75,19 +69,16 @@ struct KeyMapView: View {
             Divider()
 
             List {
-                ForEach (0..<CGEventDict.count, id: \.self) { Val in
+            ForEach (0..<DictKeys.count, id: \.self) { Val in
                     let i:Int = Val
             HStack{
                 VStack{
                 HStack{
-//                Toggle(isOn: $isChecked[i]) {}.frame(width: 50)
+                Toggle(isOn: $isChecked[i]) {}.frame(width: 50)
                 Spacer()
-                    Text("!@3")
-//                Text(listOfKeyMap[i][1]).frame(width: 30)
-//                Text(listOfKeyMap[i][0]).frame(width: 100)
-//                Text(":")
-//                Text(listOfKeyMap[i][3]).frame(width: 80)
-//                Text(listOfKeyMap[i][2]).frame(width: 100)
+                    Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!).frame(width: 50)
+                    Text(":")
+                    Text(KeyMaps[NSEvent(cgEvent: DictValues[i])!.keyCode]!).frame(width: 50)
                 Spacer()
                 }
                 }
@@ -96,4 +87,28 @@ struct KeyMapView: View {
     }
     }.frame(width: 1200, height: 500, alignment: .center)
 }
+
+
+
+func appendDataToCGEventDict(){
+    Content.PressedKey = "PressedKey"
+    Content.ReturnKey = "ReturnKey"
+    CGEventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
+//  UserDefaults.standard.set(CGEventDict, forKey: "CGEventDict")
+    isChecked.append(false)
+    DictKeys = Array(CGEventDict.keys)
+    DictValues = Array(CGEventDict.values)
+    Content.PressedKeyEvent = nil
+    Content.ReturnKeyEvent = nil
+    print(CGEventDict)
+}
+
+func RemoveDataToCGEventDict(index:Int) {
+    CGEventDict.removeValue(forKey: DictKeys[index])
+//  UserDefaults.standard.set(CGEventDict, forKey: "CGEventDict")
+    isChecked.remove(at: index)
+    DictKeys = Array(CGEventDict.keys)
+    DictValues = Array(CGEventDict.values)
+}
+    
 }

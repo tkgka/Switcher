@@ -31,7 +31,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          
          if ObservedObjects.PressedKey == "Waiting"{
              ObservedObjects.PressedKey = event.characters!+"("+String(event.keyCode)+")"
-             ObservedObjects.PressedKeyEvent = cgEvent
+             ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(event: event)
              return nil
          }
          if ObservedObjects.ReturnKey == "Waiting"{
@@ -39,14 +39,13 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              ObservedObjects.ReturnKeyEvent = cgEvent
              return nil
          }
-         else if (KeyDict.keys.contains(UInt16(event.keyCode)) && (FlagKey.contains(KeyDict[UInt16(event.keyCode)]![0]) || FlagKey.contains(KeyDict[UInt16(event.keyCode)]![1]) || KeyDict[UInt16(event.keyCode)]![0] == 0x00) && KeyMap == true){
-            let Event = CreateEvent(event: event, cgEvent: cgEvent, dic: KeyDict, index: 2, keyDown: (event.type == .keyUp ? false : true)) // index 2 = mapped keys value, index 3 = mapped keys flag
-             if (NSEvent(cgEvent: Event)?.keyCode == 12 && cgEvent.type == .keyDown && (Event.flags == .maskCommand || Event.flags.rawValue == 1048840 || Event.flags.rawValue == 1048848 || Event.flags.rawValue == 1048856)){
-                return IsAlertOn(cgEvent: Event)
-            }
-        return Event
-        }
-        else { return cgEvent }
+         
+         if CGEventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
+             return CreateCGEvent(cgEvent: CGEventDict[PressedKeyEventStringMaker(event: event)]!, KeyDown: keyDown[event.type]!)
+         }
+         
+        else {
+            return cgEvent }
         
     }else if (event.type == .flagsChanged && KeyMap == true){
         FlagKey!.contains(UInt16(exactly: event.keyCode)!) == true ? FlagKey?.removeAll(where: { $0 == UInt16(event.keyCode) }) : (FlagKey?.append(UInt16(event.keyCode)))
