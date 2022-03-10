@@ -73,7 +73,6 @@
 		F97D4D8B2788413F00FBC5AD /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		F989189C27D60CCE00FA5726 /* BKKeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKKeyMapView.swift; sourceTree = "<group>"; };
 		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
@@ -214,7 +213,6 @@
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
 				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
-				F989189C27D60CCE00FA5726 /* BKKeyMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

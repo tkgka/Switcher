@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-
 struct KeyMapView: View {
     @AppStorage("ListOfKeyMap") var listOfKeyMap:[[String]] = [["a","Any","a","Any"]]
     @State var KeyMapList:[String] = ["","Any","","Any"]
     @State var DictKeys:[String] = Array(CGEventDict.keys)
-    @State var DictValues:[CGEvent] = Array(CGEventDict.values)
+    @State var DictValues:[CGEventStruct] = Array(CGEventDict.values)
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     @ObservedObject var Content = ObservedObjects
     var body: some View {
@@ -78,7 +77,7 @@ struct KeyMapView: View {
                 Spacer()
                     Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!).frame(width: 50)
                     Text(":")
-                    Text(KeyMaps[NSEvent(cgEvent: DictValues[i])!.keyCode]!).frame(width: 50)
+                    Text(KeyMaps[DictValues[i].keys]!).frame(width: 50)
                 Spacer()
                 }
                 }
@@ -87,20 +86,19 @@ struct KeyMapView: View {
     }
     }.frame(width: 1200, height: 500, alignment: .center)
 }
-
-
-
+    
+    
 func appendDataToCGEventDict(){
     Content.PressedKey = "PressedKey"
     Content.ReturnKey = "ReturnKey"
     CGEventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
-//  UserDefaults.standard.set(CGEventDict, forKey: "CGEventDict")
+    print(CGEventDict[Content.PressedKeyEvent!]?.KeyList)
     isChecked.append(false)
     DictKeys = Array(CGEventDict.keys)
     DictValues = Array(CGEventDict.values)
     Content.PressedKeyEvent = nil
     Content.ReturnKeyEvent = nil
-    print(CGEventDict)
+    FlagKey.removeAll()
 }
 
 func RemoveDataToCGEventDict(index:Int) {

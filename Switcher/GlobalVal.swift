@@ -139,9 +139,17 @@ class ObservableList: ObservableObject {
     @Published var PressedKey: String = "PressedKey"
     @Published var ReturnKey: String = "Returnkey"
     @Published var PressedKeyEvent: String?
-    @Published var ReturnKeyEvent: CGEvent?
+    @Published var ReturnKeyEvent: CGEventStruct?
 }
 
 var ObservedObjects = ObservableList()
 
-var CGEventDict : [String : CGEvent] = [:]
+var CGEventDict : [String : CGEventStruct] = [:]
+
+struct CGEventStruct {
+    let keys: UInt16!
+    let Flag: CGEventFlags!
+    let KeyList: [UInt16]!
+}
+
+var FlagKey:[UInt16]! = []

@@ -170,10 +170,7 @@ struct MenuView: View {
                 .padding(.top, 15.0)
                 .padding(.bottom, 10.0)
                 .frame(alignment: .leading)
-                
             }
-            
-//            defaults write com.apple.finder CreateDesktop false killall Finder
             
             
     }

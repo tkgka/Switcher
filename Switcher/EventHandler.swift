@@ -18,7 +18,7 @@ class Wrapper {
 
   }
 }
-var FlagKey:[UInt16]! = [0x00]
+
 func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
      if((event.type == .keyUp || event.type == .keyDown)){
          if ((event.type == .keyDown && CMDQ == true) && event.keyCode == 12 && ( // P key down
@@ -36,18 +36,17 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          }
          if ObservedObjects.ReturnKey == "Waiting"{
              ObservedObjects.ReturnKey = event.characters!+"("+String(event.keyCode)+")"
-             ObservedObjects.ReturnKeyEvent = cgEvent
+             ObservedObjects.ReturnKeyEvent = CGEventStruct(keys: event.keyCode, Flag: cgEvent.flags , KeyList: FlagKey)
              return nil
          }
          
          if CGEventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
-             return CreateCGEvent(cgEvent: CGEventDict[PressedKeyEventStringMaker(event: event)]!, KeyDown: keyDown[event.type]!)
+             return CreateCGEvent(event: CGEventDict[PressedKeyEventStringMaker(event: event)]!, timestamp: cgEvent.timestamp, KeyDown: keyDown[event.type]!)
          }
-         
         else {
             return cgEvent }
         
-    }else if (event.type == .flagsChanged && KeyMap == true){
+     }else if (event.type == .flagsChanged && KeyMap == true){
         FlagKey!.contains(UInt16(exactly: event.keyCode)!) == true ? FlagKey?.removeAll(where: { $0 == UInt16(event.keyCode) }) : (FlagKey?.append(UInt16(event.keyCode)))
         return cgEvent
         

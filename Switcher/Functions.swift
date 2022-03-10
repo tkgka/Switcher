@@ -35,11 +35,10 @@ func CreateEvent(event:NSEvent, cgEvent:CGEvent, dic:[UInt16 : [UInt16]], index:
     return Event!
 }
 
-func CreateCGEvent(cgEvent:CGEvent, KeyDown:Bool) -> CGEvent{
-    let event:NSEvent = NSEvent(cgEvent: cgEvent)!
-    let Event = CGEvent(keyboardEventSource: nil, virtualKey: event.keyCode, keyDown: KeyDown);
-    Event?.timestamp = cgEvent.timestamp
-    Event?.flags = cgEvent.flags
+func CreateCGEvent(event:CGEventStruct, timestamp:UInt64, KeyDown:Bool) -> CGEvent{
+    let Event = CGEvent(keyboardEventSource: nil, virtualKey: event.keys, keyDown: KeyDown);
+    Event?.timestamp = timestamp
+    Event?.flags = event.Flag
     return Event!
 }
 
