@@ -76,8 +76,10 @@ struct KeyMapView: View {
                 Toggle(isOn: $isChecked[i]) {}.frame(width: 50)
                 Spacer()
                     Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!).frame(width: 50)
+                    Text(DictKeys[i].components(separatedBy: "|")[1]).frame(width: 50)
                     Text(":")
                     Text(KeyMaps[DictValues[i].keys]!).frame(width: 50)
+                    Text(String(DictValues[i].KeyList.rawValue)).frame(width: 50)
                 Spacer()
                 }
                 }
