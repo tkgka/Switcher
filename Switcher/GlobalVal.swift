@@ -106,18 +106,18 @@ let KeyMaps:[UInt16:String] = [
 ]
 
 let Flags = ["Any", "􀆝", "􀆍","􀆕","􀆔","Fn"]
-let FlagMaps: [String: Int] =
+let FlagMaps: [Int: String] =
 [
-    "Default": 256,
-    "L􀆝": 131330,
-    "R􀆝": 131332,
-    "L􀆍": 262401,
-    "R􀆍": 270592,
-    "L􀆕": 524576,
-    "R􀆕": 524608,
-    "L􀆔":1048848,
-    "R􀆔":1048848,
-    "FN": 8388864,
+    256:"Default",
+    131330:"􀆝",
+    131332:"􀆝",
+    262401:"􀆍",
+    270592:"􀆍",
+    524576:"􀆕",
+    524608:"􀆕",
+    1048840:"􀆔",
+    1048848:"􀆔",
+    8388864:"FN",
 ]
 
 
@@ -155,7 +155,5 @@ var CGEventDict : [String : CGEventStruct] = [:]
 struct CGEventStruct {
     let keys: UInt16!
     let Flag: CGEventFlags!
-    let KeyList: [UInt16]!
+    let FlagNum: UInt!
 }
-
-var FlagKey:[UInt16]! = []

@@ -36,7 +36,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          }
          if ObservedObjects.ReturnKey == "Waiting"{
              ObservedObjects.ReturnKey = event.characters!+"("+String(event.keyCode)+")"
-             ObservedObjects.ReturnKeyEvent = CGEventStruct(keys: event.keyCode, Flag: cgEvent.flags , KeyList: FlagKey)
+             ObservedObjects.ReturnKeyEvent = CGEventStruct(keys: event.keyCode, Flag: cgEvent.flags, FlagNum: event.modifierFlags.rawValue)
              return nil
          }
          
@@ -47,7 +47,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             return cgEvent }
         
      }else if (event.type == .flagsChanged && KeyMap == true){
-        FlagKey!.contains(UInt16(exactly: event.keyCode)!) == true ? FlagKey?.removeAll(where: { $0 == UInt16(event.keyCode) }) : (FlagKey?.append(UInt16(event.keyCode)))
         return cgEvent
         
     }else  if event.type == .scrollWheel && MouseWheel == true{

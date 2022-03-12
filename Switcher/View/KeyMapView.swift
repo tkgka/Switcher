@@ -75,11 +75,19 @@ struct KeyMapView: View {
                 HStack{
                 Toggle(isOn: $isChecked[i]) {}.frame(width: 50)
                 Spacer()
-                    Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!).frame(width: 50)
-                    Text(DictKeys[i].components(separatedBy: "|")[1]).frame(width: 50)
+                    let PressedVal = FuncNumToTest()
+                    let _ = PressedVal.FlagNumToString(Val: Int(DictKeys[i].components(separatedBy: "|")[1])!)
+                    HStack{
+                        Text(PressedVal.ReturnVal.rawValue)
+                        Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!)
+                    }.frame(width: 250, alignment: .trailing)
                     Text(":")
-                    Text(KeyMaps[DictValues[i].keys]!).frame(width: 50)
-                    Text(String(DictValues[i].KeyList.rawValue)).frame(width: 50)
+                    let ReturnVal = FuncNumToTest()
+                    let _ = ReturnVal.FlagNumToString(Val: Int(CGEventDict[DictKeys[i]]!.FlagNum))
+                    HStack{
+                     Text(KeyMaps[DictValues[i].keys]!)
+                    Text(ReturnVal.ReturnVal.rawValue)
+                    }.frame(width: 250, alignment: .leading)
                 Spacer()
                 }
                 }
@@ -94,13 +102,12 @@ func appendDataToCGEventDict(){
     Content.PressedKey = "PressedKey"
     Content.ReturnKey = "ReturnKey"
     CGEventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
-    print(CGEventDict[Content.PressedKeyEvent!]?.KeyList)
     isChecked.append(false)
     DictKeys = Array(CGEventDict.keys)
     DictValues = Array(CGEventDict.values)
     Content.PressedKeyEvent = nil
     Content.ReturnKeyEvent = nil
-    FlagKey.removeAll()
+    
 }
 
 func RemoveDataToCGEventDict(index:Int) {
