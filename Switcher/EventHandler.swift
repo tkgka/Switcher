@@ -30,18 +30,27 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          }
          
          if ObservedObjects.PressedKey == "Waiting"{
-             ObservedObjects.PressedKey = event.characters!+"("+String(event.keyCode)+")"
+             let FuncNumToTest = FuncNumToText()
+             FuncNumToTest.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
+             print(FuncNumToTest.ReturnVal)
+             ObservedObjects.PressedKey = FuncNumToTest.ReturnVal.rawValue + KeyMaps[event.keyCode]!
              ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(event: event)
              return nil
          }
          if ObservedObjects.ReturnKey == "Waiting"{
-             ObservedObjects.ReturnKey = event.characters!+"("+String(event.keyCode)+")"
-             ObservedObjects.ReturnKeyEvent = CGEventStruct(keys: event.keyCode, Flag: cgEvent.flags, FlagNum: event.modifierFlags.rawValue)
+             let FuncNumToTest = FuncNumToText()
+             FuncNumToTest.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
+             print(FuncNumToTest.ReturnVal)
+             ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FuncNumToTest.ReturnVal.rawValue
+             ObservedObjects.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
              return nil
          }
          
-         if CGEventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
-             return CreateCGEvent(event: CGEventDict[PressedKeyEventStringMaker(event: event)]!, timestamp: cgEvent.timestamp, KeyDown: keyDown[event.type]!)
+         if EventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
+             let value:EventStruct = EventDict[PressedKeyEventStringMaker(event: event)]!
+             let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
+             return ReturnValue.cgEvent
+//             return CreateCGEvent(event: EventDict[PressedKeyEventStringMaker(event: event)]!, timestamp: cgEvent.timestamp, KeyDown: keyDown[event.type]!)
          }
         else {
             return cgEvent }

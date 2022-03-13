@@ -35,10 +35,8 @@ func AlertPopupTimeout(){
 //    return Event!
 //}
 
-func CreateCGEvent(event:CGEventStruct, timestamp:UInt64, KeyDown:Bool) -> CGEvent{
-    let Event = CGEvent(keyboardEventSource: nil, virtualKey: event.keys, keyDown: KeyDown);
-    Event?.timestamp = timestamp
-    Event?.flags = event.Flag
+func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
+    let Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
     return Event!
 }
 
@@ -60,7 +58,7 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
 
 
 func SetKeyMapValue(){
-    print(UserDefaults.standard.dictionary(forKey: "CGEventDict"))
+    print(UserDefaults.standard.dictionary(forKey: "EventDict"))
     if IsChecked.count != ListOfKeyMap.count {
         IsChecked.removeAll()
         for _ in (0...ListOfKeyMap.count){
@@ -77,7 +75,7 @@ func PressedKeyEventStringMaker(event:NSEvent) -> String{
 
 
 
-class FuncNumToTest {
+class FuncNumToText {
     
     var ReturnVal:[String] = []
     func FlagNumToString(Val:Int){
