@@ -109,6 +109,7 @@ let Flags = ["Any", "􀆝", "􀆍","􀆕","􀆔","Fn"]
 let FlagMaps: [Int: String] =
 [
     256:"Default",
+    65792:"􁂎",
     131330:"􀆝",
     131332:"􀆝",
     262401:"􀆍",
@@ -146,13 +147,14 @@ class ObservableList: ObservableObject {
     @Published var ReturnKey: String = "Returnkey"
     @Published var PressedKeyEvent: String?
     @Published var ReturnKeyEvent: EventStruct?
+    var EventDict : [String : EventStruct] = [:]
 }
 
 var ObservedObjects = ObservableList()
 
-var EventDict : [String : EventStruct] = [:]
 
-struct EventStruct {
+
+struct EventStruct:Codable {
     let keys: UInt16!
     let FlagNum: UInt!
 }

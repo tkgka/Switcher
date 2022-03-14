@@ -58,7 +58,10 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
 
 
 func SetKeyMapValue(){
-    print(UserDefaults.standard.dictionary(forKey: "EventDict"))
+    if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
+        let DecodedVal = try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data)
+        ObservedObjects.EventDict = DecodedVal!
+    }
     if IsChecked.count != ListOfKeyMap.count {
         IsChecked.removeAll()
         for _ in (0...ListOfKeyMap.count){
@@ -102,6 +105,10 @@ class FuncNumToText {
         else if Val > 131330 && Val < 270592 {
             ReturnVal.append("􀆝")
             return FlagNumToString(Val: Val - 131330 + 256)
+        }
+        else if Val > 65792 {
+            ReturnVal.append("􁂎")
+            return FlagNumToString(Val: Val - 65792 + 256)
         }
     }
 }

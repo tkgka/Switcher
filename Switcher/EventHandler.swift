@@ -30,24 +30,25 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          }
          
          if ObservedObjects.PressedKey == "Waiting"{
-             let FuncNumToTest = FuncNumToText()
-             FuncNumToTest.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             print(FuncNumToTest.ReturnVal)
-             ObservedObjects.PressedKey = FuncNumToTest.ReturnVal.rawValue + KeyMaps[event.keyCode]!
+             let FuncNumToText = FuncNumToText()
+             FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
+             print(FuncNumToText.ReturnVal)
+             
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + String(event.keyCode))
              ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(event: event)
              return nil
          }
          if ObservedObjects.ReturnKey == "Waiting"{
-             let FuncNumToTest = FuncNumToText()
-             FuncNumToTest.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             print(FuncNumToTest.ReturnVal)
-             ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FuncNumToTest.ReturnVal.rawValue
+             let FuncNumToText = FuncNumToText()
+             FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
+             print(FuncNumToText.ReturnVal)
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FuncNumToText.ReturnVal.rawValue) : (ObservedObjects.ReturnKey = String(event.keyCode) + FuncNumToText.ReturnVal.rawValue)
              ObservedObjects.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
              return nil
          }
          
-         if EventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
-             let value:EventStruct = EventDict[PressedKeyEventStringMaker(event: event)]!
+         if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(event: event)) && KeyMap == true {
+             let value:EventStruct = ObservedObjects.EventDict[PressedKeyEventStringMaker(event: event)]!
              let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
              return ReturnValue.cgEvent
 //             return CreateCGEvent(event: EventDict[PressedKeyEventStringMaker(event: event)]!, timestamp: cgEvent.timestamp, KeyDown: keyDown[event.type]!)

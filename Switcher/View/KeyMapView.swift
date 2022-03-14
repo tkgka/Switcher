@@ -7,10 +7,6 @@
 
 import SwiftUI
 struct KeyMapView: View {
-    @AppStorage("ListOfKeyMap") var listOfKeyMap:[[String]] = [["a","Any","a","Any"]]
-    @State var KeyMapList:[String] = ["","Any","","Any"]
-    @State var DictKeys:[String] = Array(EventDict.keys)
-    @State var DictValues:[EventStruct] = Array(EventDict.values)
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     @ObservedObject var Content = ObservedObjects
     var body: some View {
@@ -38,16 +34,16 @@ struct KeyMapView: View {
         VStack{
             Text(Content.PressedKey)
                 .onTapGesture{
-                    (Content.PressedKey != "Waiting") ? (Content.PressedKey = "Waiting") : (Content.PressedKey = "PressedKey")
+                    (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
                 }
-            }.frame(width: 150)
+            }.frame(width: 250, alignment: .trailing)
         Text("->")
         VStack{
             Text(Content.ReturnKey)
                 .onTapGesture{
-                    (Content.ReturnKey != "Waiting") ? (Content.ReturnKey = "Waiting") : (Content.ReturnKey = "ReturnKey")
+                    (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
                 }
-        }.frame(width: 150)
+        }.frame(width: 250, alignment: .leading)
                 Spacer()
                 ZStack{
                Text("Add item")
@@ -59,15 +55,16 @@ struct KeyMapView: View {
                         .padding(.trailing , 8.0)
                 }.onTapGesture(count: 1, perform: {
                     if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
-                        appendDataToEventDict()
+                        appendDataToEventDict()                        
                     }
                 }).frame(width: 100)
     }
 .padding([.top], 20.0)
             Divider()
-
             List {
-            ForEach (0..<DictKeys.count, id: \.self) { Val in
+            
+            let DictKey:Array = Array(Content.EventDict.keys)
+            ForEach (0..<Content.EventDict.count, id: \.self) { Val in
                     let i:Int = Val
             HStack{
                 VStack{
@@ -75,16 +72,16 @@ struct KeyMapView: View {
                 Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
                 Spacer()
                     let PressedVal = FuncNumToText()
-                    let _ = PressedVal.FlagNumToString(Val: Int(DictKeys[i].components(separatedBy: "|")[1])!)
+                    let _ = PressedVal.FlagNumToString(Val: Int(DictKey[i].components(separatedBy: "|")[1])!)
                     HStack{
                         Text(PressedVal.ReturnVal.rawValue)
-                        Text(KeyMaps[UInt16(DictKeys[i].components(separatedBy: "|")[0])!]!)
+                        Text(KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
                     }.frame(width: 250, alignment: .trailing)
                     Text(":")
                     let ReturnVal = FuncNumToText()
-                    let _ = ReturnVal.FlagNumToString(Val: Int(EventDict[DictKeys[i]]!.FlagNum))
+                    let _ = ReturnVal.FlagNumToString(Val: Int(Content.EventDict[DictKey[i]]!.FlagNum))
                     HStack{
-                     Text(KeyMaps[DictValues[i].keys]!)
+                     Text(KeyMaps[Array(Content.EventDict.values)[i].keys]!)
                     Text(ReturnVal.ReturnVal.rawValue)
                     }.frame(width: 250, alignment: .leading)
                 Spacer()
@@ -100,21 +97,17 @@ struct KeyMapView: View {
 func appendDataToEventDict(){
     Content.PressedKey = "PressedKey"
     Content.ReturnKey = "ReturnKey"
-    EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
+    Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
     isChecked.append(false)
-    DictKeys = Array(EventDict.keys)
-    DictValues = Array(EventDict.values)
     Content.PressedKeyEvent = nil
     Content.ReturnKeyEvent = nil
-    
+    UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
 }
 
 func RemoveDataToEventDict(index:Int) {
-    EventDict.removeValue(forKey: DictKeys[index])
-//  UserDefaults.standard.set(EventDict, forKey: "EventDict")
+    Content.EventDict.removeValue(forKey: Array(Content.EventDict.keys)[index])
     isChecked.remove(at: index)
-    DictKeys = Array(EventDict.keys)
-    DictValues = Array(EventDict.values)
+    UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
 }
     
 }
