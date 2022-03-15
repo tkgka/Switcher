@@ -32,8 +32,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          if ObservedObjects.PressedKey == "Waiting"{
              let FuncNumToText = FuncNumToText()
              FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             print(FuncNumToText.ReturnVal)
-             
              KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + String(event.keyCode))
              ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(event: event)
              return nil
@@ -41,7 +39,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          if ObservedObjects.ReturnKey == "Waiting"{
              let FuncNumToText = FuncNumToText()
              FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             print(FuncNumToText.ReturnVal)
              KeyMaps[event.keyCode] != nil ? (ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FuncNumToText.ReturnVal.rawValue) : (ObservedObjects.ReturnKey = String(event.keyCode) + FuncNumToText.ReturnVal.rawValue)
              ObservedObjects.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
              return nil

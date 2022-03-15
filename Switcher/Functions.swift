@@ -81,34 +81,67 @@ func PressedKeyEventStringMaker(event:NSEvent) -> String{
 class FuncNumToText {
     
     var ReturnVal:[String] = []
+    
+    var FlagList:[String:Int] = ["􀆍":0, "􀆕":0, "􀆔":0, "􀆝":0]
     func FlagNumToString(Val:Int){
         if FlagMaps[Val] != nil {
             ReturnVal.append(FlagMaps[Val]!)
-//            print(FlagMaps.findKey(forValue: Val)!)
         }
         else if Val > 8388864 {
             ReturnVal.append("FN")
             return FlagNumToString(Val: Val - 8388864 + 256)
         }
         else if Val > 1048840 && Val < 8388864 {
-            ReturnVal.append("􀆔")
+            ReturnVal.append("L􀆔")
             return FlagNumToString(Val: Val - 1048840 + 256)
         }
         else if Val > 524576 && Val < 1048848 {
-            ReturnVal.append("􀆕")
+            ReturnVal.append("L􀆕")
             return FlagNumToString(Val: Val - 524576 + 256)
         }
         else if Val > 262401 && Val < 524640 {
-            ReturnVal.append("􀆍")
+            ReturnVal.append("L􀆍")
             return FlagNumToString(Val: Val - 262401 + 256)
         }
         else if Val > 131330 && Val < 270592 {
-            ReturnVal.append("􀆝")
+            ReturnVal.append("L􀆝")
             return FlagNumToString(Val: Val - 131330 + 256)
         }
         else if Val > 65792 {
             ReturnVal.append("􁂎")
             return FlagNumToString(Val: Val - 65792 + 256)
         }
+        else {
+            FlagLoc(Val: Val-256)
+            print(FlagList)
+            let TmpList:[String] = Array(FlagList.keys).filter{ FlagList[$0]! > 0 }
+            for i in TmpList{
+                let val:String = "L"+i
+                if ReturnVal.firstIndex(of: val) != nil {
+                    let KeyLoc:String?
+                    FlagList[i]! == 1 ? (KeyLoc = "R") : (KeyLoc = "B")
+                    ReturnVal[ReturnVal.firstIndex(of: val)!] = KeyLoc!+i
+                }
+            }
+            
+        }
     }
+    func FlagLoc(Val:Int){
+        if Val >= 8191 {
+            FlagList["􀆍"]! += 1
+            FlagLoc(Val: Val-8191)
+        }else if Val >= 32 {
+            FlagList["􀆕"]! += 1
+            FlagLoc(Val: Val-32)
+        }else if Val >= 8{
+            FlagList["􀆔"]! += 1
+            FlagLoc(Val: Val-8)
+        }else if Val >= 2{
+            FlagList["􀆝"]! += 1
+            FlagLoc(Val: Val-2)
+        }else if Val == 1{
+            FlagList["􀆍"]! += 1
+        }
+    }
+    
 }
