@@ -9,8 +9,14 @@ import SwiftUI
 import AlertPopup
 extension View {
     @discardableResult
+    //    @discardableResult
+        func setupWindow() -> NSWindow{
+            let controller = NSHostingController(rootView: self)
+            let win = NSWindow(contentViewController: controller)
+            return win
+        }
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        let win = self.setWindow()
+        let win = self.setupWindow()
         win.title = title
         win.makeKeyAndOrderFront(sender)
         win.orderFrontRegardless()
@@ -85,6 +91,7 @@ class FuncNumToText {
     var FlagList:[String:Int] = ["􀆍":0, "􀆕":0, "􀆔":0, "􀆝":0]
     func FlagNumToString(Val:Int){
         if FlagMaps[Val] != nil {
+            FlagList[FlagMaps[Val]!] != nil ? (FlagList[FlagMaps[Val]!]! += 1) : nil
             ReturnVal.append(FlagMaps[Val]!)
         }
         else if Val > 8388864 {
@@ -92,38 +99,44 @@ class FuncNumToText {
             return FlagNumToString(Val: Val - 8388864 + 256)
         }
         else if Val > 1048840 && Val < 8388864 {
-            ReturnVal.append("L􀆔")
+            ReturnVal.append(FlagMaps[1048840]!)
+            FlagList[FlagMaps[1048840]!]! += 1
             return FlagNumToString(Val: Val - 1048840 + 256)
         }
-        else if Val > 524576 && Val < 1048848 {
-            ReturnVal.append("L􀆕")
+        else if Val > 524576 && Val < 1048840 {
+            ReturnVal.append(FlagMaps[524576]!)
+            FlagList[FlagMaps[524576]!]! += 1
             return FlagNumToString(Val: Val - 524576 + 256)
         }
         else if Val > 262401 && Val < 524640 {
-            ReturnVal.append("L􀆍")
+            ReturnVal.append(FlagMaps[262401]!)
+            FlagList[FlagMaps[262401]!]! += 1
             return FlagNumToString(Val: Val - 262401 + 256)
         }
         else if Val > 131330 && Val < 270592 {
-            ReturnVal.append("L􀆝")
+            ReturnVal.append(FlagMaps[131330]!)
+            FlagList[FlagMaps[131330]!]! += 1
             return FlagNumToString(Val: Val - 131330 + 256)
         }
         else if Val > 65792 {
-            ReturnVal.append("􁂎")
+            ReturnVal.append(FlagMaps[65792]!)
             return FlagNumToString(Val: Val - 65792 + 256)
         }
         else {
             FlagLoc(Val: Val-256)
-            print(FlagList)
-            let TmpList:[String] = Array(FlagList.keys).filter{ FlagList[$0]! > 0 }
-            for i in TmpList{
-                let val:String = "L"+i
-                if ReturnVal.firstIndex(of: val) != nil {
-                    let KeyLoc:String?
-                    FlagList[i]! == 1 ? (KeyLoc = "R") : (KeyLoc = "B")
-                    ReturnVal[ReturnVal.firstIndex(of: val)!] = KeyLoc!+i
-                }
+        }
+        print(FlagList)
+        let TmpList:[String] = Array(FlagList.keys).filter{ FlagList[$0]! > 0 }
+        for i in TmpList{
+            let val:String = i
+            if ReturnVal.firstIndex(of: val) != nil {
+                var KeyLoc:String = ""
+//                    FlagList[i]! == 1 ? (KeyLoc = "R") : (KeyLoc = "B")
+                FlagList[i]! == 1 ? (KeyLoc = "L") : nil
+                FlagList[i]! == 2 ? (KeyLoc = "R") : nil
+                FlagList[i]! == 3 ? (KeyLoc = "B") : nil
+                ReturnVal[ReturnVal.firstIndex(of: val)!] = KeyLoc+i
             }
-            
         }
     }
     func FlagLoc(Val:Int){
