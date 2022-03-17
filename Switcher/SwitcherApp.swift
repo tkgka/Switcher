@@ -36,11 +36,10 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 
     
     func MakeMenuButton(){
-        let menuView = MenuView()
         popOver.behavior = .transient
         popOver.animates = true
         popOver.contentViewController = NSViewController()
-        popOver.contentViewController?.view = NSHostingView(rootView: menuView)
+        popOver.contentViewController?.view = NSHostingView(rootView: MenuView())
         popOver.contentSize = NSSize(width: 360, height: 800)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
@@ -57,10 +56,9 @@ class AppDelegate: NSObject, NSApplicationDelegate{
             if popOver.isShown{
                 popOver.performClose(sender)
             }else{
-                if let MenuButton = statusItem?.button{
                     //Top Get Button Location for popover arrow
-                    self.popOver.show(relativeTo: MenuButton.bounds, of: MenuButton, preferredEdge: NSRectEdge.minY)
-                }
+                self.popOver.show(relativeTo: (statusItem?.button!.bounds)!, of: (statusItem?.button!)!, preferredEdge: NSRectEdge.minY)
+                
             }
     }
     

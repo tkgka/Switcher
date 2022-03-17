@@ -16,7 +16,6 @@ public struct BlurView: NSViewRepresentable {
         effectView.material = .hudWindow
         effectView.blendingMode = .withinWindow
         effectView.state = NSVisualEffectView.State.active
-        
         return effectView
     }
     
@@ -60,9 +59,7 @@ public struct AlertView: View {
                 .opacity(scale)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + Timer - AlertTimeout) {
-                    let baseAnimation = Animation.easeIn(duration: AlertTimeout)
-                    let repeated = baseAnimation.repeatCount(1, autoreverses: false)
-                    withAnimation(repeated) {
+                    withAnimation(Animation.easeIn(duration: AlertTimeout).repeatCount(1, autoreverses: false)) {
                         scale = 0.0
                     }
                     }

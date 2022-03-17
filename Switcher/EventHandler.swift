@@ -1,7 +1,7 @@
 import Cocoa
 import SwiftUI
 import AlertPopup
-var currentWindow:NSWindow?
+
 
 class Wrapper {
   var state: State?
@@ -57,6 +57,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         return cgEvent
         
     }else  if event.type == .scrollWheel && MouseWheel == true{
+        AlertIsOn = false
                 if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
                     return CGEvent(scrollWheelEvent2Source: nil, units: CGScrollEventUnit.pixel, wheelCount: 1, wheel1: Int32(event.deltaY * -10), wheel2: 0, wheel3: 0)
                 }
@@ -66,7 +67,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             }
     
  else {
-    event.type == .keyDown ? AlertIsOn = false : nil
+    event.type != .keyUp ? AlertIsOn = false : nil
     return cgEvent
   }
 }

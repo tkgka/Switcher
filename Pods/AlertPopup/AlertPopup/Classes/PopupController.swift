@@ -11,15 +11,10 @@ import SwiftUI
 public extension View {
 //    @discardableResult
     func setWindow() -> NSWindow{
-        let controller = NSHostingController(rootView: self)
-        let win = NSWindow(contentViewController: controller)
-        return win
+        weak var win = NSWindow(contentViewController: NSHostingController(rootView: self))
+        return win!
     }
 
-}
-
-public func closeWindow(window:NSWindow){
-    window.close()
 }
 
 
@@ -36,14 +31,15 @@ public func displayAsAlert(win:NSWindow, Timer:Double){
     win.backgroundColor = NSColor.clear
     win.orderFrontRegardless()
     DispatchQueue.main.asyncAfter(deadline: .now() + Timer) {
-        closeWindow(window: win)
+        win.close()
     }
 }
 
 
 @available(macOS 10.15, *)
 public func ShowSystemAlert(ImageName:String = "", AlertText:String = "", Timer:Double = 1.5, ImageColor:Color = Color.gray, FontColor:Color = Color.gray) -> NSWindow{
-    let AlertWindow = AlertView(ImageName: ImageName, AlertText: AlertText, Timer:Timer, ImageColor: ImageColor, FontColor:FontColor).setWindow()
-    displayAsAlert(win: AlertWindow, Timer: Timer)
-    return AlertWindow
+    weak var AlertWindow = AlertView(ImageName: ImageName, AlertText: AlertText, Timer:Timer, ImageColor: ImageColor, FontColor:FontColor).setWindow()
+    displayAsAlert(win: AlertWindow!, Timer: Timer)
+    return AlertWindow!
 }
+

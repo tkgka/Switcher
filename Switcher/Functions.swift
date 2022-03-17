@@ -8,23 +8,18 @@
 import SwiftUI
 import AlertPopup
 extension View {
-    @discardableResult
     //    @discardableResult
-        func setupWindow() -> NSWindow{
-            let controller = NSHostingController(rootView: self)
-            let win = NSWindow(contentViewController: controller)
-            return win
-        }
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        let win = self.setupWindow()
-        win.title = title
-        win.makeKeyAndOrderFront(sender)
-        win.orderFrontRegardless()
-        return win
+        weak var win = NSWindow(contentViewController: NSHostingController(rootView: self))
+        win!.title = title
+        win!.makeKeyAndOrderFront(sender)
+        win!.orderFrontRegardless()
+        return win!
     }
 }
 func AlertPopupTimeout(){
     DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
+        currentWindow?.close()
         AlertIsOn = false
     }
 }
@@ -42,9 +37,13 @@ func AlertPopupTimeout(){
 //}
 
 func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
-    let Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
+    weak var Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
     return Event!
 }
+
+
+
+weak var currentWindow:NSWindow? = nil
 
 func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
     if (AlertIsOn == true) {
@@ -52,7 +51,7 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
         return cgEvent
     }else{
         if currentWindow != nil{
-            closeWindow(window: currentWindow!)
+            currentWindow!.close()
             currentWindow = nil
         }
         currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Enter 􀆔q again \nto shutdown app", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
@@ -65,8 +64,7 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
 
 func SetKeyMapValue(){
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
-        let DecodedVal = try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data)
-        ObservedObjects.EventDict = DecodedVal!
+        ObservedObjects.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
     if IsChecked.count != ListOfKeyMap.count {
         IsChecked.removeAll()

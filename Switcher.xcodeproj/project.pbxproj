@@ -76,6 +76,7 @@
 		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
+		F9E6F1A627E35B930017C81F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +214,7 @@
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
 				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
+				F9E6F1A627E35B930017C81F /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

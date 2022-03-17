@@ -6,7 +6,6 @@
 // UI Design from " https://github.com/mik3sw/OneClick"
 
 import SwiftUI
-
 struct MenuView: View {
     @AppStorage("CMDQ") var CMDQToggle: Bool = UserDefaults.standard.bool(forKey: "CMDQ")
     @AppStorage("MouseWheel") var MouseWheelToggle: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
