@@ -71,18 +71,24 @@ struct KeyMapView: View {
                 HStack{
                 Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
                 Spacer()
-                    let PressedVal = FuncNumToText()
-                    let _ = PressedVal.FlagNumToString(Val: Int(DictKey[i].components(separatedBy: "|")[1])!)
+                    let PressedFlagString = GetFlags(Val: UInt(DictKey[i].components(separatedBy: "|")[1])!)
                     HStack{
-                        Text(PressedVal.ReturnVal.rawValue)
-                        Text(KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
+                        Text(PressedFlagString)
+                        if KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!] != nil {
+                            Text(KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
+                        }else {
+                            Text(DictKey[i].components(separatedBy: "|")[0])
+                        }
                     }.frame(width: 250, alignment: .trailing)
                     Text(":")
-                    let ReturnVal = FuncNumToText()
-                    let _ = ReturnVal.FlagNumToString(Val: Int(Content.EventDict[DictKey[i]]!.FlagNum))
+                    let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.FlagNum))
                     HStack{
-                     Text(KeyMaps[Array(Content.EventDict.values)[i].keys]!)
-                    Text(ReturnVal.ReturnVal.rawValue)
+                        if KeyMaps[Array(Content.EventDict.values)[i].keys] != nil{
+                            Text(KeyMaps[Array(Content.EventDict.values)[i].keys]!)
+                        }else{
+                            Text(String(Array(Content.EventDict.values)[i].keys))
+                        }
+                    Text(ReturnFlagString)
                     }.frame(width: 250, alignment: .leading)
                 Spacer()
                 }

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ArrayFlags.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Switcher-SwitcherUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>

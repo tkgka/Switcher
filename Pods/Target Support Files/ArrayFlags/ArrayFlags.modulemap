@@ -1,0 +1,6 @@
+framework module ArrayFlags {
+  umbrella header "ArrayFlags-umbrella.h"
+
+  export *
+  module * { export * }
+}

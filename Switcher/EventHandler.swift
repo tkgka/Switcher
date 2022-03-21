@@ -26,20 +26,17 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              event.modifierFlags.rawValue == 1048848 || // left command key down
              event.modifierFlags.rawValue == 1048856) && (KeyDict.keys.contains(UInt16(event.keyCode)) == false || (KeyDict.keys.contains(UInt16(event.keyCode)) == true && KeyMap == false) )){ // both command key down
                  return IsAlertOn(cgEvent: cgEvent)
-         
          }
          
          if ObservedObjects.PressedKey == "Waiting"{
-             let FuncNumToText = FuncNumToText()
-             FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FuncNumToText.ReturnVal.rawValue + String(event.keyCode))
+             let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FlagString + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FlagString + String(event.keyCode))
              ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(event: event)
              return nil
          }
          if ObservedObjects.ReturnKey == "Waiting"{
-             let FuncNumToText = FuncNumToText()
-             FuncNumToText.FlagNumToString(Val: Int(event.modifierFlags.rawValue))
-             KeyMaps[event.keyCode] != nil ? (ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FuncNumToText.ReturnVal.rawValue) : (ObservedObjects.ReturnKey = String(event.keyCode) + FuncNumToText.ReturnVal.rawValue)
+             let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FlagString) : (ObservedObjects.ReturnKey = FlagString + String(event.keyCode))
              ObservedObjects.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
              return nil
          }
@@ -48,7 +45,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              let value:EventStruct = ObservedObjects.EventDict[PressedKeyEventStringMaker(event: event)]!
              let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
              return ReturnValue.cgEvent
-//             return CreateCGEvent(event: EventDict[PressedKeyEventStringMaker(event: event)]!, timestamp: cgEvent.timestamp, KeyDown: keyDown[event.type]!)
          }
         else {
             return cgEvent }

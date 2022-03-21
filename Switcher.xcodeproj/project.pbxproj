@@ -24,6 +24,7 @@
 		F97D4D912788419100FBC5AD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
 		F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* EventHandler.swift */; };
 		F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189E27D8ADB300FA5726 /* Extensions.swift */; };
+		F999DF8227E84FC3006E6391 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* TestView.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
@@ -469,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F999DF8227E84FC3006E6391 /* TestView.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,

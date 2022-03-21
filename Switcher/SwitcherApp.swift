@@ -42,12 +42,12 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         popOver.contentViewController?.view = NSHostingView(rootView: MenuView())
         popOver.contentSize = NSSize(width: 360, height: 800)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
         if let MenuButton = statusItem?.button{
+            
             MenuButton.image = NSImage(named: "IMG")
+            MenuButton.image?.isTemplate = true  // change image color to surrounding environment
             MenuButton.action = #selector(MenuButtonToggle)
         }
-
     }
     
     
@@ -58,7 +58,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
             }else{
                     //Top Get Button Location for popover arrow
                 self.popOver.show(relativeTo: (statusItem?.button!.bounds)!, of: (statusItem?.button!)!, preferredEdge: NSRectEdge.minY)
-                
             }
     }
     
