@@ -79,7 +79,7 @@ func GetFlags(Val:UInt) -> String{
     var FlagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 10486016 {
-            FlagString += FlagMaps[Int($0)]! + ","
+            FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ","
         }
     }
     FlagString = FlagString.trimmingCharacters(in: [","]) + "]"
