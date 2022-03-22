@@ -10,6 +10,7 @@
 		1E4068A765232BD6ED93070D /* Pods_Switcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0284D33547AB46888C30E5C /* Pods_Switcher.framework */; };
 		2199060D0419893AEFAA93D5 /* Pods_SwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */; };
 		C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */; };
+		F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */; };
 		F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ECBA027C942DC00C43482 /* KeyMapView.swift */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F950052A279AC7D7006807F8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
@@ -57,6 +58,7 @@
 		A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.release.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
 		B0284D33547AB46888C30E5C /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectPickerView.swift; sourceTree = "<group>"; };
 		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F9500529279AC7D7006807F8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 				F9E6F1A627E35B930017C81F /* TestView.swift */,
+				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			files = (
 				F999DF8227E84FC3006E6391 /* TestView.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
+				F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
 				F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */,

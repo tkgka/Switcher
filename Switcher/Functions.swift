@@ -67,8 +67,8 @@ func SetKeyMapValue(){
     }
 }
 
-func PressedKeyEventStringMaker(event:NSEvent) -> String{
-    return String(event.keyCode) + "|" + String(event.modifierFlags.rawValue)
+func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
+    return String(keycode) + "|" + String(Flag)
 }
 
 
@@ -82,6 +82,16 @@ func GetFlags(Val:UInt) -> String{
             FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ","
         }
     }
-    FlagString = FlagString.trimmingCharacters(in: [","]) + "]"
+    FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")
     return FlagString
+}
+
+
+func ArrayToFlagVal(val:[UInt]) -> UInt{
+    var returnVal:UInt = 0
+    val.forEach{
+        returnVal += $0 - 256
+    }
+    returnVal < 0 ? (returnVal = 0) : nil
+    return returnVal + 256
 }

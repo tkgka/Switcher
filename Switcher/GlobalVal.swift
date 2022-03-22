@@ -105,7 +105,6 @@ let KeyMaps:[UInt16:String] = [
     0x3F:"Fn",
 ]
 
-let Flags = ["Any", "􀆝", "􀆍","􀆕","􀆔","Fn"]
 let FlagMaps: [UInt: [String]] =
 [
     256:["Default","Default"],
@@ -126,28 +125,13 @@ let FlagMaps: [UInt: [String]] =
     10486016:["Arrow","Arrow"]
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let keyDown:[NSEvent.EventType:Bool] = [.keyDown:true, .keyUp:false]
 
 
 
 class ObservableList: ObservableObject {
+    @Published var PressedKeyList:[UInt] = []
+    @Published var ReturnKeyList:[UInt] = []
     @Published var PressedKey: String = "PressedKey"
     @Published var ReturnKey: String = "Returnkey"
     @Published var PressedKeyEvent: String?
