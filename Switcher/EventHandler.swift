@@ -31,7 +31,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
          if ObservedObjects.PressedKey == "Waiting"{
              let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
              KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FlagString + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FlagString + String(event.keyCode))
-             print(event.modifierFlags.rawValue)
              ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)
              return nil
          }
@@ -50,10 +49,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         else {
             return cgEvent }
         
-     }else if (event.type == .flagsChanged && KeyMap == true){
-        return cgEvent
-        
-    }else  if event.type == .scrollWheel && MouseWheel == true{
+     }else  if event.type == .scrollWheel && MouseWheel == true{
         AlertIsOn = false
                 if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
                     return CGEvent(scrollWheelEvent2Source: nil, units: CGScrollEventUnit.pixel, wheelCount: 1, wheel1: Int32(event.deltaY * -10), wheel2: 0, wheel3: 0)

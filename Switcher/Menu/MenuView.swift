@@ -143,7 +143,7 @@ struct MenuView: View {
                     .frame(alignment: .leading)
                     .padding(.bottom, 15.0)
                     .onTapGesture{
-                    TestView().openInWindow(title: "KeyMap", sender: self)
+                    MainKeyMapView().openInWindow(title: "KeyMap", sender: self)
                     }
                 }
                 }

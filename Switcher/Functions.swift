@@ -78,8 +78,8 @@ func GetFlags(Val:UInt) -> String{
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
-        if $0 < 10486016 {
-            FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ","
+        if $0 < 10486016 && FlagMaps[UInt($0)] != nil {
+            FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
         }
     }
     FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")

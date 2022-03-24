@@ -11,55 +11,6 @@ struct KeyMapView: View {
     @ObservedObject var Content = ObservedObjects
     var body: some View {
         VStack{
-
-            HStack{
-                ZStack{
-                   Text("Remove")
-                        .padding(7)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 2)
-                        )
-                        .padding([.top, .bottom] , 2)
-                    } .onTapGesture(count: 1, perform: {
-                        for (index, value) in isChecked.enumerated().reversed(){
-                            if(value == true){
-                                RemoveDataToEventDict(index: index)
-                                
-                            }
-                        }
-                    }).frame(width: 100)
-                    
-            Spacer()
-        VStack{
-            Text(Content.PressedKey)
-                .onTapGesture{
-                    (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
-                }
-            }.frame(width: 250, alignment: .trailing)
-        Text("->")
-        VStack{
-            Text(Content.ReturnKey)
-                .onTapGesture{
-                    (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
-                }
-        }.frame(width: 250, alignment: .leading)
-                Spacer()
-                ZStack{
-               Text("Add item")
-                        .padding(7)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 2)
-                        )
-                        .padding(.trailing , 8.0)
-                }.onTapGesture(count: 1, perform: {
-                    if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
-                        appendDataToEventDict()                        
-                    }
-                }).frame(width: 100)
-    }
-.padding([.top], 20.0)
             Divider()
             List {
             
@@ -93,27 +44,57 @@ struct KeyMapView: View {
                 Spacer()
                 }
                 }
-            }
+            }.padding([.top], 20.0)
         }
     }
-    }.frame(width: 1200, height: 500, alignment: .center)
+    }.frame(width: 1200, height: 450, alignment: .center)
 }
-    
-    
-func appendDataToEventDict(){
-    Content.PressedKey = "PressedKey"
-    Content.ReturnKey = "ReturnKey"
-    Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
-    isChecked.append(false)
-    Content.PressedKeyEvent = nil
-    Content.ReturnKeyEvent = nil
-    UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
 }
 
-func RemoveDataToEventDict(index:Int) {
-    Content.EventDict.removeValue(forKey: Array(Content.EventDict.keys)[index])
-    isChecked.remove(at: index)
-    UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
+
+
+
+struct ViewData: Identifiable {
+  let id = UUID().uuidString
+  let name: String
 }
-    
+
+final class ViewModel: ObservableObject {
+  init(Datas: [ViewData] = ViewModel.defaultDatas) {
+    self.Datas = Datas
+    self.selectedId = Datas[0].id
+  }
+  @Published var Datas: [ViewData]
+  @Published var selectedId: String?
+  static let defaultDatas: [ViewData] = ["Key", "Button"].map({ ViewData(name: $0) })
+}
+
+
+
+struct MainKeyMapView: View {
+  @StateObject var viewModel = ViewModel()
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(viewModel.Datas) { item in
+          NavigationLink(item.name, tag: item.id, selection: $viewModel.selectedId) {
+              
+              VStack{
+                  if item.name == viewModel.Datas[0].name{
+                      KeyInputView()
+                  }
+                  else if item.name == viewModel.Datas[1].name{
+                      KeyInputListView()
+                  }
+                  KeyMapView()
+              
+              }
+          }
+        }
+      }
+      .listStyle(.sidebar)
+            
+      Text("No selection")
+    }.frame(width: 1350, height: 520)
+  }
 }
