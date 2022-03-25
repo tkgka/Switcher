@@ -122,7 +122,7 @@ let FlagMaps: [UInt: [String]] =
     1048848:["􀆔","R"],
     1048856:["􀆔","B"],
     8388864:["FN","FN"],
-//    10486016:["Arrow","Arrow"]
+    10486016:["Arrow","Arrow"]
 ]
 
 let keyDown:[NSEvent.EventType:Bool] = [.keyDown:true, .keyUp:false]
