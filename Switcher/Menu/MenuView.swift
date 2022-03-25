@@ -6,7 +6,6 @@
 // UI Design from " https://github.com/mik3sw/OneClick"
 
 import SwiftUI
-
 struct MenuView: View {
     @AppStorage("CMDQ") var CMDQToggle: Bool = UserDefaults.standard.bool(forKey: "CMDQ")
     @AppStorage("MouseWheel") var MouseWheelToggle: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
@@ -144,7 +143,7 @@ struct MenuView: View {
                     .frame(alignment: .leading)
                     .padding(.bottom, 15.0)
                     .onTapGesture{
-                    KeyMapView().openInWindow(title: "KeyMap", sender: self)
+                    MainKeyMapView().openInWindow(title: "KeyMap", sender: self)
                     }
                 }
                 }
@@ -170,10 +169,7 @@ struct MenuView: View {
                 .padding(.top, 15.0)
                 .padding(.bottom, 10.0)
                 .frame(alignment: .leading)
-                
             }
-            
-//            defaults write com.apple.finder CreateDesktop false killall Finder
             
             
     }

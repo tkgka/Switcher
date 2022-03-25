@@ -7,33 +7,35 @@
 
 import SwiftUI
 import AlertPopup
+import ArrayFlags
+
 extension View {
-    @discardableResult
+    //    @discardableResult
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        let win = self.setWindow()
-        win.title = title
-        win.makeKeyAndOrderFront(sender)
-        win.orderFrontRegardless()
-        return win
+        weak var win = NSWindow(contentViewController: NSHostingController(rootView: self))
+        win!.title = title
+        win!.makeKeyAndOrderFront(sender)
+        win!.orderFrontRegardless()
+        return win!
     }
 }
+
 func AlertPopupTimeout(){
     DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
+        currentWindow?.close()
         AlertIsOn = false
     }
 }
 
-func CreateEvent(event:NSEvent, cgEvent:CGEvent, dic:[UInt16 : [UInt16]], index:Int, keyDown:Bool) -> CGEvent{
-    let Event = CGEvent(keyboardEventSource: nil, virtualKey: dic[UInt16(event.keyCode)]![index], keyDown: keyDown);
-    Event?.timestamp = cgEvent.timestamp
-        FlagMaps["Fn"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = .maskSecondaryFn) : nil
-        FlagMaps["Any"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = cgEvent.flags) : nil
-        FlagMaps["􀆝"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = .maskShift) : nil
-        FlagMaps["􀆍"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = .maskControl) : nil
-        FlagMaps["􀆕"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = .maskAlternate) : nil
-        FlagMaps["􀆔"]!.contains(dic[UInt16(event.keyCode)]![index+1]) ? (Event?.flags = .maskCommand) : nil
+
+func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
+    weak var Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
     return Event!
 }
+
+
+
+weak var currentWindow:NSWindow? = nil
 
 func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
     if (AlertIsOn == true) {
@@ -41,7 +43,7 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
         return cgEvent
     }else{
         if currentWindow != nil{
-            closeWindow(window: currentWindow!)
+            currentWindow!.close()
             currentWindow = nil
         }
         currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Enter 􀆔q again \nto shutdown app", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
@@ -53,27 +55,43 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
 
 
 func SetKeyMapValue(){
-    IsflagsChanged.removeAll()
-    KeyDict.removeAll()
-    for (index, value) in ListOfKeyMap.enumerated().reversed(){
-        if((value[0] == "" || value[2] == "") || (KeyDict[KeyMaps[value[0]]!] != nil)){
-            if FlagMaps[value[1]]![0] == 0x00 { // if Keys Flag == Any
-                ListOfKeyMap.removeAll(where: {$0[0] == value[0] && $0 != value})
-                IsChecked.remove(at: index)
-            }
-            else if (FlagMaps[value[1]]![0] == KeyDict[KeyMaps[value[0]]!]![0] || KeyDict[KeyMaps[value[0]]!]![0] == 0x00){
-                ListOfKeyMap.remove(at: index)
-                IsChecked.remove(at: index)
-            }
-        }else{
-            KeyDict[KeyMaps[value[0]]!] = [FlagMaps[value[1]]![0],FlagMaps[value[1]]![1],KeyMaps[value[2]]!,KeyMaps[value[3]]!] // (0,1): keysFlag, 2: MappedKeyVal, 3: MappedKeysFlag
-        }
+    if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
+        ObservedObjects.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
     if IsChecked.count != ListOfKeyMap.count {
         IsChecked.removeAll()
-        for _ in (1...ListOfKeyMap.count){
+        for _ in (0...ListOfKeyMap.count){
             IsChecked.append(false)
         }
         ListOfKeyMap = Array(Set(ListOfKeyMap))
     }
+}
+
+func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
+    return String(keycode) + "|" + String(Flag)
+}
+
+
+
+
+func GetFlags(Val:UInt) -> String{
+    let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
+    var FlagString:String = "["
+    ArrayedFlag.forEach {
+        if $0 < 20486016 && FlagMaps[UInt($0)] != nil {
+            FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+        }
+    }
+    FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")
+    return FlagString
+}
+
+
+func ArrayToFlagVal(val:[UInt]) -> UInt{
+    var returnVal:UInt = 0
+    val.forEach{
+        returnVal += $0 - 256
+    }
+    returnVal < 0 ? (returnVal = 0) : nil
+    return returnVal + 256
 }

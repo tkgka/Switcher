@@ -8,7 +8,7 @@ target 'Switcher' do
   # Pods for Switcher
 
     pod "AlertPopup", "~> 1.0.2"
-
+    pod "ArrayFlags"
   target 'SwitcherTests' do
     inherit! :search_paths
     # Pods for testing

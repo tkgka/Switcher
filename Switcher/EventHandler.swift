@@ -1,7 +1,7 @@
 import Cocoa
 import SwiftUI
 import AlertPopup
-var currentWindow:NSWindow?
+
 
 class Wrapper {
   var state: State?
@@ -18,7 +18,7 @@ class Wrapper {
 
   }
 }
-var FlagKey:[UInt16]! = [0x00]
+
 func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
      if((event.type == .keyUp || event.type == .keyDown)){
          if ((event.type == .keyDown && CMDQ == true) && event.keyCode == 12 && ( // P key down
@@ -26,21 +26,31 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              event.modifierFlags.rawValue == 1048848 || // left command key down
              event.modifierFlags.rawValue == 1048856) && (KeyDict.keys.contains(UInt16(event.keyCode)) == false || (KeyDict.keys.contains(UInt16(event.keyCode)) == true && KeyMap == false) )){ // both command key down
                  return IsAlertOn(cgEvent: cgEvent)
-             
-         }else if (KeyDict.keys.contains(UInt16(event.keyCode)) && (FlagKey.contains(KeyDict[UInt16(event.keyCode)]![0]) || FlagKey.contains(KeyDict[UInt16(event.keyCode)]![1]) || KeyDict[UInt16(event.keyCode)]![0] == 0x00) && KeyMap == true){
-            let Event = CreateEvent(event: event, cgEvent: cgEvent, dic: KeyDict, index: 2, keyDown: (event.type == .keyUp ? false : true)) // index 2 = mapped keys value, index 3 = mapped keys flag
-             if (NSEvent(cgEvent: Event)?.keyCode == 12 && cgEvent.type == .keyDown && (Event.flags == .maskCommand || Event.flags.rawValue == 1048840 || Event.flags.rawValue == 1048848 || Event.flags.rawValue == 1048856)){
-                return IsAlertOn(cgEvent: Event)
-            }
-        return Event
-        }
-        else { return cgEvent }
+         }
+         
+         if ObservedObjects.PressedKey == "Waiting"{
+             let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.PressedKey = FlagString + KeyMaps[event.keyCode]!) : (ObservedObjects.PressedKey = FlagString + String(event.keyCode))
+             ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)
+             return nil
+         }
+         if ObservedObjects.ReturnKey == "Waiting"{
+             let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
+             KeyMaps[event.keyCode] != nil ? (ObservedObjects.ReturnKey = KeyMaps[event.keyCode]! + FlagString) : (ObservedObjects.ReturnKey = FlagString + String(event.keyCode))
+             ObservedObjects.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
+             return nil
+         }
+         
+         if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && KeyMap == true {
+             let value:EventStruct = ObservedObjects.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]!
+             let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
+             return ReturnValue.cgEvent
+         }
+        else {
+            return cgEvent }
         
-    }else if (event.type == .flagsChanged && KeyMap == true){
-        FlagKey!.contains(UInt16(exactly: event.keyCode)!) == true ? FlagKey?.removeAll(where: { $0 == UInt16(event.keyCode) }) : (FlagKey?.append(UInt16(event.keyCode)))
-        return cgEvent
-        
-    }else  if event.type == .scrollWheel && MouseWheel == true{
+     }else  if event.type == .scrollWheel && MouseWheel == true{
+        AlertIsOn = false
                 if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
                     return CGEvent(scrollWheelEvent2Source: nil, units: CGScrollEventUnit.pixel, wheelCount: 1, wheel1: Int32(event.deltaY * -10), wheel2: 0, wheel3: 0)
                 }
@@ -50,7 +60,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             }
     
  else {
-    event.type == .keyDown ? AlertIsOn = false : nil
+    event.type != .keyUp ? AlertIsOn = false : nil
     return cgEvent
   }
 }
