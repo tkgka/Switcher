@@ -30,7 +30,7 @@ struct KeyMapView: View {
                         }else {
                             Text(DictKey[i].components(separatedBy: "|")[0])
                         }
-                    }.frame(width: 250, alignment: .trailing)
+                    }.frame(width: 235, alignment: .trailing)
                     Text(":")
                     let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.FlagNum))
                     HStack{
@@ -66,7 +66,7 @@ final class ViewModel: ObservableObject {
   }
   @Published var Datas: [ViewData]
   @Published var selectedId: String?
-  static let defaultDatas: [ViewData] = ["Key", "Button"].map({ ViewData(name: $0) })
+  static let defaultDatas: [ViewData] = ["Key", "Picker"].map({ ViewData(name: $0) })
 }
 
 

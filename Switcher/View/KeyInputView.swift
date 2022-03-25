@@ -184,7 +184,7 @@ VStack{
             (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
         }
     }.frame(width: 250, alignment: .trailing)
-Text("->")
+Text(":")
 VStack{
     Text(Content.ReturnKey)
         .onTapGesture{
