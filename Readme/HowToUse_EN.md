@@ -25,6 +25,12 @@ can operate function by toggle from menubar icon to use it
 
 ![image](https://user-images.githubusercontent.com/52348220/156359072-208fa9a2-b867-48be-8868-856c0f99106c.png)
 
+select pressed key & return key and press "Add Item" Button to Key mapping
+![image](https://user-images.githubusercontent.com/52348220/160222970-4be9953a-e04a-4f56-835d-2e2d2b21575a.png)
+
+click toggle button beside you want to remove and click "Remove" Button to remove the mapped key
+![image](https://user-images.githubusercontent.com/52348220/160223031-b2dedd93-e9c9-4794-aa4c-326badb5fba1.png)
+
 
 Add Application to "Users & Groups > Login Items" to open it when system starts
 
