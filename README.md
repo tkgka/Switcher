@@ -8,8 +8,16 @@ press command + q twice to shutdown app
 ![](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
 
 
+support Key mapping
+
+
+https://user-images.githubusercontent.com/52348220/160222851-68759635-4f0f-412d-aa45-8d11464fd028.mov
+
+
+
 change mouse Wheel direction
 
 
 ## 💾 [Download](https://github.com/tkgka/Switcher/releases) 
 check introduction <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse_EN.md"> here </a>
+
