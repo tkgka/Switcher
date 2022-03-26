@@ -5,6 +5,11 @@ command + q 명령어를 두번 입력한 경우에만 동작하도록 설정할
 ![](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
 
 
+키를 매핑할 수 있습니다.
+
+https://user-images.githubusercontent.com/52348220/160222851-68759635-4f0f-412d-aa45-8d11464fd028.mov
+
+
 마우스휠과 트랙패드의 스크롤 방향을 다르게 할지 여부를 결정할 수 있습니다.
 
 
