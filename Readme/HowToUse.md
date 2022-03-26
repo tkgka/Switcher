@@ -21,7 +21,22 @@ Release 된 앱을 설치 합니다.
 
 메뉴바 아이콘의 토글을 이용하여 각 기능의 사용 여부를 개별적으로 선택할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/52348220/149321446-0134261f-6030-4433-82ef-471b724e3426.png)
+![image](https://user-images.githubusercontent.com/52348220/160223229-52f6f515-fa48-4844-9135-2ecbc003f83a.png)
+
+
+### KeyMapper
+설정 창을 엽니다
+
+![image](https://user-images.githubusercontent.com/52348220/160223091-bbbcbadc-75f9-4379-bb92-3e35c3f1b555.png)
+
+"입력 키와 반환 키를 입력 후 "Add Item" 버튼을 클릭하여 키를 매핑할 수 있습니다.
+![image](https://user-images.githubusercontent.com/52348220/160222970-4be9953a-e04a-4f56-835d-2e2d2b21575a.png)
+
+삭제하고 싶은 매핑된 키 옆의 토클을 선택 후 "Remove" 버튼을 클릭하여 매핑된 키를 삭제할 수 있습니다.
+![image](https://user-images.githubusercontent.com/52348220/160223031-b2dedd93-e9c9-4794-aa4c-326badb5fba1.png)
+
+
+
 
 "사용자 및 그룹" -> "로그인 항목" 에 어플리케이션을 추가하여 로그인 시 자동으로 시작되도록 설정할 수 있습니다.
 
