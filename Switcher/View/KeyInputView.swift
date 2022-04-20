@@ -57,7 +57,7 @@ struct KeyInputListView: View {
                     }
                 }
             }
-            }.frame(width: 80)
+            }.frame(width: 50)
             VStack{
                 Form {
                     Section {
@@ -68,7 +68,7 @@ struct KeyInputListView: View {
                         }
                     }
                 }
-        }.frame(width: 100)
+        }.frame(width: 80)
             Text(":")
     VStack{
             Form {
@@ -94,7 +94,7 @@ struct KeyInputListView: View {
                     }
                 }
             }
-            }.frame(width:80)
+            }.frame(width:50)
     VStack{
         Form {
             Section {
@@ -105,7 +105,7 @@ struct KeyInputListView: View {
                 }
             }
         }
-    }.frame(width: 100)
+    }.frame(width: 80)
             Spacer()
             ZStack{
            Text("Add item")
@@ -180,17 +180,19 @@ struct KeyInputView: View {
     Spacer()
 VStack{
     Text(Content.PressedKey)
+        .font(.system(size: 13, weight: .semibold))
         .onTapGesture{
             (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
         }
-    }.frame(width: 250, alignment: .trailing)
+    }.frame(width: 180, alignment: .trailing)
 Text(":")
 VStack{
     Text(Content.ReturnKey)
+        .font(.system(size: 13, weight: .semibold))
         .onTapGesture{
             (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
         }
-}.frame(width: 250, alignment: .leading)
+}.frame(width: 180, alignment: .leading)
         Spacer()
         ZStack{
        Text("Add item")

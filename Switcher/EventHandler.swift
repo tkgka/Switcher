@@ -46,8 +46,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
              return ReturnValue.cgEvent
          }
-        else {
-            return cgEvent }
+        else { return cgEvent }
         
      }else  if event.type == .scrollWheel && MouseWheel == true{
         AlertIsOn = false

@@ -7,6 +7,8 @@
 import Foundation
 import AppKit
 
+var KeyMapWindow:NSWindow? = nil
+
 var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
 var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
 var KeyMap:Bool = UserDefaults.standard.bool(forKey: "KeyMap")
