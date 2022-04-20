@@ -31,6 +31,7 @@ struct KeyMapView: View {
                             Text(DictKey[i].components(separatedBy: "|")[0])
                         }
                     }.frame(width: 235, alignment: .trailing)
+                    .font(.system(size: 13, weight: .semibold))
                     Text(":")
                     let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.FlagNum))
                     HStack{
@@ -41,13 +42,14 @@ struct KeyMapView: View {
                         }
                     Text(ReturnFlagString)
                     }.frame(width: 250, alignment: .leading)
+                    .font(.system(size: 13, weight: .semibold))
                 Spacer()
                 }
                 }
             }.padding([.top], 20.0)
         }
     }
-    }.frame(width: 1200, height: 450, alignment: .center)
+    }.frame(width: 600, height: 350, alignment: .center)
 }
 }
 
@@ -95,6 +97,6 @@ struct MainKeyMapView: View {
       .listStyle(.sidebar)
             
       Text("No selection")
-    }.frame(width: 1350, height: 520)
+    }.frame(width: 750, height: 420)
   }
 }

@@ -97,5 +97,11 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         CGEvent.tapEnable(tap: eventTap, enable: true)
       }
     }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        KeyMapWindow != nil ? (KeyMapWindow = nil) : nil
+        return false
+    }
+    
   }
 
