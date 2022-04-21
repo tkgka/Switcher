@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let MenuButton = statusItem?.button{
             
-            MenuButton.image = NSImage(named: "IMG")
+            MenuButton.image = NSImage(named: "Image")
             MenuButton.image?.isTemplate = true  // change image color to surrounding environment
             MenuButton.action = #selector(MenuButtonToggle)
         }
