@@ -25,11 +25,11 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         if ObservedObjects.PressedKey == "Waiting"{
             let FlagString = GetFlags(Val: event.modifierFlags.rawValue + 256)
             KeyMaps[MouseBtnNum(val: event.buttonNumber)] != nil ? (ObservedObjects.PressedKey = FlagString + KeyMaps[MouseBtnNum(val: event.buttonNumber)]!) : (ObservedObjects.PressedKey = "\(FlagString) \(String(MouseBtnNum(val: event.buttonNumber)))")
-            ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue)
+            ObservedObjects.PressedKeyEvent = PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue + 256)
             return nil
         }
         
-        if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue)) && KeyMap == true {
+        if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue + 256)) && KeyMap == true {
             let value:EventStruct = ObservedObjects.EventDict[PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue)]!
             let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
             return ReturnValue.cgEvent
