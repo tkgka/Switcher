@@ -29,7 +29,7 @@ func AlertPopupTimeout(){
 
 
 func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
-    if (event.type.rawValue != 10 || event.type.rawValue != 11) { // event type != keyDown || event type != keyup
+    if (event.type.rawValue == 25 || event.type.rawValue == 26) { // event type != keyDown || event type != keyup
         weak var Event = NSEvent.keyEvent(with: .init(rawValue: event.type.rawValue - 15)!, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: false, keyCode: KeyCode)
         return Event!
     }
