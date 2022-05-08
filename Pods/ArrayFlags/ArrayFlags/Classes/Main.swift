@@ -48,7 +48,9 @@ public class ArrayFlag{
             return ArrayedFlagNum(Val: Val - 65792 + 256)
         }
         else {
+            if Val > 0 {
             FlagLoc(Val: Val-256)
+            }
         }
     }
     

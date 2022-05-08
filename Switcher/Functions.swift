@@ -29,10 +29,14 @@ func AlertPopupTimeout(){
 
 
 func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
+    if (event.type.rawValue != 10 || event.type.rawValue != 11) { // event type != keyDown || event type != keyup
+        weak var Event = NSEvent.keyEvent(with: .init(rawValue: event.type.rawValue - 15)!, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: false, keyCode: KeyCode)
+        return Event!
+    }
     weak var Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
     return Event!
 }
-
+//event type, isARepeat
 
 
 weak var currentWindow:NSWindow? = nil
@@ -94,4 +98,8 @@ func ArrayToFlagVal(val:[UInt]) -> UInt{
     }
     returnVal < 0 ? (returnVal = 0) : nil
     return returnVal + 256
+}
+
+func MouseBtnNum(val:Int) -> UInt16 {
+    return UInt16(1000 + val) //mouse button num이 기존 키 패드의 num과 겹치지 않도록 큰 값으로 지정함
 }

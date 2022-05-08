@@ -105,6 +105,8 @@ let KeyMaps:[UInt16:String] = [
     0x3A:"􀆕",
     0x36:"􀆔",
     0x3F:"Fn",
+    0x3eb: "MBtn3",
+    0x3ec: "MBtn4",
 ]
 
 let FlagMaps: [UInt: [String]] =

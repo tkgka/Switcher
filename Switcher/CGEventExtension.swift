@@ -29,7 +29,7 @@ extension CGEventType {
     case .tabletPointer: return "CGEventType.tabletPointer"
     case .tabletProximity: return "CGEventType.tabletProximity"
     case .otherMouseDown: return "CGEventType.otherMouseDown"
-    case .otherMouseUp: return "CGEventType.otherMouseUp"
+    case .otherMouseUp: return "CGEventType.otherMouseUpbbb"
     case .otherMouseDragged: return "CGEventType.otherMouseDragged"
     case .tapDisabledByTimeout: return "CGEventType.tapDisabledByTimeout"
     case .tapDisabledByUserInput: return "CGEventType.tapDisabledByUserInput"
