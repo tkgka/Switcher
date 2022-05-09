@@ -14,6 +14,9 @@
 		F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ECBA027C942DC00C43482 /* KeyMapView.swift */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F950052A279AC7D7006807F8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
+		F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBA282922620024F03D /* KeySelecterView.swift */; };
+		F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
+		F9743DC0282927620024F03D /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
 		F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* ContentView.swift */; };
 		F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
@@ -23,7 +26,7 @@
 		F97D4D7527883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D7427883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift */; };
 		F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */; };
 		F97D4D912788419100FBC5AD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
-		F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* EventHandler.swift */; };
+		F97D4D9327885EA000FBC5AD /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */; };
 		F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189E27D8ADB300FA5726 /* Extensions.swift */; };
 		F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* KeyInputView.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
@@ -62,6 +65,9 @@
 		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F9500529279AC7D7006807F8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		F9743DBA282922620024F03D /* KeySelecterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySelecterView.swift; sourceTree = "<group>"; };
+		F9743DBD282925B20024F03D /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
+		F9743DBF282927620024F03D /* KeyMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapController.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
 		F97D4D5827883B0900FBC5AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D7227883B0B00FBC5AD /* SwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherUITests.swift; sourceTree = "<group>"; };
 		F97D4D7427883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F97D4D8B2788413F00FBC5AD /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -135,6 +141,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F9743DB9282921940024F03D /* KeyInput */ = {
+			isa = PBXGroup;
+			children = (
+				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
+				F9743DBF282927620024F03D /* KeyMapController.swift */,
+				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
+				F9E6F1A627E35B930017C81F /* KeyInputView.swift */,
+				F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */,
+				F9743DBA282922620024F03D /* KeySelecterView.swift */,
+				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
+			);
+			path = KeyInput;
+			sourceTree = "<group>";
+		};
+		F9743DBC282922E10024F03D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F989189E27D8ADB300FA5726 /* Extensions.swift */,
+				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F97D4D4A27883B0900FBC5AD = {
 			isa = PBXGroup;
 			children = (
@@ -165,10 +194,7 @@
 				F9BAFD75278AF8EC00990607 /* Command */,
 				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
 				F9500529279AC7D7006807F8 /* Functions.swift */,
-				F989189E27D8ADB300FA5726 /* Extensions.swift */,
-				F97D4D8F2788418200FBC5AD /* Menu */,
-				F97D4D8B2788413F00FBC5AD /* EventHandler.swift */,
-				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
+				F9743DBC282922E10024F03D /* Extensions */,
 				F989189B27D60C4000FA5726 /* View */,
 				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
@@ -214,11 +240,10 @@
 		F989189B27D60C4000FA5726 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F97D4D8F2788418200FBC5AD /* Menu */,
+				F9743DB9282921940024F03D /* KeyInput */,
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
-				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
-				F9E6F1A627E35B930017C81F /* KeyInputView.swift */,
-				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,8 +499,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */,
+				F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */,
+				F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
 				F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */,
@@ -483,9 +510,10 @@
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
 				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
+				F9743DC0282927620024F03D /* KeyMapController.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
 				F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */,
-				F97D4D9327885EA000FBC5AD /* EventHandler.swift in Sources */,
+				F97D4D9327885EA000FBC5AD /* KeyInputController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
