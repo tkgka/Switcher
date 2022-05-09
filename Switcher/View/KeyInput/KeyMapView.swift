@@ -86,7 +86,7 @@ struct MainKeyMapView: View {
                       KeyInputView()
                   }
                   else if item.name == viewModel.Datas[1].name{
-                      KeyInputListView()
+                      KeySelecterView()
                   }
                   KeyMapView()
               

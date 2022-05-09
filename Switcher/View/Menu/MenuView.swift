@@ -7,9 +7,7 @@
 
 import SwiftUI
 struct MenuView: View {
-    @AppStorage("CMDQ") var CMDQToggle: Bool = UserDefaults.standard.bool(forKey: "CMDQ")
-    @AppStorage("MouseWheel") var MouseWheelToggle: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
-    @AppStorage("KeyMap") var KeyMapToggle: Bool = UserDefaults.standard.bool(forKey: "KeyMap")
+    @ObservedObject var ObserveToggles = ObservedToggles
     
     var body: some View {
         VStack( alignment: .leading, spacing: 0){
@@ -41,15 +39,13 @@ struct MenuView: View {
                         
                     
                     if #available(macOS 11.0, *) {
-                        Toggle("", isOn: $CMDQToggle)
+                        Toggle("", isOn: $ObserveToggles.CMDQ)
                             .toggleStyle(.switch)
                             .frame(alignment: .leading)
                             .padding(.top, 15.0)
                     } else {
                         // Fallback on earlier versions
                     }
-                }.onChange(of: CMDQToggle) { CMDQToggle in
-                    CMDQ = CMDQToggle
                 }
             Text("press command + q twice to shutdown App")
                 .font(Font.system(size: 12.0))
@@ -79,15 +75,13 @@ struct MenuView: View {
                             
                         
                         if #available(macOS 11.0, *) {
-                            Toggle("", isOn: $MouseWheelToggle)
+                            Toggle("", isOn: $ObserveToggles.MouseWheel)
                                 .toggleStyle(.switch)
                                 .frame(alignment: .leading)
                                 .padding(.top, 15.0)
                         } else {
                             // Fallback on earlier versions
                         }
-                    }.onChange(of: MouseWheelToggle) { MouseWheelToggle in
-                        MouseWheel = MouseWheelToggle
                     }
                 Text("Change Mouse Wheel Direction")
                     .font(Font.system(size: 12.0))
@@ -116,15 +110,13 @@ struct MenuView: View {
                         
                     
                     if #available(macOS 11.0, *) {
-                        Toggle("", isOn: $KeyMapToggle)
+                        Toggle("", isOn: $ObserveToggles.KeyMap)
                             .toggleStyle(.switch)
                             .frame(alignment: .leading)
                             .padding(.top, 15.0)
                     } else {
                         // Fallback on earlier versions
                     }
-                }.onChange(of: KeyMapToggle) { CMDQToggle in
-                    KeyMap = KeyMapToggle
                 }
             HStack{
             Text("Mapping key input and output")
