@@ -163,7 +163,15 @@ struct MenuView: View {
                 .frame(alignment: .leading)
             }
             
-            
+            .onChange(of: ObserveToggles.CMDQ) { CMDQ in
+                UserDefaults.standard.set(CMDQ, forKey: "CMDQ")
+            }
+            .onChange(of: ObserveToggles.MouseWheel) { MouseWheel in
+                UserDefaults.standard.set(MouseWheel, forKey: "MouseWheel")
+            }
+            .onChange(of: ObserveToggles.KeyMap) { KeyMap in
+                UserDefaults.standard.set(KeyMap, forKey: "KeyMap")
+            }
     }
         
     }

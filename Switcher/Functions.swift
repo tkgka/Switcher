@@ -44,7 +44,7 @@ weak var currentWindow:NSWindow? = nil
 func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
     if (AlertIsOn == true) {
         AlertIsOn = false
-        return cgEvent
+        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
     }else{
         if currentWindow != nil{
             currentWindow!.close()

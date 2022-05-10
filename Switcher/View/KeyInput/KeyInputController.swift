@@ -37,12 +37,10 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
        else { return cgEvent }
     }
     if(event.type == .keyUp || event.type == .keyDown){
-        if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && event.keyCode == 12 && ( // P key down
-             event.modifierFlags.rawValue == 1048840 || // right command key down
-             event.modifierFlags.rawValue == 1048848 || // left command key down
-             event.modifierFlags.rawValue == 1048856)){ // both command key down
-                 return IsAlertOn(cgEvent: cgEvent)
-         }
+            
+        let checkEventDict = ObservedObjects.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]
+        let CMDFLAG = [1048840, 1048848, 1048856]
+        
          
          if ObservedObjects.PressedKey == "Waiting"{
              
@@ -60,12 +58,22 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              
              return nil
          }
-         
-        if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true {
+        
+        
+        
+        if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && ((event.keyCode == 12 && CMDFLAG.contains(Int(event.modifierFlags.rawValue))) && (ObservedToggles.KeyMap == false || (ObservedToggles.KeyMap == true && checkEventDict == nil)) ||
+                (ObservedToggles.KeyMap == true && checkEventDict != nil && checkEventDict!.keys == 12 && CMDFLAG.contains(Int(checkEventDict!.FlagNum))))
+        ){
+            
+                 return IsAlertOn(cgEvent: cgEvent)
+         }
+        
+        else if ObservedObjects.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true {
              let value:EventStruct = ObservedObjects.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]!
              let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
              return ReturnValue.cgEvent
          }
+        
         else { return cgEvent }
         
     }else  if event.type == .scrollWheel && ObservedToggles.MouseWheel == true{
