@@ -12,11 +12,11 @@ import AlertPopup
 extension View {
     //    @discardableResult
     func openInWindow(title: String, sender: Any?) -> NSWindow {
-        weak var win = NSWindow(contentViewController: NSHostingController(rootView: self))
-        win!.title = title
-        win!.makeKeyAndOrderFront(sender)
-        win!.orderFrontRegardless()
-        return win!
+        let win = NSWindow(contentViewController: NSHostingController(rootView: self))
+        win.title = title
+        win.makeKeyAndOrderFront(sender)
+        win.orderFrontRegardless()
+        return win
     }
 }
 

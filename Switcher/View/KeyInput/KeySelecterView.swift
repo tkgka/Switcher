@@ -121,8 +121,8 @@ struct KeySelecterView: View {
                     }
                     
                 }).frame(width: 100)
-                
     }
+            
     //        HStack() {
     //            // Rather than a picker we're using Text for the label
     //            // and a button for the picker itself
