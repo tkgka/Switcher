@@ -25,40 +25,52 @@ struct MenuView: View {
                 .frame(width: 300)
             
             Group {
-            HStack(
-                spacing: 0){
-                    Image(systemName: "command")
-                        .padding(.top, 15.0)
-                        .padding(.leading, 15.0)
-                        .frame(width: 40, alignment: .leading)
-                        
-                    Text("Command + q")
-                        .fontWeight(.medium)
-                        .padding(.top, 15.0)
-                        .frame(width: 200, alignment: .leading)
-                        
-                    
-                    if #available(macOS 11.0, *) {
-                        Toggle("", isOn: $ObserveToggles.CMDQ)
-                            .toggleStyle(.switch)
-                            .frame(alignment: .leading)
+                HStack(
+                    spacing: 0){
+                        Image(systemName: "exclamationmark.triangle")
                             .padding(.top, 15.0)
-                    } else {
-                        // Fallback on earlier versions
+                            .padding(.leading, 15.0)
+                            .frame(width: 40, alignment: .leading)
+                        
+                        Text("Alert")
+                            .fontWeight(.medium)
+                            .padding(.top, 15.0)
+                            .frame(width: 200, alignment: .leading)
+                        
+                        
+                        if #available(macOS 11.0, *) {
+                            Toggle("", isOn: $ObserveToggles.CMDQ)
+                                .toggleStyle(.switch)
+                                .frame(alignment: .leading)
+                                .padding(.top, 15.0)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
+                HStack{
+                    Text("press setted key twice to execute")
+                        .font(Font.system(size: 12.0))
+                        .fontWeight(.light)
+                        .padding(.leading, 15.0)
+                        .padding(.top, 15.0)
+                        .frame(alignment: .leading)
+                        .padding(.bottom, 15.0)
+                    Text("Open")
+                        .foregroundColor(Color.blue)
+                        .font(Font.system(size: 12.0))
+                        .fontWeight(.bold)
+                        .padding(.leading, 15.0)
+                        .padding(.top, 15.0)
+                        .frame(alignment: .leading)
+                        .padding(.bottom, 15.0)
+                        .onTapGesture{
+                            KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: "AlertKey Setting", sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                        }
                 }
-            Text("press command + q twice to shutdown App")
-                .font(Font.system(size: 12.0))
-                .fontWeight(.light)
-                .padding(.leading, 15.0)
-                .padding(.top, 15.0)
-                .frame(alignment: .leading)
-                .padding(.bottom, 15.0)
-                }
-                
-                Divider()
-                    .padding(.horizontal, 10.0)
-                    .frame(width: 300)
+            }
+            Divider()
+                .padding(.horizontal, 10.0)
+                .frame(width: 300)
             
             Group{
                 HStack(
@@ -67,12 +79,12 @@ struct MenuView: View {
                             .padding(.top, 15.0)
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
-                            
+                        
                         Text("Mouse Wheel")
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
-                            
+                        
                         
                         if #available(macOS 11.0, *) {
                             Toggle("", isOn: $ObserveToggles.MouseWheel)
@@ -90,91 +102,91 @@ struct MenuView: View {
                     .padding(.top, 15.0)
                     .frame(alignment: .leading)
                     .padding(.bottom, 15.0)
-                    }
+            }
             Divider()
                 .padding(.horizontal, 10.0)
                 .frame(width: 300)
             
             Group {
-            HStack(
-                spacing: 0){
-                    Image(systemName: "keyboard")
-                        .padding(.top, 15.0)
-                        .padding(.leading, 15.0)
-                        .frame(width: 40, alignment: .leading)
-                        
-                    Text("Key Mapper")
-                        .fontWeight(.medium)
-                        .padding(.top, 15.0)
-                        .frame(width: 200, alignment: .leading)
-                        
-                    
-                    if #available(macOS 11.0, *) {
-                        Toggle("", isOn: $ObserveToggles.KeyMap)
-                            .toggleStyle(.switch)
-                            .frame(alignment: .leading)
+                HStack(
+                    spacing: 0){
+                        Image(systemName: "keyboard")
                             .padding(.top, 15.0)
-                    } else {
-                        // Fallback on earlier versions
+                            .padding(.leading, 15.0)
+                            .frame(width: 40, alignment: .leading)
+                        
+                        Text("Key Mapper")
+                            .fontWeight(.medium)
+                            .padding(.top, 15.0)
+                            .frame(width: 200, alignment: .leading)
+                        
+                        
+                        if #available(macOS 11.0, *) {
+                            Toggle("", isOn: $ObserveToggles.KeyMap)
+                                .toggleStyle(.switch)
+                                .frame(alignment: .leading)
+                                .padding(.top, 15.0)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
+                HStack{
+                    Text("Mapping key input and output")
+                        .font(Font.system(size: 12.0))
+                        .fontWeight(.light)
+                        .padding(.leading, 15.0)
+                        .padding(.top, 15.0)
+                        .frame(alignment: .leading)
+                        .padding(.bottom, 15.0)
+                    Text("Open")
+                        .foregroundColor(Color.blue)
+                        .font(Font.system(size: 12.0))
+                        .fontWeight(.bold)
+                        .padding(.leading, 15.0)
+                        .padding(.top, 15.0)
+                        .frame(alignment: .leading)
+                        .padding(.bottom, 15.0)
+                        .onTapGesture{
+                            KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: "KeyMap", sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                        }
                 }
-            HStack{
-            Text("Mapping key input and output")
-                    .font(Font.system(size: 12.0))
-                    .fontWeight(.light)
-                    .padding(.leading, 15.0)
-                    .padding(.top, 15.0)
-                    .frame(alignment: .leading)
-                    .padding(.bottom, 15.0)
-            Text("Open")
-                    .foregroundColor(Color.blue)
-                    .font(Font.system(size: 12.0))
-                    .fontWeight(.bold)
-                    .padding(.leading, 15.0)
-                    .padding(.top, 15.0)
-                    .frame(alignment: .leading)
-                    .padding(.bottom, 15.0)
-                    .onTapGesture{
-                        KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: "KeyMap", sender: self)) : KeyMapWindow?.orderFrontRegardless()
-                    }
-                }
-                }
-                
-                Divider()
-                    .padding(.horizontal, 10.0)
-                    .frame(width: 300)
-            
             }
             
+            Divider()
+                .padding(.horizontal, 10.0)
+                .frame(width: 300)
             
-            HStack{
-                Link("\(Image(systemName: "link")) GitHub", destination: URL(string: "https://github.com/tkgka/Switcher")!)
-                    .buttonStyle(LinkButtonStyle())
-                    .padding(.leading, 15.0)
-                    .padding(.top, 15.0)
-                    .padding(.bottom, 10.0)
-                    .frame(width: 240, alignment: .leading)
-                
-                Button("Quit", action: {
-                    NSApplication.shared.terminate(self)
-                })
+        }
+        
+        
+        HStack{
+            Link("\(Image(systemName: "link")) GitHub", destination: URL(string: "https://github.com/tkgka/Switcher")!)
+                .buttonStyle(LinkButtonStyle())
+                .padding(.leading, 15.0)
                 .padding(.top, 15.0)
                 .padding(.bottom, 10.0)
-                .frame(alignment: .leading)
-            }
+                .frame(width: 240, alignment: .leading)
             
-            .onChange(of: ObserveToggles.CMDQ) { CMDQ in
-                UserDefaults.standard.set(CMDQ, forKey: "CMDQ")
-            }
-            .onChange(of: ObserveToggles.MouseWheel) { MouseWheel in
-                UserDefaults.standard.set(MouseWheel, forKey: "MouseWheel")
-            }
-            .onChange(of: ObserveToggles.KeyMap) { KeyMap in
-                UserDefaults.standard.set(KeyMap, forKey: "KeyMap")
-            }
-    }
+            Button("Quit", action: {
+                NSApplication.shared.terminate(self)
+            })
+            .padding(.top, 15.0)
+            .padding(.bottom, 10.0)
+            .frame(alignment: .leading)
+        }
         
+        .onChange(of: ObserveToggles.CMDQ) { CMDQ in
+            UserDefaults.standard.set(CMDQ, forKey: "CMDQ")
+        }
+        .onChange(of: ObserveToggles.MouseWheel) { MouseWheel in
+            UserDefaults.standard.set(MouseWheel, forKey: "MouseWheel")
+        }
+        .onChange(of: ObserveToggles.KeyMap) { KeyMap in
+            UserDefaults.standard.set(KeyMap, forKey: "KeyMap")
+        }
     }
+    
+}
 
 
 struct MenuView_Previews: PreviewProvider {

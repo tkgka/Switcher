@@ -32,16 +32,18 @@ class ObservableKeyVal: ObservableObject {
     @Published var ReturnKeyEvent: EventStruct?
     var EventDict : [String : EventStruct] = [:]
 }
+
+class ObservableAlertKeyVal: ObservableObject {
+    @Published var PressedKey: String = "AlertKey"
+    @Published var PressedKeyEvent:[EventStruct]? = []
+}
+
 struct EventStruct:Codable {
     let keys: UInt16!
     let FlagNum: UInt!
 }
 
-var ObservedObjects = ObservableKeyVal()
+var ObservedKeyVals = ObservableKeyVal()
+var ObservedAlertVals = ObservableAlertKeyVal()
 var ObservedToggles = ObservableToggles()
-
-
-
-
-
 

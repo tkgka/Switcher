@@ -8,7 +8,7 @@
 import SwiftUI
 struct KeyMapView: View {
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
-    @ObservedObject var Content = ObservedObjects
+    @ObservedObject var Content = ObservedKeyVals
     var body: some View {
         VStack{
             Divider()
@@ -95,8 +95,6 @@ struct MainKeyMapView: View {
         }
       }
       .listStyle(.sidebar)
-            
-      Text("No selection")
     }.frame(width: 750, height: 420)
   }
 }

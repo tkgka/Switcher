@@ -10,7 +10,10 @@ import ArrayFlags
 
 func SetKeyMapValue(){
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
-        ObservedObjects.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
+        ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
+    }
+    if (UserDefaults.standard.value(forKey:"AlertValEvent")) == nil{
+        ObservedAlertVals.PressedKeyEvent?.append(EventStruct(keys: 12, FlagNum: 1048840))
     }
 }
 
@@ -21,12 +24,16 @@ func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
 
 
 
-func GetFlags(Val:UInt) -> String{
+func GetFlags(Val:UInt, GetSide:Bool = true) -> String{
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 20486016 && FlagMaps[UInt($0)] != nil {
-            FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+            if GetSide == true{
+                FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+            }else {
+                (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0]) ? (nil) : (FlagString += FlagMaps[UInt($0)]![0])
+            }
         }
     }
     FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")

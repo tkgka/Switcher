@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct KeyInputView: View {
-    @ObservedObject var Content = ObservedObjects
+    @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     var body: some View {
     HStack{
