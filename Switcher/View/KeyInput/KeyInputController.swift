@@ -39,8 +39,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
     if(event.type == .keyUp || event.type == .keyDown){
         
         let checkEventDict = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]
-        let CMDFLAG = [1048840, 1048848, 1048856]
-        
         
         if ObservedAlertVals.PressedKey == "Waiting" {
             let FlagString = GetFlags(Val: event.modifierFlags.rawValue, GetSide: false)
@@ -65,14 +63,18 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             return nil
         }
         
-        
-        
-        if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && ((event.keyCode == 12 && CMDFLAG.contains(Int(event.modifierFlags.rawValue))) && (ObservedToggles.KeyMap == false || (ObservedToggles.KeyMap == true && checkEventDict == nil)) ||
-                                                                         (ObservedToggles.KeyMap == true && checkEventDict != nil && checkEventDict!.keys == 12 && CMDFLAG.contains(Int(checkEventDict!.FlagNum))))
-        ){
-            
+        if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
+            (ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: event.modifierFlags.rawValue, GetSide: false))\(KeyMaps[event.keyCode]!)") && // Pressed Key is setted on Alertkeys
+             ((ObservedToggles.KeyMap == false) ||  // keyMapping is setted false
+              (ObservedToggles.KeyMap == true && checkEventDict == nil)) )) { // keyMapping is on use but key Alert key doesn't mapped
             return IsAlertOn(cgEvent: cgEvent)
         }
+        
+        else  if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
+                  ObservedToggles.KeyMap == true && checkEventDict != nil && ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: checkEventDict!.FlagNum, GetSide: false))\(KeyMaps[checkEventDict!.keys]!)")) { // pressed key mapped to Alert Key
+            return IsAlertOn(cgEvent: CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!)
+        }
+        
         
         else if ObservedKeyVals.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true {
             let value:EventStruct = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]!

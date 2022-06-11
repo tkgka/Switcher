@@ -13,69 +13,91 @@ struct AlertKeySettingView: View {
     @ObservedObject var Content = ObservedAlertVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
+    @State var Icons = ApplicationIcons()
+    @StateObject var viewModel = ViewModel()
     var body: some View {
-        HStack{
-            ZStack{
-                Text("Remove")
-                    .padding(7)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 2)
-                    )
-                    .padding([.top, .bottom] , 2)
-            } .onTapGesture(count: 1, perform: {
-                for (index, value) in isChecked.enumerated().reversed(){
-                    if(value == true){
-                        //                        RemoveDataToEventDict(index: index)
-                        
-                    }
-                }
-            }).frame(width: 100)
-            
-            Spacer()
-            VStack{
-                Text(Content.PressedKey)
-                    .font(.system(size: 13, weight: .semibold))
-                    .onTapGesture{
-                        (Content.PressedKey != "Waiting") ? (Content.PressedKey = "Waiting") : (Content.PressedKey = "AlertKey")
-                    }
-            }.frame(width: 180, alignment: .center)
-            Spacer()
-            ZStack{
-                Text("Add item")
-                    .padding(7)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 2)
-                    )
-                    .padding(.trailing , 8.0)
-            }.onTapGesture(count: 1, perform: {
-                if KeyMaps.findKey(forValue: KeyMapList[0]) != nil && KeyMaps.findKey(forValue: KeyMapList[1]) != nil{
-                    //                    appendDataToEventDict()
-                }
-            }).frame(width: 100)
-        }
-        .padding(.top, 10)
-        VStack{
-            Divider()
+        NavigationView{
             List {
-//                let DictKey:Array = Array(Content.EventDict.keys)
-                ForEach (0..<(Content.PressedKeyEvent?.count ?? 0), id: \.self) { Val in
-                    let i:Int = Val
-                    HStack{
-                        VStack{
-                            HStack{
-                                Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
-                                Spacer()
-                                HStack{
-                                    Text("\(FlagMaps[Content.PressedKeyEvent![i].FlagNum]![0])\(KeyMaps[Content.PressedKeyEvent![i].keys]!)")
-                                }.frame(width: 235, alignment: .trailing)
+                ForEach(viewModel.Datas) { item in
+                    NavigationLink(item.name, tag: item.id, selection: $viewModel.selectedId) {
+                        HStack{
+                            ZStack{
+                                Text("Remove")
+                                    .padding(7)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .stroke(lineWidth: 2)
+                                    )
+                                    .padding([.top, .bottom] , 2)
+                            } .onTapGesture(count: 1, perform: {
+                                for (index, value) in isChecked.enumerated().reversed(){
+                                    if(value == true){
+                                        //                        RemoveDataToEventDict(index: index)
+                                        
+                                    }
+                                }
+                            }).frame(width: 100)
+                            
+                            Spacer()
+                            VStack{
+                                Text(Content.PressedKey)
                                     .font(.system(size: 13, weight: .semibold))
-                            }
+                                    .onTapGesture{
+                                        (Content.PressedKey != "Waiting") ? (Content.PressedKey = "Waiting") : (Content.PressedKey = "AlertKey")
+                                    }
+                            }.frame(width: 180, alignment: .center)
+                            Spacer()
+                            ZStack{
+                                Text("Add item")
+                                    .padding(7)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .stroke(lineWidth: 2)
+                                    )
+                                    .padding(.trailing , 8.0)
+                            }.onTapGesture(count: 1, perform: {
+                                if KeyMaps.findKey(forValue: KeyMapList[0]) != nil && KeyMaps.findKey(forValue: KeyMapList[1]) != nil{
+                                    //                    appendDataToEventDict()
+                                }
+                            }).frame(width: 100)
                         }
-                    }.padding([.top], 20.0)
+                        .padding(.top, 10)
+                        VStack{
+                            Divider()
+                            List {
+                                if item.name == viewModel.Datas[0].name{
+                                    ForEach(Icons.keys.sorted(), id: \.self) { val in
+                                        HStack{
+                                            Image(nsImage: Icons[val]!)
+                                            Text(val)
+                                        }
+                                    }
+                                }
+                                else if item.name == viewModel.Datas[1].name{
+                                    
+                                    //                let DictKey:Array = Array(Content.EventDict.keys)
+                                    ForEach (0..<(Content.PressedKeyEvent.count ?? 0), id: \.self) { Val in
+                                        let i:Int = Val
+                                        HStack{
+                                            VStack{
+                                                HStack{
+                                                    Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
+                                                    Spacer()
+                                                    HStack{
+                                                        Text("\(Content.PressedKeyEvent[i])")
+                                                    }.frame(width: 235, alignment: .trailing)
+                                                        .font(.system(size: 13, weight: .semibold))
+                                                }
+                                            }
+                                        }.padding([.top], 20.0)
+                                    }
+                                }
+                            }
+                        }.frame(width: 600, height: 350, alignment: .center)
+                    }
                 }
             }
-        }.frame(width: 600, height: 350, alignment: .center)
+            .listStyle(.sidebar)
+        }.frame(width: 750, height: 420)
     }
 }

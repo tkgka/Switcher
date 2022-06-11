@@ -44,7 +44,8 @@ var TestText = "123"
 func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
     if (AlertIsOn == true) {
         AlertIsOn = false
-        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
+//        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
+        return cgEvent
     }else{
         if currentWindow != nil{
             currentWindow!.close()

@@ -35,7 +35,7 @@ class ObservableKeyVal: ObservableObject {
 
 class ObservableAlertKeyVal: ObservableObject {
     @Published var PressedKey: String = "AlertKey"
-    @Published var PressedKeyEvent:[EventStruct]? = []
+    @Published var PressedKeyEvent:[String] = []
 }
 
 struct EventStruct:Codable {

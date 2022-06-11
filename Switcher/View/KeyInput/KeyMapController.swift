@@ -13,9 +13,42 @@ func SetKeyMapValue(){
         ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
     if (UserDefaults.standard.value(forKey:"AlertValEvent")) == nil{
-        ObservedAlertVals.PressedKeyEvent?.append(EventStruct(keys: 12, FlagNum: 1048840))
+        ObservedAlertVals.PressedKeyEvent.append("[􀆔]q")
+        ObservedAlertVals.PressedKeyEvent.append("[􀆔]a")
     }
+    print(checkApplicationIsActive(Application: "Discord"))
+    ApplicationIcons()
 }
+
+
+func checkApplicationIsActive(Application:String) -> Bool {
+    let apps = NSWorkspace.shared.runningApplications
+    for app in apps {
+//            print(app.localizedName!)
+        if app.localizedName == Application {
+            if app.isActive {
+//                app.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
+                return true
+//                print(app.icon)
+            }
+            else {
+                return false
+            }
+        }
+    }
+    return false
+}
+
+
+func ApplicationIcons() -> [String:NSImage] {
+    let apps = NSWorkspace.shared.runningApplications
+    var ReturnVal:[String:NSImage] = [:]
+    for app in apps {
+        ReturnVal[app.localizedName!] = app.icon
+    }
+    return ReturnVal
+}
+
 
 func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
     return String(keycode) + "|" + String(Flag)
