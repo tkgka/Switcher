@@ -64,7 +64,14 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture{
-                            KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: "AlertKey Setting", sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                            let Name = "AlertKey Setting"
+                            if (WindowName == nil || WindowName == Name){
+                                KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                            }else{
+                                KeyMapWindow?.close()
+                                KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
+                            }
+                            WindowName = Name
                         }
                 }
             }
@@ -147,7 +154,14 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture{
-                            KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: "KeyMap", sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                            let Name = "KeyMap"
+                            if (WindowName == nil || WindowName == Name){
+                                KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
+                            }else{
+                                KeyMapWindow?.close()
+                                KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
+                            }
+                            WindowName = Name
                         }
                 }
             }

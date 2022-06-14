@@ -14,6 +14,7 @@
 		F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ECBA027C942DC00C43482 /* KeyMapView.swift */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F950052A279AC7D7006807F8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
+		F9617A09285486FA00267181 /* AppendAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9617A08285486FA00267181 /* AppendAppView.swift */; };
 		F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBA282922620024F03D /* KeySelecterView.swift */; };
 		F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
 		F9743DC0282927620024F03D /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
@@ -66,6 +67,7 @@
 		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F9500529279AC7D7006807F8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		F9617A08285486FA00267181 /* AppendAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendAppView.swift; sourceTree = "<group>"; };
 		F9743DBA282922620024F03D /* KeySelecterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySelecterView.swift; sourceTree = "<group>"; };
 		F9743DBD282925B20024F03D /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
 		F9743DBF282927620024F03D /* KeyMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */,
+				F9617A08285486FA00267181 /* AppendAppView.swift */,
 			);
 			path = AlertKeys;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9617A09285486FA00267181 /* AppendAppView.swift in Sources */,
 				F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */,
 				F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,

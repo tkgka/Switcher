@@ -40,8 +40,8 @@ func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
 
 
 weak var currentWindow:NSWindow? = nil
-var TestText = "123"
-func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
+
+func IsAlertOn(cgEvent:CGEvent, Text:String) -> CGEvent?{
     if (AlertIsOn == true) {
         AlertIsOn = false
 //        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
@@ -51,7 +51,7 @@ func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
             currentWindow!.close()
             currentWindow = nil
         }
-        currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Press \(TestText) again \nto execute", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
+        currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Press \(Text) again \nto execute", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
         AlertPopupTimeout()
         AlertIsOn = true
         return nil
