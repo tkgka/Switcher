@@ -12,15 +12,15 @@ struct KeyInputView: View {
     @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     var body: some View {
-    HStack{
-        ZStack{
-           Text("Remove")
-                .padding(7)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                    .stroke(lineWidth: 2)
-                )
-                .padding([.top, .bottom] , 2)
+        HStack{
+            ZStack{
+                Text("Remove")
+                    .padding(7)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(lineWidth: 2)
+                    )
+                    .padding([.top, .bottom] , 2)
             } .onTapGesture(count: 1, perform: {
                 for (index, value) in isChecked.enumerated().reversed(){
                     if(value == true){
@@ -30,37 +30,37 @@ struct KeyInputView: View {
                 }
             }).frame(width: 100)
             
-    Spacer()
-VStack{
-    Text(Content.PressedKey)
-        .font(.system(size: 13, weight: .semibold))
-        .onTapGesture{
-            (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
+            Spacer()
+            VStack{
+                Text(Content.PressedKey)
+                    .font(.system(size: 13, weight: .semibold))
+                    .onTapGesture{
+                        (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
+                    }
+            }.frame(width: 180, alignment: .trailing)
+            Text(":")
+            VStack{
+                Text(Content.ReturnKey)
+                    .font(.system(size: 13, weight: .semibold))
+                    .onTapGesture{
+                        (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
+                    }
+            }.frame(width: 180, alignment: .leading)
+            Spacer()
+            ZStack{
+                Text("Add item")
+                    .padding(7)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(lineWidth: 2)
+                    )
+                    .padding(.trailing , 8.0)
+            }.onTapGesture(count: 1, perform: {
+                if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
+                    appendDataToEventDict()
+                }
+            }).frame(width: 100)
         }
-    }.frame(width: 180, alignment: .trailing)
-Text(":")
-VStack{
-    Text(Content.ReturnKey)
-        .font(.system(size: 13, weight: .semibold))
-        .onTapGesture{
-            (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
-        }
-}.frame(width: 180, alignment: .leading)
-        Spacer()
-        ZStack{
-       Text("Add item")
-                .padding(7)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                    .stroke(lineWidth: 2)
-                )
-                .padding(.trailing , 8.0)
-        }.onTapGesture(count: 1, perform: {
-            if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
-                appendDataToEventDict()
-            }
-        }).frame(width: 100)
-    }
     }
     func appendDataToEventDict(){
         Content.PressedKey = "PressedKey"

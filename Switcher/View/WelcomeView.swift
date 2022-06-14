@@ -10,16 +10,16 @@ import SwiftUI
 struct WelcomeView: View {
     var body: some View {
         VStack{
-        VStack{
-            Text("Click Restart button after \n setting privacy Policy to start Switcher").multilineTextAlignment(.center)
-        }
-        Button("Restart", action: {
-            Process.launchedProcess(launchPath: "/usr/bin/open", arguments: ["-b", Bundle.main.bundleIdentifier!])
-            NSApp.terminate(self)
-        })
-        .padding(.top, 15.0)
-        .padding(.bottom, 10.0)
-        .frame(alignment: .leading)
+            VStack{
+                Text("Click Restart button after \n setting privacy Policy to start Switcher").multilineTextAlignment(.center)
+            }
+            Button("Restart", action: {
+                Process.launchedProcess(launchPath: "/usr/bin/open", arguments: ["-b", Bundle.main.bundleIdentifier!])
+                NSApp.terminate(self)
+            })
+            .padding(.top, 15.0)
+            .padding(.bottom, 10.0)
+            .frame(alignment: .leading)
         }.frame(width: 300, height: 300)
     }
 }

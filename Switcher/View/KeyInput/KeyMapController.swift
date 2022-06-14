@@ -8,7 +8,7 @@
 import Foundation
 import ArrayFlags
 
-func SetKeyMapValue(){
+func SetKeyDefaultValue(){
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
         ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
@@ -16,17 +16,18 @@ func SetKeyMapValue(){
         ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
     }
     if UserDefaults.standard.value(forKey:"AlertList") != nil{
-//        ObservedAlertVals.AlertList = (try? JSONDecoder().decode([String:NSImage].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!
+        let listedIcons:[String:Data] = (try? JSONDecoder().decode([String:Data].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!
+        for item in listedIcons.keys {
+            ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
+        }
     }
     
-    
-    ApplicationIcons()
 }
 
 
 func checkApplicationIsActive(Applications:[String]) -> Bool {
     let app = NSWorkspace.shared.frontmostApplication; // get Currently Focused Application
-//            print(app.localizedName!)
+    //            print(app.localizedName!)
     if Applications.contains(app!.localizedName ?? ""){
         return true
     }
@@ -36,33 +37,13 @@ func checkApplicationIsActive(Applications:[String]) -> Bool {
 
 func ApplicationIcons() -> [String:NSImage] {
     
-    
-//    let picture = NSImage(contentsOf: URL(fileURLWithPath: "/Users/gimsuhwan/Library/Developer/Xcode/DerivedData/Switcher-blxscdsgfudxndbdqfcyaqputlke/Build/Products/Debug/Switcher.app/Contents/Resources/AppIcon.icns"))!
-//
-//    let imageURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!.appendingPathComponent("image.png")
-//    if let png = picture.png {
-//        do {
-//            try png.write(to: imageURL)
-//            print("PNG image saved")
-//        } catch {
-//            print(error)
-//        }
-//    }
-    
-    
-    
-    
-    
     let apps = NSWorkspace.shared.runningApplications
     
-//    var listedIcons:[Data] = (try? JSONDecoder().decode([Data].self, from: (UserDefaults.standard.value(forKey:"SavedDataArray")) as! Data))!
     var ReturnVal:[String:NSImage] = [:]
     for app in apps {
         ReturnVal[app.localizedName!] = app.icon
-//        ReturnVal[app.localizedName!] = NSImage(data: listedIcons[10])
     }
-
-//    UserDefaults.standard.set(try? JSONEncoder().encode(listedIcons), forKey:"SavedDataArray")
+    
     return ReturnVal
 }
 
