@@ -7,6 +7,7 @@
 import Foundation
 import AppKit
 
+var WindowName:String? = nil // for check which window is open
 var KeyMapWindow:NSWindow? = nil
 
 var AlertIsOn:Bool = false
@@ -32,16 +33,19 @@ class ObservableKeyVal: ObservableObject {
     @Published var ReturnKeyEvent: EventStruct?
     var EventDict : [String : EventStruct] = [:]
 }
+
+class ObservableAlertKeyVal: ObservableObject {
+    @Published var PressedKey: String = "AlertKey"
+    @Published var PressedKeyEvent:[String] = []
+    @Published var AlertList:[String:NSImage] = [:]
+}
+
 struct EventStruct:Codable {
     let keys: UInt16!
     let FlagNum: UInt!
 }
 
-var ObservedObjects = ObservableKeyVal()
+var ObservedKeyVals = ObservableKeyVal()
+var ObservedAlertVals = ObservableAlertKeyVal()
 var ObservedToggles = ObservableToggles()
-
-
-
-
-
 

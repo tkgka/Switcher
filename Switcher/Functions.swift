@@ -41,16 +41,17 @@ func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
 
 weak var currentWindow:NSWindow? = nil
 
-func IsAlertOn(cgEvent:CGEvent) -> CGEvent?{
+func IsAlertOn(cgEvent:CGEvent, Text:String) -> CGEvent?{
     if (AlertIsOn == true) {
         AlertIsOn = false
-        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
+        //        return CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:12, Flag:1048840).cgEvent
+        return cgEvent
     }else{
         if currentWindow != nil{
             currentWindow!.close()
             currentWindow = nil
         }
-        currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Enter 􀆔q again \nto shutdown app", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
+        currentWindow = ShowSystemAlert(ImageName: "exclamationmark.circle", AlertText: "Press \(Text) again \nto execute", Timer: 1.5, ImageColor: Color("ImageColor"), FontColor: Color("FontColor"))
         AlertPopupTimeout()
         AlertIsOn = true
         return nil

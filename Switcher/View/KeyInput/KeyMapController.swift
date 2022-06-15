@@ -8,11 +8,45 @@
 import Foundation
 import ArrayFlags
 
-func SetKeyMapValue(){
+func SetKeyDefaultValue(){
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
-        ObservedObjects.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
+        ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
+    if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil{
+        ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
+    }
+    if UserDefaults.standard.value(forKey:"AlertList") != nil{
+        let listedIcons:[String:Data] = (try? JSONDecoder().decode([String:Data].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!
+        for item in listedIcons.keys {
+            ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
+        }
+    }
+    
 }
+
+
+func checkApplicationIsActive(Applications:[String]) -> Bool {
+    let app = NSWorkspace.shared.frontmostApplication; // get Currently Focused Application
+    //            print(app.localizedName!)
+    if Applications.contains(app!.localizedName ?? ""){
+        return true
+    }
+    return false
+}
+
+
+func ApplicationIcons() -> [String:NSImage] {
+    
+    let apps = NSWorkspace.shared.runningApplications
+    
+    var ReturnVal:[String:NSImage] = [:]
+    for app in apps {
+        ReturnVal[app.localizedName!] = app.icon
+    }
+    
+    return ReturnVal
+}
+
 
 func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
     return String(keycode) + "|" + String(Flag)
@@ -21,12 +55,16 @@ func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
 
 
 
-func GetFlags(Val:UInt) -> String{
+func GetFlags(Val:UInt, GetDirection:Bool = true) -> String{
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 20486016 && FlagMaps[UInt($0)] != nil {
-            FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+            if GetDirection == true{
+                FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+            }else {
+                (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0]) ? (nil) : (FlagString += FlagMaps[UInt($0)]![0])
+            }
         }
     }
     FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")

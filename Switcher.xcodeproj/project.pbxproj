@@ -14,6 +14,7 @@
 		F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ECBA027C942DC00C43482 /* KeyMapView.swift */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F950052A279AC7D7006807F8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
+		F9617A09285486FA00267181 /* AppendAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9617A08285486FA00267181 /* AppendAppView.swift */; };
 		F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBA282922620024F03D /* KeySelecterView.swift */; };
 		F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
 		F9743DC0282927620024F03D /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
@@ -31,6 +32,7 @@
 		F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* KeyInputView.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
+		F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,7 @@
 		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F9500529279AC7D7006807F8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		F9617A08285486FA00267181 /* AppendAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendAppView.swift; sourceTree = "<group>"; };
 		F9743DBA282922620024F03D /* KeySelecterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySelecterView.swift; sourceTree = "<group>"; };
 		F9743DBD282925B20024F03D /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
 		F9743DBF282927620024F03D /* KeyMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
+		F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKeySettingView.swift; sourceTree = "<group>"; };
 		F9E6F1A627E35B930017C81F /* KeyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputView.swift; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 		F989189B27D60C4000FA5726 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9C8E4FD28531344009EF0CD /* AlertKeys */,
 				F97D4D8F2788418200FBC5AD /* Menu */,
 				F9743DB9282921940024F03D /* KeyInput */,
 				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
@@ -254,6 +259,15 @@
 				F9BAFD76278AF8FD00990607 /* ShellCommands.swift */,
 			);
 			path = Command;
+			sourceTree = "<group>";
+		};
+		F9C8E4FD28531344009EF0CD /* AlertKeys */ = {
+			isa = PBXGroup;
+			children = (
+				F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */,
+				F9617A08285486FA00267181 /* AppendAppView.swift */,
+			);
+			path = AlertKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9617A09285486FA00267181 /* AppendAppView.swift in Sources */,
 				F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */,
 				F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
@@ -506,6 +521,7 @@
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
 				F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */,
+				F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */,
 				F950052A279AC7D7006807F8 /* Functions.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
 				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
