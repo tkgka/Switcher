@@ -14,8 +14,9 @@ func SetKeyDefaultValue(){
     }
     if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil{
         ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
-    }else{
-        ObservedAlertVals.PressedKeyEvent = ["􀆔q"]
+        if (ObservedAlertVals.PressedKeyEvent.count == 0){
+            ObservedAlertVals.PressedKeyEvent = ["􀆔q"]
+        }
     }
     if UserDefaults.standard.value(forKey:"AlertList") != nil{
         let listedIcons:[String:Data] = (try? JSONDecoder().decode([String:Data].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!

@@ -101,7 +101,6 @@ struct AlertKeySettingView: View {
             Content.PressedKey = "PressedKey"
             isChecked.append(false)
             UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")
-            print(UserDefaults.standard.value(forKey: "AlertValEvent")!)
             //        UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
         }
     }
@@ -109,6 +108,7 @@ struct AlertKeySettingView: View {
     func RemoveDataToEventDict(index:Int) {
         Content.PressedKeyEvent.remove(at: index)
         isChecked.remove(at: index)
+        UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")
         //        UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
     }
 }
