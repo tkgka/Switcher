@@ -44,11 +44,13 @@ struct AppendAppView: View {
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
                     ).onTapGesture{
-                        for item in SelectedItem {
-                            Content.AlertList[item] = Icons[item]
+                        if SelectedItem.count > 0 {
+                            for item in SelectedItem {
+                                Content.AlertList[item] = Icons[item]
+                            }
+                            StringImg2StringData()
+                            SelectedItem.removeAll()
                         }
-                        StringImg2StringData()
-                        SelectedItem.removeAll()
                     }
                 //                Image(nsImage: NSImage(contentsOf: URL(fileURLWithPath: "/Users/gimsuhwan/Library/Developer/Xcode/DerivedData/Switcher-blxscdsgfudxndbdqfcyaqputlke/Build/Products/Debug/Switcher.app/Contents/Resources/AppIcon.icns"))!)
                 Text("Remove")
@@ -58,11 +60,13 @@ struct AppendAppView: View {
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
                     ).onTapGesture{
-                        for item in RemovingItem {
-                            Content.AlertList.removeValue(forKey: item)
+                        if RemovingItem.count > 0 {
+                            for item in RemovingItem {
+                                Content.AlertList.removeValue(forKey: item)
+                            }
+                            StringImg2StringData()
+                            RemovingItem.removeAll()
                         }
-                        StringImg2StringData()
-                        RemovingItem.removeAll()
                     }
             }
             

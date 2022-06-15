@@ -55,12 +55,12 @@ func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
 
 
 
-func GetFlags(Val:UInt, GetSide:Bool = true) -> String{
+func GetFlags(Val:UInt, GetDirection:Bool = true) -> String{
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 20486016 && FlagMaps[UInt($0)] != nil {
-            if GetSide == true{
+            if GetDirection == true{
                 FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
             }else {
                 (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0]) ? (nil) : (FlagString += FlagMaps[UInt($0)]![0])

@@ -39,7 +39,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
     if(event.type == .keyUp || event.type == .keyDown){
         
         
-        let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetSide: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
+        let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
         let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
         let checkEventDict = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]
         
@@ -80,12 +80,12 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         }
         else  if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
                   ObservedToggles.KeyMap == true && checkEventDict != nil &&
-                  ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: checkEventDict!.FlagNum, GetSide: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")) { // pressed key that mapped to Alert Key
+                  ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")) { // pressed key that mapped to Alert Key
             
             let CGEventVal:CGEvent = CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!
             
             if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){
-                return IsAlertOn(cgEvent: CGEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetSide: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")
+                return IsAlertOn(cgEvent: CGEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")
             }
             return CGEventVal
         }
