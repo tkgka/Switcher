@@ -52,7 +52,7 @@ struct AppendAppView: View {
                             SelectedItem.removeAll()
                         }
                     }
-                //                Image(nsImage: NSImage(contentsOf: URL(fileURLWithPath: "/Users/gimsuhwan/Library/Developer/Xcode/DerivedData/Switcher-blxscdsgfudxndbdqfcyaqputlke/Build/Products/Debug/Switcher.app/Contents/Resources/AppIcon.icns"))!)
+
                 Text("Remove")
                     .frame(width: 60)
                     .padding(7)
