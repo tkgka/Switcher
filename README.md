@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/52348220/164449012-04c86ff9-a26f-4b9a-
 
 
 ## 💾 [Download](https://github.com/tkgka/Switcher/releases) 
-[**Download the app**](https://github.com/tkgka/Switcher/releases/download/v2.0.1/Switcher.dmg)
+[**Download the app**](https://github.com/tkgka/Switcher/releases/download/V2.0.4/Switcher.dmg)
 
 
 check introduction <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse_EN.md"> here </a>
