@@ -25,13 +25,44 @@ restart app after give accessibility permission
 
 can operate function by toggle from menubar icon to use it
 
-![image](https://user-images.githubusercontent.com/52348220/164451060-560ca942-32cd-4d80-90ad-b0dcfc14e15a.png)
+![image](https://user-images.githubusercontent.com/52348220/174285638-b2296656-beaa-4e7c-8352-2d05af2eeb7f.png)
+
+
+### Alert Keys
+open setting window
+
+![image](https://user-images.githubusercontent.com/52348220/174285929-ea239f8d-1876-4d25-bb12-27c3df789699.png)
+
+you can refresh Currently running application list by click refresh button
+
+![image](https://user-images.githubusercontent.com/52348220/174286085-c0c74a04-e742-44db-9a2e-22aa81af5453.png)
+
+click Application and Add item button to set application which to show alert
+
+![image](https://user-images.githubusercontent.com/52348220/174286297-67042ca2-3322-4f35-b40b-8a29e8c2d855.png)
+![image](https://user-images.githubusercontent.com/52348220/174286303-1255c714-cb3e-468c-aad6-116d6385b0bd.png)
+
+click Application and Remove item button to remove application
+
+![image](https://user-images.githubusercontent.com/52348220/174286488-2c47c74a-ca3e-4e9c-ad37-8c914d0b742b.png)
+
+select Alert key and press "Add Item" Button to set Key to show alert
+
+![image](https://user-images.githubusercontent.com/52348220/174286760-682c380b-ac20-4510-98dc-fea186fe5c45.png)
+
+![image](https://user-images.githubusercontent.com/52348220/174286775-0872f45a-c030-4dba-8a82-c552dd4f7330.png)
+
+
+click toggle button beside you want to remove and click "Remove" Button to Remove key
+
+![image](https://user-images.githubusercontent.com/52348220/174286906-aa1082ab-f4e4-4d5e-9d36-73e86224d4bb.png)
 
 
 ### KeyMapper
 open setting window
 
-![image](https://user-images.githubusercontent.com/52348220/160223091-bbbcbadc-75f9-4379-bb92-3e35c3f1b555.png)
+![image](https://user-images.githubusercontent.com/52348220/174285788-d25a0f9b-5507-4d1d-9992-94269516d125.png)
+
 
 select pressed key & return key and press "Add Item" Button to Key mapping
 ![image](https://user-images.githubusercontent.com/52348220/164451258-07b92c98-c0c8-455a-b46f-d2dfaf36fa2c.png)
