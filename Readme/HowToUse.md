@@ -22,13 +22,42 @@ Release 된 앱을 설치 합니다.
 
 메뉴바 아이콘의 토글을 이용하여 각 기능의 사용 여부를 개별적으로 선택할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/52348220/160223229-52f6f515-fa48-4844-9135-2ecbc003f83a.png)
+![image](https://user-images.githubusercontent.com/52348220/174285638-b2296656-beaa-4e7c-8352-2d05af2eeb7f.png)
+
+### Alert Keys
+설정창을 엽니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174285929-ea239f8d-1876-4d25-bb12-27c3df789699.png)
+
+리프레시 버튼을 눌러 현재 실행중인 앱 목록을 리프레시 할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174286085-c0c74a04-e742-44db-9a2e-22aa81af5453.png)
+
+어플리케이션을 선택하고 "Add item" 버튼을 클릭하여 경고를 표시할 앱을 지정할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174286297-67042ca2-3322-4f35-b40b-8a29e8c2d855.png)
+![image](https://user-images.githubusercontent.com/52348220/174286303-1255c714-cb3e-468c-aad6-116d6385b0bd.png)
+
+어플리케이션을 선택하고 "Remove item" 버튼을 클릭하여 경고를 표시할 앱 목록에서 특정 앱을 삭제할 수 잇습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174286488-2c47c74a-ca3e-4e9c-ad37-8c914d0b742b.png)
+
+"Alert Key" 텍스트를 클릭 후 경고를 표시할 키를 입력, "Add Item" 버튼을 눌러 경고를 표시 할 키를 추가할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174286760-682c380b-ac20-4510-98dc-fea186fe5c45.png)
+
+![image](https://user-images.githubusercontent.com/52348220/174286775-0872f45a-c030-4dba-8a82-c552dd4f7330.png)
+
+
+좌측에 있는 토글 버튼을 클릭 후 "Remove" 버튼을 클릭하여 경고를 표시할 키 목록에서 키를 삭제할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52348220/174286906-aa1082ab-f4e4-4d5e-9d36-73e86224d4bb.png)
 
 
 ### KeyMapper
 설정 창을 엽니다
 
-![image](https://user-images.githubusercontent.com/52348220/160223091-bbbcbadc-75f9-4379-bb92-3e35c3f1b555.png)
+![image](https://user-images.githubusercontent.com/52348220/174285788-d25a0f9b-5507-4d1d-9992-94269516d125.png)
 
 "입력 키와 반환 키를 입력 후 "Add Item" 버튼을 클릭하여 키를 매핑할 수 있습니다.
 ![image](https://user-images.githubusercontent.com/52348220/164451258-07b92c98-c0c8-455a-b46f-d2dfaf36fa2c.png)
