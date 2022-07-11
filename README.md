@@ -1,5 +1,7 @@
 <img alt="AppIcon" src="https://user-images.githubusercontent.com/52348220/164444909-37522368-942e-49fc-8e30-80ca99d5ad4e.png" width="128px" align="center" />
 
+[![Platforms](https://img.shields.io/badge/Platforms-macOS-blue?style=flat-square)](https://apps.apple.com/app/id1591155142)
+[![macOS](https://img.shields.io/badge/macOS-12.0-blue.svg)](https://developer.apple.com/macOS)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ftkgka%2FSwitcher&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # Switcher
