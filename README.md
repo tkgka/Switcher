@@ -11,7 +11,7 @@
 
 **press command + q twice to shutdown app**
 
-![](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
+![image](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
 
 
 **support Key mapping**
