@@ -98,7 +98,7 @@ struct AlertKeySettingView: View {
         
         if (Content.PressedKey != "AlertKey" && Content.PressedKey != "Waiting" && !Content.PressedKeyEvent.contains(Content.PressedKey)) {
             Content.PressedKeyEvent.append(Content.PressedKey)
-            Content.PressedKey = "PressedKey"
+            Content.PressedKey = "AlertKey"
             isChecked.append(false)
             UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")
             //        UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")

@@ -145,14 +145,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F94C618128C3A3F800EE41ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */,
+				F9743DBF282927620024F03D /* KeyMapController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F9743DB9282921940024F03D /* KeyInput */ = {
 			isa = PBXGroup;
 			children = (
 				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
-				F9743DBF282927620024F03D /* KeyMapController.swift */,
 				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
 				F9E6F1A627E35B930017C81F /* KeyInputView.swift */,
-				F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */,
 				F9743DBA282922620024F03D /* KeySelecterView.swift */,
 				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
 			);
@@ -200,6 +207,7 @@
 				F9500529279AC7D7006807F8 /* Functions.swift */,
 				F9743DBC282922E10024F03D /* Extensions */,
 				F989189B27D60C4000FA5726 /* View */,
+				F94C618128C3A3F800EE41ED /* Controller */,
 				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
