@@ -8,7 +8,12 @@
 import SwiftUI
 struct MenuView: View {
     @ObservedObject var ObserveToggles = ObservedToggles
-    
+    let AlertText:LocalizedStringKey = "Alert_Title"
+    let MouseText:LocalizedStringKey = "Mouse_Wheel_Title"
+    let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
+    let AlertDesc:LocalizedStringKey = "Alert_Desc"
+    let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
+    let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
     var body: some View {
         VStack( alignment: .leading, spacing: 0){
             
@@ -32,7 +37,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text("Alert")
+                        Text(AlertText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -48,12 +53,12 @@ struct MenuView: View {
                         }
                     }
                 HStack{
-                    Text("press setted key twice to execute")
+                    Text(AlertDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
                         .padding(.leading, 15.0)
                         .padding(.top, 15.0)
-                        .frame(alignment: .leading)
+                        .frame(width: 200, alignment: .leading)
                         .padding(.bottom, 15.0)
                     Text("Open")
                         .foregroundColor(Color.blue)
@@ -87,7 +92,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text("Mouse Wheel")
+                        Text(MouseText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -102,12 +107,12 @@ struct MenuView: View {
                             // Fallback on earlier versions
                         }
                     }
-                Text("Change Mouse Wheel Direction")
+                Text(MouseDesc)
                     .font(Font.system(size: 12.0))
                     .fontWeight(.light)
                     .padding(.leading, 15.0)
                     .padding(.top, 15.0)
-                    .frame(alignment: .leading)
+                    .frame(width: 200, alignment: .leading)
                     .padding(.bottom, 15.0)
             }
             Divider()
@@ -122,7 +127,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text("Key Mapper")
+                        Text(keyMapText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -138,12 +143,12 @@ struct MenuView: View {
                         }
                     }
                 HStack{
-                    Text("Mapping key input and output")
+                    Text(keyMapDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
                         .padding(.leading, 15.0)
                         .padding(.top, 15.0)
-                        .frame(alignment: .leading)
+                        .frame(width: 200, alignment: .leading)
                         .padding(.bottom, 15.0)
                     Text("Open")
                         .foregroundColor(Color.blue)

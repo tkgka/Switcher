@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Switcher
+
+  Created by 김수환 on 2022/09/04.
+  
+*/
+"Alert_Title" = "Alert";
+"Mouse_Wheel_Title" = "Mouse Wheel";
+"Key_Mapper_Title" = "Key Mapper";
+
+"Alert_Desc" = "press setted key twice to execute";
+"Mouse_Wheel_Desc" = "Change Mouse Wheel Direction";
+"Key_Mapper_Desc" = "Mapping key input and output";
+
+"Setted_Application" = "Setted Application";
+"Currently_running_Application" = "Currently Running";
+
+"Setted_Application_Empty" = "Alert will show in all Application";
+
+
+"Add_Item_Key" = "Add Item";
+"Remove_Item_Key" = "Remove";

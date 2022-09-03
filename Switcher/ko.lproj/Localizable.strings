@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Switcher
+
+  Created by 김수환 on 2022/09/04.
+  
+*/
+"Alert_Title" = "경고창";
+"Mouse_Wheel_Title" = "마우스 휠";
+"Key_Mapper_Title" = "키 매핑";
+
+"Alert_Desc" = "지정한 키를 두번 눌러야만 실행되도록 설정합니다.";
+"Mouse_Wheel_Desc" = "마우스의 회전 방향을 트랙패드와 반대되게 설정합니다.";
+"Key_Mapper_Desc" = "키를 매핑합니다.";
+
+"Setted_Application" = "설정된 앱";
+"Currently_running_Application" = "현재 실행중인 앱";
+
+"Setted_Application_Empty" = "모든 앱에서 설정한 키를 두번 눌러야만 동작합니다.";
+
+"Add_Item_Key" = "추가";
+"Remove_Item_Key" = "삭제";

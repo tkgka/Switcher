@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AlertKeySettingView: View {
+    let Add_Item_Key:LocalizedStringKey = "Add_Item_Key"
+    let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
+    
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedAlertVals
@@ -25,7 +28,8 @@ struct AlertKeySettingView: View {
                         else if item.name == viewModel.AlertDatas[1].name{
                             HStack{
                                 ZStack{
-                                    Text("Remove")
+                                    Text(Remove_Item_Key)
+                                        .frame(width: 60, alignment: .center)
                                         .padding(7)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 15)
@@ -51,7 +55,8 @@ struct AlertKeySettingView: View {
                                 }.frame(width: 180, alignment: .center)
                                 Spacer()
                                 ZStack{
-                                    Text("Add item")
+                                    Text(Add_Item_Key)
+                                        .frame(width: 60, alignment: .center)
                                         .padding(7)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 15)
@@ -67,7 +72,6 @@ struct AlertKeySettingView: View {
                                 Divider()
                                 
                                 List {
-                                    //                let DictKey:Array = Array(Content.EventDict.keys)
                                     ForEach (0..<(Content.PressedKeyEvent.count ?? 0), id: \.self) { Val in
                                         let i:Int = Val
                                         HStack{

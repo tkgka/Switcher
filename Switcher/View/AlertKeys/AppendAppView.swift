@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct AppendAppView: View {
+    let Add_Item_Key:LocalizedStringKey = "Add_Item_Key"
+    let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
+    
+    let Setted_Application:LocalizedStringKey = "Setted_Application"
+    let Currently_running_Application:LocalizedStringKey = "Currently_running_Application"
+    let Setted_Application_Empty:LocalizedStringKey = "Setted_Application_Empty"
     @State var Icons = ApplicationIcons()
     @ObservedObject var Content = ObservedAlertVals
     @State var SelectedItem:[String] = []
@@ -15,10 +21,10 @@ struct AppendAppView: View {
     var body: some View {
         HStack{
             VStack{
-                Text("Alert")
+                Text(Setted_Application)
                 List {
                     if Content.AlertList.count == 0{
-                        Text("Alert will show in all Application")
+                        Text(Setted_Application_Empty)
                     }else{ForEach(Content.AlertList.keys.sorted(), id: \.self) { val in
                         HStack{
                             Image(nsImage: Content.AlertList[val]!).resizable().frame(width: 32, height: 32)
@@ -37,8 +43,8 @@ struct AppendAppView: View {
                 }
             }
             VStack{
-                Text("Add item")
-                    .frame(width: 60)
+                Text(Add_Item_Key)
+                    .frame(width: 60, alignment: .center)
                     .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
@@ -53,8 +59,8 @@ struct AppendAppView: View {
                         }
                     }
 
-                Text("Remove")
-                    .frame(width: 60)
+                Text(Remove_Item_Key)
+                    .frame(width: 60, alignment: .center)
                     .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
@@ -80,7 +86,7 @@ struct AppendAppView: View {
                             Icons = ApplicationIcons()
                         }
                     Spacer()
-                    Text("Currently Running")
+                    Text(Currently_running_Application)
                     Spacer()
                 }
                 List {

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct KeySelecterView: View {
+    let Add_Item_Key:LocalizedStringKey = "Add_Item_Key"
+    let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
+    
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedKeyVals
@@ -16,8 +19,9 @@ struct KeySelecterView: View {
     var body: some View{
         HStack{
             ZStack{
-                Text("Remove")
+                Text(Remove_Item_Key)
                     .padding(7)
+                    .frame(width: 60, alignment: .center)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
@@ -108,8 +112,9 @@ struct KeySelecterView: View {
             }.frame(width: 80)
             Spacer()
             ZStack{
-                Text("Add item")
+                Text(Add_Item_Key)
                     .padding(7)
+                    .frame(width: 60, alignment: .center)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)

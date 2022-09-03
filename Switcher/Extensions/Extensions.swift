@@ -35,29 +35,6 @@ extension Dictionary where Value: Equatable {
 }
 
 
-
-
-
-
-// NSImage -> pngData
-//extension String{
-//    func getArrayAfterRegex(regex: String) -> [String] {
-//
-//        do {
-//            let regex = try NSRegularExpression(pattern: regex)
-//            let results = regex.matches(in: self,
-//                                        range: NSRange(self.startIndex..., in: self))
-//            return results.map {
-//                String(self[Range($0.range, in: self)!])
-//            }
-//        } catch let error {
-//            print("invalid regex: \(error.localizedDescription)")
-//            return []
-//        }
-//    }
-//}
-
-
 extension NSBitmapImageRep {
     var png: Data? { representation(using: .png, properties: [:]) }
 }
@@ -67,6 +44,3 @@ extension Data {
 extension NSImage {
     var png: Data? { tiffRepresentation?.bitmap?.png }
 }
-
-
-

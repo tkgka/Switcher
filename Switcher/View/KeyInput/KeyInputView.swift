@@ -9,13 +9,17 @@ import SwiftUI
 
 
 struct KeyInputView: View {
+    let Add_Item_Key:LocalizedStringKey = "Add_Item_Key"
+    let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
+    
     @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [false]
     var body: some View {
         HStack{
             ZStack{
-                Text("Remove")
+                Text(Remove_Item_Key)
                     .padding(7)
+                    .frame(width: 60, alignment: .center)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
@@ -48,8 +52,9 @@ struct KeyInputView: View {
             }.frame(width: 180, alignment: .leading)
             Spacer()
             ZStack{
-                Text("Add item")
+                Text(Add_Item_Key)
                     .padding(7)
+                    .frame(width: 60, alignment: .center)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
