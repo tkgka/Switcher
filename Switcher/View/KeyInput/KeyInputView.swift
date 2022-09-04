@@ -18,8 +18,8 @@ struct KeyInputView: View {
         HStack{
             ZStack{
                 Text(Remove_Item_Key)
-                    .padding(7)
                     .frame(width: 60, alignment: .center)
+                    .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
@@ -53,8 +53,8 @@ struct KeyInputView: View {
             Spacer()
             ZStack{
                 Text(Add_Item_Key)
-                    .padding(7)
                     .frame(width: 60, alignment: .center)
+                    .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)

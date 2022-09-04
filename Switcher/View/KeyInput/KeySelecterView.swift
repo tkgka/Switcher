@@ -20,8 +20,8 @@ struct KeySelecterView: View {
         HStack{
             ZStack{
                 Text(Remove_Item_Key)
-                    .padding(7)
                     .frame(width: 60, alignment: .center)
+                    .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
@@ -113,8 +113,8 @@ struct KeySelecterView: View {
             Spacer()
             ZStack{
                 Text(Add_Item_Key)
-                    .padding(7)
                     .frame(width: 60, alignment: .center)
+                    .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(lineWidth: 2)
@@ -128,15 +128,6 @@ struct KeySelecterView: View {
             }).frame(width: 100)
         }
         
-        //        HStack() {
-        //            // Rather than a picker we're using Text for the label
-        //            // and a button for the picker itself
-        //            Text("Select Items:")
-        //                .foregroundColor(.white)
-        //            Text(ObservedObjects.PressedKeyList.rawValue)
-        //            Text(ObservedObjects.ReturnKeyList.rawValue)
-        //
-        //        }
     }
     func appendDataToEventDict(){
         Content.PressedKeyEvent = PressedKeyEventStringMaker(keycode: KeyMaps.findKey(forValue: KeyMapList[0])!, Flag: ArrayToFlagVal(val: Content.PressedKeyList))

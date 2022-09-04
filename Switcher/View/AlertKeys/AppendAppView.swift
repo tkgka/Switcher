@@ -14,6 +14,7 @@ struct AppendAppView: View {
     let Setted_Application:LocalizedStringKey = "Setted_Application"
     let Currently_running_Application:LocalizedStringKey = "Currently_running_Application"
     let Setted_Application_Empty:LocalizedStringKey = "Setted_Application_Empty"
+    
     @State var Icons = ApplicationIcons()
     @ObservedObject var Content = ObservedAlertVals
     @State var SelectedItem:[String] = []
