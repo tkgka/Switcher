@@ -13,7 +13,6 @@ struct KeyMapView: View {
         VStack{
             Divider()
             List {
-                
                 let DictKey:Array = Array(Content.EventDict.keys)
                 ForEach (0..<Content.EventDict.count, id: \.self) { Val in
                     let i:Int = Val
@@ -76,7 +75,6 @@ final class ViewModel: ObservableObject {
     static let AlertDatasModel: [ViewData] = ["Apps", "Keys"].map({ ViewData(name: $0) })
     
 }
-
 
 
 struct MainKeyMapView: View {

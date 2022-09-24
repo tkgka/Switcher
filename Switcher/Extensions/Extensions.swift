@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-extension Array: RawRepresentable where Element: Codable {
+extension Array: RawRepresentable where Element: Codable { // for json object
     public init?(rawValue: String) {
         guard let data = rawValue.data(using: .utf8),
               let result = try? JSONDecoder().decode([Element].self, from: data)
@@ -35,6 +35,7 @@ extension Dictionary where Value: Equatable {
 }
 
 
+// to save image on UserDefaults
 extension NSBitmapImageRep {
     var png: Data? { representation(using: .png, properties: [:]) }
 }

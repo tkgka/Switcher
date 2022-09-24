@@ -69,9 +69,6 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
              ((ObservedToggles.KeyMap == false) ||  // keyMapping is setted false
               (ObservedToggles.KeyMap == true && checkEventDict == nil)) )) { // keyMapping is on use but key Alert key doesn't mapped
             
-            //            if (checkApplicationIsActive(Application: "Discord") == true){return IsAlertOn(cgEvent: cgEvent)}
-            //            return cgEvent
-            //
             if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){
                 return IsAlertOn(cgEvent: cgEvent, Text:AlertKeyString)
             }

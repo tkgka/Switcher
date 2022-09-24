@@ -12,19 +12,19 @@ var KeyMapWindow:NSWindow? = nil
 
 var AlertIsOn:Bool = false
 
-var AlertSize:CGFloat = 200.0
+var AlertSize:CGFloat = 200.0 
 
-let DefaultTimeout = 1.5
+let DefaultTimeout = 1.5 // AlertPopup Timeout time
 
 
-class ObservableToggles: ObservableObject {
+class ObservableToggles: ObservableObject { // toggle switchs
     @Published var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
     @Published var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
     @Published var KeyMap:Bool = UserDefaults.standard.bool(forKey: "KeyMap")
 }
 
 
-class ObservableKeyVal: ObservableObject {
+class ObservableKeyVal: ObservableObject { // Key to Map
     @Published var PressedKeyList:[UInt] = []
     @Published var ReturnKeyList:[UInt] = []
     @Published var PressedKey: String = "PressedKey"
@@ -34,13 +34,13 @@ class ObservableKeyVal: ObservableObject {
     var EventDict : [String : EventStruct] = [:]
 }
 
-class ObservableAlertKeyVal: ObservableObject {
+class ObservableAlertKeyVal: ObservableObject { // Key to show Alert when pressed
     @Published var PressedKey: String = "AlertKey"
     @Published var PressedKeyEvent:[String] = []
     @Published var AlertList:[String:NSImage] = [:]
 }
 
-struct EventStruct:Codable {
+struct EventStruct:Codable { // key Event 담당 struct
     let keys: UInt16!
     let FlagNum: UInt!
 }
@@ -48,4 +48,3 @@ struct EventStruct:Codable {
 var ObservedKeyVals = ObservableKeyVal()
 var ObservedAlertVals = ObservableAlertKeyVal()
 var ObservedToggles = ObservableToggles()
-

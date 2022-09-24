@@ -33,7 +33,6 @@ struct AppendAppView: View {
                         }.frame(width: 250,alignment: .leading)
                             .background(RemovingItem.contains(val) ? Color.red.opacity(0.5) : nil)
                             .onTapGesture{
-                                //                            SelectedItem.removeAll()
                                 if(!RemovingItem.contains(val)){
                                     RemovingItem.append(val)
                                 }else{
@@ -98,7 +97,6 @@ struct AppendAppView: View {
                         }.frame(width: 250,alignment: .leading)
                             .background(SelectedItem.contains(val) ? Color.blue.opacity(0.5) : nil)
                             .onTapGesture{
-                                //                            SelectedItem.removeAll()
                                 if(!SelectedItem.contains(val)){
                                     SelectedItem.append(val)
                                 }else{

@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+// to check Flag
 let FlagMaps: [UInt: String] =
 [
     256:"Default",
@@ -27,6 +29,7 @@ let FlagMaps: [UInt: String] =
     10486016:"Arrow"
 ]
 
+// to check Key Location
 let FlagValMaps: [UInt: String] =
 [
     256:"Default",
