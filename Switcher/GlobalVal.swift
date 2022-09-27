@@ -36,8 +36,8 @@ class ObservableKeyVal: ObservableObject { // Key to Map
 
 class ObservableAlertKeyVal: ObservableObject { // Key to show Alert when pressed
     @Published var PressedKey: String = "AlertKey"
-    @Published var PressedKeyEvent:[String] = []
-    @Published var AlertList:[String:NSImage] = [:]
+    @Published var PressedKeyEvent:[String] = [] // List of Alerts keys
+    @Published var AlertList:[String:NSImage] = [:] //applications
 }
 
 struct EventStruct:Codable { // key Event 담당 struct

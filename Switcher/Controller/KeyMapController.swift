@@ -24,13 +24,11 @@ func SetKeyDefaultValue(){
             ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
         }
     }
-    
 }
 
 
 func checkApplicationIsActive(Applications:[String]) -> Bool {
     let app = NSWorkspace.shared.frontmostApplication; // get Currently Focused Application
-    //            print(app.localizedName!)
     if Applications.contains(app!.localizedName ?? ""){
         return true
     }
@@ -62,7 +60,7 @@ func GetFlags(Val:UInt, GetDirection:Bool = true) -> String{
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
-        if $0 < 20486016 && FlagMaps[UInt($0)] != nil {
+        if $0 < 20486016 && FlagMaps[UInt($0)] != nil { //exception handling
             if GetDirection == true{
                 FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
             }else {
@@ -80,7 +78,7 @@ func ArrayToFlagVal(val:[UInt]) -> UInt{
     val.forEach{
         returnVal += $0 - 256
     }
-    returnVal < 0 ? (returnVal = 0) : nil
+    returnVal < 0 ? (returnVal = 0) : nil // exception handling
     return returnVal + 256
 }
 

@@ -1,5 +1,5 @@
 //
-//  popupController.swift
+//  Function.swift
 //  Switcher
 //
 //  Created by 김수환 on 2022/01/21.

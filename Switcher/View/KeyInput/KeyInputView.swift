@@ -83,5 +83,3 @@ struct KeyInputView: View {
         UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
     }
 }
-
-

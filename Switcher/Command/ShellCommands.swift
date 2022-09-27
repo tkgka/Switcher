@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// open settings -> security & privacy
 let Privacy_Accessibility = "open 'x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility'"
 
 func ShellCommand(arg: String) -> Void {

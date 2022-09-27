@@ -36,9 +36,9 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         }
         else { return cgEvent }
     }
+    
     if(event.type == .keyUp || event.type == .keyDown){
-        
-        
+
         let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
         let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
         let checkEventDict = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]
@@ -76,20 +76,20 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             
         }
         else  if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
-                  ObservedToggles.KeyMap == true && checkEventDict != nil &&
+                  ObservedToggles.KeyMap == true && checkEventDict != nil && // check toggle is true and Event dict exception
                   ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")) { // pressed key that mapped to Alert Key
             
             let CGEventVal:CGEvent = CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!
             
-            if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){
+            if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){ // 실행중인 application이 있는 경우 또는 특정 application 만 알림을 띄워주도록 설정한 경우
                 return IsAlertOn(cgEvent: CGEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")
             }
             return CGEventVal
         }
         
-        else if ObservedKeyVals.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true {
+        else if ObservedKeyVals.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true { // EventDict 에 입력된 키 값이 있는지 확인, keyMap toggle true 인지 확인
             let value:EventStruct = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]!
-            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
+            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum) // mapping 된 키 값 리턴
             return ReturnValue.cgEvent
         }
         
