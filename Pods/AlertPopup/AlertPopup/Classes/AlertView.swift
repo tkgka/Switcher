@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(macOS 10.14, *)
+@available(macOS 10.15, *)
 public struct BlurView: NSViewRepresentable {
     public typealias NSViewType = NSVisualEffectView
     

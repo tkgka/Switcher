@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     public func applicationDidFinishLaunching(_ notification: Notification) {
         if !AXIsProcessTrusted() {
             ShellCommand(arg: Privacy_Accessibility)
-            WelcomeView().openInWindow(title: "Switcher", sender: self)
+            let _ = WelcomeView().openInWindow(title: "Switcher", sender: self)
         }
             createEventTap()
             MakeMenuButton()
