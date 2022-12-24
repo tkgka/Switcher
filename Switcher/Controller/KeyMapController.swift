@@ -7,6 +7,7 @@
 
 import Foundation
 import ArrayFlags
+import SwiftUI
 
 func SetKeyDefaultValue(){
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
@@ -16,6 +17,7 @@ func SetKeyDefaultValue(){
         ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
         if (ObservedAlertVals.PressedKeyEvent.count == 0){
             ObservedAlertVals.PressedKeyEvent = ["[􀆔]q"]
+            UserDefaults.standard.set("[false]", forKey:"AlertKeyListIsChecked")
         }
     }
     if UserDefaults.standard.value(forKey:"AlertList") != nil{
@@ -23,6 +25,19 @@ func SetKeyDefaultValue(){
         for item in listedIcons.keys {
             ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
         }
+    }
+    
+    
+    let AlertKeyListIsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
+    if ObservedAlertVals.PressedKeyEvent.count != AlertKeyListIsCheck.count {
+        UserDefaults.standard.set("[]", forKey:"AlertKeyListIsChecked")
+        ObservedAlertVals.PressedKeyEvent.removeAll()
+    }
+    
+    let IsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
+    if ObservedKeyVals.EventDict.count != IsCheck.count {
+        UserDefaults.standard.set("[]", forKey:"IsChecked")
+        ObservedKeyVals.EventDict.removeAll()
     }
 }
 

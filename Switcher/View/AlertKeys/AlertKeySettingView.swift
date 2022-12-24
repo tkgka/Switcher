@@ -14,7 +14,7 @@ struct AlertKeySettingView: View {
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedAlertVals
-    @AppStorage("IsChecked") var isChecked:[Bool] = [false]
+    @AppStorage("AlertKeyListIsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
     @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
     @StateObject var viewModel = ViewModel()
     var body: some View {
@@ -39,7 +39,7 @@ struct AlertKeySettingView: View {
                                 } .onTapGesture(count: 1, perform: {
                                     for (index, value) in isChecked.enumerated().reversed(){
                                         if(value == true){
-                                            RemoveDataToEventDict(index: index)
+                                            removeDataFromEventDict(index: index)
                                             
                                         }
                                     }
@@ -72,7 +72,7 @@ struct AlertKeySettingView: View {
                                 Divider()
                                 
                                 List {
-                                    ForEach (0..<(Content.PressedKeyEvent.count ?? 0), id: \.self) { Val in
+                                    ForEach (0..<(Content.PressedKeyEvent.count), id: \.self) { Val in
                                         let i:Int = Val
                                         HStack{
                                             VStack{
@@ -108,7 +108,7 @@ struct AlertKeySettingView: View {
         }
     }
     
-    func RemoveDataToEventDict(index:Int) {
+    func removeDataFromEventDict(index:Int) {
         Content.PressedKeyEvent.remove(at: index)
         isChecked.remove(at: index)
         UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")

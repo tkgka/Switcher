@@ -13,7 +13,7 @@ struct KeyInputView: View {
     let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
     
     @ObservedObject var Content = ObservedKeyVals
-    @AppStorage("IsChecked") var isChecked:[Bool] = [false]
+    @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     var body: some View {
         HStack{
             ZStack{
@@ -68,6 +68,7 @@ struct KeyInputView: View {
         }
     }
     func appendDataToEventDict(){
+        print("a \(isChecked)")
         Content.PressedKey = "PressedKey"
         Content.ReturnKey = "ReturnKey"
         Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
@@ -75,6 +76,7 @@ struct KeyInputView: View {
         Content.PressedKeyEvent = nil
         Content.ReturnKeyEvent = nil
         UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
+        print("b \(isChecked)")
     }
     
     func RemoveDataToEventDict(index:Int) {

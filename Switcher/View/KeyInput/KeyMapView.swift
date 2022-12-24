@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct KeyMapView: View {
-    @AppStorage("IsChecked") var isChecked:[Bool] = [false]
+    @AppStorage("IsChecked") var isChecked:[Bool] = []
     @ObservedObject var Content = ObservedKeyVals
     var body: some View {
         VStack{

@@ -14,7 +14,7 @@ struct KeySelecterView: View {
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedKeyVals
-    @AppStorage("IsChecked") var isChecked:[Bool] = [false]
+    @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
     var body: some View{
         HStack{
