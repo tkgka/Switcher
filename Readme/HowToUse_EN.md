@@ -1,4 +1,6 @@
 Downlaod Application from Release
+
+***Note:*** you need to download [SF Symbols](https://developer.apple.com/sf-symbols/) to run Switcher
 * Application only works when locate in /Applications folder
 
 ![image](https://user-images.githubusercontent.com/52348220/164450666-6c7e4065-ef00-4f53-8d5f-9f0f7fe0ad91.png)
