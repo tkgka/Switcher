@@ -1,6 +1,6 @@
 Release 된 앱을 설치 합니다.
 
-***Note:*** Switcher를 사용하기 위해서는 SF Symbols를 설치해야 합니다.
+***Note:*** Switcher를 사용하기 위해서는 [SF Symbols](https://developer.apple.com/sf-symbols/)를 설치해야 합니다.
 * 앱이 /Applications 폴더에 위치해 있지 않으면 정상 동작하지 않습니다.
 
 ![image](https://user-images.githubusercontent.com/52348220/164450666-6c7e4065-ef00-4f53-8d5f-9f0f7fe0ad91.png)
