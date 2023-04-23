@@ -8,6 +8,7 @@
 
 <a href ="https://github.com/tkgka/Switcher/blob/main/Readme/README_KR.md" >KOR</a>
 
+***Note:*** you need to download [SF Symbols](https://developer.apple.com/sf-symbols/) to run Switcher
 
 **press command + q twice to shutdown app**
 
