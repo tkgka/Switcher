@@ -1,6 +1,7 @@
 # Switcher
 
 ***Note:*** Switcher를 사용하기 위해서는 [SF Symbols](https://developer.apple.com/sf-symbols/)를 설치해야 합니다.
+
 command + q 명령어를 두번 입력한 경우에만 동작하도록 설정할 수 있습니다.
 
 ![](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
