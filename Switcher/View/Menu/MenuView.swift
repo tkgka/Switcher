@@ -7,14 +7,9 @@
 
 import SwiftUI
 struct MenuView: View {
+    
     @ObservedObject var ObserveToggles = ObservedToggles
     @State var WindowName:String? = nil
-    let AlertText:LocalizedStringKey = "Alert_Title"
-    let MouseText:LocalizedStringKey = "Mouse_Wheel_Title"
-    let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
-    let AlertDesc:LocalizedStringKey = "Alert_Desc"
-    let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
-    let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
     
     var body: some View {
         
@@ -39,7 +34,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text(AlertText)
+                        Text(TextString.AlertText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -55,7 +50,7 @@ struct MenuView: View {
                         }
                     }
                 HStack {
-                    Text(AlertDesc)
+                    Text(TextString.AlertDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
                         .padding(.leading, 15.0)
@@ -71,14 +66,14 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let Name = "AlertKey Setting"
-                            if (WindowName == nil || WindowName == Name) {
-                                KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-                            } else {
-                                KeyMapWindow?.close()
-                                KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
-                            }
-                            WindowName = Name
+//                            let Name = "AlertKey Setting"
+//                            if (WindowName == nil || WindowName == Name) {
+//                                KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
+//                            } else {
+//                                KeyMapWindow?.close()
+//                                KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
+//                            }
+//                            WindowName = Name
                         }
                 }
             }
@@ -94,7 +89,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text(MouseText)
+                        Text(TextString.MouseText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -109,7 +104,7 @@ struct MenuView: View {
                             // Fallback on earlier versions
                         }
                     }
-                Text(MouseDesc)
+                Text(TextString.MouseDesc)
                     .font(Font.system(size: 12.0))
                     .fontWeight(.light)
                     .padding(.leading, 15.0)
@@ -129,7 +124,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text(keyMapText)
+                        Text(TextString.keyMapText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -145,7 +140,7 @@ struct MenuView: View {
                         }
                     }
                 HStack {
-                    Text(keyMapDesc)
+                    Text(TextString.keyMapDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
                         .padding(.leading, 15.0)
@@ -161,14 +156,14 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let Name = "KeyMap"
-                            if (WindowName == nil || WindowName == Name) {
-                                KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-                            } else {
-                                KeyMapWindow?.close()
-                                KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
-                            }
-                            WindowName = Name
+//                            let Name = "KeyMap"
+//                            if (WindowName == nil || WindowName == Name) {
+//                                KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
+//                            } else {
+//                                KeyMapWindow?.close()
+//                                KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
+//                            }
+//                            WindowName = Name
                         }
                 }
             }
@@ -207,6 +202,18 @@ struct MenuView: View {
     
 }
 
+
+private extension MenuView {
+    
+    enum TextString {
+        static let AlertText:LocalizedStringKey = "Alert_Title"
+        static let MouseText:LocalizedStringKey = "Mouse_Wheel_Title"
+        static let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
+        static let AlertDesc:LocalizedStringKey = "Alert_Desc"
+        static let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
+        static let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
+    }
+}
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
