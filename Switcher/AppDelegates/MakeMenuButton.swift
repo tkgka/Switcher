@@ -16,10 +16,10 @@ extension AppDelegate {
         popOver.contentViewController?.view = NSHostingView(rootView: MenuView())
         popOver.contentSize = NSSize(width: 360, height: 800)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        if let MenuButton = statusItem?.button{
-            MenuButton.image = NSImage(named: "icon")
-            MenuButton.image?.isTemplate = true  // change image color to surrounding environment
-            MenuButton.action = #selector(MenuButtonToggle)
+        if let menuButton = statusItem?.button{
+            menuButton.image = NSImage(named: "icon")
+            menuButton.image?.isTemplate = true  // change image color to surrounding environment
+            menuButton.action = #selector(MenuButtonToggle)
         }
     }
 }

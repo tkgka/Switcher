@@ -26,10 +26,12 @@ public struct EffectsView: NSViewRepresentable {
 }
 struct AlertView: View {
 
-    @State var scale: CGFloat = 1
-    let AlertTimeout:Double = 1
-    let width = NSScreen.main?.frame.width
-    let height = NSScreen.main?.frame.height
+    @State private var scale: CGFloat = 1
+    private let AlertTimeout:Double = 1
+    private let width = NSScreen.main?.frame.width
+    private let height = NSScreen.main?.frame.height
+    
+    static let defaultTimeout = 1.5
     
     var body: some View {
         
@@ -54,7 +56,7 @@ struct AlertView: View {
                 .opacity(scale)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + AlertTimeout) {
-                        let baseAnimation = Animation.easeIn(duration: DefaultTimeout - AlertTimeout)
+                        let baseAnimation = Animation.easeIn(duration: AlertView.defaultTimeout - AlertTimeout)
                         let repeated = baseAnimation.repeatCount(1, autoreverses: false)
                         withAnimation(repeated) {
                             scale = 0.0

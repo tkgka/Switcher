@@ -9,6 +9,7 @@ import SwiftUI
 import AlertPopup
 
 extension View {
+    
     func openInWindow(title: String, sender: Any?) -> NSWindow {
         let win = NSWindow(contentViewController: NSHostingController(rootView: self))
         win.title = title
@@ -19,7 +20,7 @@ extension View {
 }
 
 func AlertPopupTimeout() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + AlertView.defaultTimeout) {
         currentWindow?.close()
         AlertIsOn = false
     }

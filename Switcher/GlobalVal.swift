@@ -11,8 +11,6 @@ var KeyMapWindow:NSWindow? = nil
 
 var AlertIsOn:Bool = false
 
-let DefaultTimeout = 1.5 // AlertPopup Timeout time
-
 class ObservableToggles: ObservableObject { // toggle switchs
     @Published var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
     @Published var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")

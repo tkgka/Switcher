@@ -34,7 +34,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text(TextString.AlertText)
+                        Text(TextString.alertText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -50,7 +50,7 @@ struct MenuView: View {
                         }
                     }
                 HStack {
-                    Text(TextString.AlertDesc)
+                    Text(TextString.alertDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
                         .padding(.leading, 15.0)
@@ -89,7 +89,7 @@ struct MenuView: View {
                             .padding(.leading, 15.0)
                             .frame(width: 40, alignment: .leading)
                         
-                        Text(TextString.MouseText)
+                        Text(TextString.mouseText)
                             .fontWeight(.medium)
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
@@ -104,7 +104,7 @@ struct MenuView: View {
                             // Fallback on earlier versions
                         }
                     }
-                Text(TextString.MouseDesc)
+                Text(TextString.mouseDesc)
                     .font(Font.system(size: 12.0))
                     .fontWeight(.light)
                     .padding(.leading, 15.0)
@@ -206,11 +206,11 @@ struct MenuView: View {
 private extension MenuView {
     
     enum TextString {
-        static let AlertText:LocalizedStringKey = "Alert_Title"
-        static let MouseText:LocalizedStringKey = "Mouse_Wheel_Title"
+        static let alertText:LocalizedStringKey = "Alert_Title"
+        static let mouseText:LocalizedStringKey = "Mouse_Wheel_Title"
         static let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
-        static let AlertDesc:LocalizedStringKey = "Alert_Desc"
-        static let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
+        static let alertDesc:LocalizedStringKey = "Alert_Desc"
+        static let mouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
         static let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
     }
 }

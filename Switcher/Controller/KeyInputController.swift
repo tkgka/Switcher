@@ -23,10 +23,10 @@ class Wrapper {
 func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
     if (event.type == .otherMouseUp || event.type == .otherMouseDown) {
         if ObservedKeyVals.PressedKey == "Waiting" {
-            let FlagString = GetFlags(Val: event.modifierFlags.rawValue + 256)
+            let flagString = GetFlags(Val: event.modifierFlags.rawValue + 256)
             KeyMaps[MouseBtnNum(val: event.buttonNumber)] != nil
-            ? (ObservedKeyVals.PressedKey = FlagString + KeyMaps[MouseBtnNum(val: event.buttonNumber)]!)
-            : (ObservedKeyVals.PressedKey = "\(FlagString) \(String(MouseBtnNum(val: event.buttonNumber)))")
+            ? (ObservedKeyVals.PressedKey = flagString + KeyMaps[MouseBtnNum(val: event.buttonNumber)]!)
+            : (ObservedKeyVals.PressedKey = "\(flagString) \(String(MouseBtnNum(val: event.buttonNumber)))")
             ObservedKeyVals.PressedKeyEvent = PressedKeyEventStringMaker(
                 keycode: MouseBtnNum(val: event.buttonNumber),
                 Flag: event.modifierFlags.rawValue + 256
@@ -39,31 +39,31 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 keycode: MouseBtnNum(val: event.buttonNumber),
                 Flag: event.modifierFlags.rawValue + 256
             )]!
-            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
-            return ReturnValue.cgEvent
+            let returnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
+            return returnValue.cgEvent
         }
         else { return cgEvent }
     }
     
     if(event.type == .keyUp || event.type == .keyDown) {
         
-        let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
-        let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
+        let alertKeyString: String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
+        let flagString = GetFlags(Val: event.modifierFlags.rawValue)
         let checkEventDict = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(
             keycode: event.keyCode,
             Flag: event.modifierFlags.rawValue
         )]
         
         if ObservedAlertVals.PressedKey == "Waiting" {
-            ObservedAlertVals.PressedKey = AlertKeyString
+            ObservedAlertVals.PressedKey = alertKeyString
             return nil
         }
         
         if ObservedKeyVals.PressedKey == "Waiting" {
             
             KeyMaps[event.keyCode] != nil
-            ? (ObservedKeyVals.PressedKey = FlagString + KeyMaps[event.keyCode]!)
-            : (ObservedKeyVals.PressedKey = FlagString + String(event.keyCode))
+            ? (ObservedKeyVals.PressedKey = flagString + KeyMaps[event.keyCode]!)
+            : (ObservedKeyVals.PressedKey = flagString + String(event.keyCode))
             ObservedKeyVals.PressedKeyEvent = PressedKeyEventStringMaker(
                 keycode: event.keyCode,
                 Flag: event.modifierFlags.rawValue
@@ -74,8 +74,8 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         if ObservedKeyVals.ReturnKey == "Waiting" {
             
             KeyMaps[event.keyCode] != nil
-            ? (ObservedKeyVals.ReturnKey = KeyMaps[event.keyCode]! + FlagString)
-            : (ObservedKeyVals.ReturnKey = FlagString + String(event.keyCode))
+            ? (ObservedKeyVals.ReturnKey = KeyMaps[event.keyCode]! + flagString)
+            : (ObservedKeyVals.ReturnKey = flagString + String(event.keyCode))
             ObservedKeyVals.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
             
             return nil
@@ -83,12 +83,12 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         
         
         if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
-            (ObservedAlertVals.PressedKeyEvent.contains(AlertKeyString) && // Pressed Key is setted on Alertkeys
+            (ObservedAlertVals.PressedKeyEvent.contains(alertKeyString) && // Pressed Key is setted on Alertkeys
              ((ObservedToggles.KeyMap == false) ||  // keyMapping is setted false
               (ObservedToggles.KeyMap == true && checkEventDict == nil)) )) { // keyMapping is on use but key Alert key doesn't mapped
             
             if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))) {
-                return IsAlertOn(cgEvent: cgEvent, Text:AlertKeyString)
+                return IsAlertOn(cgEvent: cgEvent, Text:alertKeyString)
             }
             return cgEvent
             
@@ -98,17 +98,17 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                   ObservedAlertVals.PressedKeyEvent.contains(
                     "\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")
         ) { // pressed key that mapped to Alert Key
-            let CGEventVal:CGEvent = CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!
+            let cgEventVal: CGEvent = CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!
             
             if (
                 (ObservedAlertVals.AlertList.count <= 0)
                 || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))
             ) { // 실행중인 application이 있는 경우 또는 특정 application 만 알림을 띄워주도록 설정한 경우
                 return IsAlertOn(
-                    cgEvent: CGEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))"
+                    cgEvent: cgEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))"
                 )
             }
-            return CGEventVal
+            return cgEventVal
         }
         
         else if ObservedKeyVals.EventDict.keys.contains(
@@ -121,8 +121,8 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
                 keycode: event.keyCode,
                 Flag: event.modifierFlags.rawValue
             )]!
-            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum) // mapping 된 키 값 리턴
-            return ReturnValue.cgEvent
+            let returnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum) // mapping 된 키 값 리턴
+            return returnValue.cgEvent
         }
         
         else { return cgEvent }
