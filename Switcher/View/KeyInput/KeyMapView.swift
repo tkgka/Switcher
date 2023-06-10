@@ -9,7 +9,9 @@ import SwiftUI
 struct KeyMapView: View {
     @AppStorage("IsChecked") var isChecked:[Bool] = []
     @ObservedObject var Content = ObservedKeyVals
+    
     var body: some View {
+        
         VStack{
             Divider()
             List {
@@ -79,7 +81,9 @@ final class ViewModel: ObservableObject {
 
 struct MainKeyMapView: View {
     @StateObject var viewModel = ViewModel()
+    
     var body: some View {
+        
         NavigationView {
             List {
                 ForEach(viewModel.Datas) { item in

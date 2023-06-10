@@ -7,12 +7,9 @@
 import Foundation
 import AppKit
 
-var WindowName:String? = nil // for check which window is open
 var KeyMapWindow:NSWindow? = nil
 
 var AlertIsOn:Bool = false
-
-var AlertSize:CGFloat = 200.0 
 
 let DefaultTimeout = 1.5 // AlertPopup Timeout time
 

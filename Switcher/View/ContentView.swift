@@ -45,9 +45,9 @@ struct ContentView: View {
                         .font(.system(size: 18))
                         .foregroundColor(Color("FontColor"))
                 }
-            }.frame(width: AlertSize, height: AlertSize)
+            }.frame(width: Constant.AlertSize, height: Constant.AlertSize)
                 .cornerRadius(20)
-                .position(x: width!/2, y: height! - AlertSize*3/2.04)
+                .position(x: width!/2, y: height! - Constant.AlertSize*3/2.04)
                 .opacity(scale)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + AlertTimeout) {
@@ -61,6 +61,14 @@ struct ContentView: View {
         }.frame(width: width!, height:height!)
     }
 }
+
+private extension ContentView {
+    
+    enum Constant {
+        static var AlertSize:CGFloat = 200.0
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

@@ -8,15 +8,17 @@
 import SwiftUI
 struct MenuView: View {
     @ObservedObject var ObserveToggles = ObservedToggles
+    @State var WindowName:String? = nil
     let AlertText:LocalizedStringKey = "Alert_Title"
     let MouseText:LocalizedStringKey = "Mouse_Wheel_Title"
     let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
     let AlertDesc:LocalizedStringKey = "Alert_Desc"
     let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
     let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
+    
     var body: some View {
-        VStack( alignment: .leading, spacing: 0) {
-            
+        
+        VStack( alignment: .leading, spacing: 0) {    
             Text("Switcher")
                 .font(Font.system(size: 15.0))
                 .fontWeight(.semibold)
