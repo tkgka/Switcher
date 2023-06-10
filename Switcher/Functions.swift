@@ -8,7 +8,6 @@
 import SwiftUI
 import AlertPopup
 
-
 extension View {
     func openInWindow(title: String, sender: Any?) -> NSWindow {
         let win = NSWindow(contentViewController: NSHostingController(rootView: self))
@@ -26,7 +25,6 @@ func AlertPopupTimeout() {
     }
 }
 
-
 func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent {
     if (event.type.rawValue == 25 || event.type.rawValue == 26) { // event type != keyDown || event type != keyup
         weak var Event = NSEvent.keyEvent(with: .init(rawValue: event.type.rawValue - 15)!, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: false, keyCode: KeyCode)
@@ -35,8 +33,6 @@ func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent {
     weak var Event = NSEvent.keyEvent(with: event.type, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: event.isARepeat, keyCode: KeyCode)
     return Event!
 }
-
-
 
 weak var currentWindow:NSWindow? = nil
 

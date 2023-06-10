@@ -4,6 +4,7 @@ import AlertPopup
 
 
 class Wrapper {
+    
     var state: State?
     
     class State {
@@ -20,7 +21,6 @@ class Wrapper {
 }
 
 func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-    
     if (event.type == .otherMouseUp || event.type == .otherMouseDown) {
         if ObservedKeyVals.PressedKey == "Waiting" {
             let FlagString = GetFlags(Val: event.modifierFlags.rawValue + 256)

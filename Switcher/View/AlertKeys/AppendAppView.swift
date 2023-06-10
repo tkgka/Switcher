@@ -19,7 +19,9 @@ struct AppendAppView: View {
     @ObservedObject var Content = ObservedAlertVals
     @State var SelectedItem:[String] = []
     @State var RemovingItem:[String] = []
+    
     var body: some View {
+        
         HStack{
             VStack{
                 Text(Setted_Application)

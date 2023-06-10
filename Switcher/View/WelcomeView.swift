@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
     var body: some View {
+        
         VStack {
             VStack {
                 Text("Click Restart button after \n setting privacy Policy to start Switcher").multilineTextAlignment(.center)

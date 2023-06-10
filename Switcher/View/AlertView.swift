@@ -25,11 +25,14 @@ public struct EffectsView: NSViewRepresentable {
     }
 }
 struct AlertView: View {
+
     @State var scale: CGFloat = 1
     let AlertTimeout:Double = 1
     let width = NSScreen.main?.frame.width
     let height = NSScreen.main?.frame.height
+    
     var body: some View {
+        
         VStack {
             ZStack {
                 EffectsView()

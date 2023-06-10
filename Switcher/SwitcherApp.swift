@@ -14,7 +14,6 @@ struct SwitcherApp: App {
     var body: some Scene {
         Settings {
             AlertView()
-            
         }
     }
 }

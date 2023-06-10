@@ -34,7 +34,6 @@ extension Dictionary where Value: Equatable {
     }
 }
 
-
 // to save image on UserDefaults
 extension NSBitmapImageRep {
     var png: Data? { representation(using: .png, properties: [:]) }

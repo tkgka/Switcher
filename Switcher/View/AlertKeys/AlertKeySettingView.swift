@@ -17,7 +17,9 @@ struct AlertKeySettingView: View {
     @AppStorage("AlertKeyListIsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
     @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
     @StateObject var viewModel = ViewModel()
+    
     var body: some View {
+        
         NavigationView{
             List {
                 ForEach(viewModel.AlertDatas) { item in
@@ -99,7 +101,6 @@ struct AlertKeySettingView: View {
     }
     
     func appendDataToEventDict(){
-        
         if (Content.PressedKey != "AlertKey" && Content.PressedKey != "Waiting" && !Content.PressedKeyEvent.contains(Content.PressedKey)) {
             Content.PressedKeyEvent.append(Content.PressedKey)
             Content.PressedKey = "AlertKey"
