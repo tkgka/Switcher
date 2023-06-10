@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import AppKit
 
 // keyCode:KeyString
 let KeyMaps:[UInt16:String] = [
