@@ -34,6 +34,27 @@
 		F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
 		F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
 		F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
+		F99C8B572A346A3E00E8875C /* KeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* KeyInputView.swift */; };
+		F99C8B582A346A3E00E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
+		F99C8B5A2A346A3E00E8875C /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
+		F99C8B5E2A346A3E00E8875C /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
+		F99C8B5F2A346A3E00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
+		F99C8B622A346A3E00E8875C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
+		F99C8B632A346A3E00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
+		F99C8B642A346A3E00E8875C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
+		F99C8B652A346A3E00E8875C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
+		F99C8B662A346A3E00E8875C /* CGEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */; };
+		F99C8B672A346A3E00E8875C /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
+		F99C8B682A346A3E00E8875C /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
+		F99C8B692A346A3E00E8875C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189E27D8ADB300FA5726 /* Extensions.swift */; };
+		F99C8B6A2A346A3E00E8875C /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */; };
+		F99C8B6C2A346A3E00E8875C /* Pods_Switcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0284D33547AB46888C30E5C /* Pods_Switcher.framework */; };
+		F99C8B6E2A346A3E00E8875C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */; };
+		F99C8B6F2A346A3E00E8875C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F94C618628C3A5C200EE41ED /* Localizable.strings */; };
+		F99C8B702A346A3E00E8875C /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
+		F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
+		F99C8B782A346AA100E8875C /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
+		F99C8B792A346ACF00E8875C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */; };
@@ -95,6 +116,8 @@
 		F99C8B262A3458EE00E8875C /* CreateEventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTap.swift; sourceTree = "<group>"; };
 		F99C8B282A3459DD00E8875C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
+		F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher_V3.0.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Switcher copy-Info.plist"; path = "/Users/gimsuhwan/Documents/swift/Switcher/Switcher copy-Info.plist"; sourceTree = "<absolute>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKeySettingView.swift; sourceTree = "<group>"; };
@@ -125,6 +148,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F99C8B6B2A346A3E00E8875C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99C8B6C2A346A3E00E8875C /* Pods_Switcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
-				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
 				F9E6F1A627E35B930017C81F /* KeyInputView.swift */,
 				F9743DBA282922620024F03D /* KeySelecterView.swift */,
 				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
@@ -193,6 +223,7 @@
 				F97D4D5427883B0900FBC5AD /* Products */,
 				81864350AFE9618276A6B1D4 /* Frameworks */,
 				33A23FD0C2B8444F06179727 /* Pods */,
+				F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +233,7 @@
 				F97D4D5327883B0900FBC5AD /* Switcher.app */,
 				F97D4D6427883B0B00FBC5AD /* SwitcherTests.xctest */,
 				F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */,
+				F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +249,7 @@
 				F9743DBC282922E10024F03D /* Extensions */,
 				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
 				F9500529279AC7D7006807F8 /* Functions.swift */,
+				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
 				F989189B27D60C4000FA5726 /* View */,
 				F94C618628C3A5C200EE41ED /* Localizable.strings */,
 				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
@@ -360,6 +393,25 @@
 			productReference = F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F99C8B532A346A3E00E8875C /* Switcher_V3.0.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F99C8B732A346A3E00E8875C /* Build configuration list for PBXNativeTarget "Switcher_V3.0.0" */;
+			buildPhases = (
+				F99C8B542A346A3E00E8875C /* [CP] Check Pods Manifest.lock */,
+				F99C8B552A346A3E00E8875C /* Sources */,
+				F99C8B6B2A346A3E00E8875C /* Frameworks */,
+				F99C8B6D2A346A3E00E8875C /* Resources */,
+				F99C8B722A346A3E00E8875C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Switcher_V3.0.0;
+			productName = Switcher;
+			productReference = F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -402,6 +454,7 @@
 				F97D4D5227883B0900FBC5AD /* Switcher */,
 				F97D4D6327883B0B00FBC5AD /* SwitcherTests */,
 				F97D4D6D27883B0B00FBC5AD /* SwitcherUITests */,
+				F99C8B532A346A3E00E8875C /* Switcher_V3.0.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +482,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F99C8B6D2A346A3E00E8875C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99C8B6E2A346A3E00E8875C /* Preview Assets.xcassets in Resources */,
+				F99C8B6F2A346A3E00E8875C /* Localizable.strings in Resources */,
+				F99C8B702A346A3E00E8875C /* ColorAssets.xcassets in Resources */,
+				F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +599,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F99C8B542A346A3E00E8875C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Switcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F99C8B722A346A3E00E8875C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -580,6 +683,29 @@
 			files = (
 				F97D4D7527883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift in Sources */,
 				F97D4D7327883B0B00FBC5AD /* SwitcherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F99C8B552A346A3E00E8875C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99C8B572A346A3E00E8875C /* KeyInputView.swift in Sources */,
+				F99C8B582A346A3E00E8875C /* MakeMenuButton.swift in Sources */,
+				F99C8B5A2A346A3E00E8875C /* ShellCommands.swift in Sources */,
+				F99C8B5E2A346A3E00E8875C /* GlobalVal.swift in Sources */,
+				F99C8B5F2A346A3E00E8875C /* AppDelegate.swift in Sources */,
+				F99C8B622A346A3E00E8875C /* Functions.swift in Sources */,
+				F99C8B632A346A3E00E8875C /* CreateEventTap.swift in Sources */,
+				F99C8B642A346A3E00E8875C /* WelcomeView.swift in Sources */,
+				F99C8B652A346A3E00E8875C /* AlertView.swift in Sources */,
+				F99C8B792A346ACF00E8875C /* MenuView.swift in Sources */,
+				F99C8B662A346A3E00E8875C /* CGEventExtension.swift in Sources */,
+				F99C8B672A346A3E00E8875C /* KeyMapController.swift in Sources */,
+				F99C8B682A346A3E00E8875C /* SwitcherApp.swift in Sources */,
+				F99C8B692A346A3E00E8875C /* Extensions.swift in Sources */,
+				F99C8B782A346AA100E8875C /* KeyMapModel.swift in Sources */,
+				F99C8B6A2A346A3E00E8875C /* KeyInputController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +990,66 @@
 			};
 			name = Release;
 		};
+		F99C8B742A346A3E00E8875C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8CCB961CFAD0B80537658BB /* Pods-Switcher.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Switcher/Switcher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
+				DEVELOPMENT_TEAM = ABL4JWM3PY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Switcher copy-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F99C8B752A346A3E00E8875C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 578D1AE8C837FA87C88679EF /* Pods-Switcher.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Switcher/Switcher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
+				DEVELOPMENT_TEAM = ABL4JWM3PY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Switcher copy-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -899,6 +1085,15 @@
 			buildConfigurations = (
 				F97D4D7F27883B0B00FBC5AD /* Debug */,
 				F97D4D8027883B0B00FBC5AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F99C8B732A346A3E00E8875C /* Build configuration list for PBXNativeTarget "Switcher_V3.0.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F99C8B742A346A3E00E8875C /* Debug */,
+				F99C8B752A346A3E00E8875C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
