@@ -34,14 +34,14 @@ struct KeyMapView: View {
                                 }.frame(width: 235, alignment: .trailing)
                                     .font(.system(size: 13, weight: .semibold))
                                 Text(":")
-                                let ReturnFlagString = getFlags(val: UInt(Content.EventDict[DictKey[i]]!.flagNum))
+                                let returnFlagString = getFlags(val: UInt(Content.EventDict[DictKey[i]]!.flagNum))
                                 HStack {
                                     if keyMaps[Array(Content.EventDict.values)[i].keys] != nil {
                                         Text(keyMaps[Array(Content.EventDict.values)[i].keys]!)
                                     } else {
                                         Text(String(Array(Content.EventDict.values)[i].keys))
                                     }
-                                    Text(ReturnFlagString)
+                                    Text(returnFlagString)
                                 }.frame(width: 250, alignment: .leading)
                                     .font(.system(size: 13, weight: .semibold))
                                 Spacer()

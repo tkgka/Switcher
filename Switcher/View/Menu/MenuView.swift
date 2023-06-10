@@ -13,7 +13,7 @@ struct MenuView: View {
     
     var body: some View {
         
-        VStack( alignment: .leading, spacing: 0) {    
+        VStack( alignment: .leading, spacing: 0) {
             Text("Switcher")
                 .font(Font.system(size: 15.0))
                 .fontWeight(.semibold)
@@ -66,14 +66,18 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-//                            let Name = "AlertKey Setting"
-//                            if (WindowName == nil || WindowName == Name) {
-//                                KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-//                            } else {
-//                                KeyMapWindow?.close()
-//                                KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
-//                            }
-//                            WindowName = Name
+                            let Name = "AlertKey Setting"
+                            if (WindowName == nil || WindowName == Name) {
+                                guard let keyMapWindow else {
+                                    keyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
+                                    return
+                                }
+                                keyMapWindow.orderFrontRegardless()
+                            } else {
+                                keyMapWindow?.close()
+                                keyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
+                            }
+                            WindowName = Name
                         }
                 }
             }
@@ -156,14 +160,18 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-//                            let Name = "KeyMap"
-//                            if (WindowName == nil || WindowName == Name) {
-//                                KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-//                            } else {
-//                                KeyMapWindow?.close()
-//                                KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
-//                            }
-//                            WindowName = Name
+                            let Name = "KeyMap"
+                            if (WindowName == nil || WindowName == Name) {
+                                guard let keyMapWindow else {
+                                    keyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
+                                    return
+                                }
+                                keyMapWindow.orderFrontRegardless()
+                            } else {
+                                keyMapWindow?.close()
+                                keyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
+                            }
+                            WindowName = Name
                         }
                 }
             }

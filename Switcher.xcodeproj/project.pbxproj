@@ -55,6 +55,8 @@
 		F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
 		F99C8B782A346AA100E8875C /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
 		F99C8B792A346ACF00E8875C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
+		F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
+		F99C8B842A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */; };
@@ -118,6 +120,7 @@
 		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
 		F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher_V3.0.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Switcher copy-Info.plist"; path = "/Users/gimsuhwan/Documents/swift/Switcher/Switcher copy-Info.plist"; sourceTree = "<absolute>"; };
+		F99C8B822A3478B500E8875C /* Apple Symbols.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols.ttf"; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKeySettingView.swift; sourceTree = "<group>"; };
@@ -252,8 +255,7 @@
 				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
 				F989189B27D60C4000FA5726 /* View */,
 				F94C618628C3A5C200EE41ED /* Localizable.strings */,
-				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
-				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
+				F99C8B812A3476F100E8875C /* Assets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
 				F97D4D5C27883B0B00FBC5AD /* Preview Content */,
 			);
@@ -313,6 +315,16 @@
 				F99C8B262A3458EE00E8875C /* CreateEventTap.swift */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		F99C8B812A3476F100E8875C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F99C8B822A3478B500E8875C /* Apple Symbols.ttf */,
+				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
+				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
@@ -468,6 +480,7 @@
 				F94C618428C3A5C200EE41ED /* Localizable.strings in Resources */,
 				F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */,
 				F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */,
+				F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +506,7 @@
 				F99C8B6F2A346A3E00E8875C /* Localizable.strings in Resources */,
 				F99C8B702A346A3E00E8875C /* ColorAssets.xcassets in Resources */,
 				F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */,
+				F99C8B842A3478B500E8875C /* Apple Symbols.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
