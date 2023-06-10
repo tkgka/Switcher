@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  CQ
+//  Switcher
 //
 //  Created by 김수환 on 2021/12/31.
 //
@@ -24,7 +24,7 @@ public struct EffectsView: NSViewRepresentable {
         nsView.blendingMode = .withinWindow
     }
 }
-struct ContentView: View {
+struct AlertView: View {
     @State var scale: CGFloat = 1
     let AlertTimeout:Double = 1
     let width = NSScreen.main?.frame.width
@@ -62,7 +62,7 @@ struct ContentView: View {
     }
 }
 
-private extension ContentView {
+private extension AlertView {
     
     enum Constant {
         static var AlertSize:CGFloat = 200.0
@@ -71,7 +71,6 @@ private extension ContentView {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AlertView()
     }
 }
-

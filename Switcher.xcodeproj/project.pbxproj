@@ -20,7 +20,7 @@
 		F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
 		F9743DC0282927620024F03D /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
-		F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* ContentView.swift */; };
+		F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
 		F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
 		F97D4D5E27883B0B00FBC5AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */; };
 		F97D4D6927883B0B00FBC5AD /* SwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D6827883B0B00FBC5AD /* SwitcherTests.swift */; };
@@ -79,7 +79,7 @@
 		F9743DBF282927620024F03D /* KeyMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapController.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
-		F97D4D5827883B0900FBC5AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F97D4D5827883B0900FBC5AD /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Switcher.entitlements; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 				F9C8E4FD28531344009EF0CD /* AlertKeys */,
 				F97D4D8F2788418200FBC5AD /* Menu */,
 				F9743DB9282921940024F03D /* KeyInput */,
-				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F97D4D5827883B0900FBC5AD /* AlertView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 			);
 			path = View;
@@ -557,7 +557,7 @@
 				F950052A279AC7D7006807F8 /* Functions.swift in Sources */,
 				F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
-				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
+				F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
 				F9743DC0282927620024F03D /* KeyMapController.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
