@@ -39,15 +39,19 @@ struct KeyInputView: View {
                 Text(Content.PressedKey)
                     .font(.system(size: 13, weight: .semibold))
                     .onTapGesture {
-                        (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
+                        (Content.PressedKey != "Waiting")
+                        ? ((Content.PressedKey = "Waiting"), (nil))
+                        : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .trailing)
             Text(":")
             VStack{
                 Text(Content.ReturnKey)
                     .font(.system(size: 13, weight: .semibold))
-                    .onTapGesture {
-                        (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
+                    .onTapGesture { 
+                        (Content.ReturnKey != "Waiting")
+                        ? ((Content.ReturnKey = "Waiting"), (nil))
+                        : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .leading)
             Spacer()
