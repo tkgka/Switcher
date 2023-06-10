@@ -31,6 +31,9 @@
 		F97D4D9327885EA000FBC5AD /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */; };
 		F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189E27D8ADB300FA5726 /* Extensions.swift */; };
 		F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* KeyInputView.swift */; };
+		F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
+		F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
+		F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
 		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */; };
@@ -55,15 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		00253C0572F4A70B4DAFF128 /* Pods-Switcher-SwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3481CD92242070E45C675733 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		53E1A3AEAB5FF0968E1F3A64 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		578D1AE8C837FA87C88679EF /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.release.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
 		605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.debug.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.debug.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
-		A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.release.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
 		B0284D33547AB46888C30E5C /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		C0E6F129B0537995A6C69EEC /* Pods-SwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.debug.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8CCB961CFAD0B80537658BB /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.debug.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
 		F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectPickerView.swift; sourceTree = "<group>"; };
 		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
 		F94C618528C3A5C200EE41ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F99C8B262A3458EE00E8875C /* CreateEventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTap.swift; sourceTree = "<group>"; };
+		F99C8B282A3459DD00E8875C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
 		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKeySettingView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33A23FD0C2B8444F06179727 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8CCB961CFAD0B80537658BB /* Pods-Switcher.debug.xcconfig */,
+				578D1AE8C837FA87C88679EF /* Pods-Switcher.release.xcconfig */,
+				53E1A3AEAB5FF0968E1F3A64 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */,
+				00253C0572F4A70B4DAFF128 /* Pods-Switcher-SwitcherUITests.release.xcconfig */,
+				C0E6F129B0537995A6C69EEC /* Pods-SwitcherTests.debug.xcconfig */,
+				3481CD92242070E45C675733 /* Pods-SwitcherTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		81864350AFE9618276A6B1D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,19 +152,6 @@
 				334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E73887CDDADB07C0A5E4C369 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */,
-				A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */,
-				148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */,
-				A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */,
-				8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */,
-				C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		F94C618128C3A3F800EE41ED /* Controller */ = {
@@ -185,8 +191,8 @@
 				F97D4D6727883B0B00FBC5AD /* SwitcherTests */,
 				F97D4D7127883B0B00FBC5AD /* SwitcherUITests */,
 				F97D4D5427883B0900FBC5AD /* Products */,
-				E73887CDDADB07C0A5E4C369 /* Pods */,
 				81864350AFE9618276A6B1D4 /* Frameworks */,
+				33A23FD0C2B8444F06179727 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,13 +211,14 @@
 			children = (
 				F9E7EB09278C38E6004B5037 /* Info.plist */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
-				F94C618628C3A5C200EE41ED /* Localizable.strings */,
+				F99C8B2A2A3459FF00E8875C /* AppDelegates */,
 				F9BAFD75278AF8EC00990607 /* Command */,
 				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
 				F9500529279AC7D7006807F8 /* Functions.swift */,
 				F9743DBC282922E10024F03D /* Extensions */,
 				F989189B27D60C4000FA5726 /* View */,
 				F94C618128C3A3F800EE41ED /* Controller */,
+				F94C618628C3A5C200EE41ED /* Localizable.strings */,
 				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
@@ -263,6 +270,16 @@
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F99C8B2A2A3459FF00E8875C /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				F99C8B282A3459DD00E8875C /* AppDelegate.swift */,
+				F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */,
+				F99C8B262A3458EE00E8875C /* CreateEventTap.swift */,
+			);
+			path = AppDelegates;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
@@ -377,7 +394,6 @@
 			);
 			mainGroup = F97D4D4A27883B0900FBC5AD;
 			packageReferences = (
-				F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = F97D4D5427883B0900FBC5AD /* Products */;
 			projectDirPath = "";
@@ -528,15 +544,18 @@
 			files = (
 				F9617A09285486FA00267181 /* AppendAppView.swift in Sources */,
 				F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */,
+				F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */,
 				F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
 				F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */,
 				F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
 				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
+				F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */,
 				F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */,
 				F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */,
 				F950052A279AC7D7006807F8 /* Functions.swift in Sources */,
+				F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
 				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
@@ -644,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -700,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -711,7 +730,7 @@
 		};
 		F97D4D7927883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */;
+			baseConfigurationReference = C8CCB961CFAD0B80537658BB /* Pods-Switcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -741,7 +760,7 @@
 		};
 		F97D4D7A27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */;
+			baseConfigurationReference = 578D1AE8C837FA87C88679EF /* Pods-Switcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -771,7 +790,7 @@
 		};
 		F97D4D7C27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */;
+			baseConfigurationReference = C0E6F129B0537995A6C69EEC /* Pods-SwitcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -791,7 +810,7 @@
 		};
 		F97D4D7D27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */;
+			baseConfigurationReference = 3481CD92242070E45C675733 /* Pods-SwitcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -811,7 +830,7 @@
 		};
 		F97D4D7F27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */;
+			baseConfigurationReference = 53E1A3AEAB5FF0968E1F3A64 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -829,7 +848,7 @@
 		};
 		F97D4D8027883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */;
+			baseConfigurationReference = 00253C0572F4A70B4DAFF128 /* Pods-Switcher-SwitcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -885,17 +904,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = F97D4D4B27883B0900FBC5AD /* Project object */;
 }
