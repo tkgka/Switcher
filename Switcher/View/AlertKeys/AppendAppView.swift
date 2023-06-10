@@ -15,8 +15,8 @@ struct AppendAppView: View {
     let Currently_running_Application:LocalizedStringKey = "Currently_running_Application"
     let Setted_Application_Empty:LocalizedStringKey = "Setted_Application_Empty"
     
-    @State var Icons = ApplicationIcons()
-    @ObservedObject var Content = ObservedAlertVals
+    @State var Icons = applicationIcons()
+    @ObservedObject var Content = observedAlertVal
     @State var SelectedItem:[String] = []
     @State var RemovingItem:[String] = []
     
@@ -26,11 +26,11 @@ struct AppendAppView: View {
             VStack{
                 Text(Setted_Application)
                 List {
-                    if Content.AlertList.count == 0{
+                    if Content.alertList.count == 0{
                         Text(Setted_Application_Empty)
-                    }else{ForEach(Content.AlertList.keys.sorted(), id: \.self) { val in
+                    }else{ForEach(Content.alertList.keys.sorted(), id: \.self) { val in
                         HStack{
-                            Image(nsImage: Content.AlertList[val]!).resizable().frame(width: 32, height: 32)
+                            Image(nsImage: Content.alertList[val]!).resizable().frame(width: 32, height: 32)
                             Text(val)
                         }.frame(width: 250,alignment: .leading)
                             .background(RemovingItem.contains(val) ? Color.red.opacity(0.5) : nil)
@@ -54,7 +54,7 @@ struct AppendAppView: View {
                     ).onTapGesture{
                         if SelectedItem.count > 0 {
                             for item in SelectedItem {
-                                Content.AlertList[item] = Icons[item]
+                                Content.alertList[item] = Icons[item]
                             }
                             StringImg2StringData()
                             SelectedItem.removeAll()
@@ -70,7 +70,7 @@ struct AppendAppView: View {
                     ).onTapGesture{
                         if RemovingItem.count > 0 {
                             for item in RemovingItem {
-                                Content.AlertList.removeValue(forKey: item)
+                                Content.alertList.removeValue(forKey: item)
                             }
                             StringImg2StringData()
                             RemovingItem.removeAll()
@@ -85,7 +85,7 @@ struct AppendAppView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .onTapGesture{
-                            Icons = ApplicationIcons()
+                            Icons = applicationIcons()
                         }
                     Spacer()
                     Text(Currently_running_Application)
@@ -112,8 +112,8 @@ struct AppendAppView: View {
     }
     func StringImg2StringData(){
         var saveToUserDefaultsVal:[String:Data] = [:]
-        for name in Content.AlertList.keys {
-            saveToUserDefaultsVal[name] = Content.AlertList[name]?.png
+        for name in Content.alertList.keys {
+            saveToUserDefaultsVal[name] = Content.alertList[name]?.png
         }
         UserDefaults.standard.set(try? JSONEncoder().encode(saveToUserDefaultsVal), forKey:"AlertList")
     }

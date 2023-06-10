@@ -12,7 +12,7 @@ struct KeyInputView: View {
     let Add_Item_Key:LocalizedStringKey = "Add_Item_Key"
     let Remove_Item_Key:LocalizedStringKey = "Remove_Item_Key"
     
-    @ObservedObject var Content = ObservedKeyVals
+    @ObservedObject var Content = observedKeyVal
     @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     var body: some View {
         HStack {
@@ -36,22 +36,22 @@ struct KeyInputView: View {
             
             Spacer()
             VStack {
-                Text(Content.PressedKey)
+                Text(Content.pressedKey)
                     .font(.system(size: 13, weight: .semibold))
                     .onTapGesture {
-                        (Content.PressedKey != "Waiting")
-                        ? ((Content.PressedKey = "Waiting"), (nil))
-                        : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
+                        (Content.pressedKey != "Waiting")
+                        ? ((Content.pressedKey = "Waiting"), (nil))
+                        : ((Content.pressedKey = "PressedKey"), (Content.pressedKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .trailing)
             Text(":")
             VStack{
-                Text(Content.ReturnKey)
+                Text(Content.returnKey)
                     .font(.system(size: 13, weight: .semibold))
-                    .onTapGesture { 
-                        (Content.ReturnKey != "Waiting")
-                        ? ((Content.ReturnKey = "Waiting"), (nil))
-                        : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
+                    .onTapGesture {
+                        (Content.returnKey != "Waiting")
+                        ? ((Content.returnKey = "Waiting"), (nil))
+                        : ((Content.returnKey = "ReturnKey"), (Content.returnKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .leading)
             Spacer()
@@ -65,19 +65,19 @@ struct KeyInputView: View {
                     )
                     .padding(.trailing , 8.0)
             }.onTapGesture(count: 1, perform: {
-                if Content.PressedKeyEvent != nil && Content.ReturnKeyEvent != nil{
+                if Content.pressedKeyEvent != nil && Content.returnKeyEvent != nil{
                     appendDataToEventDict()
                 }
             }).frame(width: 100)
         }
     }
     func appendDataToEventDict() {
-        Content.PressedKey = "PressedKey"
-        Content.ReturnKey = "ReturnKey"
-        Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
+        Content.pressedKey = "PressedKey"
+        Content.returnKey = "ReturnKey"
+        Content.EventDict[Content.pressedKeyEvent!] = Content.returnKeyEvent!
         isChecked.append(false)
-        Content.PressedKeyEvent = nil
-        Content.ReturnKeyEvent = nil
+        Content.pressedKeyEvent = nil
+        Content.returnKeyEvent = nil
         UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
     }
     

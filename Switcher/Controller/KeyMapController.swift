@@ -9,9 +9,9 @@ import Foundation
 import ArrayFlags
 import SwiftUI
 
-func SetKeyDefaultValue() {
+func setKeyDefaultValue() {
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil {
-        ObservedKeyVals.EventDict = (
+        observedKeyVal.EventDict = (
             try? JSONDecoder().decode(
                 [String:EventStruct].self,
                 from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data
@@ -19,9 +19,9 @@ func SetKeyDefaultValue() {
         )!
     }
     if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil {
-        ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
-        if (ObservedAlertVals.PressedKeyEvent.count == 0){
-            ObservedAlertVals.PressedKeyEvent = ["[􀆔]q"]
+        observedAlertVal.pressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
+        if (observedAlertVal.pressedKeyEvent.count == 0){
+            observedAlertVal.pressedKeyEvent = ["[􀆔]q"]
             UserDefaults.standard.set("[false]", forKey:"AlertKeyListIsChecked")
         }
     }
@@ -33,21 +33,21 @@ func SetKeyDefaultValue() {
             )
         )!
         for item in listedIcons.keys {
-            ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
+            observedAlertVal.alertList[item] = NSImage(data: listedIcons[item]!)
         }
     }
     
     
     let alertKeyListIsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
-    if ObservedAlertVals.PressedKeyEvent.count != alertKeyListIsCheck.count {
+    if observedAlertVal.pressedKeyEvent.count != alertKeyListIsCheck.count {
         UserDefaults.standard.set("[]", forKey:"AlertKeyListIsChecked")
-        ObservedAlertVals.PressedKeyEvent.removeAll()
+        observedAlertVal.pressedKeyEvent.removeAll()
     }
     
     let isCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
-    if ObservedKeyVals.EventDict.count != isCheck.count {
+    if observedKeyVal.EventDict.count != isCheck.count {
         UserDefaults.standard.set("[]", forKey:"IsChecked")
-        ObservedKeyVals.EventDict.removeAll()
+        observedKeyVal.EventDict.removeAll()
     }
 }
 
@@ -61,8 +61,7 @@ func checkApplicationIsActive(Applications:[String]) -> Bool {
 }
 
 
-func ApplicationIcons() -> [String:NSImage] {
-    
+func applicationIcons() -> [String:NSImage] {
     let apps = NSWorkspace.shared.runningApplications
     
     var returnVal:[String:NSImage] = [:]
@@ -74,19 +73,19 @@ func ApplicationIcons() -> [String:NSImage] {
 }
 
 
-func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String {
-    return String(keycode) + "|" + String(Flag)
+func pressedKeyEventStringMaker(keycode:UInt16, flag:UInt) -> String {
+    return String(keycode) + "|" + String(flag)
 }
 
 
 
 
-func GetFlags(Val:UInt, GetDirection:Bool = true) -> String {
-    let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
+func getFlags(val:UInt, getDirection:Bool = true) -> String {
+    let ArrayedFlag = GetArrayFlags(Val: val).sorted()
     var flagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 20486016 && flagMaps[UInt($0)] != nil { //exception handling
-            if GetDirection == true {
+            if getDirection == true {
                 flagMaps[UInt($0)]![0] == flagMaps[UInt($0)]![1]
                 ? (flagString += flagMaps[UInt($0)]![1] + ",")
                 : (flagString += flagMaps[UInt($0)]![1] + flagMaps[UInt($0)]![0] + ",")

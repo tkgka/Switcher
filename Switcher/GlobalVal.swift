@@ -9,28 +9,28 @@ import AppKit
 
 var keyMapWindow:NSWindow? = nil
 
-var AlertIsOn:Bool = false
+var alertIsOn:Bool = false
 
 class ObservableToggles: ObservableObject { // toggle switchs
-    @Published var CMDQ:Bool = UserDefaults.standard.bool(forKey: "CMDQ")
-    @Published var MouseWheel:Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
-    @Published var KeyMap:Bool = UserDefaults.standard.bool(forKey: "KeyMap")
+    @Published var alertKey: Bool = UserDefaults.standard.bool(forKey: "AlertKey")
+    @Published var mouseWheel: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
+    @Published var keyMap: Bool = UserDefaults.standard.bool(forKey: "KeyMap")
 }
 
 class ObservableKeyVal: ObservableObject { // Key to Map
-    @Published var PressedKeyList:[UInt] = []
-    @Published var ReturnKeyList:[UInt] = []
-    @Published var PressedKey: String = "PressedKey"
-    @Published var ReturnKey: String = "Returnkey"
-    @Published var PressedKeyEvent: String?
-    @Published var ReturnKeyEvent: EventStruct?
+    @Published var pressedKeyList:[UInt] = []
+    @Published var returnKeyList:[UInt] = []
+    @Published var pressedKey: String = "PressedKey"
+    @Published var returnKey: String = "Returnkey"
+    @Published var pressedKeyEvent: String?
+    @Published var returnKeyEvent: EventStruct?
     var EventDict : [String : EventStruct] = [:]
 }
 
 class ObservableAlertKeyVal: ObservableObject { // Key to show Alert when pressed
-    @Published var PressedKey: String = "AlertKey"
-    @Published var PressedKeyEvent:[String] = [] // List of Alerts keys
-    @Published var AlertList:[String:NSImage] = [:] //applications
+    @Published var pressedKey: String = "AlertKey"
+    @Published var pressedKeyEvent:[String] = [] // List of Alerts keys
+    @Published var alertList:[String:NSImage] = [:] //applications
 }
 
 struct EventStruct:Codable { // key Event 담당 struct
@@ -38,6 +38,6 @@ struct EventStruct:Codable { // key Event 담당 struct
     let flagNum: UInt!
 }
 
-var ObservedKeyVals = ObservableKeyVal()
-var ObservedAlertVals = ObservableAlertKeyVal()
-var ObservedToggles = ObservableToggles()
+var observedKeyVal = ObservableKeyVal()
+var observedAlertVal = ObservableAlertKeyVal()
+var observedToggles = ObservableToggles()

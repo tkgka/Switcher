@@ -14,12 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
         if !AXIsProcessTrusted() {
-            ShellCommand(arg: Privacy_Accessibility)
+            shellCommand(arg: Privacy_Accessibility)
             let _ = WelcomeView().openInWindow(title: "Switcher", sender: self)
         }
         createEventTap()
-        MakeMenuButton()
-        SetKeyDefaultValue()
+        makeMenuButton()
+        setKeyDefaultValue()
     }
     
     @objc func MenuButtonToggle(sender: AnyObject) {

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension AppDelegate {
     
-    func MakeMenuButton() {
+    func makeMenuButton() {
         popOver.behavior = .transient
         popOver.animates = true
         popOver.contentViewController = NSViewController()

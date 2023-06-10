@@ -8,7 +8,7 @@
 import SwiftUI
 struct KeyMapView: View {
     @AppStorage("IsChecked") var isChecked:[Bool] = []
-    @ObservedObject var Content = ObservedKeyVals
+    @ObservedObject var Content = observedKeyVal
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct KeyMapView: View {
                             HStack {
                                 Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
                                 Spacer()
-                                let PressedFlagString = GetFlags(Val: UInt(DictKey[i].components(separatedBy: "|")[1])!)
+                                let PressedFlagString = getFlags(val: UInt(DictKey[i].components(separatedBy: "|")[1])!)
                                 HStack {
                                     Text(PressedFlagString)
                                     if keyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!] != nil {
@@ -34,7 +34,7 @@ struct KeyMapView: View {
                                 }.frame(width: 235, alignment: .trailing)
                                     .font(.system(size: 13, weight: .semibold))
                                 Text(":")
-                                let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.flagNum))
+                                let ReturnFlagString = getFlags(val: UInt(Content.EventDict[DictKey[i]]!.flagNum))
                                 HStack {
                                     if keyMaps[Array(Content.EventDict.values)[i].keys] != nil {
                                         Text(keyMaps[Array(Content.EventDict.values)[i].keys]!)

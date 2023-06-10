@@ -13,7 +13,7 @@ struct KeySelecterView: View {
     
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
-    @ObservedObject var Content = ObservedKeyVals
+    @ObservedObject var Content = observedKeyVal
     @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     @State var allItems:[UInt] = Array(flagMaps.keys).sorted()
     var body: some View {
@@ -47,7 +47,7 @@ struct KeySelecterView: View {
                         }) {
                             HStack {
                                 Spacer()
-                                Image(systemName: "\($Content.PressedKeyList.count).circle")
+                                Image(systemName: "\($Content.pressedKeyList.count).circle")
                                     .font(.title2)
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
@@ -55,7 +55,7 @@ struct KeySelecterView: View {
                             .foregroundColor(Color(red: 0.4192, green: 0.2358, blue: 0.3450))
                         }
                         .popover(isPresented: $showingPopover[0]) {
-                            MultiSelectPickerView(allItems: allItems, selectedItems: $Content.PressedKeyList)
+                            MultiSelectPickerView(allItems: allItems, selectedItems: $Content.pressedKeyList)
                             // If you have issues with it being too skinny you can hardcode the width
                                 .frame(width: 300)
                         }
@@ -84,7 +84,7 @@ struct KeySelecterView: View {
                         }) {
                             HStack {
                                 Spacer()
-                                Image(systemName: "\($Content.ReturnKeyList.count).circle")
+                                Image(systemName: "\($Content.returnKeyList.count).circle")
                                     .font(.title2)
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
@@ -92,7 +92,7 @@ struct KeySelecterView: View {
                             .foregroundColor(Color(red: 0.4192, green: 0.2358, blue: 0.3450))
                         }
                         .popover(isPresented: $showingPopover[1]) {
-                            MultiSelectPickerView(allItems: allItems, selectedItems: $Content.ReturnKeyList)
+                            MultiSelectPickerView(allItems: allItems, selectedItems: $Content.returnKeyList)
                             // If you have issues with it being too skinny you can hardcode the width
                                 .frame(width: 300)
                         }
@@ -129,13 +129,13 @@ struct KeySelecterView: View {
         }
     }
     func appendDataToEventDict() {
-        Content.PressedKeyEvent = PressedKeyEventStringMaker(keycode: keyMaps.findKey(forValue: KeyMapList[0])!, Flag: ArrayToFlagVal(val: Content.PressedKeyList))
-        Content.ReturnKeyEvent = EventStruct(keys: keyMaps.findKey(forValue: KeyMapList[1]), flagNum: ArrayToFlagVal(val: Content.ReturnKeyList))
-        Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
-        Content.PressedKeyList = []
-        Content.ReturnKeyList = []
-        Content.PressedKeyEvent = nil
-        Content.ReturnKeyEvent = nil
+        Content.pressedKeyEvent = pressedKeyEventStringMaker(keycode: keyMaps.findKey(forValue: KeyMapList[0])!, flag: ArrayToFlagVal(val: Content.pressedKeyList))
+        Content.returnKeyEvent = EventStruct(keys: keyMaps.findKey(forValue: KeyMapList[1]), flagNum: ArrayToFlagVal(val: Content.returnKeyList))
+        Content.EventDict[Content.pressedKeyEvent!] = Content.returnKeyEvent!
+        Content.pressedKeyList = []
+        Content.returnKeyList = []
+        Content.pressedKeyEvent = nil
+        Content.returnKeyEvent = nil
         UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
         KeyMapList = ["",""]
     }

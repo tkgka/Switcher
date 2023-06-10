@@ -13,7 +13,7 @@ struct AlertKeySettingView: View {
     
     @State var KeyMapList:[String] = ["",""]
     @State var showingPopover:[Bool] = [false,false]
-    @ObservedObject var Content = ObservedAlertVals
+    @ObservedObject var Content = observedAlertVal
     @AppStorage("AlertKeyListIsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
     @StateObject var viewModel = ViewModel()
     
@@ -48,10 +48,10 @@ struct AlertKeySettingView: View {
                                 
                                 Spacer()
                                 VStack{
-                                    Text(Content.PressedKey)
+                                    Text(Content.pressedKey)
                                         .font(.system(size: 13, weight: .semibold))
                                         .onTapGesture{
-                                            (Content.PressedKey != "Waiting") ? (Content.PressedKey = "Waiting") : (Content.PressedKey = "AlertKey")
+                                            (Content.pressedKey != "Waiting") ? (Content.pressedKey = "Waiting") : (Content.pressedKey = "AlertKey")
                                         }
                                 }.frame(width: 180, alignment: .center)
                                 Spacer()
@@ -73,7 +73,7 @@ struct AlertKeySettingView: View {
                                 Divider()
                                 
                                 List {
-                                    ForEach (0..<(Content.PressedKeyEvent.count), id: \.self) { Val in
+                                    ForEach (0..<(Content.pressedKeyEvent.count), id: \.self) { Val in
                                         let i:Int = Val
                                         HStack{
                                             VStack{
@@ -81,7 +81,7 @@ struct AlertKeySettingView: View {
                                                     Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
                                                     Spacer()
                                                     HStack{
-                                                        Text("\(Content.PressedKeyEvent[i])")
+                                                        Text("\(Content.pressedKeyEvent[i])")
                                                     }.frame(width: 235, alignment: .trailing)
                                                         .font(.system(size: 13, weight: .semibold))
                                                 }
@@ -100,17 +100,17 @@ struct AlertKeySettingView: View {
     }
     
     func appendDataToEventDict(){
-        if (Content.PressedKey != "AlertKey" && Content.PressedKey != "Waiting" && !Content.PressedKeyEvent.contains(Content.PressedKey)) {
-            Content.PressedKeyEvent.append(Content.PressedKey)
-            Content.PressedKey = "AlertKey"
+        if (Content.pressedKey != "AlertKey" && Content.pressedKey != "Waiting" && !Content.pressedKeyEvent.contains(Content.pressedKey)) {
+            Content.pressedKeyEvent.append(Content.pressedKey)
+            Content.pressedKey = "AlertKey"
             isChecked.append(false)
-            UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")
+            UserDefaults.standard.set(Content.pressedKeyEvent, forKey:"AlertValEvent")
         }
     }
     
     func removeDataFromEventDict(index:Int) {
-        Content.PressedKeyEvent.remove(at: index)
+        Content.pressedKeyEvent.remove(at: index)
         isChecked.remove(at: index)
-        UserDefaults.standard.set(Content.PressedKeyEvent, forKey:"AlertValEvent")
+        UserDefaults.standard.set(Content.pressedKeyEvent, forKey:"AlertValEvent")
     }
 }
