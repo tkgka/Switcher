@@ -26,18 +26,18 @@ struct KeyMapView: View {
                                 let PressedFlagString = GetFlags(Val: UInt(DictKey[i].components(separatedBy: "|")[1])!)
                                 HStack {
                                     Text(PressedFlagString)
-                                    if KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!] != nil {
-                                        Text(KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
+                                    if keyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!] != nil {
+                                        Text(keyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
                                     }else {
                                         Text(DictKey[i].components(separatedBy: "|")[0])
                                     }
                                 }.frame(width: 235, alignment: .trailing)
                                     .font(.system(size: 13, weight: .semibold))
                                 Text(":")
-                                let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.FlagNum))
+                                let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.flagNum))
                                 HStack {
-                                    if KeyMaps[Array(Content.EventDict.values)[i].keys] != nil {
-                                        Text(KeyMaps[Array(Content.EventDict.values)[i].keys]!)
+                                    if keyMaps[Array(Content.EventDict.values)[i].keys] != nil {
+                                        Text(keyMaps[Array(Content.EventDict.values)[i].keys]!)
                                     } else {
                                         Text(String(Array(Content.EventDict.values)[i].keys))
                                     }

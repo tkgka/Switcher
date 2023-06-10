@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        KeyMapWindow != nil ? (KeyMapWindow = nil) : nil
+        keyMapWindow != nil ? (keyMapWindow = nil) : nil
         return false
     }
 }

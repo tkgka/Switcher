@@ -46,10 +46,10 @@ struct MultiSelectPickerView: View {
                         HStack {
                             Image(systemName: "checkmark")
                                 .opacity(self.selectedItems.contains(item) ? 1.0 : 0.0)
-                            if(FlagMaps[item]![0] == FlagMaps[item]![1]) {
-                                Text(FlagMaps[item]![0]).frame(width: 200)
+                            if(flagMaps[item]![0] == flagMaps[item]![1]) {
+                                Text(flagMaps[item]![0]).frame(width: 200)
                             } else {
-                                Text(FlagMaps[item]![1] + FlagMaps[item]![0]).frame(width: 200)
+                                Text(flagMaps[item]![1] + flagMaps[item]![0]).frame(width: 200)
                             }
                             
                         }

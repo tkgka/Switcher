@@ -38,14 +38,14 @@ func SetKeyDefaultValue() {
     }
     
     
-    let AlertKeyListIsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
-    if ObservedAlertVals.PressedKeyEvent.count != AlertKeyListIsCheck.count {
+    let alertKeyListIsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
+    if ObservedAlertVals.PressedKeyEvent.count != alertKeyListIsCheck.count {
         UserDefaults.standard.set("[]", forKey:"AlertKeyListIsChecked")
         ObservedAlertVals.PressedKeyEvent.removeAll()
     }
     
-    let IsCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
-    if ObservedKeyVals.EventDict.count != IsCheck.count {
+    let isCheck = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
+    if ObservedKeyVals.EventDict.count != isCheck.count {
         UserDefaults.standard.set("[]", forKey:"IsChecked")
         ObservedKeyVals.EventDict.removeAll()
     }
@@ -65,12 +65,12 @@ func ApplicationIcons() -> [String:NSImage] {
     
     let apps = NSWorkspace.shared.runningApplications
     
-    var ReturnVal:[String:NSImage] = [:]
+    var returnVal:[String:NSImage] = [:]
     for app in apps {
-        ReturnVal[app.localizedName!] = app.icon
+        returnVal[app.localizedName!] = app.icon
     }
     
-    return ReturnVal
+    return returnVal
 }
 
 
@@ -83,22 +83,22 @@ func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String {
 
 func GetFlags(Val:UInt, GetDirection:Bool = true) -> String {
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
-    var FlagString:String = "["
+    var flagString:String = "["
     ArrayedFlag.forEach {
-        if $0 < 20486016 && FlagMaps[UInt($0)] != nil { //exception handling
+        if $0 < 20486016 && flagMaps[UInt($0)] != nil { //exception handling
             if GetDirection == true {
-                FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1]
-                ? (FlagString += FlagMaps[UInt($0)]![1] + ",")
-                : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+                flagMaps[UInt($0)]![0] == flagMaps[UInt($0)]![1]
+                ? (flagString += flagMaps[UInt($0)]![1] + ",")
+                : (flagString += flagMaps[UInt($0)]![1] + flagMaps[UInt($0)]![0] + ",")
             } else {
-                (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0])
+                (flagMaps[UInt($0)]![0] == flagMaps[65792]![0] || flagMaps[UInt($0)]![0] == flagMaps[10486016]![0])
                 ? (nil)
-                : (FlagString += FlagMaps[UInt($0)]![0])
+                : (flagString += flagMaps[UInt($0)]![0])
             }
         }
     }
-    FlagString == "[" ? (FlagString = "") : (FlagString = FlagString.trimmingCharacters(in: [","]) + "]")
-    return FlagString
+    flagString == "[" ? (flagString = "") : (flagString = flagString.trimmingCharacters(in: [","]) + "]")
+    return flagString
 }
 
 

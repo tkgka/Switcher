@@ -15,7 +15,7 @@ struct AlertKeySettingView: View {
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedAlertVals
     @AppStorage("AlertKeyListIsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "AlertKeyListIsChecked")!) ?? []
-    @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
+    @State var allItems:[UInt] = Array(flagMaps.keys).sorted()
     @StateObject var viewModel = ViewModel()
     
     var body: some View {

@@ -7,7 +7,7 @@
 import Foundation
 import AppKit
 
-var KeyMapWindow:NSWindow? = nil
+var keyMapWindow:NSWindow? = nil
 
 var AlertIsOn:Bool = false
 
@@ -35,7 +35,7 @@ class ObservableAlertKeyVal: ObservableObject { // Key to show Alert when presse
 
 struct EventStruct:Codable { // key Event 담당 struct
     let keys: UInt16!
-    let FlagNum: UInt!
+    let flagNum: UInt!
 }
 
 var ObservedKeyVals = ObservableKeyVal()

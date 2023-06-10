@@ -8,7 +8,7 @@
 import Foundation
 
 // keyCode:KeyString
-let KeyMaps:[UInt16:String] = [
+let keyMaps:[UInt16:String] = [
     0x00:"a",
     0x0B:"b",
     0x08:"c",
@@ -96,7 +96,7 @@ let KeyMaps:[UInt16:String] = [
 
 
 // FlagCode:FlagString
-let FlagMaps: [UInt: [String]] = [
+let flagMaps: [UInt: [String]] = [
     256:["Default","Default"],
     65792:["􁂎","􁂎"],
     131330:["􀆝","L"],

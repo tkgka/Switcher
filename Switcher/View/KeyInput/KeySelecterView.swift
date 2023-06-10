@@ -15,7 +15,7 @@ struct KeySelecterView: View {
     @State var showingPopover:[Bool] = [false,false]
     @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
-    @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
+    @State var allItems:[UInt] = Array(flagMaps.keys).sorted()
     var body: some View {
         HStack {
             ZStack {
@@ -66,7 +66,7 @@ struct KeySelecterView: View {
                 Form {
                     Section {
                         Picker("", selection: ($KeyMapList[0])) {
-                            ForEach(KeyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
+                            ForEach(keyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
                                 Text($0)
                             }
                         }
@@ -103,7 +103,7 @@ struct KeySelecterView: View {
                 Form {
                     Section {
                         Picker("", selection: ($KeyMapList[1])) {
-                            ForEach(KeyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
+                            ForEach(keyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
                                 Text($0)
                             }
                         }
@@ -121,7 +121,7 @@ struct KeySelecterView: View {
                     )
                     .padding(.trailing , 8.0)
             }.onTapGesture(count: 1, perform: {
-                if KeyMaps.findKey(forValue: KeyMapList[0]) != nil && KeyMaps.findKey(forValue: KeyMapList[1]) != nil{
+                if keyMaps.findKey(forValue: KeyMapList[0]) != nil && keyMaps.findKey(forValue: KeyMapList[1]) != nil{
                     appendDataToEventDict()
                 }
                 
@@ -129,8 +129,8 @@ struct KeySelecterView: View {
         }
     }
     func appendDataToEventDict() {
-        Content.PressedKeyEvent = PressedKeyEventStringMaker(keycode: KeyMaps.findKey(forValue: KeyMapList[0])!, Flag: ArrayToFlagVal(val: Content.PressedKeyList))
-        Content.ReturnKeyEvent = EventStruct(keys: KeyMaps.findKey(forValue: KeyMapList[1]), FlagNum: ArrayToFlagVal(val: Content.ReturnKeyList))
+        Content.PressedKeyEvent = PressedKeyEventStringMaker(keycode: keyMaps.findKey(forValue: KeyMapList[0])!, Flag: ArrayToFlagVal(val: Content.PressedKeyList))
+        Content.ReturnKeyEvent = EventStruct(keys: keyMaps.findKey(forValue: KeyMapList[1]), flagNum: ArrayToFlagVal(val: Content.ReturnKeyList))
         Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
         Content.PressedKeyList = []
         Content.ReturnKeyList = []
