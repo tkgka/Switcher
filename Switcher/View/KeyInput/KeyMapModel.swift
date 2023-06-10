@@ -8,11 +8,6 @@
 import Foundation
 import AppKit
 
-var IsChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
-
-let KeyMapsArr:[String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","`","1","2","3","4","5","6","7","8","9","0","-","=","ESC","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","F13","F14","F15","􀄦","􀄧","􀄤","􀄥","􀆛","􁂒","􀅇","􁂎","Space","􀄿","􀅀","􀄨","􀄩",",",".","/",";","'","[","]","\\","MBtn3","MBtn4"]
-
-
 // keyCode:KeyString
 let KeyMaps:[UInt16:String] = [
     0x00:"a",
@@ -102,8 +97,7 @@ let KeyMaps:[UInt16:String] = [
 
 
 // FlagCode:FlagString
-let FlagMaps: [UInt: [String]] =
-[
+let FlagMaps: [UInt: [String]] = [
     256:["Default","Default"],
     65792:["􁂎","􁂎"],
     131330:["􀆝","L"],

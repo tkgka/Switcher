@@ -66,7 +66,7 @@ struct KeySelecterView: View {
                 Form {
                     Section {
                         Picker("", selection: ($KeyMapList[0])) {
-                            ForEach(KeyMapsArr, id: \.self) {
+                            ForEach(KeyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
                                 Text($0)
                             }
                         }
@@ -103,7 +103,7 @@ struct KeySelecterView: View {
                 Form {
                     Section {
                         Picker("", selection: ($KeyMapList[1])) {
-                            ForEach(KeyMapsArr, id: \.self) {
+                            ForEach(KeyMaps.values.sorted(by: {$0 < $1}), id: \.self) {
                                 Text($0)
                             }
                         }
