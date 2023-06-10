@@ -15,7 +15,7 @@ struct MenuView: View {
     let MouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
     let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
     var body: some View {
-        VStack( alignment: .leading, spacing: 0){
+        VStack( alignment: .leading, spacing: 0) {
             
             Text("Switcher")
                 .font(Font.system(size: 15.0))
@@ -31,7 +31,7 @@ struct MenuView: View {
             
             Group {
                 HStack(
-                    spacing: 0){
+                    spacing: 0) {
                         Image(systemName: "exclamationmark.triangle")
                             .padding(.top, 15.0)
                             .padding(.leading, 15.0)
@@ -52,7 +52,7 @@ struct MenuView: View {
                             // Fallback on earlier versions
                         }
                     }
-                HStack{
+                HStack {
                     Text(AlertDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
@@ -68,11 +68,11 @@ struct MenuView: View {
                         .padding(.top, 15.0)
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
-                        .onTapGesture{
+                        .onTapGesture {
                             let Name = "AlertKey Setting"
-                            if (WindowName == nil || WindowName == Name){
+                            if (WindowName == nil || WindowName == Name) {
                                 KeyMapWindow == nil ? (KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-                            }else{
+                            } else {
                                 KeyMapWindow?.close()
                                 KeyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
                             }
@@ -84,7 +84,7 @@ struct MenuView: View {
                 .padding(.horizontal, 10.0)
                 .frame(width: 300)
             
-            Group{
+            Group {
                 HStack(
                     spacing: 0){
                         Image(systemName: "magicmouse")
@@ -121,7 +121,7 @@ struct MenuView: View {
             
             Group {
                 HStack(
-                    spacing: 0){
+                    spacing: 0) {
                         Image(systemName: "keyboard")
                             .padding(.top, 15.0)
                             .padding(.leading, 15.0)
@@ -142,7 +142,7 @@ struct MenuView: View {
                             // Fallback on earlier versions
                         }
                     }
-                HStack{
+                HStack {
                     Text(keyMapDesc)
                         .font(Font.system(size: 12.0))
                         .fontWeight(.light)
@@ -158,11 +158,11 @@ struct MenuView: View {
                         .padding(.top, 15.0)
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
-                        .onTapGesture{
+                        .onTapGesture {
                             let Name = "KeyMap"
-                            if (WindowName == nil || WindowName == Name){
+                            if (WindowName == nil || WindowName == Name) {
                                 KeyMapWindow == nil ? (KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)) : KeyMapWindow?.orderFrontRegardless()
-                            }else{
+                            } else {
                                 KeyMapWindow?.close()
                                 KeyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
                             }
@@ -170,15 +170,13 @@ struct MenuView: View {
                         }
                 }
             }
-            
             Divider()
                 .padding(.horizontal, 10.0)
                 .frame(width: 300)
-            
         }
         
         
-        HStack{
+        HStack {
             Link("\(Image(systemName: "link")) GitHub", destination: URL(string: "https://github.com/tkgka/Switcher")!)
                 .buttonStyle(LinkButtonStyle())
                 .padding(.leading, 15.0)
@@ -213,7 +211,3 @@ struct MenuView_Previews: PreviewProvider {
         MenuView()
     }
 }
-
-
-//
-

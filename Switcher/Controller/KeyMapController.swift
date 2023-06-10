@@ -10,7 +10,7 @@ import ArrayFlags
 import SwiftUI
 
 func SetKeyDefaultValue(){
-    if (UserDefaults.standard.value(forKey:"EventDict")) != nil{
+    if (UserDefaults.standard.value(forKey:"EventDict")) != nil {
         ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
     }
     if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil{
@@ -20,7 +20,7 @@ func SetKeyDefaultValue(){
             UserDefaults.standard.set("[false]", forKey:"AlertKeyListIsChecked")
         }
     }
-    if UserDefaults.standard.value(forKey:"AlertList") != nil{
+    if UserDefaults.standard.value(forKey:"AlertList") != nil {
         let listedIcons:[String:Data] = (try? JSONDecoder().decode([String:Data].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!
         for item in listedIcons.keys {
             ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
@@ -64,21 +64,21 @@ func ApplicationIcons() -> [String:NSImage] {
 }
 
 
-func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String{
+func PressedKeyEventStringMaker(keycode:UInt16, Flag:UInt) -> String {
     return String(keycode) + "|" + String(Flag)
 }
 
 
 
 
-func GetFlags(Val:UInt, GetDirection:Bool = true) -> String{
+func GetFlags(Val:UInt, GetDirection:Bool = true) -> String {
     let ArrayedFlag = GetArrayFlags(Val: Val).sorted()
     var FlagString:String = "["
     ArrayedFlag.forEach {
         if $0 < 20486016 && FlagMaps[UInt($0)] != nil { //exception handling
-            if GetDirection == true{
+            if GetDirection == true {
                 FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
-            }else {
+            } else {
                 (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0]) ? (nil) : (FlagString += FlagMaps[UInt($0)]![0])
             }
         }
@@ -89,11 +89,13 @@ func GetFlags(Val:UInt, GetDirection:Bool = true) -> String{
 
 
 func ArrayToFlagVal(val:[UInt]) -> UInt{
-    var returnVal:UInt = 0
+    var returnVal: UInt = 0
     val.forEach{
         returnVal += $0 - 256
     }
-    returnVal < 0 ? (returnVal = 0) : nil // exception handling
+    if returnVal <= 0 {
+        returnVal = 0
+    }
     return returnVal + 256
 }
 

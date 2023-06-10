@@ -16,13 +16,13 @@ struct KeyMapView: View {
                 let DictKey:Array = Array(Content.EventDict.keys)
                 ForEach (0..<Content.EventDict.count, id: \.self) { Val in
                     let i:Int = Val
-                    HStack{
-                        VStack{
-                            HStack{
+                    HStack {
+                        VStack {
+                            HStack {
                                 Toggle(isOn: $isChecked[i]) {}.frame(width: 15)
                                 Spacer()
                                 let PressedFlagString = GetFlags(Val: UInt(DictKey[i].components(separatedBy: "|")[1])!)
-                                HStack{
+                                HStack {
                                     Text(PressedFlagString)
                                     if KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!] != nil {
                                         Text(KeyMaps[UInt16(DictKey[i].components(separatedBy: "|")[0])!]!)
@@ -33,10 +33,10 @@ struct KeyMapView: View {
                                     .font(.system(size: 13, weight: .semibold))
                                 Text(":")
                                 let ReturnFlagString = GetFlags(Val: UInt(Content.EventDict[DictKey[i]]!.FlagNum))
-                                HStack{
-                                    if KeyMaps[Array(Content.EventDict.values)[i].keys] != nil{
+                                HStack {
+                                    if KeyMaps[Array(Content.EventDict.values)[i].keys] != nil {
                                         Text(KeyMaps[Array(Content.EventDict.values)[i].keys]!)
-                                    }else{
+                                    } else {
                                         Text(String(Array(Content.EventDict.values)[i].keys))
                                     }
                                     Text(ReturnFlagString)

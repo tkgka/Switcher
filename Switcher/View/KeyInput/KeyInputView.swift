@@ -15,8 +15,8 @@ struct KeyInputView: View {
     @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     var body: some View {
-        HStack{
-            ZStack{
+        HStack {
+            ZStack {
                 Text(Remove_Item_Key)
                     .frame(width: 60, alignment: .center)
                     .padding(7)
@@ -26,7 +26,7 @@ struct KeyInputView: View {
                     )
                     .padding([.top, .bottom] , 2)
             } .onTapGesture(count: 1, perform: {
-                for (index, value) in isChecked.enumerated().reversed(){
+                for (index, value) in isChecked.enumerated().reversed() {
                     if(value == true){
                         RemoveDataToEventDict(index: index)
                         
@@ -35,10 +35,10 @@ struct KeyInputView: View {
             }).frame(width: 100)
             
             Spacer()
-            VStack{
+            VStack {
                 Text(Content.PressedKey)
                     .font(.system(size: 13, weight: .semibold))
-                    .onTapGesture{
+                    .onTapGesture {
                         (Content.PressedKey != "Waiting") ? ((Content.PressedKey = "Waiting"), (nil)) : ((Content.PressedKey = "PressedKey"), (Content.PressedKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .trailing)
@@ -46,12 +46,12 @@ struct KeyInputView: View {
             VStack{
                 Text(Content.ReturnKey)
                     .font(.system(size: 13, weight: .semibold))
-                    .onTapGesture{
+                    .onTapGesture {
                         (Content.ReturnKey != "Waiting") ? ((Content.ReturnKey = "Waiting"), (nil)) : ((Content.ReturnKey = "ReturnKey"), (Content.ReturnKeyEvent = nil))
                     }
             }.frame(width: 180, alignment: .leading)
             Spacer()
-            ZStack{
+            ZStack {
                 Text(Add_Item_Key)
                     .frame(width: 60, alignment: .center)
                     .padding(7)
@@ -67,8 +67,7 @@ struct KeyInputView: View {
             }).frame(width: 100)
         }
     }
-    func appendDataToEventDict(){
-        print("a \(isChecked)")
+    func appendDataToEventDict() {
         Content.PressedKey = "PressedKey"
         Content.ReturnKey = "ReturnKey"
         Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!
@@ -76,7 +75,6 @@ struct KeyInputView: View {
         Content.PressedKeyEvent = nil
         Content.ReturnKeyEvent = nil
         UserDefaults.standard.set(try? JSONEncoder().encode(Content.EventDict), forKey:"EventDict")
-        print("b \(isChecked)")
     }
     
     func RemoveDataToEventDict(index:Int) {

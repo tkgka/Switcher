@@ -19,7 +19,7 @@ extension View {
     }
 }
 
-func AlertPopupTimeout(){
+func AlertPopupTimeout() {
     DispatchQueue.main.asyncAfter(deadline: .now() + DefaultTimeout) {
         currentWindow?.close()
         AlertIsOn = false
@@ -27,7 +27,7 @@ func AlertPopupTimeout(){
 }
 
 
-func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
+func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent {
     if (event.type.rawValue == 25 || event.type.rawValue == 26) { // event type != keyDown || event type != keyup
         weak var Event = NSEvent.keyEvent(with: .init(rawValue: event.type.rawValue - 15)!, location: event.locationInWindow, modifierFlags: .init(rawValue: Flag), timestamp: event.timestamp, windowNumber: event.windowNumber, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: false, keyCode: KeyCode)
         return Event!
@@ -40,7 +40,7 @@ func CreateNSEvent(event:NSEvent, KeyCode:UInt16, Flag:UInt) -> NSEvent{
 
 weak var currentWindow:NSWindow? = nil
 
-func IsAlertOn(cgEvent:CGEvent, Text:String) -> CGEvent?{
+func IsAlertOn(cgEvent:CGEvent, Text:String) -> CGEvent? {
     if (AlertIsOn == true) {
         AlertIsOn = false
         return cgEvent

@@ -16,9 +16,9 @@ struct KeySelecterView: View {
     @ObservedObject var Content = ObservedKeyVals
     @AppStorage("IsChecked") var isChecked:[Bool] = [Bool](rawValue: UserDefaults.standard.string(forKey: "IsChecked")!) ?? []
     @State var allItems:[UInt] = Array(FlagMaps.keys).sorted()
-    var body: some View{
-        HStack{
-            ZStack{
+    var body: some View {
+        HStack {
+            ZStack {
                 Text(Remove_Item_Key)
                     .frame(width: 60, alignment: .center)
                     .padding(7)
@@ -28,7 +28,7 @@ struct KeySelecterView: View {
                     )
                     .padding([.top, .bottom] , 2)
             } .onTapGesture(count: 1, perform: {
-                for (index, value) in isChecked.enumerated().reversed(){
+                for (index, value) in isChecked.enumerated().reversed() {
                     if(value == true){
                         RemoveDataToEventDict(index: index)
                         
@@ -99,7 +99,7 @@ struct KeySelecterView: View {
                     }
                 }
             }.frame(width:50)
-            VStack{
+            VStack {
                 Form {
                     Section {
                         Picker("", selection: ($KeyMapList[1])) {
@@ -127,9 +127,8 @@ struct KeySelecterView: View {
                 
             }).frame(width: 100)
         }
-        
     }
-    func appendDataToEventDict(){
+    func appendDataToEventDict() {
         Content.PressedKeyEvent = PressedKeyEventStringMaker(keycode: KeyMaps.findKey(forValue: KeyMapList[0])!, Flag: ArrayToFlagVal(val: Content.PressedKeyList))
         Content.ReturnKeyEvent = EventStruct(keys: KeyMaps.findKey(forValue: KeyMapList[1]), FlagNum: ArrayToFlagVal(val: Content.ReturnKeyList))
         Content.EventDict[Content.PressedKeyEvent!] = Content.ReturnKeyEvent!

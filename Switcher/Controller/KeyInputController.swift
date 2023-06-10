@@ -37,7 +37,7 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         else { return cgEvent }
     }
     
-    if(event.type == .keyUp || event.type == .keyDown){
+    if(event.type == .keyUp || event.type == .keyDown) {
 
         let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
         let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
@@ -48,14 +48,14 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
             return nil
         }
         
-        if ObservedKeyVals.PressedKey == "Waiting"{
+        if ObservedKeyVals.PressedKey == "Waiting" {
             
             KeyMaps[event.keyCode] != nil ? (ObservedKeyVals.PressedKey = FlagString + KeyMaps[event.keyCode]!) : (ObservedKeyVals.PressedKey = FlagString + String(event.keyCode))
             ObservedKeyVals.PressedKeyEvent = PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)
             
             return nil
         }
-        if ObservedKeyVals.ReturnKey == "Waiting"{
+        if ObservedKeyVals.ReturnKey == "Waiting" {
             
             KeyMaps[event.keyCode] != nil ? (ObservedKeyVals.ReturnKey = KeyMaps[event.keyCode]! + FlagString) : (ObservedKeyVals.ReturnKey = FlagString + String(event.keyCode))
             ObservedKeyVals.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
@@ -95,17 +95,14 @@ func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTa
         
         else { return cgEvent }
         
-    }else  if event.type == .scrollWheel && ObservedToggles.MouseWheel == true{
+    } else  if event.type == .scrollWheel && ObservedToggles.MouseWheel == true {
         AlertIsOn = false
         if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
             return CGEvent(scrollWheelEvent2Source: nil, units: CGScrollEventUnit.pixel, wheelCount: 1, wheel1: Int32(event.deltaY * -10), wheel2: 0, wheel3: 0)
-        }
-        else{
+        } else {
             return cgEvent
         }
-    }
-    
-    else {
+    } else {
         event.type != .keyUp ? AlertIsOn = false : nil
         return cgEvent
     }

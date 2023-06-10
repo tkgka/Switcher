@@ -30,10 +30,10 @@ struct ContentView: View {
     let width = NSScreen.main?.frame.width
     let height = NSScreen.main?.frame.height
     var body: some View {
-        VStack{
-            ZStack{
+        VStack {
+            ZStack {
                 EffectsView()
-                VStack{
+                VStack {
                     Image(systemName: "exclamationmark.circle")
                         .resizable()
                         .frame(width: 70.0, height: 70.0)
