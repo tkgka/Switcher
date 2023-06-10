@@ -9,11 +9,16 @@ import Foundation
 import ArrayFlags
 import SwiftUI
 
-func SetKeyDefaultValue(){
+func SetKeyDefaultValue() {
     if (UserDefaults.standard.value(forKey:"EventDict")) != nil {
-        ObservedKeyVals.EventDict = (try? JSONDecoder().decode([String:EventStruct].self, from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data))!
+        ObservedKeyVals.EventDict = (
+            try? JSONDecoder().decode(
+                [String:EventStruct].self,
+                from: (UserDefaults.standard.value(forKey:"EventDict")) as! Data
+            )
+        )!
     }
-    if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil{
+    if (UserDefaults.standard.value(forKey:"AlertValEvent")) != nil {
         ObservedAlertVals.PressedKeyEvent = UserDefaults.standard.value(forKey: "AlertValEvent") as! [String]
         if (ObservedAlertVals.PressedKeyEvent.count == 0){
             ObservedAlertVals.PressedKeyEvent = ["[􀆔]q"]
@@ -21,7 +26,12 @@ func SetKeyDefaultValue(){
         }
     }
     if UserDefaults.standard.value(forKey:"AlertList") != nil {
-        let listedIcons:[String:Data] = (try? JSONDecoder().decode([String:Data].self, from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data))!
+        let listedIcons:[String:Data] = (
+            try? JSONDecoder().decode(
+                [String:Data].self,
+                from: (UserDefaults.standard.value(forKey:"AlertList")) as! Data
+            )
+        )!
         for item in listedIcons.keys {
             ObservedAlertVals.AlertList[item] = NSImage(data: listedIcons[item]!)
         }
@@ -77,9 +87,13 @@ func GetFlags(Val:UInt, GetDirection:Bool = true) -> String {
     ArrayedFlag.forEach {
         if $0 < 20486016 && FlagMaps[UInt($0)] != nil { //exception handling
             if GetDirection == true {
-                FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1] ? (FlagString += FlagMaps[UInt($0)]![1] + ",") : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
+                FlagMaps[UInt($0)]![0] == FlagMaps[UInt($0)]![1]
+                ? (FlagString += FlagMaps[UInt($0)]![1] + ",")
+                : (FlagString += FlagMaps[UInt($0)]![1] + FlagMaps[UInt($0)]![0] + ",")
             } else {
-                (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0]) ? (nil) : (FlagString += FlagMaps[UInt($0)]![0])
+                (FlagMaps[UInt($0)]![0] == FlagMaps[65792]![0] || FlagMaps[UInt($0)]![0] == FlagMaps[10486016]![0])
+                ? (nil)
+                : (FlagString += FlagMaps[UInt($0)]![0])
             }
         }
     }
@@ -88,9 +102,9 @@ func GetFlags(Val:UInt, GetDirection:Bool = true) -> String {
 }
 
 
-func ArrayToFlagVal(val:[UInt]) -> UInt{
+func ArrayToFlagVal(val:[UInt]) -> UInt {
     var returnVal: UInt = 0
-    val.forEach{
+    val.forEach {
         returnVal += $0 - 256
     }
     if returnVal <= 0 {
