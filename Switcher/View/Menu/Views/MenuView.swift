@@ -6,9 +6,10 @@
 // UI Design from " https://github.com/mik3sw/OneClick"
 
 import SwiftUI
+
 struct MenuView: View {
     
-    @ObservedObject var ObserveToggles = observedToggles
+    @ObservedObject var ObserveToggles = MenuModel.shared
     @State var WindowName:String? = nil
     
     var body: some View {
@@ -66,18 +67,7 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let Name = "AlertKey Setting"
-                            if (WindowName == nil || WindowName == Name) {
-                                guard let keyMapWindow else {
-                                    keyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
-                                    return
-                                }
-                                keyMapWindow.orderFrontRegardless()
-                            } else {
-                                keyMapWindow?.close()
-                                keyMapWindow = AlertKeySettingView().openInWindow(title: Name, sender: self)
-                            }
-                            WindowName = Name
+                            
                         }
                 }
             }
@@ -160,18 +150,6 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let Name = "KeyMap"
-                            if (WindowName == nil || WindowName == Name) {
-                                guard let keyMapWindow else {
-                                    keyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
-                                    return
-                                }
-                                keyMapWindow.orderFrontRegardless()
-                            } else {
-                                keyMapWindow?.close()
-                                keyMapWindow = MainKeyMapView().openInWindow(title: Name, sender: self)
-                            }
-                            WindowName = Name
                         }
                 }
             }
