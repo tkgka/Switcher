@@ -2,11 +2,53 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
+	<key>BuildMachineOSBuild</key>
+	<string>20A241133</string>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>ClassroomStudentMenuExtra</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.ClassroomStudentMenuExtra</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ClassroomStudentMenuExtra</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSupportedPlatforms</key>
 	<array>
-		<string>Apple Symbols.ttf</string>
+		<string>MacOSX</string>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>14A6270d</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>13.0</string>
+	<key>DTSDKBuild</key>
+	<string>22A366</string>
+	<key>DTSDKName</key>
+	<string>macosx13.0.internal</string>
+	<key>DTXcode</key>
+	<string>1400</string>
+	<key>DTXcodeBuild</key>
+	<string>14A6270d</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2020 Apple Inc. All rights reserved.</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>
