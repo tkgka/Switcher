@@ -17,4 +17,3 @@ struct SwitcherApp: App {
         }
     }
 }
-
