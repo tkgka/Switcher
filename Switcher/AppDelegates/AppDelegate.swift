@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popOver = NSPopover()
     public func applicationDidFinishLaunching(_ notification: Notification) {
         if !AXIsProcessTrusted() {
-            shellCommand(arg: Privacy_Accessibility)
+            ShellCommand.open(arg: .OpenPrivacyAccessibility)
             let _ = WelcomeView().openInWindow(title: "Switcher", sender: self)
         }
         createEventTap()

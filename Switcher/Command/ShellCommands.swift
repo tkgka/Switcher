@@ -7,13 +7,20 @@
 
 import Foundation
 
-// open settings -> security & privacy
-let Privacy_Accessibility = "open 'x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility'"
+struct ShellCommand {
+    
+    static func open(arg: Open) -> Void {
+        let task = Process()
+        task.launchPath = "/bin/zsh"
+        task.arguments = ["-c", arg.rawValue]
+        task.standardOutput = Pipe()
+        task.launch()
+    }
+}
 
-func shellCommand(arg: String) -> Void {
-    let task = Process()
-    task.launchPath = "/bin/zsh"
-    task.arguments = ["-c", arg]
-    task.standardOutput = Pipe()
-    task.launch()
+extension ShellCommand {
+    
+    enum Open: String {
+        case OpenPrivacyAccessibility = "open 'x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility'"
+    }
 }
