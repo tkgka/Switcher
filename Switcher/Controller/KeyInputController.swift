@@ -32,6 +32,10 @@ private extension KeyInputController {
             if event.type == .keyDown {
                 lastPressedKeyEvent = event
             }
+            alertWindow?.close()
+            alertWindow = AlertView(
+                alertText: "\(FlagMaps(rawValue: event.modifierFlags.rawValue)?.string ?? "") \(KeyMaps(rawValue: event.keyCode)?.string ?? "")"
+            ).showViewOnNewWindowInSpecificTime(during: Constant.alertTimeout)
             return nil
         }
         
@@ -42,4 +46,15 @@ private extension KeyInputController {
     }
     
     static var lastPressedKeyEvent: NSEvent?
+    static var alertWindow: NSWindow?
+}
+
+
+// MARK: - Constant
+
+private extension KeyInputController {
+    
+    enum Constant {
+        static let alertTimeout = 1.5
+    }
 }
