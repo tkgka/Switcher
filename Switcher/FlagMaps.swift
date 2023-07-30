@@ -23,5 +23,30 @@ enum FlagMaps: UInt {
     case rightCommand = 1048848
     case bothCommands = 1048856
     case function = 8388864
-    case arrow = 10486016    
+    case arrow = 10486016
+}
+
+
+extension FlagMaps {
+    
+    var string: String {
+        switch self {
+        case .`default`:
+            return ""
+        case .capsLock:
+            return "capsLock"
+        case .leftShift, .rightShift, .bothShifts:
+            return "􀆝"
+        case .leftControl, .rightControl, .bothControls:
+            return "􀆍"
+        case .leftOption, .rightOption, .bothOptions:
+            return "􀆕"
+        case .leftCommand, .rightCommand, .bothCommands:
+            return "􀆔"
+        case .function:
+            return "Fn"
+        case .arrow:
+            return ""
+        }
+    }
 }
