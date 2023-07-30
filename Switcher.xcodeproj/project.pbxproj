@@ -44,6 +44,7 @@
 		F99C8B842A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
 		F9B962282A7550FA00EAF3CD /* FlagMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B962272A7550FA00EAF3CD /* FlagMaps.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
+		F9DA3C432A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		F99C8B822A3478B500E8875C /* Apple Symbols.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols.ttf"; sourceTree = "<group>"; };
 		F9B962272A7550FA00EAF3CD /* FlagMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMaps.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
+		F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+showViewOnNewWindowInSpecificTime.swift"; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
+				F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
 				F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */,
+				F9DA3C432A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
