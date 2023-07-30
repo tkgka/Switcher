@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct EffectsView: NSViewRepresentable {
+public struct BlurView: NSViewRepresentable {
     public typealias NSViewType = NSVisualEffectView
     
     public func makeNSView(context: Context) -> NSVisualEffectView {
@@ -15,7 +15,6 @@ public struct EffectsView: NSViewRepresentable {
         effectView.material = .hudWindow
         effectView.blendingMode = .withinWindow
         effectView.state = NSVisualEffectView.State.active
-        
         return effectView
     }
     
@@ -24,58 +23,75 @@ public struct EffectsView: NSViewRepresentable {
         nsView.blendingMode = .withinWindow
     }
 }
-struct AlertView: View {
 
-    @State private var scale: CGFloat = 1
-    private let AlertTimeout:Double = 1
-    private let width = NSScreen.main?.frame.width
-    private let height = NSScreen.main?.frame.height
+public struct AlertView: View {
     
-    static let defaultTimeout = 1.5
+    // MARK: - Interface
     
-    var body: some View {
-        
-        VStack {
-            ZStack {
-                EffectsView()
-                VStack {
-                    Image(systemName: "exclamationmark.circle")
+    let alertText:String
+    
+    
+    // MARK: - State
+    
+    @State var scale: CGFloat = 1
+    
+    
+    // MARK: - View
+    
+    public var body: some View {
+        VStack{
+            ZStack{
+                BlurView()
+                VStack{
+                    Image(systemName: ImageName.exclamationmarkCircle)
                         .resizable()
-                        .frame(width: 70.0, height: 70.0)
-                        .foregroundColor(Color("ImageColor"))
+                        .frame(width: Constant.imageSize, height: Constant.imageSize)
+                        .foregroundColor(Colors.image)
                         .padding()
-                    Text("Enter 􀆔q again \nto shutdown app")
-                        .kerning(-0.5)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 18))
-                        .foregroundColor(Color("FontColor"))
+                    Text(alertText).multilineTextAlignment(.center)
+                        .font(.system(size: Constant.fontSize))
+                        .foregroundColor(Colors.font)
                 }
-            }.frame(width: Constant.AlertSize, height: Constant.AlertSize)
-                .cornerRadius(20)
-                .position(x: width!/2, y: height! - Constant.AlertSize*3/2.04)
+            }.frame(width: Constant.viewSize, height: Constant.viewSize)
+                .cornerRadius(Constant.cornerRadius)
+                .position(x: Metric.width / 2, y: Metric.height - Constant.viewSize * 3 / 2.04)
                 .opacity(scale)
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + AlertTimeout) {
-                        let baseAnimation = Animation.easeIn(duration: AlertView.defaultTimeout - AlertTimeout)
-                        let repeated = baseAnimation.repeatCount(1, autoreverses: false)
-                        withAnimation(repeated) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + Metric.defaltTimeout - Metric.alertTimeout) {
+                        withAnimation(Animation.easeIn(duration: Metric.alertTimeout).repeatCount(1, autoreverses: false)) {
                             scale = 0.0
                         }
                     }
                 }
-        }.frame(width: width!, height:height!)
+        }.frame(width: Metric.width, height: Metric.height)
     }
 }
+
+
+// MARK: - Constant
 
 private extension AlertView {
     
     enum Constant {
-        static var AlertSize:CGFloat = 200.0
+        static let imageSize = 70.0
+        static let fontSize = 15.0
+        static let viewSize = 200.0
+        static let cornerRadius = 20.0
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlertView()
+    
+    enum Metric {
+        static let defaltTimeout:Double = 1.5
+        static let alertTimeout:Double = 0.5
+        static let width = NSScreen.main?.frame.width ?? 0
+        static let height = NSScreen.main?.frame.height ?? 0
+    }
+    
+    enum Colors {
+        static let font = Color("FontColor")
+        static let image = Color("ImageColor")
+    }
+    
+    enum ImageName {
+        static let exclamationmarkCircle = "exclamationmark.circle"
     }
 }
