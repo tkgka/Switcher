@@ -42,7 +42,7 @@ struct MenuView: View {
                         
                         
                         if #available(macOS 11.0, *) {
-                            Toggle("", isOn: $ObserveToggles.alertKey)
+                            Toggle("", isOn: $ObserveToggles.preventKeyPressByMistake)
                                 .toggleStyle(.switch)
                                 .frame(alignment: .leading)
                                 .padding(.top, 15.0)
@@ -175,8 +175,8 @@ struct MenuView: View {
             .frame(alignment: .leading)
         }
         
-        .onChange(of: ObserveToggles.alertKey) { alertKey in
-            UserDefaults.standard.set(alertKey, forKey: "AlertKey")
+        .onChange(of: ObserveToggles.preventKeyPressByMistake) { alertKey in
+            UserDefaults.standard.set(alertKey, forKey: "PreventKeyPressByMistake")
         }
         .onChange(of: ObserveToggles.mouseWheel) { MouseWheel in
             UserDefaults.standard.set(MouseWheel, forKey: "MouseWheel")
