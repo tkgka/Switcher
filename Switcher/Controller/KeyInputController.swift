@@ -10,7 +10,9 @@ import SwiftUI
 struct KeyInputController {
     
     static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-        guard event.type == .keyDown || event.type == .keyUp else {
+        guard event.type == .keyDown || event.type == .keyUp,
+              MenuModel.shared.preventKeyPressByMistake
+        else {
             return cgEvent
         }
         
@@ -33,9 +35,20 @@ private extension KeyInputController {
                 lastPressedKeyEvent = event
             }
             alertWindow?.close()
+            let flagText = String(
+                FlagMaps.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted(by: {$0.rawValue > $1.rawValue})
+                    .flatMap { flag in
+                        flag.string
+                    }
+            )
             alertWindow = AlertView(
-                alertText: "\(FlagMaps(rawValue: event.modifierFlags.rawValue)?.string ?? "") \(KeyMaps(rawValue: event.keyCode)?.string ?? "")"
+                alertText: "\(flagText) \(KeyMaps(rawValue: event.keyCode)?.string ?? "")"
             ).showViewOnNewWindowInSpecificTime(during: Constant.alertTimeout)
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constant.alertTimeout) {
+                if lastPressedKeyEvent == event {
+                    lastPressedKeyEvent = nil
+                }
+            }
             return nil
         }
         
