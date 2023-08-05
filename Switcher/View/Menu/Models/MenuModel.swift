@@ -9,7 +9,7 @@ import Foundation
 
 class MenuModel: ObservableObject {
     
-    @Published var alertKey: Bool = UserDefaults.standard.bool(forKey: "AlertKey")
+    @Published var preventKeyPressByMistake: Bool = UserDefaults.standard.bool(forKey: "PreventKeyPressByMistake")
     @Published var mouseWheel: Bool = UserDefaults.standard.bool(forKey: "MouseWheel")
     @Published var keyMap: Bool = UserDefaults.standard.bool(forKey: "KeyMap")
     
