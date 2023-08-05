@@ -36,13 +36,13 @@ private extension KeyInputController {
             }
             alertWindow?.close()
             let flagText = String(
-                FlagMaps.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted(by: {$0.rawValue > $1.rawValue})
+                FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted(by: {$0.rawValue > $1.rawValue})
                     .flatMap { flag in
                         flag.string
                     }
             )
             alertWindow = AlertView(
-                alertText: "\(flagText) \(KeyMaps(rawValue: event.keyCode)?.string ?? "")"
+                alertText: "\(flagText) \(KeyMap(rawValue: event.keyCode)?.string ?? "")"
             ).showViewOnNewWindowInSpecificTime(during: Constant.alertTimeout)
             DispatchQueue.main.asyncAfter(deadline: .now() + Constant.alertTimeout) {
                 if lastPressedKeyEvent == event {

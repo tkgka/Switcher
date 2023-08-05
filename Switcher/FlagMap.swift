@@ -1,5 +1,5 @@
 //
-//  FlagMaps.swift
+//  FlagMap.swift
 //  Switcher
 //
 //  Created by 김수환 on 2023/07/29.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FlagMaps: UInt {
+enum FlagMap: UInt {
     case `default` = 256
     case capsLock = 65792
     case leftShift = 131330
@@ -29,90 +29,90 @@ enum FlagMaps: UInt {
 
 // MARK: - Array Flags
 
-extension FlagMaps {
+extension FlagMap {
     
-    static func arrayFlags(flagNum val: UInt) -> [FlagMaps] {
+    static func arrayFlags(flagNum val: UInt) -> [FlagMap] {
         flagList = []
         flagToArrayFlagMaps(flagNum: val)
         return flagList
     }
     
-    private static var flagList: [FlagMaps] = []
+    private static var flagList: [FlagMap] = []
     
     private static func flagToArrayFlagMaps(flagNum val: UInt) {
-        if let flag = FlagMaps(rawValue: val) {
+        if let flag = FlagMap(rawValue: val) {
             flagList.append(flag)
             return
         }
-        guard val < FlagMaps.arrow.rawValue * 2 else {
+        guard val < FlagMap.arrow.rawValue * 2 else {
             return
         }
-        guard val < FlagMaps.arrow.rawValue else {
+        guard val < FlagMap.arrow.rawValue else {
             flagList.append(.arrow)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.arrow.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.arrow.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.function.rawValue else {
+        guard val < FlagMap.function.rawValue else {
             flagList.append(.function)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.function.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.function.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.leftCommand.rawValue else {
+        guard val < FlagMap.leftCommand.rawValue else {
             flagList.append(.leftCommand)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.leftCommand.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.leftCommand.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.leftOption.rawValue else {
+        guard val < FlagMap.leftOption.rawValue else {
             flagList.append(.leftOption)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.leftOption.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.leftOption.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.leftControl.rawValue else {
+        guard val < FlagMap.leftControl.rawValue else {
             flagList.append(.leftControl)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.leftControl.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.leftControl.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.leftShift.rawValue else {
+        guard val < FlagMap.leftShift.rawValue else {
             flagList.append(.leftShift)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.leftShift.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.leftShift.rawValue + FlagMap.default.rawValue)
         }
-        guard val < FlagMaps.capsLock.rawValue else {
+        guard val < FlagMap.capsLock.rawValue else {
             flagList.append(.capsLock)
-            return flagToArrayFlagMaps(flagNum: val - FlagMaps.capsLock.rawValue + FlagMaps.default.rawValue)
+            return flagToArrayFlagMaps(flagNum: val - FlagMap.capsLock.rawValue + FlagMap.default.rawValue)
         }
-        adjustFlagLocation(flagNum: val - FlagMaps.default.rawValue)
+        adjustFlagLocation(flagNum: val - FlagMap.default.rawValue)
     }
     
     private static func adjustFlagLocation(flagNum val: UInt) {
-        guard val < FlagMaps.rightControl.rawValue - FlagMaps.leftControl.rawValue else {
+        guard val < FlagMap.rightControl.rawValue - FlagMap.leftControl.rawValue else {
             flagList.removeAll(where: { $0 == .leftControl })
             flagList.append(.rightControl)
-            return adjustFlagLocation(flagNum: val - (FlagMaps.rightControl.rawValue - FlagMaps.leftControl.rawValue))
+            return adjustFlagLocation(flagNum: val - (FlagMap.rightControl.rawValue - FlagMap.leftControl.rawValue))
         }
-        guard val < FlagMaps.rightOption.rawValue - FlagMaps.leftOption.rawValue else {
+        guard val < FlagMap.rightOption.rawValue - FlagMap.leftOption.rawValue else {
             guard flagList.contains(.rightOption) else {
                 flagList.removeAll(where: { $0 == .leftOption })
                 flagList.append(.rightOption)
-                return adjustFlagLocation(flagNum: val - (FlagMaps.rightOption.rawValue - FlagMaps.leftOption.rawValue))
+                return adjustFlagLocation(flagNum: val - (FlagMap.rightOption.rawValue - FlagMap.leftOption.rawValue))
             }
             flagList.removeAll(where: { $0 == .rightOption })
             flagList.append(.bothOptions)
-            return adjustFlagLocation(flagNum: val - (FlagMaps.rightOption.rawValue - FlagMaps.leftOption.rawValue))
+            return adjustFlagLocation(flagNum: val - (FlagMap.rightOption.rawValue - FlagMap.leftOption.rawValue))
         }
-        guard val < FlagMaps.rightCommand.rawValue - FlagMaps.leftCommand.rawValue else {
+        guard val < FlagMap.rightCommand.rawValue - FlagMap.leftCommand.rawValue else {
             guard flagList.contains(.rightCommand) else {
                 flagList.removeAll(where: { $0 == .leftCommand })
                 flagList.append(.rightCommand)
-                return adjustFlagLocation(flagNum: val - (FlagMaps.rightCommand.rawValue - FlagMaps.leftCommand.rawValue))
+                return adjustFlagLocation(flagNum: val - (FlagMap.rightCommand.rawValue - FlagMap.leftCommand.rawValue))
             }
             flagList.removeAll(where: { $0 == .rightCommand })
             flagList.append(.bothCommands)
-            return adjustFlagLocation(flagNum: val - (FlagMaps.rightCommand.rawValue - FlagMaps.leftCommand.rawValue))
+            return adjustFlagLocation(flagNum: val - (FlagMap.rightCommand.rawValue - FlagMap.leftCommand.rawValue))
         }
-        guard val < FlagMaps.rightShift.rawValue - FlagMaps.leftShift.rawValue else {
+        guard val < FlagMap.rightShift.rawValue - FlagMap.leftShift.rawValue else {
             guard flagList.contains(.rightShift) else {
                 flagList.removeAll(where: { $0 == .leftShift })
                 flagList.append(.rightShift)
-                return adjustFlagLocation(flagNum: val - (FlagMaps.rightShift.rawValue - FlagMaps.leftShift.rawValue))
+                return adjustFlagLocation(flagNum: val - (FlagMap.rightShift.rawValue - FlagMap.leftShift.rawValue))
             }
             flagList.removeAll(where: { $0 == .rightShift })
             flagList.append(.bothShifts)
-            return adjustFlagLocation(flagNum: val - (FlagMaps.rightShift.rawValue - FlagMaps.leftShift.rawValue))
+            return adjustFlagLocation(flagNum: val - (FlagMap.rightShift.rawValue - FlagMap.leftShift.rawValue))
         }
         guard val == 1 else {
             return
@@ -124,7 +124,7 @@ extension FlagMaps {
 
 // MARK: - String
 
-extension FlagMaps {
+extension FlagMap {
     
     var string: String {
         switch self {

@@ -1,5 +1,5 @@
 //
-//  KeyMaps.swift
+//  KeyMap.swift
 //  Switcher
 //
 //  Created by 김수환 on 2022/05/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum KeyMaps: UInt16 {
+enum KeyMap: UInt16 {
     case a = 0x00
     case b = 0x0B
     case c = 0x08
@@ -96,7 +96,7 @@ enum KeyMaps: UInt16 {
 
 // MARK: - String Value
 
-extension KeyMaps {
+extension KeyMap {
     
     var string: String {
         switch self {
