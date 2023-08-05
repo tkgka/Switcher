@@ -44,7 +44,7 @@ extension FlagMaps {
             flagList.append(flag)
             return
         }
-        guard val < 20972032 else {
+        guard val < FlagMaps.arrow.rawValue * 2 else {
             return
         }
         guard val < FlagMaps.arrow.rawValue else {
