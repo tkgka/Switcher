@@ -30,6 +30,16 @@ struct KeyInputController {
 
 private extension KeyInputController {
     
+    static func setUpNewPreventKeyValue(event: NSEvent) {
+        guard let key = KeyMap(rawValue: event.keyCode)
+        else {
+            PreventKeyModel.shared.isAddingNewValue = false
+            return
+        }
+        PreventKeyModel.shared.newValue = .init(flags: FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue), key: key)
+        PreventKeyModel.shared.isAddingNewValue = false
+    }
+    
     static func preventKeyPressByMistake(event: NSEvent) -> CGEvent? {
         guard event.keyCode == lastPressedKeyEvent?.keyCode,
               event.modifierFlags.rawValue == lastPressedKeyEvent?.modifierFlags.rawValue
@@ -38,14 +48,9 @@ private extension KeyInputController {
                 lastPressedKeyEvent = event
             }
             alertWindow?.close()
-            let flagText = String(
-                FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted(by: {$0.rawValue > $1.rawValue})
-                    .flatMap { flag in
-                        flag.string
-                    }
-            )
+            let flagText = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sortedString
             alertWindow = AlertView(
-                alertText: "\(flagText) \(KeyMap(rawValue: event.keyCode)?.string ?? "")"
+                alertText: String(format: "Alert_Text".localized, "\(flagText) \(KeyMap(rawValue: event.keyCode)?.string ?? "")")
             ).showViewOnNewWindowInSpecificTime(during: Constant.alertTimeout)
             DispatchQueue.main.asyncAfter(deadline: .now() + Constant.alertTimeout) {
                 if lastPressedKeyEvent == event {
