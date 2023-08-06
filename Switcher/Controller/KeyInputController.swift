@@ -7,14 +7,23 @@
 
 import SwiftUI
 
-let preventedKeys: PreventedKeys = [.init(flag: .leftCommand, key: .q)]
-
 struct KeyInputController {
     
     static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-        guard event.type == .keyDown || event.type == .keyUp,
-              MenuModel.shared.preventKeyPressByMistake,
-              preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flag.rawValue == event.modifierFlags.rawValue})
+        guard event.type == .keyDown || event.type == .keyUp else {
+            return cgEvent
+        }
+        
+        guard !PreventKeyModel.shared.isAddingNewValue else {
+            setUpNewPreventKeyValue(event: event)
+            return nil
+        }
+        
+        guard MenuModel.shared.preventKeyPressByMistake else {
+            return cgEvent
+        }
+        let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted
+        guard PreventKeyModel.shared.preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags})
         else {
             return cgEvent
         }
