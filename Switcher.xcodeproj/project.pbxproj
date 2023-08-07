@@ -17,6 +17,7 @@
 		F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E82A7F728B00606876 /* String+Localized.swift */; };
 		F95DA7EA2A7F737C00606876 /* PreventKeySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */; };
 		F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */; };
+		F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */; };
 		F9743DBE282925B20024F03D /* KeyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMap.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
 		F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
@@ -80,6 +81,7 @@
 		F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventKeySelectView.swift; sourceTree = "<group>"; };
 		F95DA7E82A7F728B00606876 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventKeyModel.swift; sourceTree = "<group>"; };
+		F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyActiveApplicationController.swift; sourceTree = "<group>"; };
 		F9743DBD282925B20024F03D /* KeyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMap.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F92E216B2A7533C100DE55C6 /* Wrapper.swift */,
+				F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */,
 				F92E21722A7538C500DE55C6 /* KeyInputController.swift */,
 				F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */,
 			);
@@ -465,6 +468,7 @@
 				F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */,
 				F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */,
 				F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */,
+				F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */,
 				F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */,
 				F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
