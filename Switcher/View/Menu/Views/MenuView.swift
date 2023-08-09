@@ -67,7 +67,8 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            
+                            let keyMapWindow = PreventKeySelectView().openInWindow(title: "Name", sender: self)
+                            keyMapWindow.orderFrontRegardless()
                         }
                 }
             }

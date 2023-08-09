@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 // MARK: - Open In Window
 
-private extension View {
+extension View {
     
     func openInWindow(title: String, sender: Any?) -> NSWindow {
         let win = NSWindow(contentViewController: NSHostingController(rootView: self))

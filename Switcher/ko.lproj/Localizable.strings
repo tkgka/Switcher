@@ -20,3 +20,4 @@
 
 "Add_Item_Key" = "추가";
 "Remove_Item_Key" = "삭제";
+"Alert_Text" = "실행하려면 %@키를\n 한번 더  누르세요";
