@@ -23,7 +23,8 @@ struct KeyInputController {
             return cgEvent
         }
         let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted
-        guard PreventKeyModel.shared.preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags})
+        guard PreventKeyModel.shared.preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}),
+              CurrentlyActiveApplicationController().isKeyPreventApplicationsFfrontmostApplication(applications: PreventKeyModel.shared.preventedApplicationIdentifiers)
         else {
             return cgEvent
         }
