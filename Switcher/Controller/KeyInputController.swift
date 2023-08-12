@@ -10,6 +10,13 @@ import SwiftUI
 struct KeyInputController {
     
     static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
+        if event.type == .scrollWheel && MenuModel.shared.mouseWheel {
+            guard let updatedCgEvent = changeMouseWheelDirection(with: event) else {
+                return cgEvent
+            }
+            return updatedCgEvent
+        }
+        
         guard event.type == .keyDown || event.type == .keyUp else {
             return cgEvent
         }
@@ -31,6 +38,26 @@ struct KeyInputController {
         
         let result = preventKeyPressByMistake(event: event)
         return result
+    }
+}
+
+
+// MARK: - Change Mouse Wheel Direction
+
+private extension KeyInputController {
+    static func changeMouseWheelDirection(with event: NSEvent) -> CGEvent? {
+        if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
+            return CGEvent(
+                scrollWheelEvent2Source: nil,
+                units: CGScrollEventUnit.pixel,
+                wheelCount: 1,
+                wheel1: Int32(event.deltaY * -10),
+                wheel2: 0,
+                wheel3: 0
+            )
+        } else {
+            return nil
+        }
     }
 }
 
