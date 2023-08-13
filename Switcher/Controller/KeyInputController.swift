@@ -30,7 +30,7 @@ struct KeyInputController {
         }
         
         if MenuModel.shared.keyMap
-            && CurrentlyActiveApplicationController().isKeyPreventApplicationsFfrontmostApplication(applications: KeyMapModel.shared.keyMapedApplicationIdentifiers)
+            && CurrentlyActiveApplicationController().isKeyPreventApplicationsContainFfrontmostApplication(applications: KeyMapModel.shared.keyMapedApplicationIdentifiers)
         {
             if let newNSEvent = event.mappedKey {
                 event = newNSEvent
@@ -43,7 +43,7 @@ struct KeyInputController {
         }
         let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted
         guard PreventKeyModel.shared.preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}),
-              CurrentlyActiveApplicationController().isKeyPreventApplicationsFfrontmostApplication(applications: PreventKeyModel.shared.preventedApplicationIdentifiers)
+              CurrentlyActiveApplicationController().isKeyPreventApplicationsContainFfrontmostApplication(applications: PreventKeyModel.shared.preventedApplicationIdentifiers)
         else {
             return cgEvent
         }

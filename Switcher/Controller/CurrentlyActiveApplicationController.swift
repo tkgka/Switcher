@@ -10,7 +10,11 @@ import AppKit
 
 struct CurrentlyActiveApplicationController {
     
-    func isKeyPreventApplicationsFfrontmostApplication(applications:[String]) -> Bool {
+    func isKeyPreventApplicationsContainFfrontmostApplication(applications:[String]) -> Bool {
+        guard applications.count > 1 else {
+            return true
+        }
+        
         guard let app = Constant.workspace.frontmostApplication,
               applications.contains(app.bundleIdentifier ?? "")
         else {
