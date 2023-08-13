@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @ObservedObject var ObserveToggles = MenuModel.shared
-    @State var WindowName:String? = nil
+    @ObservedObject private var ObserveToggles = MenuModel.shared
+    @State private var keyMapWindow: NSWindow?
     
     var body: some View {
         
@@ -62,8 +62,9 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let keyMapWindow = PreventKeySelectView().openInWindow(title: "Switcher", sender: self)
-                            keyMapWindow.orderFrontRegardless()
+                            keyMapWindow?.close()
+                            keyMapWindow = PreventKeySelectView().openInWindow(title: "Switcher", sender: self)
+                            keyMapWindow?.orderFrontRegardless()
                         }
                 }
             }
@@ -136,8 +137,9 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let keyMapWindow = KeyMappingView().openInWindow(title: "Switcher", sender: self)
-                            keyMapWindow.orderFrontRegardless()
+                            keyMapWindow?.close()
+                            keyMapWindow = KeyMappingView().openInWindow(title: "Switcher", sender: self)
+                            keyMapWindow?.orderFrontRegardless()
                         }
                 }
             }
