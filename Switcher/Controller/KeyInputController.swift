@@ -9,7 +9,10 @@ import SwiftUI
 
 struct KeyInputController {
     
-    static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
+    static func handle(_event: NSEvent, _cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
+        var event = _event
+        var cgEvent = _cgEvent
+        
         if event.type == .scrollWheel && MenuModel.shared.mouseWheel {
             guard let updatedCgEvent = changeMouseWheelDirection(with: event) else {
                 return cgEvent
@@ -24,6 +27,15 @@ struct KeyInputController {
         guard !PreventKeyModel.shared.isAddingNewValue else {
             setUpNewPreventKeyValue(event: event)
             return nil
+        }
+        
+        if MenuModel.shared.keyMap
+            && CurrentlyActiveApplicationController().isKeyPreventApplicationsFfrontmostApplication(applications: KeyMapModel.shared.keyMapedApplicationIdentifiers)
+        {
+            if let newNSEvent = event.mappedKey {
+                event = newNSEvent
+                cgEvent = newNSEvent.cgEvent ?? _cgEvent
+            }
         }
         
         guard MenuModel.shared.preventKeyPressByMistake else {

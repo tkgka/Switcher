@@ -19,7 +19,7 @@ extension AppDelegate {
             callback: { proxy, _, cgEvent, ctx in
                 if let event = NSEvent(cgEvent: cgEvent),
                    let wrapper = ctx?.load(as: Wrapper.self) {
-                    if let newEvent = KeyInputController.handle(event: event, cgEvent: cgEvent, wrapper: wrapper, proxy: proxy) {
+                    if let newEvent = KeyInputController.handle(_event: event, _cgEvent: cgEvent, wrapper: wrapper, proxy: proxy) {
                         /// Quoting from https://developer.apple.com/documentation/coregraphics/cgeventtapcallback?language=swift
                         /// Your callback function should return one of the following:
                         /// - The (possibly modified) event that is passed in. This event is passed back to the event system.

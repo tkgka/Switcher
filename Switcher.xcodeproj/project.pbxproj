@@ -18,6 +18,8 @@
 		F95DA7EA2A7F737C00606876 /* PreventKeySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */; };
 		F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */; };
 		F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */; };
+		F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */; };
+		F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E915C2A88B51700BFCA99 /* MappedKeys.swift */; };
 		F9743DBE282925B20024F03D /* KeyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMap.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
 		F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
@@ -82,6 +84,8 @@
 		F95DA7E82A7F728B00606876 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventKeyModel.swift; sourceTree = "<group>"; };
 		F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyActiveApplicationController.swift; sourceTree = "<group>"; };
+		F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
+		F95E915C2A88B51700BFCA99 /* MappedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedKeys.swift; sourceTree = "<group>"; };
 		F9743DBD282925B20024F03D /* KeyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMap.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			children = (
 				F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */,
 				F92E216F2A75361C00DE55C6 /* MenuModel.swift */,
+				F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */,
 				F92E21722A7538C500DE55C6 /* KeyInputController.swift */,
 				F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */,
+				F95E915C2A88B51700BFCA99 /* MappedKeys.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -459,7 +465,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */,
 				F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */,
+				F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */,
 				F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */,
 				F9743DBE282925B20024F03D /* KeyMap.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
