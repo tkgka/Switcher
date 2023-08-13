@@ -10,9 +10,11 @@ import Foundation
 class KeyMapModel: ObservableObject {
     
     @Published var keyMapedApplicationIdentifiers: [String] = ["com.apple.Safari"]
-    @Published var mappedKeys: MappedKeys = [.init(newFlag: 256, newKey: .q, originalFlag: 1048840, originalKey: .a)]
-    @Published var isAddingNewValue: Bool = false
-    @Published var newValue: PreventedKey?
+    @Published var mappedKeys: MappedKeys = [.init(inputFlagAndKey: .init(flag: 1048840, key: .a), returnFlagAndKey: .init(flag: 256, key: .q))]
+    @Published var isAddingNewInputValue: Bool = false
+    @Published var isAddingNewReturnValue: Bool = false
+    @Published var newInputValue: FlagAndKey?
+    @Published var newReturnValue: FlagAndKey?
     
     
     // MARK: - Singleton

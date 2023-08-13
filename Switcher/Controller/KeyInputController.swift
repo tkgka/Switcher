@@ -28,6 +28,12 @@ struct KeyInputController {
             setUpNewPreventKeyValue(event: event)
             return nil
         }
+        guard !KeyMapModel.shared.isAddingNewInputValue,
+              !KeyMapModel.shared.isAddingNewReturnValue
+        else {
+            setUpMappingKeyValue(event: event)
+            return nil
+        }
         
         if MenuModel.shared.keyMap
             && CurrentlyActiveApplicationController().isKeyPreventApplicationsContainFfrontmostApplication(applications: KeyMapModel.shared.keyMapedApplicationIdentifiers)
@@ -87,6 +93,22 @@ private extension KeyInputController {
         }
         PreventKeyModel.shared.newValue = .init(flags: FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue), key: key)
         PreventKeyModel.shared.isAddingNewValue = false
+    }
+    
+    static func setUpMappingKeyValue(event: NSEvent) {
+        let model = KeyMapModel.shared
+        guard let key = KeyMap(rawValue: event.keyCode)
+        else {
+            model.isAddingNewInputValue = false
+            model.isAddingNewReturnValue = false
+            return
+        }
+        model.isAddingNewInputValue
+        ? (model.newInputValue = .init(flag: event.modifierFlags.rawValue, key: key))
+        : (model.newReturnValue = .init(flag: event.modifierFlags.rawValue, key: key))
+        
+        model.isAddingNewInputValue = false
+        model.isAddingNewReturnValue = false
     }
     
     static func preventKeyPressByMistake(event: NSEvent) -> CGEvent? {

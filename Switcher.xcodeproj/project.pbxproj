@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76C82A88E97400AB721F /* KeyMappingView.swift */; };
 		F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216B2A7533C100DE55C6 /* Wrapper.swift */; };
 		F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
 		F92E21712A75363300DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91A76C82A88E97400AB721F /* KeyMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMappingView.swift; sourceTree = "<group>"; };
 		F92E216B2A7533C100DE55C6 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		F92E216F2A75361C00DE55C6 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		F92E21722A7538C500DE55C6 /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */,
+				F91A76C82A88E97400AB721F /* KeyMappingView.swift */,
 				F97D4D902788419100FBC5AD /* MenuView.swift */,
 			);
 			path = Views;
@@ -465,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */,
 				F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */,
 				F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */,
 				F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */,

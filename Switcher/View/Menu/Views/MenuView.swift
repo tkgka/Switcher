@@ -40,15 +40,10 @@ struct MenuView: View {
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
                         
-                        
-                        if #available(macOS 11.0, *) {
-                            Toggle("", isOn: $ObserveToggles.preventKeyPressByMistake)
-                                .toggleStyle(.switch)
-                                .frame(alignment: .leading)
-                                .padding(.top, 15.0)
-                        } else {
-                            // Fallback on earlier versions
-                        }
+                        Toggle("", isOn: $ObserveToggles.preventKeyPressByMistake)
+                            .toggleStyle(.switch)
+                            .frame(alignment: .leading)
+                            .padding(.top, 15.0)
                     }
                 HStack {
                     Text(TextString.alertDesc)
@@ -67,7 +62,7 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
-                            let keyMapWindow = PreventKeySelectView().openInWindow(title: "Name", sender: self)
+                            let keyMapWindow = PreventKeySelectView().openInWindow(title: "Switcher", sender: self)
                             keyMapWindow.orderFrontRegardless()
                         }
                 }
@@ -89,15 +84,10 @@ struct MenuView: View {
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
                         
-                        
-                        if #available(macOS 11.0, *) {
-                            Toggle("", isOn: $ObserveToggles.mouseWheel)
-                                .toggleStyle(.switch)
-                                .frame(alignment: .leading)
-                                .padding(.top, 15.0)
-                        } else {
-                            // Fallback on earlier versions
-                        }
+                        Toggle("", isOn: $ObserveToggles.mouseWheel)
+                            .toggleStyle(.switch)
+                            .frame(alignment: .leading)
+                            .padding(.top, 15.0)
                     }
                 Text(TextString.mouseDesc)
                     .font(Font.system(size: 12.0))
@@ -124,15 +114,10 @@ struct MenuView: View {
                             .padding(.top, 15.0)
                             .frame(width: 200, alignment: .leading)
                         
-                        
-                        if #available(macOS 11.0, *) {
-                            Toggle("", isOn: $ObserveToggles.keyMap)
-                                .toggleStyle(.switch)
-                                .frame(alignment: .leading)
-                                .padding(.top, 15.0)
-                        } else {
-                            // Fallback on earlier versions
-                        }
+                        Toggle("", isOn: $ObserveToggles.keyMap)
+                            .toggleStyle(.switch)
+                            .frame(alignment: .leading)
+                            .padding(.top, 15.0)
                     }
                 HStack {
                     Text(TextString.keyMapDesc)
@@ -151,6 +136,8 @@ struct MenuView: View {
                         .frame(alignment: .leading)
                         .padding(.bottom, 15.0)
                         .onTapGesture {
+                            let keyMapWindow = KeyMappingView().openInWindow(title: "Switcher", sender: self)
+                            keyMapWindow.orderFrontRegardless()
                         }
                 }
             }
