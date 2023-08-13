@@ -11,7 +11,7 @@ import AppKit
 struct CurrentlyActiveApplicationController {
     
     func isKeyPreventApplicationsContainFfrontmostApplication(applications:[String]) -> Bool {
-        guard applications.count > 1 else {
+        guard applications.count > 0 else {
             return true
         }
         
