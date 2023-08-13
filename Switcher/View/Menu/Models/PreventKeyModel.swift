@@ -9,7 +9,6 @@ import Foundation
 
 class PreventKeyModel: ObservableObject {
     
-    
     @Published var preventedApplicationIdentifiers: [String] = ["com.apple.Safari"]
     @Published var preventedKeys: PreventedKeys = [.init(flags: [.leftCommand], key: .q), .init(flags: [.rightCommand], key: .q), .init(flags: [.bothCommands], key: .q)]
     @Published var isAddingNewValue: Bool = false

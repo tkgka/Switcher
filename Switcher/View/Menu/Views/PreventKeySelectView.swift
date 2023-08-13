@@ -9,14 +9,57 @@ import SwiftUI
 
 struct PreventKeySelectView: View {
     
-    @ObservedObject var model = PreventKeyModel.shared
+    @ObservedObject private var model = PreventKeyModel.shared
+    @State private var toggles: [Bool] = Array(repeating: false, count: PreventKeyModel.shared.preventedKeys.count)
     
     var body: some View {
+        VStack {
+            Header()
+            List {
+                ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
+                    HStack{
+                        Toggle(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)), isOn: $toggles[index])
+                    }
+                }
+            }
+        }.frame(height: 300)
+    }
+    
+    func appendDataToEventDict() {
+        guard let newValue = model.newValue,
+              !model.preventedKeys.contains(newValue)
+        else {
+            model.newValue = nil
+            return
+        }
+        model.preventedKeys.append(newValue)
+        model.newValue = nil
+        toggles = Array(repeating: false, count: model.preventedKeys.count)
+    }
+    
+    func RemoveDataFromEventDict() {
+        var removeValues = PreventedKeys()
+        (0 ..< model.preventedKeys.count).forEach({ index in
+            guard toggles[index] else { return }
+            removeValues.append(model.preventedKeys[index])
+        })
+        model.preventedKeys.removeAll(where: { removeValues.contains($0) })
+        toggles = Array(repeating: false, count: model.preventedKeys.count)
+    }
+}
+
+
+// MARK: - Header
+
+private extension PreventKeySelectView {
+    
+    @ViewBuilder
+    func Header() -> some View {
         Spacer(minLength: Metric.minimumSpacing)
         HStack {
             Spacer(minLength: Metric.minimumSpacing)
             Button {
-                
+                RemoveDataFromEventDict()
             } label: {
                 ZStack {
                     Text(Texts.removeButton)
@@ -46,7 +89,7 @@ struct PreventKeySelectView: View {
             Spacer()
             
             Button {
-                
+                appendDataToEventDict()
             } label: {
                 ZStack {
                     Text(Texts.addButton)
@@ -57,13 +100,6 @@ struct PreventKeySelectView: View {
             Spacer(minLength: Metric.minimumSpacing)
         }
         Spacer(minLength: Metric.minimumSpacing)
-    }
-    func appendDataToEventDict() {
-        // TODO: - Implement
-    }
-    
-    func RemoveDataToEventDict(index:Int) {
-        // TODO: - Implement
     }
 }
 
