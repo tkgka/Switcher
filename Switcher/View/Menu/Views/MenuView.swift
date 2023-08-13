@@ -182,12 +182,12 @@ struct MenuView: View {
 private extension MenuView {
     
     enum TextString {
-        static let alertText:LocalizedStringKey = "Alert_Title"
-        static let mouseText:LocalizedStringKey = "Mouse_Wheel_Title"
-        static let keyMapText:LocalizedStringKey = "Key_Mapper_Title"
-        static let alertDesc:LocalizedStringKey = "Alert_Desc"
-        static let mouseDesc:LocalizedStringKey = "Mouse_Wheel_Desc"
-        static let keyMapDesc:LocalizedStringKey = "Key_Mapper_Desc"
+        static let alertText: LocalizedStringKey = "Alert_Title"
+        static let mouseText: LocalizedStringKey = "Mouse_Wheel_Title"
+        static let keyMapText: LocalizedStringKey = "Key_Mapper_Title"
+        static let alertDesc: LocalizedStringKey = "Alert_Desc"
+        static let mouseDesc: LocalizedStringKey = "Mouse_Wheel_Desc"
+        static let keyMapDesc: LocalizedStringKey = "Key_Mapper_Desc"
     }
 }
 
