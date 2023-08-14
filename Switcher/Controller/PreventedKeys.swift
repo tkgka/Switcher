@@ -9,7 +9,7 @@ import Foundation
 
 typealias PreventedKeys = [PreventedKey]
 
-struct PreventedKey: Hashable {
+struct PreventedKey: Hashable, Codable {
     let flags: [FlagMap]
     let key: KeyMap
 }

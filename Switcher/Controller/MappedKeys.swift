@@ -10,13 +10,13 @@ import AppKit
 
 typealias MappedKeys = [MappedKey]
 
-struct MappedKey: Hashable {
+struct MappedKey: Hashable, Codable {
     
     let inputFlagAndKey: FlagAndKey
     let returnFlagAndKey: FlagAndKey
 }
 
-struct FlagAndKey: Hashable {
+struct FlagAndKey: Hashable, Codable {
     let flag: UInt
     let key: KeyMap
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum KeyMap: UInt16 {
+enum KeyMap: UInt16, Codable {
     case a = 0x00
     case b = 0x0B
     case c = 0x08

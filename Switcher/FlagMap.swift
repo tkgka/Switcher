@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FlagMap: UInt {
+enum FlagMap: UInt, Codable {
     case `default` = 256
     case capsLock = 65792
     case leftShift = 131330
