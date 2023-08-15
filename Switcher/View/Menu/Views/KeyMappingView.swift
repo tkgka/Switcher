@@ -172,7 +172,7 @@ private extension KeyMappingView {
     @ViewBuilder
     func ApplicationSelector() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
+            HStack(spacing: 0.0) {
                 if let icon = NSImage(systemSymbolName: "ellipsis.circle", accessibilityDescription: nil) {
                     Image(nsImage: icon)
                         .font(.largeTitle)
