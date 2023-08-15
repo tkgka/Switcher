@@ -10,25 +10,55 @@ import SwiftUI
 struct PreventKeySelectView: View {
     
     @ObservedObject private var model = PreventKeyModel.shared
+    @ObservedObject private var applicationModel = ApplicationModel.shared
     @State private var toggles: [Bool] = Array(repeating: false, count: PreventKeyModel.shared.preventedKeys.count)
+    @State private var currentlySelectedApplication: ApplicationData?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0.0) {
             Header()
+            ApplicationSelector()
             List {
-                ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
-                    HStack{
-                        Toggle(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)), isOn: $toggles[index])
+                if let currentlySelectedApplication,
+                   let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
+                    ForEach(0 ..< selectedApplication.preventedKeys.count, id: \.self) { index in
+                        HStack{
+                            Toggle(Texts.newValue(.init(flags: selectedApplication.preventedKeys[index].flags, key: selectedApplication.preventedKeys[index].key)), isOn: $toggles[index])
+                        }
+                    }
+                } else {
+                    ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
+                        HStack{
+                            Toggle(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)), isOn: $toggles[index])
+                        }
                     }
                 }
             }
+            .background(Color("BGColor"))
+            .scrollContentBackground(.hidden)
         }.frame(height: 300)
     }
     
     func appendDataToEventDict() {
-        guard let newValue = model.newValue,
-              !model.preventedKeys.contains(newValue)
+        guard let newValue = model.newValue
         else {
+            model.newValue = nil
+            return
+        }
+        if let currentlySelectedApplication,
+           var selectedApplication = applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
+            guard !selectedApplication.preventedKeys.contains(newValue) else {
+                model.newValue = nil
+                return
+            }
+            applicationModel.applications.removeAll(where: {$0 == selectedApplication})
+            selectedApplication.preventedKeys.append(newValue)
+            applicationModel.applications.append(selectedApplication)
+            model.newValue = nil
+            toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+            return
+        }
+        guard !model.preventedKeys.contains(newValue) else {
             model.newValue = nil
             return
         }
@@ -38,6 +68,20 @@ struct PreventKeySelectView: View {
     }
     
     func RemoveDataFromEventDict() {
+        
+        if let currentlySelectedApplication,
+           var selectedApplication = applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
+            var removeValues = PreventedKeys()
+            (0 ..< selectedApplication.preventedKeys.count).forEach({ index in
+                guard toggles[index] else { return }
+                removeValues.append(selectedApplication.preventedKeys[index])
+            })
+            applicationModel.applications.removeAll(where: {$0 == selectedApplication})
+            selectedApplication.preventedKeys.removeAll(where: { removeValues.contains($0) })
+            applicationModel.applications.append(selectedApplication)
+            toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+            return
+        }
         var removeValues = PreventedKeys()
         (0 ..< model.preventedKeys.count).forEach({ index in
             guard toggles[index] else { return }
@@ -99,7 +143,55 @@ private extension PreventKeySelectView {
             }
             Spacer(minLength: Metric.minimumSpacing)
         }
-        Spacer(minLength: Metric.minimumSpacing)
+        Spacer(minLength: Metric.largeSpacing)
+    }
+}
+
+
+// MARK: - Applications
+
+private extension PreventKeySelectView {
+    
+    @ViewBuilder
+    func ApplicationSelector() -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 0.0) {
+                if let icon = NSImage(systemSymbolName: "ellipsis.circle", accessibilityDescription: nil) {
+                    Image(nsImage: icon)
+                        .font(.largeTitle)
+                        .frame(width: 50, height: 30)
+                        .background(currentlySelectedApplication == nil ? Color("BGColor") : Color.clear)
+                        .onTapGesture {
+                            currentlySelectedApplication = nil
+                            toggles = Array(repeating: false, count: model.preventedKeys.count)
+                        }
+                }
+                ForEach(applicationModel.applications, id: \.self) { application in
+                    if let icon = application.image {
+                        Image(nsImage: icon)
+                            .font(.largeTitle)
+                            .frame(width: 50, height: 30)
+                            .background(application.identifier == currentlySelectedApplication?.identifier ? Color("BGColor") : Color.clear)
+                            .onTapGesture {
+                                currentlySelectedApplication = application
+                                toggles = Array(repeating: false, count: application.preventedKeys.count)
+                            }
+                    }
+                }
+                if let icon = NSImage(systemSymbolName: "plus.circle", accessibilityDescription: nil) {
+                    Image(nsImage: icon)
+                        .font(.largeTitle)
+                        .frame(width: 50, height: 30)
+                        .background(Color.clear)
+                        .onTapGesture { // TODO: - remove
+                            guard let application = CurrentlyActiveApplicationController().currentlyRunningApplications().first(where: {$0.bundleIdentifier == "com.apple.Safari"} ),
+                                  let identifier = application.bundleIdentifier
+                            else { return }
+                            applicationModel.applications.append(.init(identifier: identifier, image: application.icon, preventedKeys: [], mappedKeys: []))
+                        }
+                }
+            }
+        }
     }
 }
 
@@ -111,6 +203,7 @@ private extension PreventKeySelectView {
     enum Metric {
         static let defaultWidth = 180.0
         static let minimumSpacing = 3.0
+        static let largeSpacing = 15.0
         static let fontSize = 13.0
         
         enum Button {

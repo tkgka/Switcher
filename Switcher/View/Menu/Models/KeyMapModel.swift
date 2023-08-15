@@ -9,7 +9,6 @@ import Foundation
 
 class KeyMapModel: ObservableObject {
     
-    @Published var keyMapedApplicationIdentifiers: [String] = ["com.apple.Safari"]
     @Published var mappedKeys: MappedKeys = KeyMapModel.load() {
         didSet {
             KeyMapModel.save(mappedKeys: mappedKeys)

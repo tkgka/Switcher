@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import AppKit
 
 class PreventKeyModel: ObservableObject {
     
-    @Published var preventedApplicationIdentifiers: [String] = ["com.apple.Safari"]
     @Published var preventedKeys: PreventedKeys = PreventKeyModel.load() {
         didSet {
             PreventKeyModel.save(preventedKeys: preventedKeys)

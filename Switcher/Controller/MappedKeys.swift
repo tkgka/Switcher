@@ -24,8 +24,8 @@ struct FlagAndKey: Hashable, Codable {
 
 extension NSEvent {
     
-    var mappedKey: NSEvent? {
-        guard let MappedKey = KeyMapModel.shared.mappedKeys.first(
+    func mappedKey(keys: MappedKeys) -> NSEvent? {
+        guard let MappedKey = keys.first(
             where: {
                 $0.inputFlagAndKey.key.rawValue == self.keyCode && $0.inputFlagAndKey.flag == self.modifierFlags.rawValue
         }

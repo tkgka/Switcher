@@ -9,10 +9,7 @@ import SwiftUI
 
 struct KeyInputController {
     
-    static func handle(_event: NSEvent, _cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-        var event = _event
-        var cgEvent = _cgEvent
-        
+    static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
         if event.type == .scrollWheel && MenuModel.shared.mouseWheel {
             guard let updatedCgEvent = changeMouseWheelDirection(with: event) else {
                 return cgEvent
@@ -35,27 +32,15 @@ struct KeyInputController {
             return nil
         }
         
-        if MenuModel.shared.keyMap
-            && CurrentlyActiveApplicationController().isKeyPreventApplicationsContainFfrontmostApplication(applications: KeyMapModel.shared.keyMapedApplicationIdentifiers)
-        {
-            if let newNSEvent = event.mappedKey {
-                event = newNSEvent
-                cgEvent = newNSEvent.cgEvent ?? _cgEvent
+        if let applicationIdentifier = CurrentlyActiveApplicationController().applicationsDataContainFfrontmostApplication(applications: ApplicationModel.shared.applications) {
+            guard let applicationData = ApplicationModel.shared.applications.first(where: { $0.identifier == applicationIdentifier }) else {
+                return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: PreventKeyModel.shared.preventedKeys, mappedKeys: KeyMapModel.shared.mappedKeys)
             }
+            return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: applicationData.preventedKeys, mappedKeys: applicationData.mappedKeys)
         }
         
-        guard MenuModel.shared.preventKeyPressByMistake else {
-            return cgEvent
-        }
-        let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted
-        guard PreventKeyModel.shared.preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}),
-              CurrentlyActiveApplicationController().isKeyPreventApplicationsContainFfrontmostApplication(applications: PreventKeyModel.shared.preventedApplicationIdentifiers)
-        else {
-            return cgEvent
-        }
         
-        let result = preventKeyPressByMistake(event: event)
-        return result
+        return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: PreventKeyModel.shared.preventedKeys, mappedKeys: KeyMapModel.shared.mappedKeys)
     }
 }
 
@@ -139,6 +124,35 @@ private extension KeyInputController {
     
     static var lastPressedKeyEvent: NSEvent?
     static var alertWindow: NSWindow?
+}
+
+
+// MARK: - Core
+
+private extension KeyInputController {
+    
+    static func returnResultCGEvent(_event: NSEvent, _cgEvent: CGEvent, preventedKeys: PreventedKeys, mappedKeys: MappedKeys) -> CGEvent? {
+        var event = _event
+        var cgEvent = _cgEvent
+        
+        if MenuModel.shared.keyMap {
+            if let newNSEvent = event.mappedKey(keys: mappedKeys) {
+                event = newNSEvent
+                cgEvent = newNSEvent.cgEvent ?? _cgEvent
+            }
+        }
+        guard MenuModel.shared.preventKeyPressByMistake else {
+            return cgEvent
+        }
+        
+        let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sorted
+        guard preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}) else {
+            return cgEvent
+        }
+        
+        let result = KeyInputController.preventKeyPressByMistake(event: event)
+        return result
+    }
 }
 
 
