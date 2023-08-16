@@ -89,7 +89,7 @@ enum KeyMap: UInt16, Codable {
     case option = 0x3A
     case command = 0x36
     case function = 0x3F
-    case mouseButton3 = 0x3eb
+    case mouseButton3 = 0x3eb // buttonNumber + 1000
     case mouseButton4 = 0x3ec
 }
 
