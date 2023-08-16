@@ -13,7 +13,7 @@ struct ApplicationListView: View {
     var backgroundColor: Color
     var body: some View {
         List {
-            ForEach(applications, id: \.self) { application in
+            ForEach(applications.sorted(by: {$0.identifier > $1.identifier}), id: \.self) { application in
                 if let iconData = application.imageData,
                    let icon = NSImage(data: iconData) {
                     HStack{
