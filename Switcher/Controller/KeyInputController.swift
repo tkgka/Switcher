@@ -150,12 +150,14 @@ private extension KeyInputController {
         }
         
         let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue + (isMouseKey ? 256 : 0)).sorted
-        guard preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}) else {
-            return cgEvent
+        if !isMouseKey {
+            guard preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}) else {
+                return cgEvent
+            }
+            let result = KeyInputController.preventKeyPressByMistake(event: event)
+            return result
         }
-        
-        let result = KeyInputController.preventKeyPressByMistake(event: event)
-        return result
+        return cgEvent
     }
 }
 

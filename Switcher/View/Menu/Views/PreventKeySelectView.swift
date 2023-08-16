@@ -40,7 +40,8 @@ struct PreventKeySelectView: View {
             .onChange(of: currentlySelectedApplication) { newValue in
                 if let currentlySelectedApplication,
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
-                    toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
+                    toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+                    return
                 }
                 toggles = Array(repeating: false, count: model.preventedKeys.count)
             }

@@ -42,6 +42,7 @@ struct KeyMappingView: View {
                 if let currentlySelectedApplication,
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
                     toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
+                    return
                 }
                 toggles = Array(repeating: false, count: model.mappedKeys.count)
             }
