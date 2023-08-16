@@ -14,13 +14,11 @@
 		F91A76D42A8D02BA00AB721F /* ApplicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */; };
 		F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216B2A7533C100DE55C6 /* Wrapper.swift */; };
 		F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
-		F92E21712A75363300DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
 		F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E21722A7538C500DE55C6 /* KeyInputController.swift */; };
 		F94C618428C3A5C200EE41ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F94C618628C3A5C200EE41ED /* Localizable.strings */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
 		F95DA7E72A7F6DD800606876 /* PreventKeySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */; };
 		F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E82A7F728B00606876 /* String+Localized.swift */; };
-		F95DA7EA2A7F737C00606876 /* PreventKeySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */; };
 		F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */; };
 		F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */; };
 		F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */; };
@@ -38,22 +36,7 @@
 		F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
 		F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
 		F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
-		F99C8B582A346A3E00E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
-		F99C8B5A2A346A3E00E8875C /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
-		F99C8B5F2A346A3E00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
-		F99C8B632A346A3E00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
-		F99C8B642A346A3E00E8875C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
-		F99C8B652A346A3E00E8875C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
-		F99C8B662A346A3E00E8875C /* CGEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */; };
-		F99C8B682A346A3E00E8875C /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
-		F99C8B6E2A346A3E00E8875C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */; };
-		F99C8B6F2A346A3E00E8875C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F94C618628C3A5C200EE41ED /* Localizable.strings */; };
-		F99C8B702A346A3E00E8875C /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
-		F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
-		F99C8B782A346AA100E8875C /* KeyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMap.swift */; };
-		F99C8B792A346ACF00E8875C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
 		F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
-		F99C8B842A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
 		F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B962272A7550FA00EAF3CD /* FlagMap.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */; };
@@ -113,7 +96,6 @@
 		F99C8B262A3458EE00E8875C /* CreateEventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTap.swift; sourceTree = "<group>"; };
 		F99C8B282A3459DD00E8875C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
-		F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher_V3.0.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Switcher copy-Info.plist"; path = "/Users/gimsuhwan/Documents/swift/Switcher/Switcher copy-Info.plist"; sourceTree = "<absolute>"; };
 		F99C8B822A3478B500E8875C /* Apple Symbols.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols.ttf"; sourceTree = "<group>"; };
 		F9B962272A7550FA00EAF3CD /* FlagMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMap.swift; sourceTree = "<group>"; };
@@ -140,13 +122,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F97D4D6B27883B0B00FBC5AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F99C8B6B2A346A3E00E8875C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,7 +194,6 @@
 				F97D4D5327883B0900FBC5AD /* Switcher.app */,
 				F97D4D6427883B0B00FBC5AD /* SwitcherTests.xctest */,
 				F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */,
-				F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,23 +346,6 @@
 			productReference = F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		F99C8B532A346A3E00E8875C /* Switcher_V3.0.0 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F99C8B732A346A3E00E8875C /* Build configuration list for PBXNativeTarget "Switcher_V3.0.0" */;
-			buildPhases = (
-				F99C8B552A346A3E00E8875C /* Sources */,
-				F99C8B6B2A346A3E00E8875C /* Frameworks */,
-				F99C8B6D2A346A3E00E8875C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Switcher_V3.0.0;
-			productName = Switcher;
-			productReference = F99C8B762A346A3E00E8875C /* Switcher_V3.0.0.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -429,7 +386,6 @@
 				F97D4D5227883B0900FBC5AD /* Switcher */,
 				F97D4D6327883B0B00FBC5AD /* SwitcherTests */,
 				F97D4D6D27883B0B00FBC5AD /* SwitcherUITests */,
-				F99C8B532A346A3E00E8875C /* Switcher_V3.0.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -458,18 +414,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F99C8B6D2A346A3E00E8875C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F99C8B6E2A346A3E00E8875C /* Preview Assets.xcassets in Resources */,
-				F99C8B6F2A346A3E00E8875C /* Localizable.strings in Resources */,
-				F99C8B702A346A3E00E8875C /* ColorAssets.xcassets in Resources */,
-				F99C8B712A346A3E00E8875C /* Assets.xcassets in Resources */,
-				F99C8B842A3478B500E8875C /* Apple Symbols.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,25 +468,6 @@
 			files = (
 				F97D4D7527883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift in Sources */,
 				F97D4D7327883B0B00FBC5AD /* SwitcherUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F99C8B552A346A3E00E8875C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F99C8B582A346A3E00E8875C /* MakeMenuButton.swift in Sources */,
-				F99C8B5A2A346A3E00E8875C /* ShellCommands.swift in Sources */,
-				F99C8B5F2A346A3E00E8875C /* AppDelegate.swift in Sources */,
-				F99C8B632A346A3E00E8875C /* CreateEventTap.swift in Sources */,
-				F99C8B642A346A3E00E8875C /* WelcomeView.swift in Sources */,
-				F99C8B652A346A3E00E8875C /* AlertView.swift in Sources */,
-				F99C8B792A346ACF00E8875C /* MenuView.swift in Sources */,
-				F99C8B662A346A3E00E8875C /* CGEventExtension.swift in Sources */,
-				F92E21712A75363300DE55C6 /* MenuModel.swift in Sources */,
-				F95DA7EA2A7F737C00606876 /* PreventKeySelectView.swift in Sources */,
-				F99C8B682A346A3E00E8875C /* SwitcherApp.swift in Sources */,
-				F99C8B782A346AA100E8875C /* KeyMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,66 +754,6 @@
 			};
 			name = Release;
 		};
-		F99C8B742A346A3E00E8875C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Switcher/Switcher.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
-				DEVELOPMENT_TEAM = ABL4JWM3PY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Switcher copy-Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F99C8B752A346A3E00E8875C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Switcher/Switcher.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
-				DEVELOPMENT_TEAM = ABL4JWM3PY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Switcher copy-Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -924,15 +789,6 @@
 			buildConfigurations = (
 				F97D4D7F27883B0B00FBC5AD /* Debug */,
 				F97D4D8027883B0B00FBC5AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F99C8B732A346A3E00E8875C /* Build configuration list for PBXNativeTarget "Switcher_V3.0.0" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F99C8B742A346A3E00E8875C /* Debug */,
-				F99C8B752A346A3E00E8875C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
