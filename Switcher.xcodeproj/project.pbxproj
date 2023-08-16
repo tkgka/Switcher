@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76C82A88E97400AB721F /* KeyMappingView.swift */; };
 		F91A76CB2A8B6B3100AB721F /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */; };
+		F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */; };
 		F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216B2A7533C100DE55C6 /* Wrapper.swift */; };
 		F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
 		F92E21712A75363300DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		F91A76C82A88E97400AB721F /* KeyMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMappingView.swift; sourceTree = "<group>"; };
 		F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
+		F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+resized.swift"; sourceTree = "<group>"; };
 		F92E216B2A7533C100DE55C6 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		F92E216F2A75361C00DE55C6 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		F92E21722A7538C500DE55C6 /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
@@ -153,10 +155,10 @@
 		F92E216D2A7535F500DE55C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */,
 				F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */,
 				F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */,
 				F92E216F2A75361C00DE55C6 /* MenuModel.swift */,
-				F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +191,7 @@
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
 				F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */,
 				F95DA7E82A7F728B00606876 /* String+Localized.swift */,
+				F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */,
 				F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */,
 				F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */,
+				F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */,
 				F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */,
 				F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */,
 				F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */,
