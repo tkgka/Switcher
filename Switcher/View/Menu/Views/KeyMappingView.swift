@@ -184,9 +184,11 @@ private extension KeyMappingView {
                         }
                 }
                 ForEach(applicationModel.applications, id: \.self) { application in
-                    if let icon = application.image {
+                    if let iconData = application.imageData,
+                       let icon = NSImage(data: iconData) {
                         Image(nsImage: icon)
-                            .font(.largeTitle)
+                            .resizable()
+                            .scaledToFit()
                             .frame(width: 50, height: 30)
                             .background(application.identifier == currentlySelectedApplication?.identifier ? Color("BGColor") : Color.clear)
                             .onTapGesture {

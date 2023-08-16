@@ -167,9 +167,11 @@ private extension PreventKeySelectView {
                         }
                 }
                 ForEach(applicationModel.applications, id: \.self) { application in
-                    if let icon = application.image {
+                    if let iconData = application.imageData,
+                       let icon = NSImage(data: iconData) {
                         Image(nsImage: icon)
-                            .font(.largeTitle)
+                            .resizable()
+                            .scaledToFit()
                             .frame(width: 50, height: 30)
                             .background(application.identifier == currentlySelectedApplication?.identifier ? Color("BGColor") : Color.clear)
                             .onTapGesture {
@@ -187,7 +189,7 @@ private extension PreventKeySelectView {
                             guard let application = CurrentlyActiveApplicationController().currentlyRunningApplications().first(where: {$0.bundleIdentifier == "com.apple.Safari"} ),
                                   let identifier = application.bundleIdentifier
                             else { return }
-                            applicationModel.applications.append(.init(identifier: identifier, image: application.icon, preventedKeys: [], mappedKeys: []))
+                            applicationModel.applications.append(.init(identifier: identifier, imageData: application.icon?.resized(to: .init(width: 30.0, height: 30.0))?.png, preventedKeys: [], mappedKeys: []))
                         }
                 }
             }
