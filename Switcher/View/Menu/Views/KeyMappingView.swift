@@ -13,7 +13,8 @@ struct KeyMappingView: View {
     @ObservedObject private var applicationModel = ApplicationModel.shared
     @State private var toggles: [Bool] = Array(repeating: false, count: KeyMapModel.shared.mappedKeys.count)
     @State private var currentlySelectedApplication: ApplicationData?
-    
+    @State private var window: NSWindow?
+
     var body: some View {
         VStack(spacing: 0.0) {
             Header()
@@ -37,6 +38,13 @@ struct KeyMappingView: View {
             .background(Color("BGColor"))
             .scrollContentBackground(.hidden)
         }.frame(height: 300)
+            .onChange(of: currentlySelectedApplication) { newValue in
+                if let currentlySelectedApplication,
+                   let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
+                    toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
+                }
+                toggles = Array(repeating: false, count: model.mappedKeys.count)
+            }
     }
     
     func appendDataToEventDict() {
@@ -78,8 +86,8 @@ struct KeyMappingView: View {
             selectedApplication.mappedKeys.removeAll(where: { removeValues.contains($0) })
             applicationModel.applications.append(selectedApplication)
             toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
+            return
         }
-        
         var removeValues = MappedKeys()
         (0 ..< model.mappedKeys.count).forEach({ index in
             guard toggles[index] else { return }
@@ -203,7 +211,8 @@ private extension KeyMappingView {
                         .frame(width: 50, height: 30)
                         .background(Color.clear)
                         .onTapGesture {
-                            
+                            window?.close()
+                            window = ApplicationsAddView().openInWindow(title: "Switcher", sender: self)
                         }
                 }
             }

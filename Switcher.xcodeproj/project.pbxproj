@@ -10,6 +10,8 @@
 		F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76C82A88E97400AB721F /* KeyMappingView.swift */; };
 		F91A76CB2A8B6B3100AB721F /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */; };
 		F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */; };
+		F91A76D22A8CF7CE00AB721F /* ApplicationsAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */; };
+		F91A76D42A8D02BA00AB721F /* ApplicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */; };
 		F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216B2A7533C100DE55C6 /* Wrapper.swift */; };
 		F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
 		F92E21712A75363300DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
@@ -80,6 +82,8 @@
 		F91A76C82A88E97400AB721F /* KeyMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMappingView.swift; sourceTree = "<group>"; };
 		F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
 		F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+resized.swift"; sourceTree = "<group>"; };
+		F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsAddView.swift; sourceTree = "<group>"; };
+		F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListView.swift; sourceTree = "<group>"; };
 		F92E216B2A7533C100DE55C6 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		F92E216F2A75361C00DE55C6 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		F92E21722A7538C500DE55C6 /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 		F92E216E2A7535FC00DE55C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */,
+				F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */,
 				F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */,
 				F91A76C82A88E97400AB721F /* KeyMappingView.swift */,
 				F97D4D902788419100FBC5AD /* MenuView.swift */,
@@ -489,6 +495,7 @@
 				F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */,
 				F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */,
 				F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */,
+				F91A76D42A8D02BA00AB721F /* ApplicationListView.swift in Sources */,
 				F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */,
 				F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
@@ -499,6 +506,7 @@
 				F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */,
 				F95DA7E72A7F6DD800606876 /* PreventKeySelectView.swift in Sources */,
 				F9DA3C432A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift in Sources */,
+				F91A76D22A8CF7CE00AB721F /* ApplicationsAddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

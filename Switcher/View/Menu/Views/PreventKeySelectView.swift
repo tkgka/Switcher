@@ -13,7 +13,7 @@ struct PreventKeySelectView: View {
     @ObservedObject private var applicationModel = ApplicationModel.shared
     @State private var toggles: [Bool] = Array(repeating: false, count: PreventKeyModel.shared.preventedKeys.count)
     @State private var currentlySelectedApplication: ApplicationData?
-    
+    @State private var window: NSWindow?
     var body: some View {
         VStack(spacing: 0.0) {
             Header()
@@ -37,6 +37,13 @@ struct PreventKeySelectView: View {
             .background(Color("BGColor"))
             .scrollContentBackground(.hidden)
         }.frame(height: 300)
+            .onChange(of: currentlySelectedApplication) { newValue in
+                if let currentlySelectedApplication,
+                   let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
+                    toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
+                }
+                toggles = Array(repeating: false, count: model.preventedKeys.count)
+            }
     }
     
     func appendDataToEventDict() {
@@ -185,11 +192,9 @@ private extension PreventKeySelectView {
                         .font(.largeTitle)
                         .frame(width: 50, height: 30)
                         .background(Color.clear)
-                        .onTapGesture { // TODO: - remove
-                            guard let application = CurrentlyActiveApplicationController().currentlyRunningApplications().first(where: {$0.bundleIdentifier == "com.apple.Safari"} ),
-                                  let identifier = application.bundleIdentifier
-                            else { return }
-                            applicationModel.applications.append(.init(identifier: identifier, imageData: application.icon?.resized(to: .init(width: 30.0, height: 30.0))?.png, preventedKeys: [], mappedKeys: []))
+                        .onTapGesture {
+                            window?.close()
+                            window = ApplicationsAddView().openInWindow(title: "Switcher", sender: self)
                         }
                 }
             }
