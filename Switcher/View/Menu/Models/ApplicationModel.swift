@@ -43,6 +43,7 @@ class ApplicationModel: ObservableObject {
 }
 
 struct ApplicationData: Hashable, Codable {
+    var uuid = UUID()
     let identifier: String
     var imageData: Data?
     var preventedKeys: PreventedKeys
