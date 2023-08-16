@@ -18,7 +18,7 @@ struct ApplicationsAddView: View {
         HStack{
             VStack{
                 Text("Setted_Application") // TODO: -
-                ApplicationListView(applications: $model.applications, identifierContainer: $removingItems, backgroundColor: .blue)
+                ApplicationListView(applications: $model.applications, identifierContainer: $removingItems, backgroundColor: .red)
             }
             VStack{
                 Text("Add_Item_Key") // TODO: -
@@ -68,7 +68,7 @@ struct ApplicationsAddView: View {
                 ApplicationListView(
                     applications: $currentlyRunnignApplications,
                     identifierContainer: $selectedItem,
-                    backgroundColor: .red
+                    backgroundColor: .blue
                 )
             }
         }.frame(width: 750.0, height: 450.0)
