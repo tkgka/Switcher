@@ -1,35 +1,30 @@
 //
-//  PreventKeyModel.swift
+//  ApplicationModel.swift
 //  Switcher
 //
-//  Created by 김수환 on 2023/08/06.
+//  Created by 김수환 on 2023/08/15.
 //
 
-import Foundation
 import AppKit
 
-class PreventKeyModel: ObservableObject {
-    
-    @Published var preventedKeys: PreventedKeys = PreventKeyModel.load() {
+class ApplicationModel: ObservableObject {
+    @Published var applications: [ApplicationData] = ApplicationModel.load() {
         didSet {
-            PreventKeyModel.save(preventedKeys: preventedKeys)
+            ApplicationModel.save(applications: applications)
         }
     }
-    @Published var isAddingNewValue: Bool = false
-    @Published var newValue: PreventedKey?
-    
     
     // MARK: - Singleton
     
-    static let shared = PreventKeyModel()
+    static let shared = ApplicationModel()
     
     
     // MARK: - Save
     
-    fileprivate static func save(preventedKeys: PreventedKeys) {
+    fileprivate static func save(applications: [ApplicationData]) {
         guard
             let fileURL = Path.fileURL,
-            let data = try? JSONEncoder().encode(preventedKeys)
+            let data = try? JSONEncoder().encode(applications)
         else { return }
         try? data.write(to: fileURL, options: .atomic)
     }
@@ -37,20 +32,26 @@ class PreventKeyModel: ObservableObject {
     
     // MARK: - Load
     
-    fileprivate static func load() -> PreventedKeys {
+    fileprivate static func load() -> [ApplicationData] {
         guard let fileURL = Path.fileURL,
               let data = try? Data(contentsOf: fileURL),
-              let preventedKeys = try? JSONDecoder().decode(PreventedKeys.self, from: data) else {
-            return PreventedKeys()
+              let applications = try? JSONDecoder().decode([ApplicationData].self, from: data) else {
+            return []
         }
-        return preventedKeys
+        return applications
     }
 }
 
+struct ApplicationData: Hashable, Codable {
+    var uuid = UUID()
+    let identifier: String
+    var imageData: Data?
+    var preventedKeys: PreventedKeys
+    var mappedKeys: MappedKeys
+}
 
-// MARK: - Constant
 
-private extension PreventKeyModel {
+private extension ApplicationModel {
     
     enum Path {
         static var preventKeyModelURL: URL? {
@@ -58,7 +59,7 @@ private extension PreventKeyModel {
                 return nil
             }
             let documentsDirectoryURL = applicationSupportDirectoryURL.appendingPathComponent("Documents")
-            let preventKeyModelURL = documentsDirectoryURL.appendingPathComponent("PreventKeyModel")
+            let preventKeyModelURL = documentsDirectoryURL.appendingPathComponent("ApplicationModel")
             let fileManager = FileManager.default
             if !fileManager.fileExists(atPath: preventKeyModelURL.absoluteString) {
                 try? fileManager.createDirectory(
@@ -71,7 +72,7 @@ private extension PreventKeyModel {
         }
         
         static var fileURL: URL? {
-            return preventKeyModelURL?.appendingPathComponent("Prevented-key-list.json")
+            return preventKeyModelURL?.appendingPathComponent("Application-data-list.json")
         }
     }
 }

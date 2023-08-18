@@ -1,19 +1,20 @@
 //
-//  PreventKeySelectView.swift
+//  KeyMappingView.swift
 //  Switcher
 //
-//  Created by 김수환 on 2023/08/06.
+//  Created by 김수환 on 2023/08/13.
 //
 
 import SwiftUI
 
-struct PreventKeySelectView: View {
+struct KeyMappingView: View {
     
-    @ObservedObject private var model = PreventKeyModel.shared
+    @ObservedObject private var model = KeyMapModel.shared
     @ObservedObject private var applicationModel = ApplicationModel.shared
-    @State private var toggles: [Bool] = Array(repeating: false, count: PreventKeyModel.shared.preventedKeys.count)
+    @State private var toggles: [Bool] = Array(repeating: false, count: KeyMapModel.shared.mappedKeys.count)
     @State private var currentlySelectedApplication: ApplicationData?
     @State private var window: NSWindow?
+
     var body: some View {
         VStack(spacing: 0.0) {
             Header()
@@ -21,15 +22,15 @@ struct PreventKeySelectView: View {
             List {
                 if let currentlySelectedApplication,
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
-                    ForEach(0 ..< selectedApplication.preventedKeys.count, id: \.self) { index in
+                    ForEach(0 ..< selectedApplication.mappedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.newValue(.init(flags: selectedApplication.preventedKeys[index].flags, key: selectedApplication.preventedKeys[index].key)), isOn: $toggles[index])
+                            Toggle(Texts.mappedKey(selectedApplication.mappedKeys[index]), isOn: $toggles[index])
                         }
                     }
                 } else {
-                    ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
+                    ForEach(0 ..< model.mappedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)), isOn: $toggles[index])
+                            Toggle(Texts.mappedKey(model.mappedKeys[index]), isOn: $toggles[index])
                         }
                     }
                 }
@@ -40,70 +41,68 @@ struct PreventKeySelectView: View {
             .onChange(of: currentlySelectedApplication) { newValue in
                 if let currentlySelectedApplication,
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
-                    toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+                    toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
                     return
                 }
-                toggles = Array(repeating: false, count: model.preventedKeys.count)
+                toggles = Array(repeating: false, count: model.mappedKeys.count)
             }
     }
     
     func appendDataToEventDict() {
-        guard let newValue = model.newValue
+        guard let newInputValue = model.newInputValue,
+              let newReturnValue = model.newReturnValue
         else {
-            model.newValue = nil
             return
         }
         if let currentlySelectedApplication,
            var selectedApplication = applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
-            guard !selectedApplication.preventedKeys.contains(newValue) else {
-                model.newValue = nil
-                return
-            }
+            guard !selectedApplication.mappedKeys.contains(.init(inputFlagAndKey: newInputValue, returnFlagAndKey: newReturnValue)) else { return }
+            let mappedKey: MappedKey = .init(inputFlagAndKey: newInputValue, returnFlagAndKey: newReturnValue)
             applicationModel.applications.removeAll(where: {$0 == selectedApplication})
-            selectedApplication.preventedKeys.append(newValue)
+            selectedApplication.mappedKeys.append(mappedKey)
             applicationModel.applications.append(selectedApplication)
-            model.newValue = nil
-            toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+            model.newInputValue = nil
+            model.newReturnValue = nil
+            toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
             return
         }
-        guard !model.preventedKeys.contains(newValue) else {
-            model.newValue = nil
-            return
-        }
-        model.preventedKeys.append(newValue)
-        model.newValue = nil
-        toggles = Array(repeating: false, count: model.preventedKeys.count)
+        
+        guard !model.mappedKeys.contains(.init(inputFlagAndKey: newInputValue, returnFlagAndKey: newReturnValue)) else { return }
+        let mappedKey: MappedKey = .init(inputFlagAndKey: newInputValue, returnFlagAndKey: newReturnValue)
+        model.mappedKeys.append(mappedKey)
+        model.newInputValue = nil
+        model.newReturnValue = nil
+        toggles = Array(repeating: false, count: model.mappedKeys.count)
     }
     
     func RemoveDataFromEventDict() {
-        
         if let currentlySelectedApplication,
            var selectedApplication = applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
-            var removeValues = PreventedKeys()
-            (0 ..< selectedApplication.preventedKeys.count).forEach({ index in
+            var removeValues = MappedKeys()
+            (0 ..< selectedApplication.mappedKeys.count).forEach({ index in
                 guard toggles[index] else { return }
-                removeValues.append(selectedApplication.preventedKeys[index])
+                removeValues.append(selectedApplication.mappedKeys[index])
             })
             applicationModel.applications.removeAll(where: {$0 == selectedApplication})
-            selectedApplication.preventedKeys.removeAll(where: { removeValues.contains($0) })
+            selectedApplication.mappedKeys.removeAll(where: { removeValues.contains($0) })
             applicationModel.applications.append(selectedApplication)
-            toggles = Array(repeating: false, count: selectedApplication.preventedKeys.count)
+            toggles = Array(repeating: false, count: selectedApplication.mappedKeys.count)
             return
         }
-        var removeValues = PreventedKeys()
-        (0 ..< model.preventedKeys.count).forEach({ index in
+        var removeValues = MappedKeys()
+        (0 ..< model.mappedKeys.count).forEach({ index in
             guard toggles[index] else { return }
-            removeValues.append(model.preventedKeys[index])
+            removeValues.append(model.mappedKeys[index])
         })
-        model.preventedKeys.removeAll(where: { removeValues.contains($0) })
-        toggles = Array(repeating: false, count: model.preventedKeys.count)
+        model.mappedKeys.removeAll(where: { removeValues.contains($0) })
+        toggles = Array(repeating: false, count: model.mappedKeys.count)
     }
 }
 
 
 // MARK: - Header
 
-private extension PreventKeySelectView {
+private extension KeyMappingView {
     
     @ViewBuilder
     func Header() -> some View {
@@ -123,23 +122,42 @@ private extension PreventKeySelectView {
             Spacer()
             VStack {
                 var text: String {
-                    if let newValue = model.newValue {
+                    if let newValue = model.newInputValue {
                         return Texts.newValue(newValue)
                     }
-                    guard model.isAddingNewValue else {
-                        return Texts.pressToAddNewKey
+                    guard model.isAddingNewInputValue else {
+                        return Texts.pressToSelectMappingKey
                     }
                     return Texts.waiting
                 }
                 Text(text)
                     .font(.system(size: Metric.fontSize, weight: .semibold))
                     .onTapGesture {
-                        model.newValue = nil
-                        model.isAddingNewValue.toggle()
+                        model.newInputValue = nil
+                        model.isAddingNewInputValue.toggle()
+                    }
+            }.frame(width: Metric.defaultWidth, alignment: .center)
+            VStack {
+                Text("->")
+            }.frame(width: 20, alignment: .center)
+            VStack {
+                var text: String {
+                    if let newValue = model.newReturnValue {
+                        return Texts.newValue(newValue)
+                    }
+                    guard model.isAddingNewReturnValue else {
+                        return Texts.pressToSelectMappingKey
+                    }
+                    return Texts.waiting
+                }
+                Text(text)
+                    .font(.system(size: Metric.fontSize, weight: .semibold))
+                    .onTapGesture {
+                        model.newReturnValue = nil
+                        model.isAddingNewReturnValue.toggle()
                     }
             }.frame(width: Metric.defaultWidth, alignment: .center)
             Spacer()
-            
             Button {
                 appendDataToEventDict()
             } label: {
@@ -151,14 +169,14 @@ private extension PreventKeySelectView {
             }
             Spacer(minLength: Metric.minimumSpacing)
         }
-        Spacer(minLength: Metric.largeSpacing)
+        Spacer(minLength: Metric.minimumSpacing)
     }
 }
 
 
 // MARK: - Applications
 
-private extension PreventKeySelectView {
+private extension KeyMappingView {
     
     @ViewBuilder
     func ApplicationSelector() -> some View {
@@ -171,7 +189,7 @@ private extension PreventKeySelectView {
                         .background(currentlySelectedApplication == nil ? Color("BGColor") : Color.clear)
                         .onTapGesture {
                             currentlySelectedApplication = nil
-                            toggles = Array(repeating: false, count: model.preventedKeys.count)
+                            toggles = Array(repeating: false, count: model.mappedKeys.count)
                         }
                 }
                 ForEach(applicationModel.applications, id: \.self) { application in
@@ -184,7 +202,7 @@ private extension PreventKeySelectView {
                             .background(application.identifier == currentlySelectedApplication?.identifier ? Color("BGColor") : Color.clear)
                             .onTapGesture {
                                 currentlySelectedApplication = application
-                                toggles = Array(repeating: false, count: application.preventedKeys.count)
+                                toggles = Array(repeating: false, count: application.mappedKeys.count)
                             }
                     }
                 }
@@ -206,12 +224,11 @@ private extension PreventKeySelectView {
 
 // MARK: - Constant
 
-private extension PreventKeySelectView {
+private extension KeyMappingView {
     
     enum Metric {
         static let defaultWidth = 180.0
         static let minimumSpacing = 3.0
-        static let largeSpacing = 15.0
         static let fontSize = 13.0
         
         enum Button {
@@ -223,11 +240,14 @@ private extension PreventKeySelectView {
     enum Texts {
         static let removeButton = "Remove_Item_Key".localized
         static let addButton = "Add_Item_Key".localized
-        static let pressToAddNewKey = "PressToAddNewKey".localized
+        static let pressToSelectMappingKey = "PressToSelectMappingKey".localized
         static let waiting = "waiting".localized
         
-        static func newValue(_ value: PreventedKey) -> String {
-            return "\(value.flags.sortedString) \(value.key.string)"
+        static func mappedKey(_ value: MappedKey) -> String {
+            return "\(FlagMap.arrayFlags(flagNum: value.inputFlagAndKey.flag).sortedString) \(value.inputFlagAndKey.key.string) -> \(FlagMap.arrayFlags(flagNum: value.returnFlagAndKey.flag).sortedString) \(value.returnFlagAndKey.key.string)"
+        }
+        static func newValue(_ value: FlagAndKey) -> String {
+            return "\(FlagMap.arrayFlags(flagNum: value.flag).sortedString) \(value.key.string)"
         }
     }
 }

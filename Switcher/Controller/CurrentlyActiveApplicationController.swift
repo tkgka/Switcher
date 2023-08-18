@@ -10,13 +10,15 @@ import AppKit
 
 struct CurrentlyActiveApplicationController {
     
-    func isKeyPreventApplicationsFfrontmostApplication(applications:[String]) -> Bool {
-        guard let app = Constant.workspace.frontmostApplication,
-              applications.contains(app.bundleIdentifier ?? "")
-        else {
-            return false
+    func applicationsDataContainFfrontmostApplication(applications:[ApplicationData]) -> String? {
+        let bundleIdentifiers = applications.compactMap { applicaiton in
+            applicaiton.identifier
         }
-        return true
+        guard let app = Constant.workspace.frontmostApplication,
+              bundleIdentifiers.contains(app.bundleIdentifier ?? "") else {
+            return nil
+        }
+        return app.bundleIdentifier
     }
     
     
