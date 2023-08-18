@@ -21,13 +21,18 @@ struct KeyInputController {
             return cgEvent
         }
         
-        guard !PreventKeyModel.shared.isAddingNewValue else {
-            setUpNewPreventKeyValue(event: event)
-            return nil
+        if event.type == .keyDown || event.type == .keyUp {
+            guard !PreventKeyModel.shared.isAddingNewValue else {
+                setUpNewPreventKeyValue(event: event)
+                return nil
+            }
+            
+            guard !KeyMapModel.shared.isAddingNewReturnValue else {
+                setUpMappingKeyValue(event: event)
+                return nil
+            }
         }
-        guard !KeyMapModel.shared.isAddingNewInputValue,
-              !KeyMapModel.shared.isAddingNewReturnValue
-        else {
+        guard !KeyMapModel.shared.isAddingNewInputValue else {
             setUpMappingKeyValue(event: event)
             return nil
         }
