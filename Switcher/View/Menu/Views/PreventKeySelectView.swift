@@ -23,13 +23,21 @@ struct PreventKeySelectView: View {
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
                     ForEach(0 ..< selectedApplication.preventedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.newValue(.init(flags: selectedApplication.preventedKeys[index].flags, key: selectedApplication.preventedKeys[index].key)), isOn: $toggles[index])
+                            Toggle("", isOn: $toggles[index])
+                            Text(Texts.newValue(.init(flags: selectedApplication.preventedKeys[index].flags, key: selectedApplication.preventedKeys[index].key)))
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(Metric.cornerRadius)
                         }
                     }
                 } else {
                     ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)), isOn: $toggles[index])
+                            Toggle("", isOn: $toggles[index])
+                            Text(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)))
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(Metric.cornerRadius)
                         }
                     }
                 }
@@ -209,6 +217,8 @@ private extension PreventKeySelectView {
 private extension PreventKeySelectView {
     
     enum Metric {
+        static let textEdgeInset = EdgeInsets(top: 4.0, leading: 4.0, bottom: 4.0, trailing: 4.0)
+        static let cornerRadius = 10.0
         static let defaultWidth = 180.0
         static let minimumSpacing = 3.0
         static let largeSpacing = 15.0
@@ -218,6 +228,10 @@ private extension PreventKeySelectView {
             static let width = 60.0
             static let padding = 7.0
         }
+    }
+    
+    enum Colors {
+        static let lightGray = Color("LightGray")
     }
     
     enum Texts {
