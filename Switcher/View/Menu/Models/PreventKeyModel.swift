@@ -41,7 +41,7 @@ class PreventKeyModel: ObservableObject {
         guard let fileURL = Path.fileURL,
               let data = try? Data(contentsOf: fileURL),
               let preventedKeys = try? JSONDecoder().decode(PreventedKeys.self, from: data) else {
-            return PreventedKeys()
+            return [.init(flags: [.leftCommand], key: .q), .init(flags: [.rightCommand], key: .q), .init(flags: [.bothCommands], key: .q)]
         }
         return preventedKeys
     }
