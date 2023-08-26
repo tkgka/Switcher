@@ -12,19 +12,27 @@
 
 **press command + q twice to shutdown app**
 
-![image](https://user-images.githubusercontent.com/52348220/150669417-04c33fc1-5780-4627-abf4-359eaa5a333c.gif)
 
 
-**support Key mapping**
+https://github.com/tkgka/Switcher/assets/52348220/22e0a472-6ef4-40ab-a269-b04ad29d2824
 
-https://user-images.githubusercontent.com/52348220/164449012-04c86ff9-a26f-4b9a-b7e1-ef30d0e26f4d.mov
+
+
+
+**support independent application key mapping**
+
+
+
+https://github.com/tkgka/Switcher/assets/52348220/c3326cb8-a633-4ae0-99c9-de6cd8888ff2
+
+
 
 
 **change mouse Wheel direction**
 
 
 ## 💾 [Download](https://github.com/tkgka/Switcher/releases) 
-[**Download the app**](https://github.com/tkgka/Switcher/releases/download/v2.0.6/Switcher.dmg)
+[**Download the app**](https://github.com/tkgka/Switcher/releases/download/v3.0.1/Switcher.dmg)
 
 
 check introduction <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse_EN.md"> here </a>
