@@ -38,22 +38,24 @@ struct KeyMappingView: View {
                         }
                     }
                 } else {
-                    ForEach(0 ..< model.mappedKeys.count, id: \.self) { index in
-                        HStack{
-                            Toggle(
-                                "",
-                                isOn: $toggles[index]
-                            )
-                            Text(model.mappedKeys[index].inputFlagAndKeyString)
-                                .padding(Metric.textEdgeInset)
-                                .background(Colors.lightGray)
-                                .cornerRadius(10.0)
-                            Text("->")
-                                .bold()
-                            Text(model.mappedKeys[index].returnFlagAndKeyString)
-                                .padding(Metric.textEdgeInset)
-                                .background(Colors.lightGray)
-                                .cornerRadius(10.0)
+                    if model.mappedKeys.count == toggles.count {
+                        ForEach(0 ..< model.mappedKeys.count, id: \.self) { index in
+                            HStack{
+                                Toggle(
+                                    "",
+                                    isOn: $toggles[index]
+                                )
+                                Text(model.mappedKeys[index].inputFlagAndKeyString)
+                                    .padding(Metric.textEdgeInset)
+                                    .background(Colors.lightGray)
+                                    .cornerRadius(10.0)
+                                Text("->")
+                                    .bold()
+                                Text(model.mappedKeys[index].returnFlagAndKeyString)
+                                    .padding(Metric.textEdgeInset)
+                                    .background(Colors.lightGray)
+                                    .cornerRadius(10.0)
+                            }
                         }
                     }
                 }

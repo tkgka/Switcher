@@ -31,13 +31,15 @@ struct PreventKeySelectView: View {
                         }
                     }
                 } else {
-                    ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
-                        HStack{
-                            Toggle("", isOn: $toggles[index])
-                            Text(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)))
-                                .padding(Metric.textEdgeInset)
-                                .background(Colors.lightGray)
-                                .cornerRadius(Metric.cornerRadius)
+                    if model.preventedKeys.count == toggles.count {
+                        ForEach(0 ..< model.preventedKeys.count, id: \.self) { index in
+                            HStack{
+                                Toggle("", isOn: $toggles[index])
+                                Text(Texts.newValue(.init(flags: model.preventedKeys[index].flags, key: model.preventedKeys[index].key)))
+                                    .padding(Metric.textEdgeInset)
+                                    .background(Colors.lightGray)
+                                    .cornerRadius(Metric.cornerRadius)
+                            }
                         }
                     }
                 }
