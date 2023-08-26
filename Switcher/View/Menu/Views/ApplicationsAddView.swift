@@ -83,7 +83,7 @@ struct ApplicationsAddView: View {
             return ApplicationData(
                 identifier: application.bundleIdentifier ?? "",
                 imageData: imageData,
-                preventedKeys: [],
+                preventedKeys: [.init(flags: [.leftCommand], key: .q), .init(flags: [.rightCommand], key: .q), .init(flags: [.bothCommands], key: .q)],
                 mappedKeys: []
             )
         })
