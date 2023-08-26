@@ -30,50 +30,56 @@ can operate function by toggle from menubar icon to use it
 ![image](https://user-images.githubusercontent.com/52348220/174285638-b2296656-beaa-4e7c-8352-2d05af2eeb7f.png)
 
 
-### Alert Keys
+### Add Application to independently control
+
 open setting window
 
 ![image](https://user-images.githubusercontent.com/52348220/174285929-ea239f8d-1876-4d25-bb12-27c3df789699.png)
 
+click ![plus circle@2x](https://github.com/tkgka/Switcher/assets/52348220/11c97e4d-beaf-4a58-9828-fffe2f76335d)
+
+
+![image](https://github.com/tkgka/Switcher/assets/52348220/bcaf3d7b-c479-4c91-a062-6a0ae9829572)
+
 you can refresh Currently running application list by click refresh button
 
-![image](https://user-images.githubusercontent.com/52348220/174286085-c0c74a04-e742-44db-9a2e-22aa81af5453.png)
+![image](https://github.com/tkgka/Switcher/assets/52348220/484c6136-48f2-4e59-ab82-7ecbbd4cec31)
 
-click Application and Add item button to set application which to show alert
 
-![image](https://user-images.githubusercontent.com/52348220/174286297-67042ca2-3322-4f35-b40b-8a29e8c2d855.png)
-![image](https://user-images.githubusercontent.com/52348220/174286303-1255c714-cb3e-468c-aad6-116d6385b0bd.png)
+click Application and `Add item button to set application which to independently control
+
+![image](https://github.com/tkgka/Switcher/assets/52348220/b0e7c1d8-1fec-454b-b0d1-4d378b4ba772)
 
 click Application and Remove item button to remove application
 
-![image](https://user-images.githubusercontent.com/52348220/174286488-2c47c74a-ca3e-4e9c-ad37-8c914d0b742b.png)
-
-select Alert key and press "Add Item" Button to set Key to show alert
-
-![image](https://user-images.githubusercontent.com/52348220/174286760-682c380b-ac20-4510-98dc-fea186fe5c45.png)
-
-![image](https://user-images.githubusercontent.com/52348220/174286775-0872f45a-c030-4dba-8a82-c552dd4f7330.png)
+![image](https://github.com/tkgka/Switcher/assets/52348220/e994f47a-0916-4e42-9fda-9419a322e585)
 
 
-click toggle button beside you want to remove and click "Remove" Button to Remove key
+### Alert Keys
 
-![image](https://user-images.githubusercontent.com/52348220/174286906-aa1082ab-f4e4-4d5e-9d36-73e86224d4bb.png)
+press `press to add newKey` Text and press the key that you want to prevent to press by mistake
+
+![image](https://github.com/tkgka/Switcher/assets/52348220/c018c20a-4001-43ed-aa12-b229cb9fe579)
 
 
 ### KeyMapper
+
 open setting window
 
 ![image](https://user-images.githubusercontent.com/52348220/174285788-d25a0f9b-5507-4d1d-9992-94269516d125.png)
 
 
-select pressed key & return key and press "Add Item" Button to Key mapping
-![image](https://user-images.githubusercontent.com/52348220/164451258-07b92c98-c0c8-455a-b46f-d2dfaf36fa2c.png)
+select pressed to select MappingKey and press "Add Item" Button to Key mapping
+
+![image](https://github.com/tkgka/Switcher/assets/52348220/c246f9c7-73d0-4e4b-882f-7e115743268a)
 
 
 click toggle button beside you want to remove and click "Remove" Button to remove the mapped key
-![image](https://user-images.githubusercontent.com/52348220/164451206-67e53085-852f-40cd-a5aa-03b362fbdeff.png)
+
+![image](https://github.com/tkgka/Switcher/assets/52348220/5d608660-6638-431a-9590-54c40ba81811)
 
 
+### Login Items
 
 Add Application to "Users & Groups > Login Items" to open it when system starts
 
