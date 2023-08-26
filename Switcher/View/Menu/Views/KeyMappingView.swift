@@ -24,13 +24,36 @@ struct KeyMappingView: View {
                    let selectedApplication =  applicationModel.applications.first(where: {$0.identifier == currentlySelectedApplication.identifier}) {
                     ForEach(0 ..< selectedApplication.mappedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.mappedKey(selectedApplication.mappedKeys[index]), isOn: $toggles[index])
+                            Toggle("",isOn: $toggles[index])
+                            Text(selectedApplication.mappedKeys[index].inputFlagAndKeyString)
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(Metric.cornerRadius)
+                            Text("->")
+                                .bold()
+                            Text(selectedApplication.mappedKeys[index].returnFlagAndKeyString)
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(Metric.cornerRadius)
                         }
                     }
                 } else {
                     ForEach(0 ..< model.mappedKeys.count, id: \.self) { index in
                         HStack{
-                            Toggle(Texts.mappedKey(model.mappedKeys[index]), isOn: $toggles[index])
+                            Toggle(
+                                "",
+                                isOn: $toggles[index]
+                            )
+                            Text(model.mappedKeys[index].inputFlagAndKeyString)
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(10.0)
+                            Text("->")
+                                .bold()
+                            Text(model.mappedKeys[index].returnFlagAndKeyString)
+                                .padding(Metric.textEdgeInset)
+                                .background(Colors.lightGray)
+                                .cornerRadius(10.0)
                         }
                     }
                 }
@@ -227,6 +250,8 @@ private extension KeyMappingView {
 private extension KeyMappingView {
     
     enum Metric {
+        static let textEdgeInset = EdgeInsets(top: 4.0, leading: 4.0, bottom: 4.0, trailing: 4.0)
+        static let cornerRadius = 10.0
         static let defaultWidth = 180.0
         static let minimumSpacing = 3.0
         static let fontSize = 13.0
@@ -237,15 +262,15 @@ private extension KeyMappingView {
         }
     }
     
+    enum Colors {
+        static let lightGray = Color("LightGray")
+    }
+    
     enum Texts {
         static let removeButton = "Remove_Item_Key".localized
         static let addButton = "Add_Item_Key".localized
         static let pressToSelectMappingKey = "PressToSelectMappingKey".localized
         static let waiting = "waiting".localized
-        
-        static func mappedKey(_ value: MappedKey) -> String {
-            return "\(FlagMap.arrayFlags(flagNum: value.inputFlagAndKey.flag).sortedString) \(value.inputFlagAndKey.key.string) -> \(FlagMap.arrayFlags(flagNum: value.returnFlagAndKey.flag).sortedString) \(value.returnFlagAndKey.key.string)"
-        }
         static func newValue(_ value: FlagAndKey) -> String {
             return "\(FlagMap.arrayFlags(flagNum: value.flag).sortedString) \(value.key.string)"
         }

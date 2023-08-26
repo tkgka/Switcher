@@ -16,6 +16,16 @@ struct MappedKey: Hashable, Codable {
     let returnFlagAndKey: FlagAndKey
 }
 
+extension MappedKey {
+    
+    var inputFlagAndKeyString: String {
+        "\(FlagMap.arrayFlags(flagNum: inputFlagAndKey.flag).sortedString) \(inputFlagAndKey.key.string)"
+    }
+    var returnFlagAndKeyString: String {
+        "\(FlagMap.arrayFlags(flagNum: returnFlagAndKey.flag).sortedString) \(returnFlagAndKey.key.string)"
+    }
+}
+
 struct FlagAndKey: Hashable, Codable {
     let flag: UInt
     let key: KeyMap
