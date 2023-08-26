@@ -5,9 +5,10 @@
 //
 // code from "https://github.com/j-f1/ForceClickToRightClick"
 
-import Foundation
+import SwiftUI
 
 extension CGEventType {
+    
     public static var pressure = CGEventType(rawValue: 29)!
     
     @inlinable public var maskValue: CGEventMask { 1 << rawValue }
@@ -39,6 +40,7 @@ extension CGEventType {
 }
 
 extension CGEventMask: OptionSet {
+    
     public static let all: CGEventMask = ~0
     
     public var rawValue: Self { self }

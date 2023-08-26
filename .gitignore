@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+Pods/*
+
+## Xcode-related
+xcuserdata/
+.build/
+build/
+DerivedData/

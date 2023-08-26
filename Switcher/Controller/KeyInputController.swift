@@ -1,113 +1,186 @@
-import Cocoa
+//
+//  KeyInputController.swift
+//  Switcher
+//
+//  Created by 김수환 on 2023/07/29.
+//
+
 import SwiftUI
-import AlertPopup
 
-
-class Wrapper {
-    var state: State?
+struct KeyInputController {
     
-    class State {
-        init(mouseDownEvent: CGEvent) {
-            self.mouseDownEvent = mouseDownEvent
+    static func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
+        if event.type == .scrollWheel && MenuModel.shared.mouseWheel {
+            guard let updatedCgEvent = changeMouseWheelDirection(with: event) else {
+                return cgEvent
+            }
+            return updatedCgEvent
         }
         
-        var mouseDownEvent: CGEvent
-        var task: DispatchWorkItem!
-        var isRight = false
-        var mouseMoves: [CGPoint] = []
+        guard event.type == .keyDown || event.type == .keyUp || event.type == .otherMouseDown || event.type == .otherMouseUp else {
+            return cgEvent
+        }
         
+        if event.type == .keyDown || event.type == .keyUp {
+            guard !PreventKeyModel.shared.isAddingNewValue else {
+                setUpNewPreventKeyValue(event: event)
+                return nil
+            }
+            
+            guard !KeyMapModel.shared.isAddingNewReturnValue else {
+                setUpMappingKeyValue(event: event)
+                return nil
+            }
+        }
+        guard !KeyMapModel.shared.isAddingNewInputValue else {
+            setUpMappingKeyValue(event: event)
+            return nil
+        }
+        
+        if let applicationIdentifier = CurrentlyActiveApplicationController().applicationsDataContainFfrontmostApplication(applications: ApplicationModel.shared.applications) {
+            guard let applicationData = ApplicationModel.shared.applications.first(where: { $0.identifier == applicationIdentifier }) else {
+                return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: PreventKeyModel.shared.preventedKeys, mappedKeys: KeyMapModel.shared.mappedKeys)
+            }
+            return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: applicationData.preventedKeys, mappedKeys: applicationData.mappedKeys)
+        }
+        
+        
+        return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: PreventKeyModel.shared.preventedKeys, mappedKeys: KeyMapModel.shared.mappedKeys)
     }
 }
 
-func handle(event: NSEvent, cgEvent: CGEvent, wrapper: Wrapper, proxy: CGEventTapProxy) -> CGEvent? {
-    
-    if (event.type == .otherMouseUp || event.type == .otherMouseDown) {
-        if ObservedKeyVals.PressedKey == "Waiting"{
-            let FlagString = GetFlags(Val: event.modifierFlags.rawValue + 256)
-            KeyMaps[MouseBtnNum(val: event.buttonNumber)] != nil ? (ObservedKeyVals.PressedKey = FlagString + KeyMaps[MouseBtnNum(val: event.buttonNumber)]!) : (ObservedKeyVals.PressedKey = "\(FlagString) \(String(MouseBtnNum(val: event.buttonNumber)))")
-            ObservedKeyVals.PressedKeyEvent = PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue + 256)
-            return nil
-        }
-        
-        if ObservedKeyVals.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue + 256)) && ObservedToggles.KeyMap == true {
-            let value:EventStruct = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: MouseBtnNum(val: event.buttonNumber), Flag: event.modifierFlags.rawValue + 256)]!
-            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum)
-            return ReturnValue.cgEvent
-        }
-        else { return cgEvent }
-    }
-    
-    if(event.type == .keyUp || event.type == .keyDown){
 
-        let AlertKeyString:String = "\(GetFlags(Val: event.modifierFlags.rawValue, GetDirection: false))\(KeyMaps[event.keyCode] ?? String(event.keyCode))"
-        let FlagString = GetFlags(Val: event.modifierFlags.rawValue)
-        let checkEventDict = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]
-        
-        if ObservedAlertVals.PressedKey == "Waiting" {
-            ObservedAlertVals.PressedKey = AlertKeyString
-            return nil
-        }
-        
-        if ObservedKeyVals.PressedKey == "Waiting"{
-            
-            KeyMaps[event.keyCode] != nil ? (ObservedKeyVals.PressedKey = FlagString + KeyMaps[event.keyCode]!) : (ObservedKeyVals.PressedKey = FlagString + String(event.keyCode))
-            ObservedKeyVals.PressedKeyEvent = PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)
-            
-            return nil
-        }
-        if ObservedKeyVals.ReturnKey == "Waiting"{
-            
-            KeyMaps[event.keyCode] != nil ? (ObservedKeyVals.ReturnKey = KeyMaps[event.keyCode]! + FlagString) : (ObservedKeyVals.ReturnKey = FlagString + String(event.keyCode))
-            ObservedKeyVals.ReturnKeyEvent = EventStruct(keys: event.keyCode, FlagNum: event.modifierFlags.rawValue)
-            
-            return nil
-        }
-        
-        
-        if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
-            (ObservedAlertVals.PressedKeyEvent.contains(AlertKeyString) && // Pressed Key is setted on Alertkeys
-             ((ObservedToggles.KeyMap == false) ||  // keyMapping is setted false
-              (ObservedToggles.KeyMap == true && checkEventDict == nil)) )) { // keyMapping is on use but key Alert key doesn't mapped
-            
-            if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){
-                return IsAlertOn(cgEvent: cgEvent, Text:AlertKeyString)
-            }
-            return cgEvent
-            
-        }
-        else  if ((event.type == .keyDown && ObservedToggles.CMDQ == true) && // key down && CMDQ IS Set to Use
-                  ObservedToggles.KeyMap == true && checkEventDict != nil && // check toggle is true and Event dict exception
-                  ObservedAlertVals.PressedKeyEvent.contains("\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")) { // pressed key that mapped to Alert Key
-            
-            let CGEventVal:CGEvent = CreateNSEvent(event:NSEvent(cgEvent: cgEvent)!, KeyCode:checkEventDict!.keys, Flag:checkEventDict!.FlagNum).cgEvent!
-            
-            if ((ObservedAlertVals.AlertList.count <= 0) || (checkApplicationIsActive(Applications: Array(ObservedAlertVals.AlertList.keys)))){ // 실행중인 application이 있는 경우 또는 특정 application 만 알림을 띄워주도록 설정한 경우
-                return IsAlertOn(cgEvent: CGEventVal, Text:"\(GetFlags(Val: checkEventDict!.FlagNum, GetDirection: false))\(KeyMaps[checkEventDict!.keys] ?? String(event.keyCode))")
-            }
-            return CGEventVal
-        }
-        
-        else if ObservedKeyVals.EventDict.keys.contains(PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)) && ObservedToggles.KeyMap == true { // EventDict 에 입력된 키 값이 있는지 확인, keyMap toggle true 인지 확인
-            let value:EventStruct = ObservedKeyVals.EventDict[PressedKeyEventStringMaker(keycode: event.keyCode, Flag: event.modifierFlags.rawValue)]!
-            let ReturnValue = CreateNSEvent(event: event, KeyCode:value.keys, Flag: value.FlagNum) // mapping 된 키 값 리턴
-            return ReturnValue.cgEvent
-        }
-        
-        else { return cgEvent }
-        
-    }else  if event.type == .scrollWheel && ObservedToggles.MouseWheel == true{
-        AlertIsOn = false
+// MARK: - Change Mouse Wheel Direction
+
+private extension KeyInputController {
+    static func changeMouseWheelDirection(with event: NSEvent) -> CGEvent? {
         if (event.momentumPhase.rawValue == 0 && event.phase.rawValue == 0) {
-            return CGEvent(scrollWheelEvent2Source: nil, units: CGScrollEventUnit.pixel, wheelCount: 1, wheel1: Int32(event.deltaY * -10), wheel2: 0, wheel3: 0)
-        }
-        else{
-            return cgEvent
+            return CGEvent(
+                scrollWheelEvent2Source: nil,
+                units: CGScrollEventUnit.pixel,
+                wheelCount: 1,
+                wheel1: Int32(event.deltaY * -10),
+                wheel2: 0,
+                wheel3: 0
+            )
+        } else {
+            return nil
         }
     }
+}
+
+
+// MARK: - Prevent Key Press By Mistake
+
+
+private extension KeyInputController {
     
-    else {
-        event.type != .keyUp ? AlertIsOn = false : nil
+    static func setUpNewPreventKeyValue(event: NSEvent) {
+        let isMouseKey = event.type == .otherMouseDown || event.type == .otherMouseUp
+        guard let key = isMouseKey ? KeyMap(rawValue: event.uInt16ButtonNumber) : KeyMap(rawValue: event.keyCode)
+        else {
+            PreventKeyModel.shared.isAddingNewValue = false
+            return
+        }
+        PreventKeyModel.shared.newValue = .init(flags: FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue + (isMouseKey ? 256 : 0)), key: key)
+        PreventKeyModel.shared.isAddingNewValue = false
+    }
+    
+    static func setUpMappingKeyValue(event: NSEvent) {
+        let isMouseKey = event.type == .otherMouseDown || event.type == .otherMouseUp
+        let model = KeyMapModel.shared
+        guard let key = isMouseKey ? KeyMap(rawValue: event.uInt16ButtonNumber) : KeyMap(rawValue: event.keyCode)
+        else {
+            model.isAddingNewInputValue = false
+            model.isAddingNewReturnValue = false
+            return
+        }
+        model.isAddingNewInputValue
+        ? (model.newInputValue = .init(flag: event.modifierFlags.rawValue + (isMouseKey ? 256 : 0), key: key))
+        : (model.newReturnValue = .init(flag: event.modifierFlags.rawValue + (isMouseKey ? 256 : 0), key: key))
+        
+        model.isAddingNewInputValue = false
+        model.isAddingNewReturnValue = false
+    }
+    
+    static func preventKeyPressByMistake(event: NSEvent) -> CGEvent? {
+        guard event.keyCode == lastPressedKeyEvent?.keyCode,
+              event.modifierFlags.rawValue == lastPressedKeyEvent?.modifierFlags.rawValue
+        else {
+            if event.type == .keyDown {
+                lastPressedKeyEvent = event
+            }
+            alertWindow?.close()
+            let flagText = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue).sortedString
+            alertWindow = AlertView(
+                alertText: String(format: "Alert_Text".localized, "\(flagText) \(KeyMap(rawValue: event.keyCode)?.string ?? "")")
+            ).showViewOnNewWindowInSpecificTime(during: Constant.alertTimeout)
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constant.alertTimeout) {
+                if lastPressedKeyEvent == event {
+                    lastPressedKeyEvent = nil
+                }
+            }
+            return nil
+        }
+        
+        if event.type == .keyDown {
+            lastPressedKeyEvent = nil
+        }
+        return event.cgEvent
+    }
+    
+    static var lastPressedKeyEvent: NSEvent?
+    static var alertWindow: NSWindow?
+}
+
+
+// MARK: - Core
+
+private extension KeyInputController {
+    
+    static func returnResultCGEvent(_event: NSEvent, _cgEvent: CGEvent, preventedKeys: PreventedKeys, mappedKeys: MappedKeys) -> CGEvent? {
+        let isMouseKey = _event.type == .otherMouseDown || _event.type == .otherMouseUp
+        var event = _event
+        var cgEvent = _cgEvent
+        
+        if MenuModel.shared.keyMap {
+            if let newNSEvent = event.mappedKey(keys: mappedKeys, isMouseKey: isMouseKey) {
+                event = newNSEvent
+                cgEvent = newNSEvent.cgEvent ?? _cgEvent
+            }
+        }
+        
+        guard MenuModel.shared.preventKeyPressByMistake else {
+            return cgEvent
+        }
+        
+        let flags = FlagMap.arrayFlags(flagNum: event.modifierFlags.rawValue + (isMouseKey ? 256 : 0)).sorted
+        if !isMouseKey {
+            guard preventedKeys.contains(where: {$0.key.rawValue == event.keyCode && $0.flags.sorted == flags}) else {
+                return cgEvent
+            }
+            let result = KeyInputController.preventKeyPressByMistake(event: event)
+            return result
+        }
         return cgEvent
+    }
+}
+
+
+// MARK: - Constant
+
+private extension KeyInputController {
+    
+    enum Constant {
+        static let alertTimeout = 1.5
+    }
+}
+
+
+extension NSEvent {
+    
+    var uInt16ButtonNumber: uint16 {
+        UInt16(1000 + self.buttonNumber)
     }
 }
 

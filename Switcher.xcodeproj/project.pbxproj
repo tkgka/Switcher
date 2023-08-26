@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E4068A765232BD6ED93070D /* Pods_Switcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0284D33547AB46888C30E5C /* Pods_Switcher.framework */; };
-		2199060D0419893AEFAA93D5 /* Pods_SwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */; };
-		C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */; };
-		F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */; };
-		F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ECBA027C942DC00C43482 /* KeyMapView.swift */; };
+		F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76C82A88E97400AB721F /* KeyMappingView.swift */; };
+		F91A76CB2A8B6B3100AB721F /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */; };
+		F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */; };
+		F91A76D22A8CF7CE00AB721F /* ApplicationsAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */; };
+		F91A76D42A8D02BA00AB721F /* ApplicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */; };
+		F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216B2A7533C100DE55C6 /* Wrapper.swift */; };
+		F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E216F2A75361C00DE55C6 /* MenuModel.swift */; };
+		F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E21722A7538C500DE55C6 /* KeyInputController.swift */; };
 		F94C618428C3A5C200EE41ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F94C618628C3A5C200EE41ED /* Localizable.strings */; };
 		F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9500527279AB23B006807F8 /* ColorAssets.xcassets */; };
-		F950052A279AC7D7006807F8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9500529279AC7D7006807F8 /* Functions.swift */; };
-		F9617A09285486FA00267181 /* AppendAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9617A08285486FA00267181 /* AppendAppView.swift */; };
-		F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBA282922620024F03D /* KeySelecterView.swift */; };
-		F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMapModel.swift */; };
-		F9743DC0282927620024F03D /* KeyMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBF282927620024F03D /* KeyMapController.swift */; };
+		F95DA7E72A7F6DD800606876 /* PreventKeySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */; };
+		F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7E82A7F728B00606876 /* String+Localized.swift */; };
+		F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */; };
+		F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */; };
+		F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */; };
+		F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E915C2A88B51700BFCA99 /* MappedKeys.swift */; };
+		F9743DBE282925B20024F03D /* KeyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9743DBD282925B20024F03D /* KeyMap.swift */; };
 		F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */; };
-		F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* ContentView.swift */; };
+		F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D5827883B0900FBC5AD /* AlertView.swift */; };
 		F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */; };
 		F97D4D5E27883B0B00FBC5AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */; };
 		F97D4D6927883B0B00FBC5AD /* SwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D6827883B0B00FBC5AD /* SwitcherTests.swift */; };
@@ -28,12 +33,14 @@
 		F97D4D7527883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D7427883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift */; };
 		F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */; };
 		F97D4D912788419100FBC5AD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D902788419100FBC5AD /* MenuView.swift */; };
-		F97D4D9327885EA000FBC5AD /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */; };
-		F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989189E27D8ADB300FA5726 /* Extensions.swift */; };
-		F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6F1A627E35B930017C81F /* KeyInputView.swift */; };
-		F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD6B27889AD400990607 /* GlobalVal.swift */; };
+		F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B262A3458EE00E8875C /* CreateEventTap.swift */; };
+		F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
+		F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
+		F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
+		F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B962272A7550FA00EAF3CD /* FlagMap.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
-		F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */; };
+		F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */; };
+		F9DA3C432A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */; };
 		F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,28 +62,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher_SwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.debug.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.debug.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.debug.xcconfig"; sourceTree = "<group>"; };
-		A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher-SwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switcher.release.xcconfig"; path = "Target Support Files/Pods-Switcher/Pods-Switcher.release.xcconfig"; sourceTree = "<group>"; };
-		B0284D33547AB46888C30E5C /* Pods_Switcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-SwitcherTests/Pods-SwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
-		F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectPickerView.swift; sourceTree = "<group>"; };
-		F91ECBA027C942DC00C43482 /* KeyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapView.swift; sourceTree = "<group>"; };
+		F91A76C82A88E97400AB721F /* KeyMappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMappingView.swift; sourceTree = "<group>"; };
+		F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
+		F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+resized.swift"; sourceTree = "<group>"; };
+		F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsAddView.swift; sourceTree = "<group>"; };
+		F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListView.swift; sourceTree = "<group>"; };
+		F92E216B2A7533C100DE55C6 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		F92E216F2A75361C00DE55C6 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		F92E21722A7538C500DE55C6 /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
 		F94C618528C3A5C200EE41ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F94C618728C3A5F100EE41ED /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F9500527279AB23B006807F8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
-		F9500529279AC7D7006807F8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		F9617A08285486FA00267181 /* AppendAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendAppView.swift; sourceTree = "<group>"; };
-		F9743DBA282922620024F03D /* KeySelecterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySelecterView.swift; sourceTree = "<group>"; };
-		F9743DBD282925B20024F03D /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
-		F9743DBF282927620024F03D /* KeyMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapController.swift; sourceTree = "<group>"; };
+		F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventKeySelectView.swift; sourceTree = "<group>"; };
+		F95DA7E82A7F728B00606876 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventKeyModel.swift; sourceTree = "<group>"; };
+		F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyActiveApplicationController.swift; sourceTree = "<group>"; };
+		F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapModel.swift; sourceTree = "<group>"; };
+		F95E915C2A88B51700BFCA99 /* MappedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedKeys.swift; sourceTree = "<group>"; };
+		F9743DBD282925B20024F03D /* KeyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMap.swift; sourceTree = "<group>"; };
 		F97D4D5327883B0900FBC5AD /* Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherApp.swift; sourceTree = "<group>"; };
-		F97D4D5827883B0900FBC5AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F97D4D5827883B0900FBC5AD /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F97D4D5D27883B0B00FBC5AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Switcher.entitlements; sourceTree = "<group>"; };
@@ -85,14 +91,17 @@
 		F97D4D6E27883B0B00FBC5AD /* SwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97D4D7227883B0B00FBC5AD /* SwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherUITests.swift; sourceTree = "<group>"; };
 		F97D4D7427883B0B00FBC5AD /* SwitcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
 		F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGEventExtension.swift; sourceTree = "<group>"; };
 		F97D4D902788419100FBC5AD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		F989189E27D8ADB300FA5726 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F9BAFD6B27889AD400990607 /* GlobalVal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVal.swift; sourceTree = "<group>"; };
+		F99C8B262A3458EE00E8875C /* CreateEventTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTap.swift; sourceTree = "<group>"; };
+		F99C8B282A3459DD00E8875C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
+		F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Switcher copy-Info.plist"; path = "/Users/gimsuhwan/Documents/swift/Switcher/Switcher copy-Info.plist"; sourceTree = "<absolute>"; };
+		F99C8B822A3478B500E8875C /* Apple Symbols.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols.ttf"; sourceTree = "<group>"; };
+		F9B962272A7550FA00EAF3CD /* FlagMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMap.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
-		F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKeySettingView.swift; sourceTree = "<group>"; };
-		F9E6F1A627E35B930017C81F /* KeyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputView.swift; sourceTree = "<group>"; };
+		F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventedKeys.swift; sourceTree = "<group>"; };
+		F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+showViewOnNewWindowInSpecificTime.swift"; sourceTree = "<group>"; };
 		F9E7EB09278C38E6004B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E4068A765232BD6ED93070D /* Pods_Switcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2199060D0419893AEFAA93D5 /* Pods_SwitcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,62 +125,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31D610F227D4089861DF08E /* Pods_Switcher_SwitcherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81864350AFE9618276A6B1D4 /* Frameworks */ = {
+		F92E216D2A7535F500DE55C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B0284D33547AB46888C30E5C /* Pods_Switcher.framework */,
-				605E8E5192E3C847AB901C78 /* Pods_Switcher_SwitcherUITests.framework */,
-				334167ACBD3F3977EF039666 /* Pods_SwitcherTests.framework */,
+				F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */,
+				F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */,
+				F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */,
+				F92E216F2A75361C00DE55C6 /* MenuModel.swift */,
 			);
-			name = Frameworks;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		E73887CDDADB07C0A5E4C369 /* Pods */ = {
+		F92E216E2A7535FC00DE55C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */,
-				A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */,
-				148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */,
-				A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */,
-				8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */,
-				C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */,
+				F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */,
+				F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */,
+				F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */,
+				F91A76C82A88E97400AB721F /* KeyMappingView.swift */,
+				F97D4D902788419100FBC5AD /* MenuView.swift */,
 			);
-			path = Pods;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F94C618128C3A3F800EE41ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F97D4D8B2788413F00FBC5AD /* KeyInputController.swift */,
-				F9743DBF282927620024F03D /* KeyMapController.swift */,
+				F92E216B2A7533C100DE55C6 /* Wrapper.swift */,
+				F95E91582A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift */,
+				F92E21722A7538C500DE55C6 /* KeyInputController.swift */,
+				F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */,
+				F95E915C2A88B51700BFCA99 /* MappedKeys.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F9743DB9282921940024F03D /* KeyInput */ = {
-			isa = PBXGroup;
-			children = (
-				F91ECBA027C942DC00C43482 /* KeyMapView.swift */,
-				F9743DBD282925B20024F03D /* KeyMapModel.swift */,
-				F9E6F1A627E35B930017C81F /* KeyInputView.swift */,
-				F9743DBA282922620024F03D /* KeySelecterView.swift */,
-				F9095A4927E88B340065B55F /* MultiSelectPickerView.swift */,
-			);
-			path = KeyInput;
 			sourceTree = "<group>";
 		};
 		F9743DBC282922E10024F03D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F989189E27D8ADB300FA5726 /* Extensions.swift */,
 				F97D4D8D2788416300FBC5AD /* CGEventExtension.swift */,
+				F9DA3C422A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift */,
+				F95DA7E82A7F728B00606876 /* String+Localized.swift */,
+				F91A76CF2A8CF6B900AB721F /* NSImage+resized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,8 +184,7 @@
 				F97D4D6727883B0B00FBC5AD /* SwitcherTests */,
 				F97D4D7127883B0B00FBC5AD /* SwitcherUITests */,
 				F97D4D5427883B0900FBC5AD /* Products */,
-				E73887CDDADB07C0A5E4C369 /* Pods */,
-				81864350AFE9618276A6B1D4 /* Frameworks */,
+				F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,15 +203,15 @@
 			children = (
 				F9E7EB09278C38E6004B5037 /* Info.plist */,
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
-				F94C618628C3A5C200EE41ED /* Localizable.strings */,
-				F9BAFD75278AF8EC00990607 /* Command */,
-				F9BAFD6B27889AD400990607 /* GlobalVal.swift */,
-				F9500529279AC7D7006807F8 /* Functions.swift */,
-				F9743DBC282922E10024F03D /* Extensions */,
-				F989189B27D60C4000FA5726 /* View */,
+				F99C8B2A2A3459FF00E8875C /* AppDelegates */,
 				F94C618128C3A3F800EE41ED /* Controller */,
-				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
-				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
+				F9BAFD75278AF8EC00990607 /* Command */,
+				F9743DBC282922E10024F03D /* Extensions */,
+				F9743DBD282925B20024F03D /* KeyMap.swift */,
+				F9B962272A7550FA00EAF3CD /* FlagMap.swift */,
+				F989189B27D60C4000FA5726 /* View */,
+				F94C618628C3A5C200EE41ED /* Localizable.strings */,
+				F99C8B812A3476F100E8875C /* Assets */,
 				F97D4D5F27883B0B00FBC5AD /* Switcher.entitlements */,
 				F97D4D5C27883B0B00FBC5AD /* Preview Content */,
 			);
@@ -248,7 +246,8 @@
 		F97D4D8F2788418200FBC5AD /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				F97D4D902788419100FBC5AD /* MenuView.swift */,
+				F92E216E2A7535FC00DE55C6 /* Views */,
+				F92E216D2A7535F500DE55C6 /* Models */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -256,13 +255,31 @@
 		F989189B27D60C4000FA5726 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F9C8E4FD28531344009EF0CD /* AlertKeys */,
 				F97D4D8F2788418200FBC5AD /* Menu */,
-				F9743DB9282921940024F03D /* KeyInput */,
-				F97D4D5827883B0900FBC5AD /* ContentView.swift */,
+				F97D4D5827883B0900FBC5AD /* AlertView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F99C8B2A2A3459FF00E8875C /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				F99C8B282A3459DD00E8875C /* AppDelegate.swift */,
+				F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */,
+				F99C8B262A3458EE00E8875C /* CreateEventTap.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		F99C8B812A3476F100E8875C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F99C8B822A3478B500E8875C /* Apple Symbols.ttf */,
+				F9500527279AB23B006807F8 /* ColorAssets.xcassets */,
+				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
@@ -273,15 +290,6 @@
 			path = Command;
 			sourceTree = "<group>";
 		};
-		F9C8E4FD28531344009EF0CD /* AlertKeys */ = {
-			isa = PBXGroup;
-			children = (
-				F9C8E4FB28531201009EF0CD /* AlertKeySettingView.swift */,
-				F9617A08285486FA00267181 /* AppendAppView.swift */,
-			);
-			path = AlertKeys;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,11 +297,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7827883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "Switcher" */;
 			buildPhases = (
-				C94599B351B94EA3CF5B619F /* [CP] Check Pods Manifest.lock */,
 				F97D4D4F27883B0900FBC5AD /* Sources */,
 				F97D4D5027883B0900FBC5AD /* Frameworks */,
 				F97D4D5127883B0900FBC5AD /* Resources */,
-				2F58259BAE90DA81F1576231 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,7 +314,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7B27883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "SwitcherTests" */;
 			buildPhases = (
-				51E3CA8F3A28C63622E67866 /* [CP] Check Pods Manifest.lock */,
 				F97D4D6027883B0B00FBC5AD /* Sources */,
 				F97D4D6127883B0B00FBC5AD /* Frameworks */,
 				F97D4D6227883B0B00FBC5AD /* Resources */,
@@ -327,11 +332,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97D4D7E27883B0B00FBC5AD /* Build configuration list for PBXNativeTarget "SwitcherUITests" */;
 			buildPhases = (
-				6C31084868633D01D2C49617 /* [CP] Check Pods Manifest.lock */,
 				F97D4D6A27883B0B00FBC5AD /* Sources */,
 				F97D4D6B27883B0B00FBC5AD /* Frameworks */,
 				F97D4D6C27883B0B00FBC5AD /* Resources */,
-				0E2046899EC1B88312AB79EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,7 +354,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					F97D4D5227883B0900FBC5AD = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -376,9 +379,6 @@
 				ko,
 			);
 			mainGroup = F97D4D4A27883B0900FBC5AD;
-			packageReferences = (
-				F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
-			);
 			productRefGroup = F97D4D5427883B0900FBC5AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,6 +399,7 @@
 				F94C618428C3A5C200EE41ED /* Localizable.strings in Resources */,
 				F9500528279AB23B006807F8 /* ColorAssets.xcassets in Resources */,
 				F97D4D5B27883B0B00FBC5AD /* Assets.xcassets in Resources */,
+				F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,132 +419,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0E2046899EC1B88312AB79EA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Switcher-SwitcherUITests/Pods-Switcher-SwitcherUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F58259BAE90DA81F1576231 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Switcher/Pods-Switcher-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51E3CA8F3A28C63622E67866 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwitcherTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C31084868633D01D2C49617 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Switcher-SwitcherUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C94599B351B94EA3CF5B619F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Switcher-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		F97D4D4F27883B0900FBC5AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9617A09285486FA00267181 /* AppendAppView.swift in Sources */,
-				F999DF8227E84FC3006E6391 /* KeyInputView.swift in Sources */,
-				F9743DBE282925B20024F03D /* KeyMapModel.swift in Sources */,
+				F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */,
+				F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */,
+				F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */,
+				F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */,
+				F91A76CB2A8B6B3100AB721F /* ApplicationModel.swift in Sources */,
+				F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */,
+				F9743DBE282925B20024F03D /* KeyMap.swift in Sources */,
 				F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */,
-				F9095A4A27E88B340065B55F /* MultiSelectPickerView.swift in Sources */,
-				F9743DBB282922620024F03D /* KeySelecterView.swift in Sources */,
 				F97D4D912788419100FBC5AD /* MenuView.swift in Sources */,
-				F9BAFD6C27889AD400990607 /* GlobalVal.swift in Sources */,
-				F91ECBA127C942DC00C43482 /* KeyMapView.swift in Sources */,
-				F9C8E4FC28531201009EF0CD /* AlertKeySettingView.swift in Sources */,
-				F950052A279AC7D7006807F8 /* Functions.swift in Sources */,
+				F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */,
+				F99C8B272A3458EE00E8875C /* CreateEventTap.swift in Sources */,
+				F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */,
+				F91A76D02A8CF6B900AB721F /* NSImage+resized.swift in Sources */,
+				F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */,
+				F95E91592A8119DE00BFCA99 /* CurrentlyActiveApplicationController.swift in Sources */,
+				F91A76D42A8D02BA00AB721F /* ApplicationListView.swift in Sources */,
+				F92E21732A7538C500DE55C6 /* KeyInputController.swift in Sources */,
+				F95DA7EC2A7F738400606876 /* PreventKeyModel.swift in Sources */,
 				F9E7EB11278C5BE2004B5037 /* WelcomeView.swift in Sources */,
-				F97D4D5927883B0900FBC5AD /* ContentView.swift in Sources */,
+				F97D4D5927883B0900FBC5AD /* AlertView.swift in Sources */,
 				F97D4D8E2788416300FBC5AD /* CGEventExtension.swift in Sources */,
-				F9743DC0282927620024F03D /* KeyMapController.swift in Sources */,
+				F92E21702A75361C00DE55C6 /* MenuModel.swift in Sources */,
 				F97D4D5727883B0900FBC5AD /* SwitcherApp.swift in Sources */,
-				F989189F27D8ADB300FA5726 /* Extensions.swift in Sources */,
-				F97D4D9327885EA000FBC5AD /* KeyInputController.swift in Sources */,
+				F92E216C2A7533C100DE55C6 /* Wrapper.swift in Sources */,
+				F95DA7E72A7F6DD800606876 /* PreventKeySelectView.swift in Sources */,
+				F9DA3C432A7648B100E1A30C /* UIView+showViewOnNewWindowInSpecificTime.swift in Sources */,
+				F91A76D22A8CF7CE00AB721F /* ApplicationsAddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +534,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -644,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -689,6 +597,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -700,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -711,7 +620,6 @@
 		};
 		F97D4D7927883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F2C2C3345381D5983CAC4C1 /* Pods-Switcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -719,6 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -730,8 +639,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -741,7 +650,6 @@
 		};
 		F97D4D7A27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A610C9F224FB59E060B53EBD /* Pods-Switcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -749,6 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Switcher/Preview Content\"";
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -760,8 +669,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tkgka.Switcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -771,12 +680,12 @@
 		};
 		F97D4D7C27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CCB01668BF6E69B53A4B83C /* Pods-SwitcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
@@ -791,12 +700,12 @@
 		};
 		F97D4D7D27883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C908826686044B902089CFF4 /* Pods-SwitcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
@@ -811,11 +720,11 @@
 		};
 		F97D4D7F27883B0B00FBC5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 148EBA41A3E3C20ED9583966 /* Pods-Switcher-SwitcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -829,11 +738,11 @@
 		};
 		F97D4D8027883B0B00FBC5AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A03E0C8BF9FFA86B1FB329F2 /* Pods-Switcher-SwitcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ABL4JWM3PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -885,17 +794,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F9E7EB0A278C3B42004B5037 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = F97D4D4B27883B0900FBC5AD /* Project object */;
 }

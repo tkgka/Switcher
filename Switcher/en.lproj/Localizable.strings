@@ -21,3 +21,6 @@
 
 "Add_Item_Key" = "Add Item";
 "Remove_Item_Key" = "Remove";
+"Alert_Text" = "press %@\n again to execute";
+"PressToAddNewKey" = "press to add newKey";
+"PressToSelectMappingKey" = "Press to select MappingKey";
