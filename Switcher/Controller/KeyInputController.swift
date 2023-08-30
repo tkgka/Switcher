@@ -36,8 +36,8 @@ struct KeyInputController {
             setUpMappingKeyValue(event: event)
             return nil
         }
-        
-        if let applicationIdentifier = CurrentlyActiveApplicationController().applicationsDataContainFfrontmostApplication(applications: ApplicationModel.shared.applications) {
+        let currentlyActiveApplicationController: CurrentlyActiveApplicationControllerType = CurrentlyActiveApplicationController()
+        if let applicationIdentifier = currentlyActiveApplicationController.applicationsDataContainFfrontmostApplication(applications: ApplicationModel.shared.applications) {
             guard let applicationData = ApplicationModel.shared.applications.first(where: { $0.identifier == applicationIdentifier }) else {
                 return returnResultCGEvent(_event: event, _cgEvent: cgEvent, preventedKeys: PreventKeyModel.shared.preventedKeys, mappedKeys: KeyMapModel.shared.mappedKeys)
             }

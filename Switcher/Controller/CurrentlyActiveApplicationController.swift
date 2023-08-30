@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-struct CurrentlyActiveApplicationController {
+struct CurrentlyActiveApplicationController: CurrentlyActiveApplicationControllerType {
     
     func applicationsDataContainFfrontmostApplication(applications:[ApplicationData]) -> String? {
         let bundleIdentifiers = applications.compactMap { applicaiton in

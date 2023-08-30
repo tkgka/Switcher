@@ -37,6 +37,7 @@
 		F99C8B292A3459DD00E8875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B282A3459DD00E8875C /* AppDelegate.swift */; };
 		F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */; };
 		F99C8B832A3478B500E8875C /* Apple Symbols.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99C8B822A3478B500E8875C /* Apple Symbols.ttf */; };
+		F9AB16822A9F7F90005215BB /* CurrentlyActiveApplicationControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB16812A9F7F90005215BB /* CurrentlyActiveApplicationControllerType.swift */; };
 		F9B962282A7550FA00EAF3CD /* FlagMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B962272A7550FA00EAF3CD /* FlagMap.swift */; };
 		F9BAFD77278AF8FD00990607 /* ShellCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAFD76278AF8FD00990607 /* ShellCommands.swift */; };
 		F9CDCDEE2A7E56CD009182E0 /* PreventedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */; };
@@ -98,6 +99,7 @@
 		F99C8B2B2A345A4600E8875C /* MakeMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMenuButton.swift; sourceTree = "<group>"; };
 		F99C8B772A346A3E00E8875C /* Switcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Switcher copy-Info.plist"; path = "/Users/gimsuhwan/Documents/swift/Switcher/Switcher copy-Info.plist"; sourceTree = "<absolute>"; };
 		F99C8B822A3478B500E8875C /* Apple Symbols.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols.ttf"; sourceTree = "<group>"; };
+		F9AB16812A9F7F90005215BB /* CurrentlyActiveApplicationControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyActiveApplicationControllerType.swift; sourceTree = "<group>"; };
 		F9B962272A7550FA00EAF3CD /* FlagMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMap.swift; sourceTree = "<group>"; };
 		F9BAFD76278AF8FD00990607 /* ShellCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommands.swift; sourceTree = "<group>"; };
 		F9CDCDED2A7E56CD009182E0 /* PreventedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventedKeys.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				F97D4D5627883B0900FBC5AD /* SwitcherApp.swift */,
 				F99C8B2A2A3459FF00E8875C /* AppDelegates */,
 				F94C618128C3A3F800EE41ED /* Controller */,
+				F9AB16802A9F7F7F005215BB /* Type */,
 				F9BAFD75278AF8EC00990607 /* Command */,
 				F9743DBC282922E10024F03D /* Extensions */,
 				F9743DBD282925B20024F03D /* KeyMap.swift */,
@@ -280,6 +283,14 @@
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		F9AB16802A9F7F7F005215BB /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB16812A9F7F90005215BB /* CurrentlyActiveApplicationControllerType.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
@@ -427,6 +438,7 @@
 				F91A76C92A88E97400AB721F /* KeyMappingView.swift in Sources */,
 				F95E915D2A88B51700BFCA99 /* MappedKeys.swift in Sources */,
 				F95DA7E92A7F728B00606876 /* String+Localized.swift in Sources */,
+				F9AB16822A9F7F90005215BB /* CurrentlyActiveApplicationControllerType.swift in Sources */,
 				F95E915B2A88B4E500BFCA99 /* KeyMapModel.swift in Sources */,
 				F91A76CB2A8B6B3100AB721F /* ApplicationModel.swift in Sources */,
 				F99C8B2C2A345A4600E8875C /* MakeMenuButton.swift in Sources */,
