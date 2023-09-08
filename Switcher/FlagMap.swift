@@ -75,6 +75,8 @@ extension FlagMap {
             flagList.append(.capsLock)
             return flagToArrayFlagMaps(flagNum: val - FlagMap.capsLock.rawValue + FlagMap.default.rawValue)
         }
+        guard val > FlagMap.default.rawValue else { return }
+        
         adjustFlagLocation(flagNum: val - FlagMap.default.rawValue)
     }
     
