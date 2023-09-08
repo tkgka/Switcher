@@ -91,6 +91,7 @@ enum KeyMap: UInt16, Codable {
     case function = 0x3F
     case mouseButton3 = 0x3eb // buttonNumber + 1000
     case mouseButton4 = 0x3ec
+    case mouseButton5 = 0x3ed
 }
 
 
@@ -266,6 +267,8 @@ extension KeyMap {
             return "MBtn3"
         case .mouseButton4:
             return "MBtn4"
+        case .mouseButton5:
+            return "MBtn5"
         }
     }
 }
