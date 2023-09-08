@@ -134,9 +134,6 @@
 		F92E216D2A7535F500DE55C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */,
-				F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */,
-				F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */,
 				F92E216F2A75361C00DE55C6 /* MenuModel.swift */,
 			);
 			path = Models;
@@ -145,10 +142,6 @@
 		F92E216E2A7535FC00DE55C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */,
-				F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */,
-				F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */,
-				F91A76C82A88E97400AB721F /* KeyMappingView.swift */,
 				F97D4D902788419100FBC5AD /* MenuView.swift */,
 			);
 			path = Views;
@@ -256,6 +249,11 @@
 			isa = PBXGroup;
 			children = (
 				F97D4D8F2788418200FBC5AD /* Menu */,
+				F91A76D32A8D02BA00AB721F /* ApplicationListView.swift */,
+				F95DA7E62A7F6DD800606876 /* PreventKeySelectView.swift */,
+				F91A76C82A88E97400AB721F /* KeyMappingView.swift */,
+				F91A76D12A8CF7CE00AB721F /* ApplicationsAddView.swift */,
+				F9B6C6702AAB84D900C40583 /* Models */,
 				F97D4D5827883B0900FBC5AD /* AlertView.swift */,
 				F9E7EB10278C5BE2004B5037 /* WelcomeView.swift */,
 			);
@@ -280,6 +278,16 @@
 				F97D4D5A27883B0B00FBC5AD /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		F9B6C6702AAB84D900C40583 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F91A76CA2A8B6B3100AB721F /* ApplicationModel.swift */,
+				F95DA7EB2A7F738400606876 /* PreventKeyModel.swift */,
+				F95E915A2A88B4E500BFCA99 /* KeyMapModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F9BAFD75278AF8EC00990607 /* Command */ = {
