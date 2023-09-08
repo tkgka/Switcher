@@ -32,7 +32,7 @@ https://github.com/tkgka/Switcher/assets/52348220/c3326cb8-a633-4ae0-99c9-de6cd8
 
 
 ## 💾 [Download](https://github.com/tkgka/Switcher/releases) 
-[**Download the app**](https://github.com/tkgka/Switcher/releases/download/v3.0.1/Switcher.dmg)
+[**Download the app**](https://github.com/tkgka/Switcher/releases/download/v3.0.2/Switcher.dmg)
 
 
 check introduction <a href = "https://github.com/tkgka/Switcher/blob/main/Readme/HowToUse_EN.md"> here </a>
