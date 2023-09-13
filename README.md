@@ -43,3 +43,8 @@ ksh17171@gmail.com
 <a href="https://www.buymeacoffee.com/tkgka" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 
+# Thanks 🤗
+[![www.ifun.de](https://github.com/tkgka/Switcher/assets/52348220/4c53d9ee-0417-422a-8491-7dd3b7e4209a)](https://www.ifun.de/switcher-mac-app-verhindert-versehentliche-tastatureingaben-217996/)
+
+[![lifehacker.ru](https://github.com/tkgka/Switcher/assets/52348220/23d3ce7c-7215-43e0-bfc4-3ddd48472a1c)](https://lifehacker.ru/switcher-mac-os/)
+
